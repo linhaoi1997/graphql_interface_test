@@ -1,0 +1,129 @@
+{
+  "uid" : "c696b36e2436a86a",
+  "name" : "test_1[variable0]",
+  "fullName" : "interface.employee_test.test_createEmployee.TestCreateEmployee#test_1",
+  "historyId" : "4c607c505f7f0e0e47f9886c888e8de2",
+  "time" : {
+    "start" : 1600227954525,
+    "stop" : 1600227954855,
+    "duration" : 330
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "init",
+    "time" : {
+      "start" : 1600227952218,
+      "stop" : 1600227952218,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1600227952116,
+      "stop" : 1600227952218,
+      "duration" : 102
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "resource",
+    "time" : {
+      "start" : 1600227952218,
+      "stop" : 1600227952218,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "66892d4d9528b6a7",
+      "name" : "log",
+      "source" : "66892d4d9528b6a7.txt",
+      "type" : "text/plain",
+      "size" : 5177
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "所有项完整"
+  }, {
+    "name" : "feature",
+    "value" : "createEmployee"
+  }, {
+    "name" : "epic",
+    "value" : "employee"
+  }, {
+    "name" : "parentSuite",
+    "value" : "interface.employee_test"
+  }, {
+    "name" : "suite",
+    "value" : "test_createEmployee"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestCreateEmployee"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Pro.local"
+  }, {
+    "name" : "thread",
+    "value" : "99506-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "interface.employee_test.test_createEmployee"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "variable",
+    "value" : "{'input': {'name': 'name_ycm24', 'department': {'id': 3}, 'code': 'code_h5jol', 'phone': 'phone_lb031', 'job': 'job_w3q2v', 'email': 'test@sina.com', 'account': 'account_v23fx', 'password': 'password_lb9ny', 'status': 'FROZEN', 'roles': [{'id': 1}, {'id': 2}, {'id': 3}]}}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "c696b36e2436a86a.json",
+  "parameterValues" : [ "{'input': {'name': 'name_ycm24', 'department': {'id': 3}, 'code': 'code_h5jol', 'phone': 'phone_lb031', 'job': 'job_w3q2v', 'email': 'test@sina.com', 'account': 'account_v23fx', 'password': 'password_lb9ny', 'status': 'FROZEN', 'roles': [{'id': 1}, {'id': 2}, {'id': 3}]}}" ]
+}

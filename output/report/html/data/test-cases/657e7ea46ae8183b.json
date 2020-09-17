@@ -1,0 +1,141 @@
+{
+  "uid" : "657e7ea46ae8183b",
+  "name" : "test_query_thing",
+  "fullName" : "interface.thingRepair_test.test_queryThingRepair.TestQueryThingRepairs#test_query_thing",
+  "historyId" : "2da0ac04258791b344af836520577b1d",
+  "time" : {
+    "start" : 1600228281664,
+    "stop" : 1600228291572,
+    "duration" : 9908
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "init",
+    "time" : {
+      "start" : 1600227952218,
+      "stop" : 1600227952218,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1600227952116,
+      "stop" : 1600227952218,
+      "duration" : 102
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "resource",
+    "time" : {
+      "start" : 1600227952218,
+      "stop" : 1600227952218,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "create_id",
+    "time" : {
+      "start" : 1600228281663,
+      "stop" : 1600228281663,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "c2477f37d72d770b",
+      "name" : "log",
+      "source" : "c2477f37d72d770b.txt",
+      "type" : "text/plain",
+      "size" : 955883
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "正确查询"
+  }, {
+    "name" : "feature",
+    "value" : "queryThingRepair"
+  }, {
+    "name" : "epic",
+    "value" : "thingRepair"
+  }, {
+    "name" : "parentSuite",
+    "value" : "interface.thingRepair_test"
+  }, {
+    "name" : "suite",
+    "value" : "test_queryThingRepair"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestQueryThingRepairs"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Pro.local"
+  }, {
+    "name" : "thread",
+    "value" : "99506-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "interface.thingRepair_test.test_queryThingRepair"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "657e7ea46ae8183b.json",
+  "parameterValues" : [ ]
+}

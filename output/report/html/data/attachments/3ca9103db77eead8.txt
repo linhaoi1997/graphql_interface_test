@@ -1,0 +1,227 @@
+DEBUG    mytest:GraphqlClient.py:34 http://192.168.1.175:8888/graphql/?permissionTable
+DEBUG    mytest:GraphqlClient.py:35 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMxNDM0Nn0.oo9c5sPlg1FpR7bnUW5abCyhAJuGeCNUpftqw2kqjGI'}
+DEBUG    mytest:GraphqlClient.py:36 {
+}
+
+DEBUG    mytest:GraphqlClient.py:39 {
+  'data': {
+    'permissionTable': {
+      '__typename': 'PermissionTable',
+      'admin': {
+        '__typename': 'Permission',
+        'description': '所有数据权限，可管理全部信息',
+        'id': '1',
+        'scopes': [],
+      },
+      'modules': [
+        {
+          '__typename': 'PermissionModule',
+          'name': 'SCADA',
+          'permissions': [
+            {
+              '__typename': 'Permission',
+              'description': '使用SCADA入口',
+              'id': '27',
+              'scopes': [],
+            },
+          ],
+        },
+        {
+          '__typename': 'PermissionModule',
+          'name': '主设备管理',
+          'permissions': [
+            {
+              '__typename': 'Permission',
+              'description': '查看主设备列表、详情',
+              'id': '2',
+              'scopes': ['/query/thing', '/query/things'],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '编辑、导入、导出主设备详情',
+              'id': '3',
+              'scopes': ['/mutation/createThing', '/mutation/updateThing', '/mutation/importThings', '/mutation/exportThings', '/mutation/deleteThings'],
+            },
+          ],
+        },
+        {
+          '__typename': 'PermissionModule',
+          'name': '保养',
+          'permissions': [
+            {
+              '__typename': 'Permission',
+              'description': '查看保养方案',
+              'id': '16',
+              'scopes': ['/query/thingMaintenanceRule', '/query/thingMaintenanceRules'],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '编辑保养方案',
+              'id': '17',
+              'scopes': ['/mutation/createThingMaintenanceRule', '/mutation/updateThingMaintenanceRule', '/mutation/deleteThingMaintenanceRules'],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '查看、发起、审核保养单',
+              'id': '18',
+              'scopes': ['/query/thingMaintenance', '/query/thingMaintenances', '/query/exportThingMaintenances', '/mutation/createThingMaintenance', '/mutation/updateThingMaintenance', '/mutation/updateThingMaintenanceStatus'],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '查看、发起、反馈保养单',
+              'id': '19',
+              'scopes': ['/query/thingMaintenance', '/query/thingMaintenances', '/query/exportThingMaintenances', '/mutation/createThingMaintenance', '/mutation/updateThingMaintenance', '/mutation/updateThingMaintenanceFeedback'],
+            },
+          ],
+        },
+        {
+          '__typename': 'PermissionModule',
+          'name': '备件管理',
+          'permissions': [
+            {
+              '__typename': 'Permission',
+              'description': '查看备件列表、详情',
+              'id': '4',
+              'scopes': ['/query/sparePart', '/query/spareParts'],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '编辑、导入、导出备件详情',
+              'id': '5',
+              'scopes': ['/mutation/createSparePart', '/mutation/updateSparePart', '/mutation/importSpareParts', '/mutation/exportSpareParts', '/mutation/deleteSpareParts'],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '查看备件库存、入库记录、申领记录',
+              'id': '6',
+              'scopes': ['/query/sparePartStocks', '/query/sparePartStock', '/query/exportSparePartStock', '/query/sparePartReceipts', '/query/sparePartReceipt', '/query/exportSparePartReceipts', '/query/sparePartOutbound', '/query/sparePartOutbounds', '/query/exportSparePartOutbounds'],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '编辑仓库信息',
+              'id': '7',
+              'scopes': [],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '发起备件入库',
+              'id': '8',
+              'scopes': ['/mutation/createSparePartReceipt', '/mutation/updateSparePartReceipt'],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '发起备件申领',
+              'id': '9',
+              'scopes': ['/mutation/createSparePartOutbound', '/mutation/updateSparePartOutbound'],
+            },
+          ],
+        },
+        {
+          '__typename': 'PermissionModule',
+          'name': '巡检',
+          'permissions': [
+            {
+              '__typename': 'Permission',
+              'description': '查看巡检方案',
+              'id': '12',
+              'scopes': ['/query/thingInspectionRule', '/query/thingInspectionRules'],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '编辑巡检方案',
+              'id': '13',
+              'scopes': ['/mutation/createThingInspectionRule', '/mutation/updateThingInspectionRule', '/mutation/deleteInspectionRules'],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '查看、发起、审核巡检单',
+              'id': '14',
+              'scopes': ['/mutation/createThingInspection', '/mutation/updateThingInspection', '/mutation/updateThingInspectionStatus', '/query/thingInspection', '/mutation/thingInspections'],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '查看、发起、反馈巡检单',
+              'id': '15',
+              'scopes': ['/mutation/createThingInspection', '/mutation/updateThingInspection', '/mutation/updateThingInspectionFeedback', '/query/thingInspection', '/mutation/thingInspections'],
+            },
+          ],
+        },
+        {
+          '__typename': 'PermissionModule',
+          'name': '概览（报表）',
+          'permissions': [
+            {
+              '__typename': 'Permission',
+              'description': '查看所有报表',
+              'id': '26',
+              'scopes': [],
+            },
+          ],
+        },
+        {
+          '__typename': 'PermissionModule',
+          'name': '维修',
+          'permissions': [
+            {
+              '__typename': 'Permission',
+              'description': '查看、发起、审核维修单',
+              'id': '10',
+              'scopes': ['/query/thingRepairs', '/query/thingRepair', '/mutation/createThingRepair', '/mutation/createThingRepairs', '/mutation/updateThingRepair', '/mutation/updateThingRepairStatus'],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '查看、发起、反馈维修单',
+              'id': '11',
+              'scopes': ['/query/thingRepairs', '/query/thingRepair', '/mutation/createThingRepair', '/mutation/createThingRepairs', '/mutation/updateThingRepair', '/mutation/updateThingRepairFeedback'],
+            },
+          ],
+        },
+        {
+          '__typename': 'PermissionModule',
+          'name': '设置',
+          'permissions': [
+            {
+              '__typename': 'Permission',
+              'description': '自定义表单',
+              'id': '20',
+              'scopes': ['/mutation/updateFormStruct'],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '查看隐藏字段',
+              'id': '21',
+              'scopes': [],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '查看组织架构及人员',
+              'id': '22',
+              'scopes': ['/query/departments', '/query/employees'],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '编辑组织架构及人员',
+              'id': '23',
+              'scopes': ['/mutation/createDepartment', '/mutation/updateDepartment', '/mutation/deleteDepartment', '/mutation/deleteEmployees'],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '查看角色权限',
+              'id': '24',
+              'scopes': ['/query/permissionTable'],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '编辑角色权限',
+              'id': '25',
+              'scopes': ['/mutation/updateEmployee'],
+            },
+          ],
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+DEBUG    mytest:test_all_permissions.py:30 ['thingByQrCode', 'thingsTemplate', 'sparePartsTemplate', 'exportThingRepairs', 'exportThingInspectionRules', 'exportThingInspections', 'exportThingMaintenanceRules', 'formStruct', 'formStructs', 'roles', 'thingOverview', 'thingSummary', 'sparePartSummary', 'taskSummary', 'uploadFile', 'uploadFiles', 'deleteSparePartReceipts', 'deleteSparePartOutbounds', 'deleteThingRepairs', 'updateSparePartOutboundStatus', 'deleteThingInspections', 'deleteThingMaintenances', 'createEmployee', 'updateEmployeePassword', 'createRole', 'updateRole', 'deleteRoles', 'login', 'logout']

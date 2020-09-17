@@ -1,0 +1,184 @@
+DEBUG    mytest:GraphqlClient.py:34 http://192.168.1.175:8888/graphql/?createThingRepair
+DEBUG    mytest:GraphqlClient.py:35 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMzNTI2OX0.9zo8j0aEY3MM4SspiZo_FjCUKeMV9IZq_LgcBqdjeAM'}
+DEBUG    mytest:GraphqlClient.py:36 {
+  'input': {
+    'addition': '[{"key": "b5ae005f48ff48f2b6c292515c1424b5", "value":
+                 "\\u5355\\u884c\\u6587\\u5b57_rr3q3"}]',
+    'faultDesc': 'faultDesc_3gz77',
+    'faultImages': [
+      {
+        'id': 2,
+      },
+      {
+        'id': 3,
+      },
+      {
+        'id': 4,
+      },
+    ],
+    'reportDepartment': 'reportDepartment_k4w5l',
+    'reportedAt': 1600248871093,
+    'thing': {
+      'id': 2,
+    },
+    'worker': {
+      'id': 1,
+    },
+  },
+}
+
+DEBUG    mytest:GraphqlClient.py:39 {
+  'data': {
+    'createThingRepair': {
+      '__typename': 'ThingRepair',
+      'addition': '[{"key": "b5ae005f48ff48f2b6c292515c1424b5", "value":
+                   "\\u5355\\u884c\\u6587\\u5b57_rr3q3"}]',
+      'code': 'WX202009160005',
+      'faultDesc': 'faultDesc_3gz77',
+      'faultImages': [
+        {
+          '__typename': 'File',
+          'id': '4',
+          'name': 'test.pdf',
+          'url': 'https://minio.teletraan.io/eam-sleemon/test.pdf?...(len=300)',
+        },
+        {
+          '__typename': 'File',
+          'id': '3',
+          'name': 'test3.jpeg',
+          'url': 'https://minio.teletraan.io/eam-sleemon/test3.jpe...(len=302)',
+        },
+        {
+          '__typename': 'File',
+          'id': '2',
+          'name': 'test2.jpeg',
+          'url': 'https://minio.teletraan.io/eam-sleemon/test2.jpe...(len=302)',
+        },
+      ],
+      'finishedAt': None,
+      'id': '5',
+      'laborCosts': None,
+      'materialCosts': None,
+      'otherCosts': None,
+      'reportDepartment': 'reportDepartment_k4w5l',
+      'reportedAt': 1600248871093,
+      'result': '',
+      'resultHistory': [],
+      'sparePartCosts': None,
+      'status': 'DISPATCHING',
+      'thing': {
+        '__typename': 'Thing',
+        'activatedAt': None,
+        'addition': None,
+        'attachments': None,
+        'brand': '1',
+        'category': '1',
+        'code': 'code_smkpy',
+        'contact': None,
+        'depreciationRate': None,
+        'desc': None,
+        'distributor': None,
+        'factory': '1',
+        'id': '2',
+        'images': None,
+        'location': None,
+        'manufacturer': None,
+        'model': 'model_t2zf7',
+        'name': 'name_cjcxn',
+        'phone': None,
+        'purchasedAt': None,
+        'purchasedPrice': None,
+        'purpose': '1',
+        'qrCode': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASIAAAEiAQAAAAB
+                   1xeIbAAABdElEQVR4nO2YQWrDMBBF39SGLFXoAXIU62alN3NuZC0DCr8LWYlT
+                   ...(8 hidden lines)',
+        'spareParts': [
+          {'id': '5', 'name': 'name_h6t1q', 'desc':...(len=6891),
+        ],
+        'status': '1',
+        'yearsOfUse': None,
+      },
+      'totalCosts': 0.0,
+      'worker': {
+        '__typename': 'Employee',
+        'account': 'admin',
+        'code': None,
+        'department': {
+          '__typename': 'Department',
+          'headcount': 0,
+          'id': '1',
+          'name': '喜临门家具股份有限公司',
+          'parentPath': [],
+          'subsidiaries': [],
+        },
+        'email': None,
+        'id': '1',
+        'job': None,
+        'name': '管理员',
+        'phone': None,
+        'roles': [
+          {'id': '1', 'name': '负责人', 'permissions':...(len=170),
+        ],
+        'status': 'ACTIVATED',
+      },
+    },
+  },
+  'errors': None,
+}
+
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..errors'
+get
+'None
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except None
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..thing.id'
+get
+''2'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 2
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..reportedAt'
+get
+'1600248871093
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 1600248871093
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..reportDepartment'
+get
+''reportDepartment_k4w5l'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except reportDepartment_k4w5l
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..createThingRepair.faultImages[*].id'
+get
+'['4', '3', '2']
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except [2, 3, 4]
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..faultDesc'
+get
+''faultDesc_3gz77'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except faultDesc_3gz77
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..worker.id'
+get
+''1'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 1

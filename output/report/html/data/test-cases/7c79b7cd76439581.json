@@ -1,0 +1,154 @@
+{
+  "uid" : "7c79b7cd76439581",
+  "name" : "test_5[audit_feed_pass]",
+  "fullName" : "interface.workFlow_test.test_thingInspectionFlow.TestThingInspectionWorkFlow#test_5",
+  "historyId" : "01520abd72b95e27b37af7326ca9559e",
+  "time" : {
+    "start" : 1600243842069,
+    "stop" : 1600243843983,
+    "duration" : 1914
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "resource",
+    "time" : {
+      "start" : 1600243752992,
+      "stop" : 1600243752992,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1600243752946,
+      "stop" : 1600243752992,
+      "duration" : 46
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "init",
+    "time" : {
+      "start" : 1600243752992,
+      "stop" : 1600243752992,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "eb17e411e77387ac",
+      "name" : "log",
+      "source" : "eb17e411e77387ac.txt",
+      "type" : "text/plain",
+      "size" : 6302
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "epic",
+    "value" : "workflow"
+  }, {
+    "name" : "story",
+    "value" : "巡检中不允许的操作"
+  }, {
+    "name" : "feature",
+    "value" : "ThingInspectionWorkFlow"
+  }, {
+    "name" : "parentSuite",
+    "value" : "interface.workFlow_test"
+  }, {
+    "name" : "suite",
+    "value" : "test_thingInspectionFlow"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestThingInspectionWorkFlow"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Pro.local"
+  }, {
+    "name" : "thread",
+    "value" : "5049-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "interface.workFlow_test.test_thingInspectionFlow"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "action",
+    "value" : "'audit_feed_pass'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "e89eea7cf369b394",
+      "status" : "passed",
+      "time" : {
+        "start" : 1600231372631,
+        "stop" : 1600231377768,
+        "duration" : 5137
+      }
+    }, {
+      "uid" : "70832611e6b6b09f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1600231212369,
+        "stop" : 1600231214416,
+        "duration" : 2047
+      }
+    }, {
+      "uid" : "d5a6a72b35712ebb",
+      "status" : "broken",
+      "statusDetails" : "TypeError: 'bool' object is not subscriptable",
+      "time" : {
+        "start" : 1600228429847,
+        "stop" : 1600228429941,
+        "duration" : 94
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "7c79b7cd76439581.json",
+  "parameterValues" : [ "'audit_feed_pass'" ]
+}

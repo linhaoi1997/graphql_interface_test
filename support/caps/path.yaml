@@ -1,0 +1,8 @@
+schema_graphql: /Users/linhao/graphql/eam/
+#platform_graphql: /Users/linhao/graphql/platform/
+allure: /Users/linhao/Desktop/linhao/project/allure-2.13.1/bin/
+#schema
+schema: /Users/linhao/graphql/eam.graphql
+#sql
+eam-test_sql: /Users/linhao/Desktop/linhao/make/execute/eam-test-last.sql
+eam-sleemon_sql: /Users/linhao/Desktop/linhao/make/execute/eam-sleemon-last.sql

@@ -1,0 +1,39 @@
+DEBUG    mytest:GraphqlClient.py:34 http://192.168.1.175:8888/graphql/?createThingInspectionRule
+DEBUG    mytest:GraphqlClient.py:35 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMzNTI4OX0.k_hAhuMhV-cBH_8CWupgmx6Tlr1Xr29LKSo2a4FnQ68'}
+DEBUG    mytest:GraphqlClient.py:36 {
+  'input': {
+    'name': 'name_altcj',
+  },
+}
+
+DEBUG    mytest:GraphqlClient.py:39 {
+  'data': {
+    'createThingInspectionRule': {
+      '__typename': 'ThingInspectionRule',
+      'addition': '[]',
+      'code': 'XJFA202009160006',
+      'id': '6',
+      'items': None,
+      'name': 'name_altcj',
+      'updatedAt': 1600248891019,
+    },
+  },
+  'errors': None,
+}
+
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..errors'
+get
+'None
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except None
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..name'
+get
+''name_altcj'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except name_altcj

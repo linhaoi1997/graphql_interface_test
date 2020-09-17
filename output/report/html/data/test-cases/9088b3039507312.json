@@ -1,0 +1,141 @@
+{
+  "uid" : "9088b3039507312",
+  "name" : "test",
+  "fullName" : "interface.thingInspection_test.test_exportThingInspections.TestQueryExportThingInspections#test",
+  "historyId" : "755b826a33529a4d9a4cedfbe51a0529",
+  "time" : {
+    "start" : 1600228080874,
+    "stop" : 1600228097772,
+    "duration" : 16898
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "init",
+    "time" : {
+      "start" : 1600227952218,
+      "stop" : 1600227952218,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "create_id",
+    "time" : {
+      "start" : 1600228080874,
+      "stop" : 1600228080874,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1600227952116,
+      "stop" : 1600227952218,
+      "duration" : 102
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "resource",
+    "time" : {
+      "start" : 1600227952218,
+      "stop" : 1600227952218,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "410fcc12adf7427a",
+      "name" : "log",
+      "source" : "410fcc12adf7427a.txt",
+      "type" : "text/plain",
+      "size" : 1442331
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "exportThingInspections"
+  }, {
+    "name" : "epic",
+    "value" : "thingInspection"
+  }, {
+    "name" : "story",
+    "value" : "导出三项"
+  }, {
+    "name" : "parentSuite",
+    "value" : "interface.thingInspection_test"
+  }, {
+    "name" : "suite",
+    "value" : "test_exportThingInspections"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestQueryExportThingInspections"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Pro.local"
+  }, {
+    "name" : "thread",
+    "value" : "99506-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "interface.thingInspection_test.test_exportThingInspections"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "9088b3039507312.json",
+  "parameterValues" : [ ]
+}

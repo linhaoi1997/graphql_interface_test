@@ -1,0 +1,24 @@
+DEBUG    mytest:test_uploadFile.py:60 {'Content-Type': 'multipart/form-data; boundary=a40e449e05b3b53e27576420b89280c8', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMxNDM2Nn0.qwwp2gSAo9uGy36INVq4Zm_eQ4p4vwiL_Gug2NFRUY8'}
+DEBUG    mytest:test_uploadFile.py:61 mutation uploadFiles($files: [Upload!]!) {
+  uploadFiles(files: $files) {
+    id
+    name
+    url
+    __typename
+  }
+}
+DEBUG    mytest:test_uploadFile.py:76 {
+  'data': {
+    'uploadFiles': [
+      {
+        '__typename': 'File',
+        'id': '11',
+        'name': '测试类型用2.xls',
+        'url': 'https://minio.teletraan.io/eam-sleemon/%E6%B5%8B%E8%AF%95%E7%B1%
+                BB%E5%9E%8B%E7%94%A82.xls?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz
+                ...(4 hidden lines)',
+      },
+    ],
+  },
+  'errors': None,
+}

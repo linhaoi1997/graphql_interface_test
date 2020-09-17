@@ -1,0 +1,89 @@
+DEBUG    mytest:GraphqlClient.py:34 http://192.168.1.175:8888/graphql/?createEmployee
+DEBUG    mytest:GraphqlClient.py:35 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMxNDM0Mn0.UOI1OaH_ELEAVzSlldya-CY3ahODVdxWOAwKSCpjxGc'}
+DEBUG    mytest:GraphqlClient.py:36 {
+  'input': {
+    'account': 'account_p6nu3',
+    'department': {
+      'id': 1,
+    },
+    'email': 'test@sina.com',
+    'name': 'name_13skg',
+    'password': 'password_ezbyv',
+    'status': 'ACTIVATED',
+  },
+}
+
+DEBUG    mytest:GraphqlClient.py:39 {
+  'data': {
+    'createEmployee': {
+      '__typename': 'Employee',
+      'account': 'account_p6nu3',
+      'code': None,
+      'department': {
+        '__typename': 'Department',
+        'headcount': 2,
+        'id': '1',
+        'name': '喜临门家具股份有限公司',
+        'parentPath': [],
+        'subsidiaries': [],
+      },
+      'email': 'test@sina.com',
+      'id': '3',
+      'job': None,
+      'name': 'name_13skg',
+      'phone': None,
+      'roles': [],
+      'status': 'ACTIVATED',
+    },
+  },
+  'errors': None,
+}
+
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..errors'
+get
+'None
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except None
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..name'
+get
+''name_13skg'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except name_13skg
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..department.id'
+get
+''1'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 1
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..account'
+get
+''account_p6nu3'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except account_p6nu3
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..status'
+get
+''ACTIVATED'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except ACTIVATED
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..email'
+get
+''test@sina.com'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except test@sina.com

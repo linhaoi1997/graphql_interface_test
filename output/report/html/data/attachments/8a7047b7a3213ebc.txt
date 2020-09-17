@@ -1,0 +1,287 @@
+DEBUG    mytest:GraphqlClient.py:38 http://192.168.1.175:8888/graphql/?createSparePart
+DEBUG    mytest:GraphqlClient.py:39 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMzg2M30.bDF63tEtAmErRaXh7qMiutGlmJgXvC6t-V25X6bPxfs'}
+DEBUG    mytest:GraphqlClient.py:40 {
+  'input': {
+    'addition': '[{"key": "f881c575aeab40f19093f57c64fd52da", "value": 1.01},
+                 {"key": "8e8540d4e51649aca1f4260b8068e91b", "value": 1.01},
+                 ...(26 hidden lines)',
+    'attachments': [
+      {
+        'id': 2,
+      },
+      {
+        'id': 3,
+      },
+      {
+        'id': 4,
+      },
+    ],
+    'desc': 'desc_bh4l9',
+    'distributor': 'distributor_2o26x',
+    'images': [
+      {
+        'id': 2,
+      },
+      {
+        'id': 3,
+      },
+      {
+        'id': 1,
+      },
+    ],
+    'manufacturer': 'manufacturer_pwzf6',
+    'model': 'model_rjxp2',
+    'name': 'name_0lixp',
+    'price': 1.01,
+    'things': [
+      {
+        'id': 2,
+      },
+      {
+        'id': 3,
+      },
+      {
+        'id': 1,
+      },
+    ],
+    'type': '生产设备',
+  },
+}
+
+DEBUG    mytest:GraphqlClient.py:43 {
+  'data': {
+    'createSparePart': {
+      '__typename': 'SparePart',
+      'addition': '[{"key": "f881c575aeab40f19093f57c64fd52da", "value": 1.01},
+                   {"key": "8e8540d4e51649aca1f4260b8068e91b", "value": 1.01},
+                   ...(24 hidden lines)',
+      'attachments': [
+        {
+          '__typename': 'File',
+          'id': '2',
+          'name': 'test2.jpeg',
+          'url': 'http://192.168.1.175:9060/sleemon/test2.jpeg?X-A...(len=297)',
+        },
+        {
+          '__typename': 'File',
+          'id': '3',
+          'name': 'test3.jpeg',
+          'url': 'http://192.168.1.175:9060/sleemon/test3.jpeg?X-A...(len=297)',
+        },
+        {
+          '__typename': 'File',
+          'id': '4',
+          'name': 'test.pdf',
+          'url': 'http://192.168.1.175:9060/sleemon/test.pdf?X-Amz...(len=295)',
+        },
+      ],
+      'desc': 'desc_bh4l9',
+      'distributor': 'distributor_2o26x',
+      'id': '8',
+      'images': [
+        {
+          '__typename': 'File',
+          'id': '2',
+          'name': 'test2.jpeg',
+          'url': 'http://192.168.1.175:9060/sleemon/test2.jpeg?X-A...(len=297)',
+        },
+        {
+          '__typename': 'File',
+          'id': '3',
+          'name': 'test3.jpeg',
+          'url': 'http://192.168.1.175:9060/sleemon/test3.jpeg?X-A...(len=297)',
+        },
+        {
+          '__typename': 'File',
+          'id': '1',
+          'name': 'test.jpg',
+          'url': 'http://192.168.1.175:9060/sleemon/test.jpg?X-Amz...(len=295)',
+        },
+      ],
+      'manufacturer': 'manufacturer_pwzf6',
+      'model': 'model_rjxp2',
+      'name': 'name_0lixp',
+      'price': 1.01,
+      'things': [
+        {
+          '__typename': 'Thing',
+          'activatedAt': None,
+          'addition': None,
+          'brand': '1',
+          'category': '1',
+          'code': 'code_lcdhm',
+          'contact': None,
+          'depreciationRate': None,
+          'desc': None,
+          'distributor': None,
+          'factory': '1',
+          'id': '1',
+          'images': None,
+          'location': None,
+          'manufacturer': None,
+          'model': 'model_z6aw5',
+          'name': 'name_pz0bx',
+          'phone': None,
+          'predictResidualRate': None,
+          'purchasedAt': None,
+          'purchasedPrice': None,
+          'purpose': '1',
+          'qrCode': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgA...(len=630)',
+          'spareParts': [{'id': '5', 'name': 'name_h6t1q',...(len=13097),
+          'status': '1',
+          'usedYear': None,
+          'yearsOfUse': None,
+        },
+        {
+          '__typename': 'Thing',
+          'activatedAt': None,
+          'addition': None,
+          'brand': '1',
+          'category': '1',
+          'code': 'code_smkpy',
+          'contact': None,
+          'depreciationRate': None,
+          'desc': None,
+          'distributor': None,
+          'factory': '1',
+          'id': '2',
+          'images': None,
+          'location': None,
+          'manufacturer': None,
+          'model': 'model_t2zf7',
+          'name': 'name_cjcxn',
+          'phone': None,
+          'predictResidualRate': None,
+          'purchasedAt': None,
+          'purchasedPrice': None,
+          'purpose': '1',
+          'qrCode': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgA...(len=594)',
+          'spareParts': [{'id': '5', 'name': 'name_h6t1q',...(len=13097),
+          'status': '1',
+          'usedYear': None,
+          'yearsOfUse': None,
+        },
+        {
+          '__typename': 'Thing',
+          'activatedAt': None,
+          'addition': None,
+          'brand': '1',
+          'category': '1',
+          'code': 'code_ccnst',
+          'contact': None,
+          'depreciationRate': None,
+          'desc': None,
+          'distributor': None,
+          'factory': '1',
+          'id': '3',
+          'images': None,
+          'location': None,
+          'manufacturer': None,
+          'model': 'model_dg51t',
+          'name': 'name_o2chs',
+          'phone': None,
+          'predictResidualRate': None,
+          'purchasedAt': None,
+          'purchasedPrice': None,
+          'purpose': '1',
+          'qrCode': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgA...(len=634)',
+          'spareParts': [{'id': '5', 'name': 'name_h6t1q',...(len=13097),
+          'status': '1',
+          'usedYear': None,
+          'yearsOfUse': None,
+        },
+      ],
+      'type': '生产设备',
+    },
+  },
+  'errors': None,
+}
+
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..errors'
+get
+'None
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except None
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..name'
+get
+''name_0lixp'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except name_0lixp
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..desc'
+get
+''desc_bh4l9'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except desc_bh4l9
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..type'
+get
+''生产设备'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 生产设备
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..model'
+get
+''model_rjxp2'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except model_rjxp2
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..manufacturer'
+get
+''manufacturer_pwzf6'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except manufacturer_pwzf6
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..distributor'
+get
+''distributor_2o26x'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except distributor_2o26x
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..createSparePart.images[*].id'
+get
+'['2', '3', '1']
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except [2, 3, 1]
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..createSparePart.attachments[*].id'
+get
+'['2', '3', '4']
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except [2, 3, 4]
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..createSparePart.things[*].id'
+get
+'['1', '2', '3']
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except [2, 3, 1]
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..price'
+get
+'1.01
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 1.01

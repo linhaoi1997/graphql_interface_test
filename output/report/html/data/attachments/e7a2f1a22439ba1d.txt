@@ -1,0 +1,47 @@
+DEBUG    mytest:GraphqlClient.py:34 http://192.168.1.175:8888/graphql/?createThingMaintenance
+DEBUG    mytest:GraphqlClient.py:35 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMxNDM1MH0.97ydSGHNZAhpTae_8ZxpZPSNXbEFFoGHjeUMpLeu72Q'}
+DEBUG    mytest:GraphqlClient.py:36 {
+  'input': {
+    'maintainer': {
+      'id': 1,
+    },
+    'rule': {
+      'id': 1,
+    },
+    'startAt': 1600228431161,
+    'thing': {
+      'id': 1,
+    },
+  },
+}
+
+ERROR    sgqlc.endpoint.http:base.py:213 GraphQL query failed with 2 errors
+DEBUG    mytest:GraphqlClient.py:39 {
+  'data': None,
+  'errors': [
+    {
+      'locations': [
+        {
+          'column': 33,
+          'line': 1,
+        },
+      ],
+      'message': 'Variable '$input' got invalid value {'rule': {'id': 1},
+                  'maintainer': {'id': 1}, 'startAt': 1600228431161, 'thing':
+                  ...(2 hidden lines)',
+      'path': None,
+    },
+    {
+      'locations': [
+        {
+          'column': 33,
+          'line': 1,
+        },
+      ],
+      'message': 'Variable '$input' got invalid value {'rule': {'id': 1},
+                  'maintainer': {'id': 1}, 'startAt': 1600228431161, 'thing':
+                  ...(2 hidden lines)',
+      'path': None,
+    },
+  ],
+}

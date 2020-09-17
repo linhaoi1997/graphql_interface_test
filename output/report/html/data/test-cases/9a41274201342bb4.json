@@ -1,0 +1,131 @@
+{
+  "uid" : "9a41274201342bb4",
+  "name" : "test_7[feed]",
+  "fullName" : "interface.workFlow_test.test_thingMaintanenceFlow.TestThingMaintenanceWorkFlow#test_7",
+  "historyId" : "30d8a9b519e69612dfbef2393ec1bef8",
+  "time" : {
+    "start" : 1600228432443,
+    "stop" : 1600228432580,
+    "duration" : 137
+  },
+  "status" : "broken",
+  "statusMessage" : "TypeError: 'bool' object is not subscriptable",
+  "statusTrace" : "self = <interface.workFlow_test.test_thingMaintanenceFlow.TestThingMaintenanceWorkFlow object at 0x10f791ef0>\naction = 'feed'\n\n    @pytest.mark.parametrize(\"action\", test_data)\n    @allure.story(\"待保养不允许的操作\")\n    def test_7(self, action):\n>       thing_maintenance_id = self.simple_user.create_thing_maintenance(delay=10)\n\ninterface/workFlow_test/test_thingMaintanenceFlow.py:190: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <interface.workFlow_test.test_thingMaintanenceFlow.ThingMaintenanceUser object at 0x10b88de80>\ndelay = 10\n\n    def create_thing_maintenance(self, delay=0):\n        query_name = \"createThingMaintenance\"\n        variables = {\n            \"input\": {\n                \"rule\": RULE,\n                \"maintainer\": MAINTAINER,\n                \"startAt\": create_timestamp() + delay * 60 * 1000,\n                \"thing\": THING\n            }\n        }\n>       thing_maintenance_id = self.user(query_name, variables).find_result(\"$..id\")[0]\nE       TypeError: 'bool' object is not subscriptable\n\ninterface/workFlow_test/test_thingMaintanenceFlow.py:29: TypeError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "init",
+    "time" : {
+      "start" : 1600227952218,
+      "stop" : 1600227952218,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1600227952116,
+      "stop" : 1600227952218,
+      "duration" : 102
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "resource",
+    "time" : {
+      "start" : 1600227952218,
+      "stop" : 1600227952218,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "TypeError: 'bool' object is not subscriptable",
+    "statusTrace" : "self = <interface.workFlow_test.test_thingMaintanenceFlow.TestThingMaintenanceWorkFlow object at 0x10f791ef0>\naction = 'feed'\n\n    @pytest.mark.parametrize(\"action\", test_data)\n    @allure.story(\"待保养不允许的操作\")\n    def test_7(self, action):\n>       thing_maintenance_id = self.simple_user.create_thing_maintenance(delay=10)\n\ninterface/workFlow_test/test_thingMaintanenceFlow.py:190: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <interface.workFlow_test.test_thingMaintanenceFlow.ThingMaintenanceUser object at 0x10b88de80>\ndelay = 10\n\n    def create_thing_maintenance(self, delay=0):\n        query_name = \"createThingMaintenance\"\n        variables = {\n            \"input\": {\n                \"rule\": RULE,\n                \"maintainer\": MAINTAINER,\n                \"startAt\": create_timestamp() + delay * 60 * 1000,\n                \"thing\": THING\n            }\n        }\n>       thing_maintenance_id = self.user(query_name, variables).find_result(\"$..id\")[0]\nE       TypeError: 'bool' object is not subscriptable\n\ninterface/workFlow_test/test_thingMaintanenceFlow.py:29: TypeError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "2a8ec01169dcf3f",
+      "name" : "log",
+      "source" : "2a8ec01169dcf3f.txt",
+      "type" : "text/plain",
+      "size" : 1598
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "ThingMaintenanceWorkFlow"
+  }, {
+    "name" : "story",
+    "value" : "待保养不允许的操作"
+  }, {
+    "name" : "epic",
+    "value" : "workflow"
+  }, {
+    "name" : "parentSuite",
+    "value" : "interface.workFlow_test"
+  }, {
+    "name" : "suite",
+    "value" : "test_thingMaintanenceFlow"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestThingMaintenanceWorkFlow"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Pro.local"
+  }, {
+    "name" : "thread",
+    "value" : "99506-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "interface.workFlow_test.test_thingMaintanenceFlow"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "action",
+    "value" : "'feed'"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "9a41274201342bb4.json",
+  "parameterValues" : [ "'feed'" ]
+}

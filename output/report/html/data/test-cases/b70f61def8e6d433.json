@@ -1,0 +1,149 @@
+{
+  "uid" : "b70f61def8e6d433",
+  "name" : "test_1",
+  "fullName" : "interface.sparePartOutBound_test.test_deleteSparePartOutbounds.TestDeleteSparePartOutbounds#test_1",
+  "historyId" : "46a212856e07e69713f4c64be3b7e679",
+  "time" : {
+    "start" : 1600227972140,
+    "stop" : 1600227972633,
+    "duration" : 493
+  },
+  "status" : "broken",
+  "statusMessage" : "KeyError: 'SparePartOutBound'",
+  "statusTrace" : "self = <test_deleteSparePartOutbounds.TestDeleteSparePartOutbounds object at 0x10ba94908>\nresource = <support.base_test.ResourceLoader.ResourceLoader object at 0x109eb1c18>\ncreate_id = <function create_id.<locals>._create_id at 0x10ba84e18>\n\n    @allure.story(\"删除3个\")\n    def test_1(self, resource, create_id):\n>       _ids = create_id(self.create_name, 3, self.resource_name)\n\ninterface/sparePartOutBound_test/test_deleteSparePartOutbounds.py:18: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\ncreate_name = 'createSparePartOutbound', num = 3, name = 'SparePartOutBound'\nreturn_type = 'id'\n\n    def _create_id(create_name, num, name, return_type=\"id\"):\n        create_interface = GraphqlInterface(create_name)\n        _ids = []\n        variable = {}\n        _id_map = {}\n        while num > 0:\n            variable = next(create_interface.generate(\"generate_all_params\", **all_param))\n            _id_map = s.create(create_name, variable)\n            logger.debug(_id_map)\n>           _ids.append(_id_map[name][0])\nE           KeyError: 'SparePartOutBound'\n\ninterface/conftest.py:65: KeyError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "init",
+    "time" : {
+      "start" : 1600227952218,
+      "stop" : 1600227952218,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1600227952116,
+      "stop" : 1600227952218,
+      "duration" : 102
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "create_id",
+    "time" : {
+      "start" : 1600227972140,
+      "stop" : 1600227972140,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "resource",
+    "time" : {
+      "start" : 1600227952218,
+      "stop" : 1600227952218,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "KeyError: 'SparePartOutBound'",
+    "statusTrace" : "self = <test_deleteSparePartOutbounds.TestDeleteSparePartOutbounds object at 0x10ba94908>\nresource = <support.base_test.ResourceLoader.ResourceLoader object at 0x109eb1c18>\ncreate_id = <function create_id.<locals>._create_id at 0x10ba84e18>\n\n    @allure.story(\"删除3个\")\n    def test_1(self, resource, create_id):\n>       _ids = create_id(self.create_name, 3, self.resource_name)\n\ninterface/sparePartOutBound_test/test_deleteSparePartOutbounds.py:18: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\ncreate_name = 'createSparePartOutbound', num = 3, name = 'SparePartOutBound'\nreturn_type = 'id'\n\n    def _create_id(create_name, num, name, return_type=\"id\"):\n        create_interface = GraphqlInterface(create_name)\n        _ids = []\n        variable = {}\n        _id_map = {}\n        while num > 0:\n            variable = next(create_interface.generate(\"generate_all_params\", **all_param))\n            _id_map = s.create(create_name, variable)\n            logger.debug(_id_map)\n>           _ids.append(_id_map[name][0])\nE           KeyError: 'SparePartOutBound'\n\ninterface/conftest.py:65: KeyError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "5b0fd215e7ae4f10",
+      "name" : "log",
+      "source" : "5b0fd215e7ae4f10.txt",
+      "type" : "text/plain",
+      "size" : 20393
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "epic",
+    "value" : "sparePartOutBound"
+  }, {
+    "name" : "story",
+    "value" : "删除3个"
+  }, {
+    "name" : "feature",
+    "value" : "deleteSparePartOutbounds"
+  }, {
+    "name" : "parentSuite",
+    "value" : "interface.sparePartOutBound_test"
+  }, {
+    "name" : "suite",
+    "value" : "test_deleteSparePartOutbounds"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestDeleteSparePartOutbounds"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Pro.local"
+  }, {
+    "name" : "thread",
+    "value" : "99506-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "interface.sparePartOutBound_test.test_deleteSparePartOutbounds"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "b70f61def8e6d433.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,137 @@
+{
+  "uid" : "6f63e8d06b4ce2db",
+  "name" : "test_1[variable0]",
+  "fullName" : "interface.thingMaintenance_test.test_createThingMaintenance.TestCreateThingMaintenance#test_1",
+  "historyId" : "cea5275ae429a1131005362d0654e075",
+  "time" : {
+    "start" : 1600248925194,
+    "stop" : 1600248932432,
+    "duration" : 7238
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "resource",
+    "time" : {
+      "start" : 1600248925192,
+      "stop" : 1600248925192,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "init",
+    "time" : {
+      "start" : 1600248925192,
+      "stop" : 1600248925192,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1600248925131,
+      "stop" : 1600248925192,
+      "duration" : 61
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "5e5e630efff8dd67",
+      "name" : "log",
+      "source" : "5e5e630efff8dd67.txt",
+      "type" : "text/plain",
+      "size" : 5216
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "createThingMaintenance"
+  }, {
+    "name" : "epic",
+    "value" : "thingMaintenance"
+  }, {
+    "name" : "story",
+    "value" : "所有项完整"
+  }, {
+    "name" : "parentSuite",
+    "value" : "interface.thingMaintenance_test"
+  }, {
+    "name" : "suite",
+    "value" : "test_createThingMaintenance"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestCreateThingMaintenance"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Pro.local"
+  }, {
+    "name" : "thread",
+    "value" : "78031-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "interface.thingMaintenance_test.test_createThingMaintenance"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "variable",
+    "value" : "{'input': {'rule': {'id': 1}, 'thing': {'id': 2}, 'maintainer': {'id': 1}, 'period': {'type': 'SINGLE', 'startAt': 1600248925127, 'endAt': 1600248925127, 'frequency': 'WEEK'}, 'addition': '[{\"key\": \"92bbc21776944bf8834a7b7fbaa4be2c\", \"value\": \"\\\\u5355\\\\u884c\\\\u6587\\\\u5b57_vsxcc\"}]'}}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "f87380ff71ca6bad",
+      "status" : "passed",
+      "time" : {
+        "start" : 1600228137400,
+        "stop" : 1600228142245,
+        "duration" : 4845
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "6f63e8d06b4ce2db.json",
+  "parameterValues" : [ "{'input': {'rule': {'id': 1}, 'thing': {'id': 2}, 'maintainer': {'id': 1}, 'period': {'type': 'SINGLE', 'startAt': 1600248925127, 'endAt': 1600248925127, 'frequency': 'WEEK'}, 'addition': '[{\"key\": \"92bbc21776944bf8834a7b7fbaa4be2c\", \"value\": \"\\\\u5355\\\\u884c\\\\u6587\\\\u5b57_vsxcc\"}]'}}" ]
+}

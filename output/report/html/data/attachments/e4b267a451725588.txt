@@ -1,0 +1,22 @@
+DEBUG    mytest:GraphqlClient.py:34 http://192.168.1.175:8888/graphql/?departments
+DEBUG    mytest:GraphqlClient.py:35 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMxNDM0Mn0.UOI1OaH_ELEAVzSlldya-CY3ahODVdxWOAwKSCpjxGc'}
+DEBUG    mytest:GraphqlClient.py:36 {
+}
+
+DEBUG    mytest:GraphqlClient.py:39 {
+  'data': {
+    'departments': '{"id": 1, "name": "\\u559c\\u4e34\\u95e8\\u5bb6\\u5177\\u80a
+                    1\\u4efd\\u6709\\u9650\\u516c\\u53f8", "headcount": 0,
+                    ...(6 hidden lines)',
+  },
+  'errors': None,
+}
+
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..errors'
+get
+'None
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except None

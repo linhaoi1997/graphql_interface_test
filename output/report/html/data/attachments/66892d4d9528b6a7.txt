@@ -1,0 +1,199 @@
+DEBUG    mytest:GraphqlClient.py:34 http://192.168.1.175:8888/graphql/?createEmployee
+DEBUG    mytest:GraphqlClient.py:35 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMxNDM0Mn0.UOI1OaH_ELEAVzSlldya-CY3ahODVdxWOAwKSCpjxGc'}
+DEBUG    mytest:GraphqlClient.py:36 {
+  'input': {
+    'account': 'account_v23fx',
+    'code': 'code_h5jol',
+    'department': {
+      'id': 3,
+    },
+    'email': 'test@sina.com',
+    'job': 'job_w3q2v',
+    'name': 'name_ycm24',
+    'password': 'password_lb9ny',
+    'phone': 'phone_lb031',
+    'roles': [
+      {
+        'id': 1,
+      },
+      {
+        'id': 2,
+      },
+      {
+        'id': 3,
+      },
+    ],
+    'status': 'FROZEN',
+  },
+}
+
+DEBUG    mytest:GraphqlClient.py:39 {
+  'data': {
+    'createEmployee': {
+      '__typename': 'Employee',
+      'account': 'account_v23fx',
+      'code': 'code_h5jol',
+      'department': {
+        '__typename': 'Department',
+        'headcount': 1,
+        'id': '3',
+        'name': 'name_350nu',
+        'parentPath': ['1', '2'],
+        'subsidiaries': [],
+      },
+      'email': 'test@sina.com',
+      'id': '2',
+      'job': 'job_w3q2v',
+      'name': 'name_ycm24',
+      'phone': 'phone_lb031',
+      'roles': [
+        {
+          '__typename': 'Role',
+          'id': '1',
+          'name': '负责人',
+          'permissions': [
+            {
+              '__typename': 'Permission',
+              'description': '所有数据权限，可管理全部信息',
+              'id': '1',
+              'scopes': [],
+            },
+          ],
+        },
+        {
+          '__typename': 'Role',
+          'id': '2',
+          'name': 'name_1ykwe',
+          'permissions': [
+            {
+              '__typename': 'Permission',
+              'description': '所有数据权限，可管理全部信息',
+              'id': '1',
+              'scopes': [],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '查看主设备列表、详情',
+              'id': '2',
+              'scopes': ['/query/thing', '/query/things'],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '编辑、导入、导出主设备详情',
+              'id': '3',
+              'scopes': ['/mutation/createThing', '/mutation/updateThing', '/mutation/importThings', '/mutation/exportThings', '/mutation/deleteThings'],
+            },
+          ],
+        },
+        {
+          '__typename': 'Role',
+          'id': '3',
+          'name': 'name_2osyn',
+          'permissions': [
+            {
+              '__typename': 'Permission',
+              'description': '所有数据权限，可管理全部信息',
+              'id': '1',
+              'scopes': [],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '查看主设备列表、详情',
+              'id': '2',
+              'scopes': ['/query/thing', '/query/things'],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '编辑、导入、导出主设备详情',
+              'id': '3',
+              'scopes': ['/mutation/createThing', '/mutation/updateThing', '/mutation/importThings', '/mutation/exportThings', '/mutation/deleteThings'],
+            },
+          ],
+        },
+      ],
+      'status': 'FROZEN',
+    },
+  },
+  'errors': None,
+}
+
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..errors'
+get
+'None
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except None
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..name'
+get
+''name_ycm24'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except name_ycm24
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..department.id'
+get
+''3'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 3
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..code'
+get
+''code_h5jol'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except code_h5jol
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..phone'
+get
+''phone_lb031'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except phone_lb031
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..job'
+get
+''job_w3q2v'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except job_w3q2v
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..email'
+get
+''test@sina.com'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except test@sina.com
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..account'
+get
+''account_v23fx'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except account_v23fx
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..status'
+get
+''FROZEN'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except FROZEN
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..createEmployee.roles[*].id'
+get
+'['1', '2', '3']
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except [1, 2, 3]

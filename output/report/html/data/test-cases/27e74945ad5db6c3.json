@@ -1,0 +1,129 @@
+{
+  "uid" : "27e74945ad5db6c3",
+  "name" : "test_11[feed]",
+  "fullName" : "interface.workFlow_test.test_thingRepairFlow.TestThingRepairWorkFlow#test_11",
+  "historyId" : "8d4d6fb7c4c5d9d2af4c6cd26706f3c3",
+  "time" : {
+    "start" : 1600228782550,
+    "stop" : 1600228802898,
+    "duration" : 20348
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "init",
+    "time" : {
+      "start" : 1600227952218,
+      "stop" : 1600227952218,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1600227952116,
+      "stop" : 1600227952218,
+      "duration" : 102
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "resource",
+    "time" : {
+      "start" : 1600227952218,
+      "stop" : 1600227952218,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "eced8efc2a672c14",
+      "name" : "log",
+      "source" : "eced8efc2a672c14.txt",
+      "type" : "text/plain",
+      "size" : 1898771
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "ThingRepairWorkFlow"
+  }, {
+    "name" : "story",
+    "value" : "维修完成不允许的操作"
+  }, {
+    "name" : "epic",
+    "value" : "workflow"
+  }, {
+    "name" : "parentSuite",
+    "value" : "interface.workFlow_test"
+  }, {
+    "name" : "suite",
+    "value" : "test_thingRepairFlow"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestThingRepairWorkFlow"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Pro.local"
+  }, {
+    "name" : "thread",
+    "value" : "99506-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "interface.workFlow_test.test_thingRepairFlow"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "action",
+    "value" : "'feed'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "27e74945ad5db6c3.json",
+  "parameterValues" : [ "'feed'" ]
+}

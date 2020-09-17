@@ -1,0 +1,125 @@
+DEBUG    mytest:GraphqlClient.py:38 http://192.168.1.175:8888/graphql/?createThing
+DEBUG    mytest:GraphqlClient.py:39 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMzc3MX0.pDoj1-ef7PLEg58jUSdVAVJhcjOwTNixGqsV3qw4pag'}
+DEBUG    mytest:GraphqlClient.py:40 {
+  'input': {
+    'brand': '喜临门',
+    'category': '生产设备',
+    'code': 'code_2z63g',
+    'factory': '喜临门',
+    'model': 'model_hgxb5',
+    'name': 'name_54w2x',
+    'purpose': '生产',
+    'status': '使用中',
+  },
+}
+
+DEBUG    mytest:GraphqlClient.py:43 {
+  'data': {
+    'createThing': {
+      '__typename': 'Thing',
+      'activatedAt': None,
+      'addition': '[]',
+      'attachments': None,
+      'brand': '喜临门',
+      'category': '生产设备',
+      'code': 'code_2z63g',
+      'contact': None,
+      'depreciationRate': None,
+      'desc': None,
+      'distributor': None,
+      'factory': '喜临门',
+      'id': '11',
+      'images': None,
+      'location': None,
+      'manufacturer': None,
+      'model': 'model_hgxb5',
+      'name': 'name_54w2x',
+      'phone': None,
+      'predictResidualRate': None,
+      'purchasedAt': None,
+      'purchasedPrice': None,
+      'purpose': '生产',
+      'qrCode': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASIAAAEiAQAAAAB1x
+                 eIbAAABeklEQVR4nO2aQYqkQBBF32+FWlowB6ijpEfXo/QBBnRZoPxZZFrdVZue
+                 ...(8 hidden lines)',
+      'spareParts': None,
+      'status': '使用中',
+      'usedYear': None,
+      'yearsOfUse': None,
+    },
+  },
+  'errors': None,
+}
+
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..errors'
+get
+'None
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except None
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..code'
+get
+''code_2z63g'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except code_2z63g
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..name'
+get
+''name_54w2x'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except name_54w2x
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..model'
+get
+''model_hgxb5'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except model_hgxb5
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..category'
+get
+''生产设备'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 生产设备
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..brand'
+get
+''喜临门'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 喜临门
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..factory'
+get
+''喜临门'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 喜临门
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..purpose'
+get
+''生产'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 生产
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..status'
+get
+''使用中'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 使用中

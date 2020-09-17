@@ -1,0 +1,83 @@
+DEBUG    mytest:GraphqlClient.py:38 http://192.168.1.175:8888/graphql/?createSparePartOutbound
+DEBUG    mytest:GraphqlClient.py:39 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyNDMwN30.96jXOmAG70q4_zmAlLSyYzvtVy9ywNbRboG5FC4cqnQ'}
+DEBUG    mytest:GraphqlClient.py:40 {
+  'input': {
+    'addition': '[{"key": "10f16f763c9548aea404526b525be2cb", "value":
+                 "\\u5355\\u884c\\u6587\\u5b57_hajng"}, {"key":
+                 ...(20 hidden lines)',
+    'details': [
+      {
+        'number': 1,
+        'reason': 'LOOSEN',
+        'sparePart': {
+          'id': 2,
+        },
+      },
+      {
+        'number': 1,
+        'reason': 'LOOSEN',
+        'sparePart': {
+          'id': 3,
+        },
+      },
+      {
+        'number': 1,
+        'reason': 'LOOSEN',
+        'sparePart': {
+          'id': 1,
+        },
+      },
+    ],
+    'factory': 'factory_usnsl',
+    'operator': {
+      'id': 1,
+    },
+    'reason': 'reason_2a2tr',
+    'shelf': 'shelf_vcl90',
+    'thingRepair': {
+      'id': 1,
+    },
+    'time': 1600337909049,
+  },
+}
+
+ERROR    sgqlc.endpoint.http:base.py:213 GraphQL query failed with 1 errors
+DEBUG    mytest:GraphqlClient.py:43 {
+  'data': None,
+  'errors': [
+    {
+      'locations': [
+        {
+          'column': 5,
+          'line': 2,
+        },
+      ],
+      'message': '1 validation error for CreateSparePartOutboundInput\nreason\n
+                  value is not a valid enumeration member; permitted: '设备维修
+                  ...(4 hidden lines)',
+      'path': ['createSparePartOutbound'],
+    },
+  ],
+}
+
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..errors'
+get
+'[
+  {
+    'locations': [
+      {
+        'column': 5,
+        'line': 2,
+      },
+    ],
+    'message': '1 validation error for CreateSparePartOutboundInput\nreason\n
+                value is not a valid enumeration member; permitted: '设备维修',
+                ...(4 hidden lines)',
+    'path': ['createSparePartOutbound'],
+  },
+]
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except None

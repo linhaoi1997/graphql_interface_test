@@ -1,0 +1,24 @@
+DEBUG    mytest:test_uploadFile.py:60 {'Content-Type': 'multipart/form-data; boundary=60d2e8d9a31aa32d24aea6740bf30f27', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMxNDM3MH0.YzPwQakkWH56rcAuE04cimqoHTOaRC7qg2hyF9iRK5g'}
+DEBUG    mytest:test_uploadFile.py:61 mutation uploadFiles($files: [Upload!]!) {
+  uploadFiles(files: $files) {
+    id
+    name
+    url
+    __typename
+  }
+}
+DEBUG    mytest:test_uploadFile.py:76 {
+  'data': {
+    'uploadFiles': [
+      {
+        '__typename': 'File',
+        'id': '19',
+        'name': '不支持的文件类型.pdf',
+        'url': 'https://minio.teletraan.io/eam-sleemon/%E4%B8%8D%E6%94%AF%E6%8C%
+                81%E7%9A%84%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B.pdf?X-Amz-Algori
+                ...(4 hidden lines)',
+      },
+    ],
+  },
+  'errors': None,
+}

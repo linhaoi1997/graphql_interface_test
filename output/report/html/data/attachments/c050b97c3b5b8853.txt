@@ -1,0 +1,388 @@
+DEBUG    mytest:GraphqlClient.py:38 http://192.168.1.175:8888/graphql/?createThing
+DEBUG    mytest:GraphqlClient.py:39 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMzc3MX0.pDoj1-ef7PLEg58jUSdVAVJhcjOwTNixGqsV3qw4pag'}
+DEBUG    mytest:GraphqlClient.py:40 {
+  'input': {
+    'activatedAt': 1600337372281,
+    'addition': '[{"key": "d67db137c0f3406098c3826a39de83a4", "value":
+                 "\\u5355\\u884c\\u6587\\u5b57_ag9qh"}, {"key":
+                 ...(20 hidden lines)',
+    'attachments': [
+      {
+        'id': 2,
+      },
+      {
+        'id': 3,
+      },
+      {
+        'id': 4,
+      },
+    ],
+    'brand': '喜临门',
+    'category': '生产设备',
+    'code': 'code_i313j',
+    'contact': 'contact_r8tg5',
+    'depreciationRate': 1.01,
+    'desc': 'desc_cp0ra',
+    'distributor': 'distributor_bxu0u',
+    'factory': '喜临门',
+    'images': [
+      {
+        'id': 2,
+      },
+      {
+        'id': 3,
+      },
+      {
+        'id': 1,
+      },
+    ],
+    'location': 'location_fsc11',
+    'manufacturer': 'manufacturer_pxhel',
+    'model': 'model_f4qyx',
+    'name': 'name_uqim9',
+    'phone': 'phone_30e5c',
+    'predictResidualRate': 1.01,
+    'purchasedAt': 1600337372281,
+    'purchasedPrice': 1.01,
+    'purpose': '生产',
+    'spareParts': [
+      {
+        'id': 2,
+      },
+      {
+        'id': 3,
+      },
+      {
+        'id': 1,
+      },
+    ],
+    'status': '使用中',
+    'usedYear': 1.01,
+    'yearsOfUse': 1.01,
+  },
+}
+
+DEBUG    mytest:GraphqlClient.py:43 {
+  'data': {
+    'createThing': {
+      '__typename': 'Thing',
+      'activatedAt': 1600337372281,
+      'addition': '[{"key": "d67db137c0f3406098c3826a39de83a4", "value":
+                   "\\u5355\\u884c\\u6587\\u5b57_ag9qh"}, {"key":
+                   ...(20 hidden lines)',
+      'attachments': [
+        {
+          '__typename': 'File',
+          'id': '4',
+          'name': 'test.pdf',
+          'url': 'http://192.168.1.175:9060/sleemon/test.pdf?X-Amz...(len=295)',
+        },
+        {
+          '__typename': 'File',
+          'id': '3',
+          'name': 'test3.jpeg',
+          'url': 'http://192.168.1.175:9060/sleemon/test3.jpeg?X-A...(len=297)',
+        },
+        {
+          '__typename': 'File',
+          'id': '2',
+          'name': 'test2.jpeg',
+          'url': 'http://192.168.1.175:9060/sleemon/test2.jpeg?X-A...(len=297)',
+        },
+      ],
+      'brand': '喜临门',
+      'category': '生产设备',
+      'code': 'code_i313j',
+      'contact': 'contact_r8tg5',
+      'depreciationRate': 1.01,
+      'desc': 'desc_cp0ra',
+      'distributor': 'distributor_bxu0u',
+      'factory': '喜临门',
+      'id': '10',
+      'images': [
+        {
+          '__typename': 'File',
+          'id': '1',
+          'name': 'test.jpg',
+          'url': 'http://192.168.1.175:9060/sleemon/test.jpg?X-Amz...(len=295)',
+        },
+        {
+          '__typename': 'File',
+          'id': '3',
+          'name': 'test3.jpeg',
+          'url': 'http://192.168.1.175:9060/sleemon/test3.jpeg?X-A...(len=297)',
+        },
+        {
+          '__typename': 'File',
+          'id': '2',
+          'name': 'test2.jpeg',
+          'url': 'http://192.168.1.175:9060/sleemon/test2.jpeg?X-A...(len=297)',
+        },
+      ],
+      'location': 'location_fsc11',
+      'manufacturer': 'manufacturer_pxhel',
+      'model': 'model_f4qyx',
+      'name': 'name_uqim9',
+      'phone': 'phone_30e5c',
+      'predictResidualRate': 1.01,
+      'purchasedAt': 1600337372281,
+      'purchasedPrice': 1.01,
+      'purpose': '生产',
+      'qrCode': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASIAAAEiAQAAAAB1x
+                 eIbAAABc0lEQVR4nO2aQW6DMBBF3xRLWcINehQ4OhwlB6iEl5GIfhe2SZou2o0D
+                 ...(8 hidden lines)',
+      'spareParts': [
+        {
+          '__typename': 'SparePart',
+          'addition': None,
+          'attachments': None,
+          'desc': None,
+          'distributor': None,
+          'id': '1',
+          'images': None,
+          'manufacturer': None,
+          'model': 'model_fipua',
+          'name': 'name_bux7k',
+          'price': 1.01,
+          'things': [{'id': '6', 'code': 'code_hk255', 'name':...(len=9230),
+          'type': '不知道什么设备',
+        },
+        {
+          '__typename': 'SparePart',
+          'addition': None,
+          'attachments': None,
+          'desc': None,
+          'distributor': None,
+          'id': '3',
+          'images': None,
+          'manufacturer': None,
+          'model': 'model_1wk3h',
+          'name': 'name_kl54e',
+          'price': 1.01,
+          'things': [{'id': '6', 'code': 'code_hk255', 'name':...(len=9230),
+          'type': '不知道什么设备',
+        },
+        {
+          '__typename': 'SparePart',
+          'addition': None,
+          'attachments': None,
+          'desc': None,
+          'distributor': None,
+          'id': '2',
+          'images': None,
+          'manufacturer': None,
+          'model': 'model_laorh',
+          'name': 'name_pdgl4',
+          'price': 1.01,
+          'things': [{'id': '6', 'code': 'code_hk255', 'name':...(len=9230),
+          'type': '魔法设备',
+        },
+      ],
+      'status': '使用中',
+      'usedYear': 1.01,
+      'yearsOfUse': 1.01,
+    },
+  },
+  'errors': None,
+}
+
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..errors'
+get
+'None
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except None
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..code'
+get
+''code_i313j'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except code_i313j
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..name'
+get
+''name_uqim9'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except name_uqim9
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..model'
+get
+''model_f4qyx'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except model_f4qyx
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..contact'
+get
+''contact_r8tg5'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except contact_r8tg5
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..phone'
+get
+''phone_30e5c'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except phone_30e5c
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..createThing.images[*].id'
+get
+'['1', '3', '2']
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except [2, 3, 1]
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..desc'
+get
+''desc_cp0ra'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except desc_cp0ra
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..location'
+get
+''location_fsc11'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except location_fsc11
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..manufacturer'
+get
+''manufacturer_pxhel'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except manufacturer_pxhel
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..distributor'
+get
+''distributor_bxu0u'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except distributor_bxu0u
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..purchasedAt'
+get
+'1600337372281
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 1600337372281
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..activatedAt'
+get
+'1600337372281
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 1600337372281
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..purchasedPrice'
+get
+'1.01
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 1.01
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..yearsOfUse'
+get
+'1.01
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 1.01
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..depreciationRate'
+get
+'1.01
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 1.01
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..createThing.spareParts[*].id'
+get
+'['1', '3', '2']
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except [2, 3, 1]
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..createThing.attachments[*].id'
+get
+'['4', '3', '2']
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except [2, 3, 4]
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..usedYear'
+get
+'1.01
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 1.01
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..predictResidualRate'
+get
+'1.01
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 1.01
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..category'
+get
+''生产设备'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 生产设备
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..brand'
+get
+''喜临门'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 喜临门
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..factory'
+get
+''喜临门'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 喜临门
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..purpose'
+get
+''生产'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 生产
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..status'
+get
+''使用中'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 使用中

@@ -1,0 +1,141 @@
+{
+  "uid" : "e8d7d71ed4f8821",
+  "name" : "test_query_thing",
+  "fullName" : "interface.sparePartReceipt_test.test_querySparePartReceipt.TestQuerySparePartReceipt#test_query_thing",
+  "historyId" : "b62f045ec6d20c61f0bbfffb6ff4b918",
+  "time" : {
+    "start" : 1600227997416,
+    "stop" : 1600228000465,
+    "duration" : 3049
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "init",
+    "time" : {
+      "start" : 1600227952218,
+      "stop" : 1600227952218,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "create_id",
+    "time" : {
+      "start" : 1600227997415,
+      "stop" : 1600227997415,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1600227952116,
+      "stop" : 1600227952218,
+      "duration" : 102
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "resource",
+    "time" : {
+      "start" : 1600227952218,
+      "stop" : 1600227952218,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "55728bf7974ab2dd",
+      "name" : "log",
+      "source" : "55728bf7974ab2dd.txt",
+      "type" : "text/plain",
+      "size" : 83969
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "querySparePartReceipt"
+  }, {
+    "name" : "epic",
+    "value" : "sparePartReceipt"
+  }, {
+    "name" : "story",
+    "value" : "正确查询"
+  }, {
+    "name" : "parentSuite",
+    "value" : "interface.sparePartReceipt_test"
+  }, {
+    "name" : "suite",
+    "value" : "test_querySparePartReceipt"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestQuerySparePartReceipt"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Pro.local"
+  }, {
+    "name" : "thread",
+    "value" : "99506-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "interface.sparePartReceipt_test.test_querySparePartReceipt"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "e8d7d71ed4f8821.json",
+  "parameterValues" : [ ]
+}

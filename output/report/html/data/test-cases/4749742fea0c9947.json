@@ -1,0 +1,137 @@
+{
+  "uid" : "4749742fea0c9947",
+  "name" : "test_2[variable0]",
+  "fullName" : "interface.sparePart_test.test_createSparePart.TestCreateSparePart#test_2",
+  "historyId" : "452fd8f02c0b4bd9037e0849e56f4b6c",
+  "time" : {
+    "start" : 1600337465782,
+    "stop" : 1600337465899,
+    "duration" : 117
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "resource",
+    "time" : {
+      "start" : 1600337465278,
+      "stop" : 1600337465278,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1600337465219,
+      "stop" : 1600337465278,
+      "duration" : 59
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "init",
+    "time" : {
+      "start" : 1600337465278,
+      "stop" : 1600337465278,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "27e68757efad29e6",
+      "name" : "log",
+      "source" : "27e68757efad29e6.txt",
+      "type" : "text/plain",
+      "size" : 1883
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "createSparePart"
+  }, {
+    "name" : "epic",
+    "value" : "sparePart"
+  }, {
+    "name" : "story",
+    "value" : "不填写选填项"
+  }, {
+    "name" : "parentSuite",
+    "value" : "interface.sparePart_test"
+  }, {
+    "name" : "suite",
+    "value" : "test_createSparePart"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestCreateSparePart"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Pro.local"
+  }, {
+    "name" : "thread",
+    "value" : "91691-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "interface.sparePart_test.test_createSparePart"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "variable",
+    "value" : "{'input': {'name': 'name_bi5wc', 'type': '生产设备', 'model': 'model_cvgc7', 'price': 1.01}}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "1fb3edb2510f9279",
+      "status" : "passed",
+      "time" : {
+        "start" : 1600228007544,
+        "stop" : 1600228009533,
+        "duration" : 1989
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "4749742fea0c9947.json",
+  "parameterValues" : [ "{'input': {'name': 'name_bi5wc', 'type': '生产设备', 'model': 'model_cvgc7', 'price': 1.01}}" ]
+}

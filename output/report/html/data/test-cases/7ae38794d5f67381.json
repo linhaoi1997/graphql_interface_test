@@ -1,0 +1,128 @@
+{
+  "uid" : "7ae38794d5f67381",
+  "name" : "test_3",
+  "fullName" : "interface.workFlow_test.test_thingMaintanenceFlow.TestThingMaintenanceWorkFlow#test_3",
+  "historyId" : "141b399c3e60924058617b6c6638972f",
+  "time" : {
+    "start" : 1600231656062,
+    "stop" : 1600231660732,
+    "duration" : 4670
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError",
+  "statusTrace" : "self = <interface.workFlow_test.test_thingMaintanenceFlow.TestThingMaintenanceWorkFlow object at 0x10ba94d30>\n\n    @allure.story(\"审核拒绝--再次反馈 循环5次\")\n    def test_3(self):\n        thing_maintenance_id = self.simple_user.create_thing_maintenance()\n    \n        def circulation(n):\n            for i in range(n):\n                # 反馈\n                self.simple_user.feed(thing_maintenance_id)\n                # 审核拒绝\n                self.simple_user.audit_feed_reject(thing_maintenance_id)\n    \n>       circulation(5)\n\ntest_thingMaintanenceFlow.py:140: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \ntest_thingMaintanenceFlow.py:136: in circulation\n    self.simple_user.feed(thing_maintenance_id)\ntest_thingMaintanenceFlow.py:93: in feed\n    self.assertJsonResponseEqual(\"$..status\", result, \"UNDERREVIEW\")\n../../support/base_test/AssertMethod.py:23: in assertJsonResponseEqual\n    self.assertEqual(value, result)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <interface.workFlow_test.test_thingMaintanenceFlow.ThingMaintenanceUser object at 0x10b46c7b8>\nvalue = 'UNDERREVIEW', result = None\n\n    def assertEqual(self, value, result):\n        if type(value) == str and value.isdigit():\n            if type(result) in (str, int):\n                assert int(value) == int(result)\n        elif type(value) in (int, float):\n            if type(result) in (str, int, float):\n                assert int(value) == int(result)\n            else:\n                assert None\n        elif type(value) == list:\n            assert format_number(value) == format_number(result)\n        else:\n>           assert value == result\nE           AssertionError\n\n../../support/base_test/AssertMethod.py:94: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1600231631344,
+      "stop" : 1600231631403,
+      "duration" : 59
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "init",
+    "time" : {
+      "start" : 1600231631403,
+      "stop" : 1600231631403,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "resource",
+    "time" : {
+      "start" : 1600231631403,
+      "stop" : 1600231631403,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError",
+    "statusTrace" : "self = <interface.workFlow_test.test_thingMaintanenceFlow.TestThingMaintenanceWorkFlow object at 0x10ba94d30>\n\n    @allure.story(\"审核拒绝--再次反馈 循环5次\")\n    def test_3(self):\n        thing_maintenance_id = self.simple_user.create_thing_maintenance()\n    \n        def circulation(n):\n            for i in range(n):\n                # 反馈\n                self.simple_user.feed(thing_maintenance_id)\n                # 审核拒绝\n                self.simple_user.audit_feed_reject(thing_maintenance_id)\n    \n>       circulation(5)\n\ntest_thingMaintanenceFlow.py:140: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \ntest_thingMaintanenceFlow.py:136: in circulation\n    self.simple_user.feed(thing_maintenance_id)\ntest_thingMaintanenceFlow.py:93: in feed\n    self.assertJsonResponseEqual(\"$..status\", result, \"UNDERREVIEW\")\n../../support/base_test/AssertMethod.py:23: in assertJsonResponseEqual\n    self.assertEqual(value, result)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <interface.workFlow_test.test_thingMaintanenceFlow.ThingMaintenanceUser object at 0x10b46c7b8>\nvalue = 'UNDERREVIEW', result = None\n\n    def assertEqual(self, value, result):\n        if type(value) == str and value.isdigit():\n            if type(result) in (str, int):\n                assert int(value) == int(result)\n        elif type(value) in (int, float):\n            if type(result) in (str, int, float):\n                assert int(value) == int(result)\n            else:\n                assert None\n        elif type(value) == list:\n            assert format_number(value) == format_number(result)\n        else:\n>           assert value == result\nE           AssertionError\n\n../../support/base_test/AssertMethod.py:94: AssertionError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "2ac7e4c04f000f9a",
+      "name" : "log",
+      "source" : "2ac7e4c04f000f9a.txt",
+      "type" : "text/plain",
+      "size" : 476772
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "ThingMaintenanceWorkFlow"
+  }, {
+    "name" : "story",
+    "value" : "审核拒绝--再次反馈 循环5次"
+  }, {
+    "name" : "epic",
+    "value" : "workflow"
+  }, {
+    "name" : "parentSuite",
+    "value" : "interface.workFlow_test"
+  }, {
+    "name" : "suite",
+    "value" : "test_thingMaintanenceFlow"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestThingMaintenanceWorkFlow"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Pro.local"
+  }, {
+    "name" : "thread",
+    "value" : "1068-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "interface.workFlow_test.test_thingMaintanenceFlow"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "7ae38794d5f67381.json",
+  "parameterValues" : [ ]
+}

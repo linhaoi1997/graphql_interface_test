@@ -1,0 +1,145 @@
+{
+  "uid" : "2410bd7e914097d8",
+  "name" : "test_1[variable0]",
+  "fullName" : "interface.thingRepair_test.test_createThingRepair.TestCreateThingRepair#test_1",
+  "historyId" : "d3af61056c0b495dc217c54927e541b6",
+  "time" : {
+    "start" : 1600338207930,
+    "stop" : 1600338208477,
+    "duration" : 547
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1600338207867,
+      "stop" : 1600338207927,
+      "duration" : 60
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "resource",
+    "time" : {
+      "start" : 1600338207928,
+      "stop" : 1600338207928,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "init",
+    "time" : {
+      "start" : 1600338207928,
+      "stop" : 1600338207928,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "bcd3d5b51dd6acb7",
+      "name" : "log",
+      "source" : "bcd3d5b51dd6acb7.txt",
+      "type" : "text/plain",
+      "size" : 5233
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "createThingRepair"
+  }, {
+    "name" : "epic",
+    "value" : "thingRepair"
+  }, {
+    "name" : "story",
+    "value" : "所有项完整"
+  }, {
+    "name" : "parentSuite",
+    "value" : "interface.thingRepair_test"
+  }, {
+    "name" : "suite",
+    "value" : "test_createThingRepair"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestCreateThingRepair"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Pro.local"
+  }, {
+    "name" : "thread",
+    "value" : "92212-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "interface.thingRepair_test.test_createThingRepair"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "variable",
+    "value" : "{'input': {'thing': {'id': 2}, 'reportedAt': 1600338207863, 'reportDepartment': 'reportDepartment_uvljj', 'faultImages': [{'id': 2}, {'id': 3}, {'id': 4}], 'faultDesc': 'faultDesc_wz5ek', 'worker': {'id': 1}, 'addition': '[{\"key\": \"80738cd9146d4988996d52eb738a1d64\", \"value\": \"\\\\u5355\\\\u884c\\\\u6587\\\\u5b57_ean9n\"}, {\"key\": \"ad541f95191c41ce83982ce22b3ae336\", \"value\": \"\\\\u591a\\\\u884c\\\\u6587\\\\u5b57_hdiai\"}, {\"key\": \"629d77e3ef1340c2b248e7ed328a00bf\", \"value\": \"\\\\u8054\\\\u7cfb\\\\u65b9\\\\u5f0f_fvvq8\"}, {\"key\": \"2b751826df204bb1baf54fcf03c8a8c5\", \"value\": 1600338207863}, {\"key\": \"0e9293da1d3940a5876ef9aeac717f3d\", \"value\": 1600338207863}, {\"key\": \"86e8ab5ff7b64ac69d389a75e87727c2\", \"value\": 1600338207863}, {\"key\": \"fa481fb1f4c94e5e8f5e167d044120fa\", \"value\": \"\\\\u63cf\\\\u8ff0\\\\u6587\\\\u5b57_5es3p\"}, {\"key\": \"bcef61b7f75d46f1b346d9241c30c779\", \"value\": \"1\"}, {\"key\": \"5ac7c42d37424f6faefc22a63523c323\", \"value\": [\"2\", \"3\", \"1\"]}, {\"key\": \"87c9d2e874594d74a6b3578367178eed\", \"value\": 1.01}, {\"key\": \"ed9808e075744ec7ab2d5ab5048515bd\", \"value\": 1.01}, {\"key\": \"22c56f3c0b2240a7befdbaa0199ccf0a\", \"value\": 1.01}, {\"key\": \"abb695bbbd6040409a98323e089a63a6\", \"value\": \"\\\\u8054\\\\u7cfb\\\\u65b9\\\\u5f0f-\\\\u6d4b\\\\u8bd5\\\\u5fc5\\\\u586b\\\\u9879/\\\\u9ed8\\\\u8ba4\\\\u5185\\\\u5bb9_jd1xf\"}, {\"key\": \"2496979fa5ff4e48a7e81b008fc19382\", \"value\": \"\\\\u6587\\\\u5b57-\\\\u9650\\\\u5b57\\\\u65702-100_rbu4u\"}]'}}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "638c1be145b1b7a4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1600248871157,
+        "stop" : 1600248871434,
+        "duration" : 277
+      }
+    }, {
+      "uid" : "e67f97582e636d61",
+      "status" : "passed",
+      "time" : {
+        "start" : 1600228241832,
+        "stop" : 1600228247422,
+        "duration" : 5590
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "2410bd7e914097d8.json",
+  "parameterValues" : [ "{'input': {'thing': {'id': 2}, 'reportedAt': 1600338207863, 'reportDepartment': 'reportDepartment_uvljj', 'faultImages': [{'id': 2}, {'id': 3}, {'id': 4}], 'faultDesc': 'faultDesc_wz5ek', 'worker': {'id': 1}, 'addition': '[{\"key\": \"80738cd9146d4988996d52eb738a1d64\", \"value\": \"\\\\u5355\\\\u884c\\\\u6587\\\\u5b57_ean9n\"}, {\"key\": \"ad541f95191c41ce83982ce22b3ae336\", \"value\": \"\\\\u591a\\\\u884c\\\\u6587\\\\u5b57_hdiai\"}, {\"key\": \"629d77e3ef1340c2b248e7ed328a00bf\", \"value\": \"\\\\u8054\\\\u7cfb\\\\u65b9\\\\u5f0f_fvvq8\"}, {\"key\": \"2b751826df204bb1baf54fcf03c8a8c5\", \"value\": 1600338207863}, {\"key\": \"0e9293da1d3940a5876ef9aeac717f3d\", \"value\": 1600338207863}, {\"key\": \"86e8ab5ff7b64ac69d389a75e87727c2\", \"value\": 1600338207863}, {\"key\": \"fa481fb1f4c94e5e8f5e167d044120fa\", \"value\": \"\\\\u63cf\\\\u8ff0\\\\u6587\\\\u5b57_5es3p\"}, {\"key\": \"bcef61b7f75d46f1b346d9241c30c779\", \"value\": \"1\"}, {\"key\": \"5ac7c42d37424f6faefc22a63523c323\", \"value\": [\"2\", \"3\", \"1\"]}, {\"key\": \"87c9d2e874594d74a6b3578367178eed\", \"value\": 1.01}, {\"key\": \"ed9808e075744ec7ab2d5ab5048515bd\", \"value\": 1.01}, {\"key\": \"22c56f3c0b2240a7befdbaa0199ccf0a\", \"value\": 1.01}, {\"key\": \"abb695bbbd6040409a98323e089a63a6\", \"value\": \"\\\\u8054\\\\u7cfb\\\\u65b9\\\\u5f0f-\\\\u6d4b\\\\u8bd5\\\\u5fc5\\\\u586b\\\\u9879/\\\\u9ed8\\\\u8ba4\\\\u5185\\\\u5bb9_jd1xf\"}, {\"key\": \"2496979fa5ff4e48a7e81b008fc19382\", \"value\": \"\\\\u6587\\\\u5b57-\\\\u9650\\\\u5b57\\\\u65702-100_rbu4u\"}]'}}" ]
+}

@@ -1,0 +1,141 @@
+{
+  "uid" : "b5d8a54a2d1facc1",
+  "name" : "test_1",
+  "fullName" : "interface.sparePartReceipt_test.test_deleteSparePartReceipts.TestDeleteSparePartReceipts#test_1",
+  "historyId" : "26c47566c67c375eb36b76d0e709e06e",
+  "time" : {
+    "start" : 1600227985492,
+    "stop" : 1600227992065,
+    "duration" : 6573
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "init",
+    "time" : {
+      "start" : 1600227952218,
+      "stop" : 1600227952218,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "create_id",
+    "time" : {
+      "start" : 1600227985492,
+      "stop" : 1600227985492,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1600227952116,
+      "stop" : 1600227952218,
+      "duration" : 102
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "resource",
+    "time" : {
+      "start" : 1600227952218,
+      "stop" : 1600227952218,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "c9423e28bb18b8a9",
+      "name" : "log",
+      "source" : "c9423e28bb18b8a9.txt",
+      "type" : "text/plain",
+      "size" : 127118
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "epic",
+    "value" : "sparePartReceipt"
+  }, {
+    "name" : "story",
+    "value" : "删除3个"
+  }, {
+    "name" : "feature",
+    "value" : "deleteSparePartReceipts"
+  }, {
+    "name" : "parentSuite",
+    "value" : "interface.sparePartReceipt_test"
+  }, {
+    "name" : "suite",
+    "value" : "test_deleteSparePartReceipts"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestDeleteSparePartReceipts"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Pro.local"
+  }, {
+    "name" : "thread",
+    "value" : "99506-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "interface.sparePartReceipt_test.test_deleteSparePartReceipts"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "b5d8a54a2d1facc1.json",
+  "parameterValues" : [ ]
+}

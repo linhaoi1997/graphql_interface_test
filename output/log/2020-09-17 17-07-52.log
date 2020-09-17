@@ -1,0 +1,2920 @@
+2020-09-17 17:07:53,681 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?login
+2020-09-17 17:07:53,684 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json'}
+2020-09-17 17:07:53,702 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'account': 'admin',
+    'password': 'admin',
+  },
+}
+
+2020-09-17 17:07:54,152 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'login': {
+      '__typename': 'AuthInfo',
+      'employee': {
+        '__typename': 'Employee',
+        'account': 'admin',
+        'code': None,
+        'department': {
+          '__typename': 'Department',
+          'headcount': 30,
+          'id': '1',
+          'name': '喜临门家具股份有限公司',
+          'parentPath': [],
+          'subsidiaries': [],
+        },
+        'email': None,
+        'id': '1',
+        'job': None,
+        'name': '管理员',
+        'phone': None,
+        'roles': [
+          {'id': '1', 'name': '负责人', 'permissions':...(len=170),
+        ],
+        'status': 'ACTIVATED',
+      },
+      'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXB
+                sb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29
+                ...(5 hidden lines)',
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:07:54,179 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?formStructs
+2020-09-17 17:07:54,179 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3M30.k_-tZZFRpLkPKJ2VjXI0bbznzBiiBrBV5FqGKM9sNiQ'}
+2020-09-17 17:07:54,179 - GraphqlClient.py - send_request - DEBUG -{
+  'isDraft': False,
+}
+
+2020-09-17 17:07:54,643 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'formStructs': [
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'spare_part_outbounds_领用仓库',...(len=392),
+          {'id': 'spare_part_outbounds_领用工厂',...(len=396),
+          {'id': 'spare_part_outbounds_领用时间',...(len=306),
+        ],
+        'displayName': '申领单信息',
+        'name': 'spare_part_outbounds',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'spare_part_receipts_入库仓库',...(len=392),
+          {'id': 'spare_part_receipts_入库工厂',...(len=396),
+          {'id': 'spare_part_receipts_入库时间',...(len=306),
+        ],
+        'displayName': '入库单信息',
+        'name': 'spare_part_receipts',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'spare_parts_备件名称', 'type':...(len=382),
+          {'id': 'spare_parts_备件类型', 'type':...(len=341),
+          {'id': 'spare_parts_备件型号', 'type':...(len=383),
+          {'id': 'spare_parts_生产厂家', 'type':...(len=397),
+          {'id': 'spare_parts_经销商', 'type':...(len=391),
+          {'id': 'spare_parts_备件描述', 'type':...(len=381),
+          {'id': 'spare_parts_附件', 'type':...(len=314),
+          {'id': 'spare_parts_图片', 'type':...(len=300),
+          {'id': 'spare_parts_单价', 'type':...(len=318),
+          {'id':...(len=339),
+          {'id':...(len=339),
+          {'id':...(len=339),
+          {'id':...(len=337),
+          {'id':...(len=452),
+          {'id':...(len=492),
+        ],
+        'displayName': '备件基本档案',
+        'name': 'spare_parts',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'thing_inspection_rules_巡检方案名...(len=400),
+        ],
+        'displayName': '设备巡检方案',
+        'name': 'thing_inspection_rules',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [],
+        'displayName': '巡检工单',
+        'name': 'thing_inspections',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'thing_inspections_feedback_巡检完...(len=322),
+        ],
+        'displayName': '反馈巡检工单',
+        'name': 'thing_inspections_feedback',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [],
+        'displayName': '保养工单',
+        'name': 'thing_maintenance',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'thing_maintenance_feedback_结束时...(len=315),
+          {'id': 'thing_maintenance_feedback_备注',...(len=395),
+          {'id': 'thing_maintenance_feedback_备件费...(len=357),
+          {'id': 'thing_maintenance_feedback_材料费...(len=354),
+          {'id': 'thing_maintenance_feedback_人工费...(len=348),
+          {'id': 'thing_maintenance_feedback_其他费...(len=352),
+          {'id': 'thing_maintenance_feedback_保养结...(len=397),
+          {'id': 'thing_maintenance_feedback_保养图...(len=323),
+        ],
+        'displayName': '反馈保养工单',
+        'name': 'thing_maintenance_feedback',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'thing_maintenance_rules_保养方案...(len=402),
+          {'id': 'thing_maintenance_rules_保养等级...(len=379),
+          {'id': 'thing_maintenance_rules_保养频次...(len=403),
+        ],
+        'displayName': '保养方案',
+        'name': 'thing_maintenance_rules',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'thing_repairs_申请部门', 'type':...(len=408),
+          {'id': 'thing_repairs_故障描述', 'type':...(len=395),
+          {'id': 'thing_repairs_故障图片', 'type':...(len=315),
+        ],
+        'displayName': '报修单信息',
+        'name': 'thing_repairs',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'thing_repairs_feedback_维修完成时...(len=329),
+          {'id': 'thing_repairs_feedback_备件费',...(len=351),
+          {'id': 'thing_repairs_feedback_维修费用',...(len=307),
+          {'id': 'thing_repairs_feedback_材料费',...(len=348),
+          {'id': 'thing_repairs_feedback_人工费',...(len=341),
+          {'id': 'thing_repairs_feedback_其他费用',...(len=346),
+          {'id': 'thing_repairs_feedback_维修结果',...(len=393),
+        ],
+        'displayName': '报修单反馈信息',
+        'name': 'thing_repairs_feedback',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'things_设备名称', 'type': 'TEXT',...(len=376),
+          {'id': 'things_设备编码', 'type': 'TEXT',...(len=376),
+          {'id': 'things_设备位置', 'type': 'TEXT',...(len=385),
+          {'id': 'things_设备型号', 'type': 'TEXT',...(len=378),
+          {'id': 'things_负责人', 'type':...(len=291),
+          {'id': 'things_手机号码', 'type': 'TEXT',...(len=378),
+          {'id': 'things_生产厂家', 'type': 'TEXT',...(len=392),
+          {'id': 'things_经销商', 'type': 'TEXT',...(len=386),
+          {'id': 'things_采购日期', 'type':...(len=307),
+          {'id': 'things_启用日期', 'type':...(len=307),
+          {'id': 'things_关联附件', 'type':...(len=311),
+          {'id': 'things_设备图片', 'type':...(len=296),
+          {'id': 'things_设备描述', 'type': 'TEXT',...(len=377),
+          {'id': 'things_设备类别', 'type':...(len=344),
+          {'id': 'things_品牌', 'type':...(len=328),
+          {'id': 'things_使用工厂', 'type':...(len=340),
+          {'id': 'things_用途', 'type':...(len=330),
+          {'id': 'things_设备状态', 'type':...(len=338),
+          {'id': 'things_采购价格(固定资产原值)',...(len=367),
+          {'id': 'things_预计使用年限', 'type':...(len=341),
+          {'id': 'things_已使用年数', 'type':...(len=332),
+          {'id': 'things_预计净产值率', 'type':...(len=359),
+          {'id': 'things_年折旧率', 'type':...(len=347),
+        ],
+        'displayName': '设备信息',
+        'name': 'things',
+      },
+    ],
+  },
+  'errors': None,
+}
+
+2020-09-17 17:07:54,664 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?login
+2020-09-17 17:07:54,664 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json'}
+2020-09-17 17:07:54,666 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'account': 'admin',
+    'password': 'admin',
+  },
+}
+
+2020-09-17 17:07:54,858 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'login': {
+      '__typename': 'AuthInfo',
+      'employee': {
+        '__typename': 'Employee',
+        'account': 'admin',
+        'code': None,
+        'department': {
+          '__typename': 'Department',
+          'headcount': 30,
+          'id': '1',
+          'name': '喜临门家具股份有限公司',
+          'parentPath': [],
+          'subsidiaries': [],
+        },
+        'email': None,
+        'id': '1',
+        'job': None,
+        'name': '管理员',
+        'phone': None,
+        'roles': [
+          {'id': '1', 'name': '负责人', 'permissions':...(len=170),
+        ],
+        'status': 'ACTIVATED',
+      },
+      'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXB
+                sb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29
+                ...(5 hidden lines)',
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:07:54,869 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?login
+2020-09-17 17:07:54,869 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json'}
+2020-09-17 17:07:54,870 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'account': 'admin',
+    'password': 'admin',
+  },
+}
+
+2020-09-17 17:07:55,169 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'login': {
+      '__typename': 'AuthInfo',
+      'employee': {
+        '__typename': 'Employee',
+        'account': 'admin',
+        'code': None,
+        'department': {
+          '__typename': 'Department',
+          'headcount': 30,
+          'id': '1',
+          'name': '喜临门家具股份有限公司',
+          'parentPath': [],
+          'subsidiaries': [],
+        },
+        'email': None,
+        'id': '1',
+        'job': None,
+        'name': '管理员',
+        'phone': None,
+        'roles': [
+          {'id': '1', 'name': '负责人', 'permissions':...(len=170),
+        ],
+        'status': 'ACTIVATED',
+      },
+      'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXB
+                sb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29
+                ...(5 hidden lines)',
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:07:55,184 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?login
+2020-09-17 17:07:55,185 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json'}
+2020-09-17 17:07:55,186 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'account': 'admin',
+    'password': 'admin',
+  },
+}
+
+2020-09-17 17:07:55,572 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'login': {
+      '__typename': 'AuthInfo',
+      'employee': {
+        '__typename': 'Employee',
+        'account': 'admin',
+        'code': None,
+        'department': {
+          '__typename': 'Department',
+          'headcount': 30,
+          'id': '1',
+          'name': '喜临门家具股份有限公司',
+          'parentPath': [],
+          'subsidiaries': [],
+        },
+        'email': None,
+        'id': '1',
+        'job': None,
+        'name': '管理员',
+        'phone': None,
+        'roles': [
+          {'id': '1', 'name': '负责人', 'permissions':...(len=170),
+        ],
+        'status': 'ACTIVATED',
+      },
+      'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXB
+                sb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29
+                ...(5 hidden lines)',
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:07:55,800 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?permissionTable
+2020-09-17 17:07:55,800 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:07:55,800 - GraphqlClient.py - send_request - DEBUG -{
+}
+
+2020-09-17 17:07:56,178 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'permissionTable': {
+      '__typename': 'PermissionTable',
+      'admin': {
+        '__typename': 'Permission',
+        'description': '所有数据权限，可管理全部信息',
+        'id': '1',
+        'scopes': [],
+      },
+      'modules': [
+        {
+          '__typename': 'PermissionModule',
+          'name': 'SCADA',
+          'permissions': [{'id': '27', 'scopes': [], 'description':...(len=88),
+        },
+        {
+          '__typename': 'PermissionModule',
+          'name': '主设备管理',
+          'permissions': [{'id': '2', 'scopes': ['/query/thing',...(len=397),
+        },
+        {
+          '__typename': 'PermissionModule',
+          'name': '保养',
+          'permissions': [{'id': '16', 'scopes':...(len=952),
+        },
+        {
+          '__typename': 'PermissionModule',
+          'name': '备件管理',
+          'permissions': [{'id': '28', 'scopes': ['/mutation/updat...(len=1298),
+        },
+        {
+          '__typename': 'PermissionModule',
+          'name': '巡检',
+          'permissions': [{'id': '12', 'scopes':...(len=864),
+        },
+        {
+          '__typename': 'PermissionModule',
+          'name': '概览（报表）',
+          'permissions': [{'id': '26', 'scopes':...(len=181),
+        },
+        {
+          '__typename': 'PermissionModule',
+          'name': '维修',
+          'permissions': [{'id': '10', 'scopes':...(len=544),
+        },
+        {
+          '__typename': 'PermissionModule',
+          'name': '设置',
+          'permissions': [{'id': '20', 'scopes':...(len=884),
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:07:56,179 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:07:56,179 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:07:56,181 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': 'SCADA',
+    'permissions': [
+      {
+        'id': '27',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:07:56,446 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '121',
+      'name': 'SCADA',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '使用SCADA入口',
+          'id': '27',
+          'scopes': [],
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:07:56,446 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:07:56,446 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:07:56,447 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': 'SCADA',
+    'permissions': [
+      {
+        'id': '27',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:07:56,562 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '122',
+      'name': 'SCADA',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '使用SCADA入口',
+          'id': '27',
+          'scopes': [],
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:07:56,564 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createEmployee
+2020-09-17 17:07:56,564 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:07:56,570 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'account': 'admin1',
+    'code': 'poall',
+    'department': {
+      'id': 1,
+    },
+    'name': 'SCADA',
+    'password': '123456',
+    'phone': '123456',
+    'roles': [
+      {
+        'id': '122',
+      },
+    ],
+    'status': 'ACTIVATED',
+  },
+}
+
+2020-09-17 17:07:57,979 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createEmployee': {
+      '__typename': 'Employee',
+      'account': 'admin1',
+      'code': 'poall',
+      'department': {
+        '__typename': 'Department',
+        'headcount': 31,
+        'id': '1',
+        'name': '喜临门家具股份有限公司',
+        'parentPath': [],
+        'subsidiaries': [],
+      },
+      'email': None,
+      'id': '105',
+      'job': None,
+      'name': 'SCADA',
+      'phone': '123456',
+      'roles': [
+        {
+          '__typename': 'Role',
+          'id': '122',
+          'name': 'SCADA',
+          'permissions': [{'id': '27', 'scopes': [], 'description':...(len=88),
+        },
+      ],
+      'status': 'ACTIVATED',
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:07:57,979 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:07:57,979 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:07:57,980 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': '主设备管理',
+    'permissions': [
+      {
+        'id': '2',
+      },
+      {
+        'id': '3',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:07:58,045 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '123',
+      'name': '主设备管理',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '查看主设备列表、详情',
+          'id': '2',
+          'scopes': ['/query/thing', '/query/things', '/query/thingByQrCode'],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑、导入、导出主设备详情',
+          'id': '3',
+          'scopes': ['/mutation/createThing',...(len=150),
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:07:58,045 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:07:58,045 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:07:58,046 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': '主设备管理',
+    'permissions': [
+      {
+        'id': '2',
+      },
+      {
+        'id': '3',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:07:58,135 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '124',
+      'name': '主设备管理',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '查看主设备列表、详情',
+          'id': '2',
+          'scopes': ['/query/thing', '/query/things', '/query/thingByQrCode'],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑、导入、导出主设备详情',
+          'id': '3',
+          'scopes': ['/mutation/createThing',...(len=150),
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:07:58,135 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createEmployee
+2020-09-17 17:07:58,135 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:07:58,138 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'account': 'admin2',
+    'code': 'qkdhv',
+    'department': {
+      'id': 1,
+    },
+    'name': '主设备管理',
+    'password': '123456',
+    'phone': '123456',
+    'roles': [
+      {
+        'id': '124',
+      },
+    ],
+    'status': 'ACTIVATED',
+  },
+}
+
+2020-09-17 17:07:59,808 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createEmployee': {
+      '__typename': 'Employee',
+      'account': 'admin2',
+      'code': 'qkdhv',
+      'department': {
+        '__typename': 'Department',
+        'headcount': 32,
+        'id': '1',
+        'name': '喜临门家具股份有限公司',
+        'parentPath': [],
+        'subsidiaries': [],
+      },
+      'email': None,
+      'id': '106',
+      'job': None,
+      'name': '主设备管理',
+      'phone': '123456',
+      'roles': [
+        {
+          '__typename': 'Role',
+          'id': '124',
+          'name': '主设备管理',
+          'permissions': [{'id': '2', 'scopes': ['/query/thing',...(len=397),
+        },
+      ],
+      'status': 'ACTIVATED',
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:07:59,808 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:07:59,808 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:07:59,811 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': '保养',
+    'permissions': [
+      {
+        'id': '16',
+      },
+      {
+        'id': '17',
+      },
+      {
+        'id': '18',
+      },
+      {
+        'id': '19',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:07:59,884 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '125',
+      'name': '保养',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '查看保养方案',
+          'id': '16',
+          'scopes': ['/query/thingMaintenanceRule',...(len=63),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑保养方案',
+          'id': '17',
+          'scopes': ['/mutation/createThingMaintenanceRule',...(len=121),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看、发起、审核保养单',
+          'id': '18',
+          'scopes': ['/query/thingMaintenance',...(len=203),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看、发起、反馈保养单',
+          'id': '19',
+          'scopes': ['/query/thingMaintenance',...(len=205),
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:07:59,885 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:07:59,885 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:07:59,886 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': '保养',
+    'permissions': [
+      {
+        'id': '16',
+      },
+      {
+        'id': '17',
+      },
+      {
+        'id': '18',
+      },
+      {
+        'id': '19',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:07:59,986 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '126',
+      'name': '保养',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '查看保养方案',
+          'id': '16',
+          'scopes': ['/query/thingMaintenanceRule',...(len=63),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑保养方案',
+          'id': '17',
+          'scopes': ['/mutation/createThingMaintenanceRule',...(len=121),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看、发起、审核保养单',
+          'id': '18',
+          'scopes': ['/query/thingMaintenance',...(len=203),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看、发起、反馈保养单',
+          'id': '19',
+          'scopes': ['/query/thingMaintenance',...(len=205),
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:07:59,987 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createEmployee
+2020-09-17 17:07:59,987 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:07:59,989 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'account': 'admin3',
+    'code': 'ljcji',
+    'department': {
+      'id': 1,
+    },
+    'name': '保养',
+    'password': '123456',
+    'phone': '123456',
+    'roles': [
+      {
+        'id': '126',
+      },
+    ],
+    'status': 'ACTIVATED',
+  },
+}
+
+2020-09-17 17:08:01,398 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createEmployee': {
+      '__typename': 'Employee',
+      'account': 'admin3',
+      'code': 'ljcji',
+      'department': {
+        '__typename': 'Department',
+        'headcount': 33,
+        'id': '1',
+        'name': '喜临门家具股份有限公司',
+        'parentPath': [],
+        'subsidiaries': [],
+      },
+      'email': None,
+      'id': '107',
+      'job': None,
+      'name': '保养',
+      'phone': '123456',
+      'roles': [
+        {
+          '__typename': 'Role',
+          'id': '126',
+          'name': '保养',
+          'permissions': [{'id': '16', 'scopes':...(len=952),
+        },
+      ],
+      'status': 'ACTIVATED',
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:01,399 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:08:01,399 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:01,402 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': '备件管理',
+    'permissions': [
+      {
+        'id': '28',
+      },
+      {
+        'id': '4',
+      },
+      {
+        'id': '5',
+      },
+      {
+        'id': '6',
+      },
+      {
+        'id': '7',
+      },
+      {
+        'id': '8',
+      },
+      {
+        'id': '9',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:08:01,491 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '127',
+      'name': '备件管理',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '查看备件列表、详情',
+          'id': '4',
+          'scopes': ['/query/sparePart', '/query/spareParts'],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑、导入、导出备件详情',
+          'id': '5',
+          'scopes': ['/mutation/createSparePart',...(len=174),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看备件库存、入库记录、申领记录',
+          'id': '6',
+          'scopes': ['/query/sparePartStocks',...(len=263),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑仓库信息',
+          'id': '7',
+          'scopes': [],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '发起备件入库',
+          'id': '8',
+          'scopes': ['/mutation/createSparePartReceipt',...(len=72),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '发起备件申领',
+          'id': '9',
+          'scopes': ['/mutation/createSparePartOutbound',...(len=74),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '审核备件申领单',
+          'id': '28',
+          'scopes': ['/mutation/updateSparePartOutboundStatus'],
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:01,491 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:08:01,491 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:01,494 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': '备件管理',
+    'permissions': [
+      {
+        'id': '28',
+      },
+      {
+        'id': '4',
+      },
+      {
+        'id': '5',
+      },
+      {
+        'id': '6',
+      },
+      {
+        'id': '7',
+      },
+      {
+        'id': '8',
+      },
+      {
+        'id': '9',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:08:01,607 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '128',
+      'name': '备件管理',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '查看备件列表、详情',
+          'id': '4',
+          'scopes': ['/query/sparePart', '/query/spareParts'],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑、导入、导出备件详情',
+          'id': '5',
+          'scopes': ['/mutation/createSparePart',...(len=174),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看备件库存、入库记录、申领记录',
+          'id': '6',
+          'scopes': ['/query/sparePartStocks',...(len=263),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑仓库信息',
+          'id': '7',
+          'scopes': [],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '发起备件入库',
+          'id': '8',
+          'scopes': ['/mutation/createSparePartReceipt',...(len=72),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '发起备件申领',
+          'id': '9',
+          'scopes': ['/mutation/createSparePartOutbound',...(len=74),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '审核备件申领单',
+          'id': '28',
+          'scopes': ['/mutation/updateSparePartOutboundStatus'],
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:01,607 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createEmployee
+2020-09-17 17:08:01,608 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:01,610 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'account': 'admin4',
+    'code': 'isdxq',
+    'department': {
+      'id': 1,
+    },
+    'name': '备件管理',
+    'password': '123456',
+    'phone': '123456',
+    'roles': [
+      {
+        'id': '128',
+      },
+    ],
+    'status': 'ACTIVATED',
+  },
+}
+
+2020-09-17 17:08:02,755 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createEmployee': {
+      '__typename': 'Employee',
+      'account': 'admin4',
+      'code': 'isdxq',
+      'department': {
+        '__typename': 'Department',
+        'headcount': 34,
+        'id': '1',
+        'name': '喜临门家具股份有限公司',
+        'parentPath': [],
+        'subsidiaries': [],
+      },
+      'email': None,
+      'id': '108',
+      'job': None,
+      'name': '备件管理',
+      'phone': '123456',
+      'roles': [
+        {
+          '__typename': 'Role',
+          'id': '128',
+          'name': '备件管理',
+          'permissions': [{'id': '4', 'scopes':...(len=1298),
+        },
+      ],
+      'status': 'ACTIVATED',
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:02,756 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:08:02,756 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:02,758 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': '巡检',
+    'permissions': [
+      {
+        'id': '12',
+      },
+      {
+        'id': '13',
+      },
+      {
+        'id': '14',
+      },
+      {
+        'id': '15',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:08:02,817 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '129',
+      'name': '巡检',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '查看巡检方案',
+          'id': '12',
+          'scopes': ['/query/thingInspectionRule',...(len=61),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑巡检方案',
+          'id': '13',
+          'scopes': ['/mutation/createThingInspectionRule',...(len=113),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看、发起、审核巡检单',
+          'id': '14',
+          'scopes': ['/mutation/createThingInspection',...(len=164),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看、发起、反馈巡检单',
+          'id': '15',
+          'scopes': ['/mutation/createThingInspection',...(len=166),
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:02,817 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:08:02,817 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:02,819 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': '巡检',
+    'permissions': [
+      {
+        'id': '12',
+      },
+      {
+        'id': '13',
+      },
+      {
+        'id': '14',
+      },
+      {
+        'id': '15',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:08:02,893 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '130',
+      'name': '巡检',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '查看巡检方案',
+          'id': '12',
+          'scopes': ['/query/thingInspectionRule',...(len=61),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑巡检方案',
+          'id': '13',
+          'scopes': ['/mutation/createThingInspectionRule',...(len=113),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看、发起、审核巡检单',
+          'id': '14',
+          'scopes': ['/mutation/createThingInspection',...(len=164),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看、发起、反馈巡检单',
+          'id': '15',
+          'scopes': ['/mutation/createThingInspection',...(len=166),
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:02,894 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createEmployee
+2020-09-17 17:08:02,894 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:02,900 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'account': 'admin5',
+    'code': 'ruthw',
+    'department': {
+      'id': 1,
+    },
+    'name': '巡检',
+    'password': '123456',
+    'phone': '123456',
+    'roles': [
+      {
+        'id': '130',
+      },
+    ],
+    'status': 'ACTIVATED',
+  },
+}
+
+2020-09-17 17:08:03,755 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createEmployee': {
+      '__typename': 'Employee',
+      'account': 'admin5',
+      'code': 'ruthw',
+      'department': {
+        '__typename': 'Department',
+        'headcount': 35,
+        'id': '1',
+        'name': '喜临门家具股份有限公司',
+        'parentPath': [],
+        'subsidiaries': [],
+      },
+      'email': None,
+      'id': '109',
+      'job': None,
+      'name': '巡检',
+      'phone': '123456',
+      'roles': [
+        {
+          '__typename': 'Role',
+          'id': '130',
+          'name': '巡检',
+          'permissions': [{'id': '12', 'scopes':...(len=864),
+        },
+      ],
+      'status': 'ACTIVATED',
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:03,756 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:08:03,756 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:03,757 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': '概览（报表）',
+    'permissions': [
+      {
+        'id': '26',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:08:03,862 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '131',
+      'name': '概览（报表）',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '查看所有报表',
+          'id': '26',
+          'scopes': ['/query/thingOverview', '/query/thingSummary',...(len=96),
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:03,863 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:08:03,863 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:03,863 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': '概览（报表）',
+    'permissions': [
+      {
+        'id': '26',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:08:03,929 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '132',
+      'name': '概览（报表）',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '查看所有报表',
+          'id': '26',
+          'scopes': ['/query/thingOverview', '/query/thingSummary',...(len=96),
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:03,930 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createEmployee
+2020-09-17 17:08:03,930 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:03,932 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'account': 'admin6',
+    'code': 'hkzcu',
+    'department': {
+      'id': 1,
+    },
+    'name': '概览（报表）',
+    'password': '123456',
+    'phone': '123456',
+    'roles': [
+      {
+        'id': '132',
+      },
+    ],
+    'status': 'ACTIVATED',
+  },
+}
+
+2020-09-17 17:08:04,837 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createEmployee': {
+      '__typename': 'Employee',
+      'account': 'admin6',
+      'code': 'hkzcu',
+      'department': {
+        '__typename': 'Department',
+        'headcount': 36,
+        'id': '1',
+        'name': '喜临门家具股份有限公司',
+        'parentPath': [],
+        'subsidiaries': [],
+      },
+      'email': None,
+      'id': '110',
+      'job': None,
+      'name': '概览（报表）',
+      'phone': '123456',
+      'roles': [
+        {
+          '__typename': 'Role',
+          'id': '132',
+          'name': '概览（报表）',
+          'permissions': [{'id': '26', 'scopes':...(len=181),
+        },
+      ],
+      'status': 'ACTIVATED',
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:04,837 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:08:04,837 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:04,838 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': '维修',
+    'permissions': [
+      {
+        'id': '10',
+      },
+      {
+        'id': '11',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:08:05,323 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '133',
+      'name': '维修',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '查看、发起、审核维修单',
+          'id': '10',
+          'scopes': ['/query/thingRepairs', '/query/thingRepair',...(len=176),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看、发起、反馈维修单',
+          'id': '11',
+          'scopes': ['/query/thingRepairs', '/query/thingRepair',...(len=178),
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:05,323 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:08:05,323 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:05,324 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': '维修',
+    'permissions': [
+      {
+        'id': '10',
+      },
+      {
+        'id': '11',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:08:05,461 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '134',
+      'name': '维修',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '查看、发起、审核维修单',
+          'id': '10',
+          'scopes': ['/query/thingRepairs', '/query/thingRepair',...(len=176),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看、发起、反馈维修单',
+          'id': '11',
+          'scopes': ['/query/thingRepairs', '/query/thingRepair',...(len=178),
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:05,462 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createEmployee
+2020-09-17 17:08:05,462 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:05,467 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'account': 'admin7',
+    'code': 'ahvuc',
+    'department': {
+      'id': 1,
+    },
+    'name': '维修',
+    'password': '123456',
+    'phone': '123456',
+    'roles': [
+      {
+        'id': '134',
+      },
+    ],
+    'status': 'ACTIVATED',
+  },
+}
+
+2020-09-17 17:08:05,767 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createEmployee': {
+      '__typename': 'Employee',
+      'account': 'admin7',
+      'code': 'ahvuc',
+      'department': {
+        '__typename': 'Department',
+        'headcount': 37,
+        'id': '1',
+        'name': '喜临门家具股份有限公司',
+        'parentPath': [],
+        'subsidiaries': [],
+      },
+      'email': None,
+      'id': '111',
+      'job': None,
+      'name': '维修',
+      'phone': '123456',
+      'roles': [
+        {
+          '__typename': 'Role',
+          'id': '134',
+          'name': '维修',
+          'permissions': [{'id': '10', 'scopes':...(len=544),
+        },
+      ],
+      'status': 'ACTIVATED',
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:05,767 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:08:05,767 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:05,770 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': '设置',
+    'permissions': [
+      {
+        'id': '20',
+      },
+      {
+        'id': '21',
+      },
+      {
+        'id': '22',
+      },
+      {
+        'id': '23',
+      },
+      {
+        'id': '24',
+      },
+      {
+        'id': '25',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:08:05,877 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '135',
+      'name': '设置',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '自定义表单',
+          'id': '20',
+          'scopes': ['/mutation/updateFormStruct'],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看隐藏字段',
+          'id': '21',
+          'scopes': [],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看组织架构及人员',
+          'id': '22',
+          'scopes': ['/query/departments', '/query/employees'],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑组织架构及人员',
+          'id': '23',
+          'scopes': ['/mutation/createDepartment',...(len=220),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看角色权限',
+          'id': '24',
+          'scopes': ['/query/permissionTable', '/query/roles'],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑角色权限',
+          'id': '25',
+          'scopes': ['/mutation/updateEmployee'],
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:05,877 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:08:05,877 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:05,880 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': '设置',
+    'permissions': [
+      {
+        'id': '20',
+      },
+      {
+        'id': '21',
+      },
+      {
+        'id': '22',
+      },
+      {
+        'id': '23',
+      },
+      {
+        'id': '24',
+      },
+      {
+        'id': '25',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:08:06,280 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '136',
+      'name': '设置',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '自定义表单',
+          'id': '20',
+          'scopes': ['/mutation/updateFormStruct'],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看隐藏字段',
+          'id': '21',
+          'scopes': [],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看组织架构及人员',
+          'id': '22',
+          'scopes': ['/query/departments', '/query/employees'],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑组织架构及人员',
+          'id': '23',
+          'scopes': ['/mutation/createDepartment',...(len=220),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看角色权限',
+          'id': '24',
+          'scopes': ['/query/permissionTable', '/query/roles'],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑角色权限',
+          'id': '25',
+          'scopes': ['/mutation/updateEmployee'],
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:06,280 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createEmployee
+2020-09-17 17:08:06,280 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:06,283 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'account': 'admin8',
+    'code': 'cpabr',
+    'department': {
+      'id': 1,
+    },
+    'name': '设置',
+    'password': '123456',
+    'phone': '123456',
+    'roles': [
+      {
+        'id': '136',
+      },
+    ],
+    'status': 'ACTIVATED',
+  },
+}
+
+2020-09-17 17:08:08,073 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createEmployee': {
+      '__typename': 'Employee',
+      'account': 'admin8',
+      'code': 'cpabr',
+      'department': {
+        '__typename': 'Department',
+        'headcount': 38,
+        'id': '1',
+        'name': '喜临门家具股份有限公司',
+        'parentPath': [],
+        'subsidiaries': [],
+      },
+      'email': None,
+      'id': '112',
+      'job': None,
+      'name': '设置',
+      'phone': '123456',
+      'roles': [
+        {
+          '__typename': 'Role',
+          'id': '136',
+          'name': '设置',
+          'permissions': [{'id': '20', 'scopes':...(len=884),
+        },
+      ],
+      'status': 'ACTIVATED',
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:08,558 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?permissionTable
+2020-09-17 17:08:08,558 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:08,558 - GraphqlClient.py - send_request - DEBUG -{
+}
+
+2020-09-17 17:08:08,671 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'permissionTable': {
+      '__typename': 'PermissionTable',
+      'admin': {
+        '__typename': 'Permission',
+        'description': '所有数据权限，可管理全部信息',
+        'id': '1',
+        'scopes': [],
+      },
+      'modules': [
+        {
+          '__typename': 'PermissionModule',
+          'name': 'SCADA',
+          'permissions': [{'id': '27', 'scopes': [], 'description':...(len=88),
+        },
+        {
+          '__typename': 'PermissionModule',
+          'name': '主设备管理',
+          'permissions': [{'id': '2', 'scopes': ['/query/thing',...(len=397),
+        },
+        {
+          '__typename': 'PermissionModule',
+          'name': '保养',
+          'permissions': [{'id': '16', 'scopes':...(len=952),
+        },
+        {
+          '__typename': 'PermissionModule',
+          'name': '备件管理',
+          'permissions': [{'id': '28', 'scopes': ['/mutation/updat...(len=1298),
+        },
+        {
+          '__typename': 'PermissionModule',
+          'name': '巡检',
+          'permissions': [{'id': '12', 'scopes':...(len=864),
+        },
+        {
+          '__typename': 'PermissionModule',
+          'name': '概览（报表）',
+          'permissions': [{'id': '26', 'scopes':...(len=181),
+        },
+        {
+          '__typename': 'PermissionModule',
+          'name': '维修',
+          'permissions': [{'id': '10', 'scopes':...(len=544),
+        },
+        {
+          '__typename': 'PermissionModule',
+          'name': '设置',
+          'permissions': [{'id': '20', 'scopes':...(len=884),
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:08,671 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:08:08,671 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:08,672 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': 'SCADA',
+    'permissions': [
+      {
+        'id': '27',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:08:09,392 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '137',
+      'name': 'SCADA',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '使用SCADA入口',
+          'id': '27',
+          'scopes': [],
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:09,393 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:08:09,393 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:09,394 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': 'SCADA',
+    'permissions': [
+      {
+        'id': '27',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:08:09,698 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '138',
+      'name': 'SCADA',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '使用SCADA入口',
+          'id': '27',
+          'scopes': [],
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:09,699 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createEmployee
+2020-09-17 17:08:09,699 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:09,702 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'account': 'admin1',
+    'code': 'eddxn',
+    'department': {
+      'id': 1,
+    },
+    'name': 'SCADA',
+    'password': '123456',
+    'phone': '123456',
+    'roles': [
+      {
+        'id': '138',
+      },
+    ],
+    'status': 'ACTIVATED',
+  },
+}
+
+2020-09-17 17:08:10,007 - GraphqlClient.py - send_request - DEBUG -{
+  'data': None,
+  'errors': [
+    {
+      'locations': [
+        {
+          'column': 5,
+          'line': 2,
+        },
+      ],
+      'message': 'duplicate key value violates unique constraint
+                  "uq_employees__account__company_id"\nDETAIL:  Key (account,
+                  ...(1 hidden line)',
+      'path': ['createEmployee'],
+    },
+  ],
+}
+
+2020-09-17 17:08:10,008 - test_permissions.py - TestPermission - DEBUG -'bool' object is not subscriptable
+2020-09-17 17:08:10,008 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:08:10,008 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:10,010 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': '主设备管理',
+    'permissions': [
+      {
+        'id': '2',
+      },
+      {
+        'id': '3',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:08:10,090 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '139',
+      'name': '主设备管理',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '查看主设备列表、详情',
+          'id': '2',
+          'scopes': ['/query/thing', '/query/things', '/query/thingByQrCode'],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑、导入、导出主设备详情',
+          'id': '3',
+          'scopes': ['/mutation/createThing',...(len=150),
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:10,090 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:08:10,090 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:10,092 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': '主设备管理',
+    'permissions': [
+      {
+        'id': '2',
+      },
+      {
+        'id': '3',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:08:10,261 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '140',
+      'name': '主设备管理',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '查看主设备列表、详情',
+          'id': '2',
+          'scopes': ['/query/thing', '/query/things', '/query/thingByQrCode'],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑、导入、导出主设备详情',
+          'id': '3',
+          'scopes': ['/mutation/createThing',...(len=150),
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:10,261 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createEmployee
+2020-09-17 17:08:10,261 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:10,264 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'account': 'admin2',
+    'code': 'iotfo',
+    'department': {
+      'id': 1,
+    },
+    'name': '主设备管理',
+    'password': '123456',
+    'phone': '123456',
+    'roles': [
+      {
+        'id': '140',
+      },
+    ],
+    'status': 'ACTIVATED',
+  },
+}
+
+2020-09-17 17:08:10,512 - GraphqlClient.py - send_request - DEBUG -{
+  'data': None,
+  'errors': [
+    {
+      'locations': [
+        {
+          'column': 5,
+          'line': 2,
+        },
+      ],
+      'message': 'duplicate key value violates unique constraint
+                  "uq_employees__account__company_id"\nDETAIL:  Key (account,
+                  ...(1 hidden line)',
+      'path': ['createEmployee'],
+    },
+  ],
+}
+
+2020-09-17 17:08:10,512 - test_permissions.py - TestPermission - DEBUG -'bool' object is not subscriptable
+2020-09-17 17:08:10,512 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:08:10,512 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:10,515 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': '保养',
+    'permissions': [
+      {
+        'id': '16',
+      },
+      {
+        'id': '17',
+      },
+      {
+        'id': '18',
+      },
+      {
+        'id': '19',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:08:10,646 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '141',
+      'name': '保养',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '查看保养方案',
+          'id': '16',
+          'scopes': ['/query/thingMaintenanceRule',...(len=63),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑保养方案',
+          'id': '17',
+          'scopes': ['/mutation/createThingMaintenanceRule',...(len=121),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看、发起、审核保养单',
+          'id': '18',
+          'scopes': ['/query/thingMaintenance',...(len=203),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看、发起、反馈保养单',
+          'id': '19',
+          'scopes': ['/query/thingMaintenance',...(len=205),
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:10,646 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:08:10,646 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:10,648 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': '保养',
+    'permissions': [
+      {
+        'id': '16',
+      },
+      {
+        'id': '17',
+      },
+      {
+        'id': '18',
+      },
+      {
+        'id': '19',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:08:10,801 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '142',
+      'name': '保养',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '查看保养方案',
+          'id': '16',
+          'scopes': ['/query/thingMaintenanceRule',...(len=63),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑保养方案',
+          'id': '17',
+          'scopes': ['/mutation/createThingMaintenanceRule',...(len=121),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看、发起、审核保养单',
+          'id': '18',
+          'scopes': ['/query/thingMaintenance',...(len=203),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看、发起、反馈保养单',
+          'id': '19',
+          'scopes': ['/query/thingMaintenance',...(len=205),
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:10,802 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createEmployee
+2020-09-17 17:08:10,802 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:10,807 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'account': 'admin3',
+    'code': 'kptcx',
+    'department': {
+      'id': 1,
+    },
+    'name': '保养',
+    'password': '123456',
+    'phone': '123456',
+    'roles': [
+      {
+        'id': '142',
+      },
+    ],
+    'status': 'ACTIVATED',
+  },
+}
+
+2020-09-17 17:08:11,132 - GraphqlClient.py - send_request - DEBUG -{
+  'data': None,
+  'errors': [
+    {
+      'locations': [
+        {
+          'column': 5,
+          'line': 2,
+        },
+      ],
+      'message': 'duplicate key value violates unique constraint
+                  "uq_employees__account__company_id"\nDETAIL:  Key (account,
+                  ...(1 hidden line)',
+      'path': ['createEmployee'],
+    },
+  ],
+}
+
+2020-09-17 17:08:11,132 - test_permissions.py - TestPermission - DEBUG -'bool' object is not subscriptable
+2020-09-17 17:08:11,133 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:08:11,133 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:11,136 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': '备件管理',
+    'permissions': [
+      {
+        'id': '28',
+      },
+      {
+        'id': '4',
+      },
+      {
+        'id': '5',
+      },
+      {
+        'id': '6',
+      },
+      {
+        'id': '7',
+      },
+      {
+        'id': '8',
+      },
+      {
+        'id': '9',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:08:11,293 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '143',
+      'name': '备件管理',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '查看备件列表、详情',
+          'id': '4',
+          'scopes': ['/query/sparePart', '/query/spareParts'],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑、导入、导出备件详情',
+          'id': '5',
+          'scopes': ['/mutation/createSparePart',...(len=174),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看备件库存、入库记录、申领记录',
+          'id': '6',
+          'scopes': ['/query/sparePartStocks',...(len=263),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑仓库信息',
+          'id': '7',
+          'scopes': [],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '发起备件入库',
+          'id': '8',
+          'scopes': ['/mutation/createSparePartReceipt',...(len=72),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '发起备件申领',
+          'id': '9',
+          'scopes': ['/mutation/createSparePartOutbound',...(len=74),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '审核备件申领单',
+          'id': '28',
+          'scopes': ['/mutation/updateSparePartOutboundStatus'],
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:11,294 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:08:11,294 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:11,297 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': '备件管理',
+    'permissions': [
+      {
+        'id': '28',
+      },
+      {
+        'id': '4',
+      },
+      {
+        'id': '5',
+      },
+      {
+        'id': '6',
+      },
+      {
+        'id': '7',
+      },
+      {
+        'id': '8',
+      },
+      {
+        'id': '9',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:08:11,391 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '144',
+      'name': '备件管理',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '查看备件列表、详情',
+          'id': '4',
+          'scopes': ['/query/sparePart', '/query/spareParts'],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑、导入、导出备件详情',
+          'id': '5',
+          'scopes': ['/mutation/createSparePart',...(len=174),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看备件库存、入库记录、申领记录',
+          'id': '6',
+          'scopes': ['/query/sparePartStocks',...(len=263),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑仓库信息',
+          'id': '7',
+          'scopes': [],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '发起备件入库',
+          'id': '8',
+          'scopes': ['/mutation/createSparePartReceipt',...(len=72),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '发起备件申领',
+          'id': '9',
+          'scopes': ['/mutation/createSparePartOutbound',...(len=74),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '审核备件申领单',
+          'id': '28',
+          'scopes': ['/mutation/updateSparePartOutboundStatus'],
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:11,391 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createEmployee
+2020-09-17 17:08:11,391 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:11,394 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'account': 'admin4',
+    'code': 'vaoav',
+    'department': {
+      'id': 1,
+    },
+    'name': '备件管理',
+    'password': '123456',
+    'phone': '123456',
+    'roles': [
+      {
+        'id': '144',
+      },
+    ],
+    'status': 'ACTIVATED',
+  },
+}
+
+2020-09-17 17:08:11,613 - GraphqlClient.py - send_request - DEBUG -{
+  'data': None,
+  'errors': [
+    {
+      'locations': [
+        {
+          'column': 5,
+          'line': 2,
+        },
+      ],
+      'message': 'duplicate key value violates unique constraint
+                  "uq_employees__account__company_id"\nDETAIL:  Key (account,
+                  ...(1 hidden line)',
+      'path': ['createEmployee'],
+    },
+  ],
+}
+
+2020-09-17 17:08:11,614 - test_permissions.py - TestPermission - DEBUG -'bool' object is not subscriptable
+2020-09-17 17:08:11,614 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:08:11,614 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:11,616 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': '巡检',
+    'permissions': [
+      {
+        'id': '12',
+      },
+      {
+        'id': '13',
+      },
+      {
+        'id': '14',
+      },
+      {
+        'id': '15',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:08:11,959 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '145',
+      'name': '巡检',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '查看巡检方案',
+          'id': '12',
+          'scopes': ['/query/thingInspectionRule',...(len=61),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑巡检方案',
+          'id': '13',
+          'scopes': ['/mutation/createThingInspectionRule',...(len=113),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看、发起、审核巡检单',
+          'id': '14',
+          'scopes': ['/mutation/createThingInspection',...(len=164),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看、发起、反馈巡检单',
+          'id': '15',
+          'scopes': ['/mutation/createThingInspection',...(len=166),
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:11,960 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:08:11,960 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:11,962 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': '巡检',
+    'permissions': [
+      {
+        'id': '12',
+      },
+      {
+        'id': '13',
+      },
+      {
+        'id': '14',
+      },
+      {
+        'id': '15',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:08:12,243 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '146',
+      'name': '巡检',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '查看巡检方案',
+          'id': '12',
+          'scopes': ['/query/thingInspectionRule',...(len=61),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑巡检方案',
+          'id': '13',
+          'scopes': ['/mutation/createThingInspectionRule',...(len=113),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看、发起、审核巡检单',
+          'id': '14',
+          'scopes': ['/mutation/createThingInspection',...(len=164),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看、发起、反馈巡检单',
+          'id': '15',
+          'scopes': ['/mutation/createThingInspection',...(len=166),
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:12,244 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createEmployee
+2020-09-17 17:08:12,244 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:12,247 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'account': 'admin5',
+    'code': 'hucog',
+    'department': {
+      'id': 1,
+    },
+    'name': '巡检',
+    'password': '123456',
+    'phone': '123456',
+    'roles': [
+      {
+        'id': '146',
+      },
+    ],
+    'status': 'ACTIVATED',
+  },
+}
+
+2020-09-17 17:08:12,673 - GraphqlClient.py - send_request - DEBUG -{
+  'data': None,
+  'errors': [
+    {
+      'locations': [
+        {
+          'column': 5,
+          'line': 2,
+        },
+      ],
+      'message': 'duplicate key value violates unique constraint
+                  "uq_employees__account__company_id"\nDETAIL:  Key (account,
+                  ...(1 hidden line)',
+      'path': ['createEmployee'],
+    },
+  ],
+}
+
+2020-09-17 17:08:12,673 - test_permissions.py - TestPermission - DEBUG -'bool' object is not subscriptable
+2020-09-17 17:08:12,674 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:08:12,674 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:12,675 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': '概览（报表）',
+    'permissions': [
+      {
+        'id': '26',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:08:12,754 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '147',
+      'name': '概览（报表）',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '查看所有报表',
+          'id': '26',
+          'scopes': ['/query/thingOverview', '/query/thingSummary',...(len=96),
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:12,754 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:08:12,754 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:12,756 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': '概览（报表）',
+    'permissions': [
+      {
+        'id': '26',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:08:12,855 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '148',
+      'name': '概览（报表）',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '查看所有报表',
+          'id': '26',
+          'scopes': ['/query/thingOverview', '/query/thingSummary',...(len=96),
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:12,856 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createEmployee
+2020-09-17 17:08:12,856 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:12,860 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'account': 'admin6',
+    'code': 'risfw',
+    'department': {
+      'id': 1,
+    },
+    'name': '概览（报表）',
+    'password': '123456',
+    'phone': '123456',
+    'roles': [
+      {
+        'id': '148',
+      },
+    ],
+    'status': 'ACTIVATED',
+  },
+}
+
+2020-09-17 17:08:15,021 - GraphqlClient.py - send_request - DEBUG -{
+  'data': None,
+  'errors': [
+    {
+      'locations': [
+        {
+          'column': 5,
+          'line': 2,
+        },
+      ],
+      'message': 'duplicate key value violates unique constraint
+                  "uq_employees__account__company_id"\nDETAIL:  Key (account,
+                  ...(1 hidden line)',
+      'path': ['createEmployee'],
+    },
+  ],
+}
+
+2020-09-17 17:08:15,021 - test_permissions.py - TestPermission - DEBUG -'bool' object is not subscriptable
+2020-09-17 17:08:15,021 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:08:15,021 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:15,023 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': '维修',
+    'permissions': [
+      {
+        'id': '10',
+      },
+      {
+        'id': '11',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:08:15,161 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '149',
+      'name': '维修',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '查看、发起、审核维修单',
+          'id': '10',
+          'scopes': ['/query/thingRepairs', '/query/thingRepair',...(len=176),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看、发起、反馈维修单',
+          'id': '11',
+          'scopes': ['/query/thingRepairs', '/query/thingRepair',...(len=178),
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:15,161 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:08:15,161 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:15,162 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': '维修',
+    'permissions': [
+      {
+        'id': '10',
+      },
+      {
+        'id': '11',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:08:16,215 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '150',
+      'name': '维修',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '查看、发起、审核维修单',
+          'id': '10',
+          'scopes': ['/query/thingRepairs', '/query/thingRepair',...(len=176),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看、发起、反馈维修单',
+          'id': '11',
+          'scopes': ['/query/thingRepairs', '/query/thingRepair',...(len=178),
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:16,216 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createEmployee
+2020-09-17 17:08:16,216 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:16,218 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'account': 'admin7',
+    'code': 'xqrpg',
+    'department': {
+      'id': 1,
+    },
+    'name': '维修',
+    'password': '123456',
+    'phone': '123456',
+    'roles': [
+      {
+        'id': '150',
+      },
+    ],
+    'status': 'ACTIVATED',
+  },
+}
+
+2020-09-17 17:08:16,475 - GraphqlClient.py - send_request - DEBUG -{
+  'data': None,
+  'errors': [
+    {
+      'locations': [
+        {
+          'column': 5,
+          'line': 2,
+        },
+      ],
+      'message': 'duplicate key value violates unique constraint
+                  "uq_employees__account__company_id"\nDETAIL:  Key (account,
+                  ...(1 hidden line)',
+      'path': ['createEmployee'],
+    },
+  ],
+}
+
+2020-09-17 17:08:16,475 - test_permissions.py - TestPermission - DEBUG -'bool' object is not subscriptable
+2020-09-17 17:08:16,475 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:08:16,475 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:16,479 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': '设置',
+    'permissions': [
+      {
+        'id': '20',
+      },
+      {
+        'id': '21',
+      },
+      {
+        'id': '22',
+      },
+      {
+        'id': '23',
+      },
+      {
+        'id': '24',
+      },
+      {
+        'id': '25',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:08:16,536 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '151',
+      'name': '设置',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '自定义表单',
+          'id': '20',
+          'scopes': ['/mutation/updateFormStruct'],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看隐藏字段',
+          'id': '21',
+          'scopes': [],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看组织架构及人员',
+          'id': '22',
+          'scopes': ['/query/departments', '/query/employees'],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑组织架构及人员',
+          'id': '23',
+          'scopes': ['/mutation/createDepartment',...(len=220),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看角色权限',
+          'id': '24',
+          'scopes': ['/query/permissionTable', '/query/roles'],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑角色权限',
+          'id': '25',
+          'scopes': ['/mutation/updateEmployee'],
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:16,536 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createRole
+2020-09-17 17:08:16,536 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:16,538 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': '设置',
+    'permissions': [
+      {
+        'id': '20',
+      },
+      {
+        'id': '21',
+      },
+      {
+        'id': '22',
+      },
+      {
+        'id': '23',
+      },
+      {
+        'id': '24',
+      },
+      {
+        'id': '25',
+      },
+    ],
+  },
+}
+
+2020-09-17 17:08:16,786 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '152',
+      'name': '设置',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '自定义表单',
+          'id': '20',
+          'scopes': ['/mutation/updateFormStruct'],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看隐藏字段',
+          'id': '21',
+          'scopes': [],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看组织架构及人员',
+          'id': '22',
+          'scopes': ['/query/departments', '/query/employees'],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑组织架构及人员',
+          'id': '23',
+          'scopes': ['/mutation/createDepartment',...(len=220),
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看角色权限',
+          'id': '24',
+          'scopes': ['/query/permissionTable', '/query/roles'],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑角色权限',
+          'id': '25',
+          'scopes': ['/mutation/updateEmployee'],
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+2020-09-17 17:08:16,786 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createEmployee
+2020-09-17 17:08:16,786 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDQyMDA3NX0.EZlikuvzRxQjoaes2AxpyX_HB8lxLF1tmjkm0IRUrfg'}
+2020-09-17 17:08:16,788 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'account': 'admin8',
+    'code': 'hiznk',
+    'department': {
+      'id': 1,
+    },
+    'name': '设置',
+    'password': '123456',
+    'phone': '123456',
+    'roles': [
+      {
+        'id': '152',
+      },
+    ],
+    'status': 'ACTIVATED',
+  },
+}
+
+2020-09-17 17:08:18,972 - GraphqlClient.py - send_request - DEBUG -{
+  'data': None,
+  'errors': [
+    {
+      'locations': [
+        {
+          'column': 5,
+          'line': 2,
+        },
+      ],
+      'message': 'duplicate key value violates unique constraint
+                  "uq_employees__account__company_id"\nDETAIL:  Key (account,
+                  ...(1 hidden line)',
+      'path': ['createEmployee'],
+    },
+  ],
+}
+
+2020-09-17 17:08:18,973 - test_permissions.py - TestPermission - DEBUG -'bool' object is not subscriptable
+2020-09-17 17:08:19,040 - test_permissions.py - test - DEBUG -[]

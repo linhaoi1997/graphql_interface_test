@@ -1,0 +1,149 @@
+{
+  "uid" : "e2800b0bbeae2374",
+  "name" : "test_query_thing",
+  "fullName" : "interface.employee_test.test_queryEmployees.TestQueryEmployees#test_query_thing",
+  "historyId" : "6b1ffbfa3b4c16c59aa417732bb477a4",
+  "time" : {
+    "start" : 1600227956043,
+    "stop" : 1600227958552,
+    "duration" : 2509
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError",
+  "statusTrace" : "self = <test_queryEmployees.TestQueryEmployees object at 0x10ba954e0>\nresource = <support.base_test.ResourceLoader.ResourceLoader object at 0x109eb1c18>\ncreate_id = <function create_id.<locals>._create_id at 0x10ba84620>\n\n    @allure.story(\"正确查询\")\n    def test_query_thing(self, resource, create_id):\n        _ids = create_id(self.create_name, 3, self.resource_name, return_type=\"id\")\n        user = resource.simple_user\n        variables = {\"offset\": 0, \"limit\": 3,\n                     \"filter\": {\"department\": {\"id\": 1}, \"containSubsidiaries\": True},\n                     \"orderBy\": [\"+updated_at\"]\n                     }  # 分页查询一个\n        result = user.send_request(self.query_name, variables).result\n>       self.assertQuerys(_ids, result)\n\ninterface/employee_test/test_queryEmployees.py:26: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nsupport/base_test/AssertMethod.py:143: in assertQuerys\n    self.assertIds_query(_ids, result)\nsupport/base_test/AssertMethod.py:119: in assertIds_query\n    self.assertJsonResponseEqual(\"$..\" + self.query_name + \".data[*].id\", result, variables)\nsupport/base_test/AssertMethod.py:23: in assertJsonResponseEqual\n    self.assertEqual(value, result)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <test_queryEmployees.TestQueryEmployees object at 0x10ba954e0>\nvalue = [7, 8, 9], result = [1, 2, 3]\n\n    def assertEqual(self, value, result):\n        if type(value) == str and value.isdigit():\n            if type(result) in (str, int):\n                assert int(value) == int(result)\n        elif type(value) in (int, float):\n            if type(result) in (str, int, float):\n                assert int(value) == int(result)\n            else:\n                assert None\n        elif type(value) == list:\n>           assert format_number(value) == format_number(result)\nE           AssertionError\n\nsupport/base_test/AssertMethod.py:92: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "init",
+    "time" : {
+      "start" : 1600227952218,
+      "stop" : 1600227952218,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "create_id",
+    "time" : {
+      "start" : 1600227956042,
+      "stop" : 1600227956042,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1600227952116,
+      "stop" : 1600227952218,
+      "duration" : 102
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "resource",
+    "time" : {
+      "start" : 1600227952218,
+      "stop" : 1600227952218,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError",
+    "statusTrace" : "self = <test_queryEmployees.TestQueryEmployees object at 0x10ba954e0>\nresource = <support.base_test.ResourceLoader.ResourceLoader object at 0x109eb1c18>\ncreate_id = <function create_id.<locals>._create_id at 0x10ba84620>\n\n    @allure.story(\"正确查询\")\n    def test_query_thing(self, resource, create_id):\n        _ids = create_id(self.create_name, 3, self.resource_name, return_type=\"id\")\n        user = resource.simple_user\n        variables = {\"offset\": 0, \"limit\": 3,\n                     \"filter\": {\"department\": {\"id\": 1}, \"containSubsidiaries\": True},\n                     \"orderBy\": [\"+updated_at\"]\n                     }  # 分页查询一个\n        result = user.send_request(self.query_name, variables).result\n>       self.assertQuerys(_ids, result)\n\ninterface/employee_test/test_queryEmployees.py:26: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nsupport/base_test/AssertMethod.py:143: in assertQuerys\n    self.assertIds_query(_ids, result)\nsupport/base_test/AssertMethod.py:119: in assertIds_query\n    self.assertJsonResponseEqual(\"$..\" + self.query_name + \".data[*].id\", result, variables)\nsupport/base_test/AssertMethod.py:23: in assertJsonResponseEqual\n    self.assertEqual(value, result)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <test_queryEmployees.TestQueryEmployees object at 0x10ba954e0>\nvalue = [7, 8, 9], result = [1, 2, 3]\n\n    def assertEqual(self, value, result):\n        if type(value) == str and value.isdigit():\n            if type(result) in (str, int):\n                assert int(value) == int(result)\n        elif type(value) in (int, float):\n            if type(result) in (str, int, float):\n                assert int(value) == int(result)\n            else:\n                assert None\n        elif type(value) == list:\n>           assert format_number(value) == format_number(result)\nE           AssertionError\n\nsupport/base_test/AssertMethod.py:92: AssertionError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "3a2ce76468b26181",
+      "name" : "log",
+      "source" : "3a2ce76468b26181.txt",
+      "type" : "text/plain",
+      "size" : 17548
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "epic",
+    "value" : "employee"
+  }, {
+    "name" : "story",
+    "value" : "正确查询"
+  }, {
+    "name" : "feature",
+    "value" : "queryEmployees"
+  }, {
+    "name" : "parentSuite",
+    "value" : "interface.employee_test"
+  }, {
+    "name" : "suite",
+    "value" : "test_queryEmployees"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestQueryEmployees"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Pro.local"
+  }, {
+    "name" : "thread",
+    "value" : "99506-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "interface.employee_test.test_queryEmployees"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "e2800b0bbeae2374.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,127 @@
+{
+  "uid" : "70832611e6b6b09f",
+  "name" : "test_5[audit_feed_pass]",
+  "fullName" : "interface.workFlow_test.test_thingInspectionFlow.TestThingInspectionWorkFlow#test_5",
+  "historyId" : "01520abd72b95e27b37af7326ca9559e",
+  "time" : {
+    "start" : 1600231212369,
+    "stop" : 1600231214416,
+    "duration" : 2047
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "init",
+    "time" : {
+      "start" : 1600231182564,
+      "stop" : 1600231182564,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1600231182507,
+      "stop" : 1600231182564,
+      "duration" : 57
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "resource",
+    "time" : {
+      "start" : 1600231182564,
+      "stop" : 1600231182564,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "9978ea12923d8c7a",
+      "name" : "log",
+      "source" : "9978ea12923d8c7a.txt",
+      "type" : "text/plain",
+      "size" : 180143
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "ThingInspectionWorkFlow"
+  }, {
+    "name" : "epic",
+    "value" : "workflow"
+  }, {
+    "name" : "story",
+    "value" : "巡检中不允许的操作"
+  }, {
+    "name" : "parentSuite",
+    "value" : "interface.workFlow_test"
+  }, {
+    "name" : "suite",
+    "value" : "test_thingInspectionFlow"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestThingInspectionWorkFlow"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Pro.local"
+  }, {
+    "name" : "thread",
+    "value" : "829-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "interface.workFlow_test.test_thingInspectionFlow"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "action",
+    "value" : "'audit_feed_pass'"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "70832611e6b6b09f.json",
+  "parameterValues" : [ "'audit_feed_pass'" ]
+}

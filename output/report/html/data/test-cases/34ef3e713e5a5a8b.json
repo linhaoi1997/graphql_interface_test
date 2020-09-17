@@ -1,0 +1,152 @@
+{
+  "uid" : "34ef3e713e5a5a8b",
+  "name" : "test_1[variable0]",
+  "fullName" : "interface.thingRepair_test.test_updateThingRepair.TestUpdateThingRepair#test_1",
+  "historyId" : "470f72e76dcf00ff9f8340dd5227ec08",
+  "time" : {
+    "start" : 1600228324320,
+    "stop" : 1600228329392,
+    "duration" : 5072
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError",
+  "statusTrace" : "self = <test_updateThingRepair.TestUpdateThingRepair object at 0x10ba3b5f8>\nvariable = {'input': {'addition': '[{\"key\": \"8424d6c6c9cc402bb6ec0349ea81fa0e\", \"value\": \"\\\\u5355\\\\u884c\\\\u6587\\\\u5b57_ct7qk\"}, {...5702-100_ve4nv\"}]', 'faultDesc': 'faultDesc_d7nrc', 'faultImages': [{'id': 5}, {'id': 1}, {'id': 2}], 'id': '17', ...}}\nresource = <support.base_test.ResourceLoader.ResourceLoader object at 0x109eb1c18>\ncreate_id = <function create_id.<locals>._create_id at 0x109fa4d90>\n\n    @allure.story(\"所有项完整\")\n    @pytest.mark.parametrize(\"variable\", interface.generate(\"generate_all_params\", **BaseTestCase.all_param))\n    def test_1(self, variable, resource, create_id):\n        # 创建一个id以修改\n        _id, _ = create_id(self.create_name, 1, \"ThingRepair\", return_type=\"variable\")\n        variable['input'][\"id\"] = _id\n        # 使用创建的id\n        user = resource.simple_user\n        result = user.send_request(self.query_name, variable).result\n>       self.assertForm(variable, result)\n\ninterface/thingRepair_test/test_updateThingRepair.py:25: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nsupport/base_test/AssertMethod.py:123: in assertForm\n    self.assertCorrect(result)\nsupport/base_test/AssertMethod.py:128: in assertCorrect\n    self.assertJsonResponseEqual(\"$..errors\", result, None)\nsupport/base_test/AssertMethod.py:23: in assertJsonResponseEqual\n    self.assertEqual(value, result)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <test_updateThingRepair.TestUpdateThingRepair object at 0x10ba3b5f8>\nvalue = None\nresult = [{'extensions': {'code': 'APOLLO_ERROR'}, 'locations': [{'column': 5, 'line': 2}], 'message': '维修单已提交审核，无法修改基本信息', 'path': ['updateThingRepair']}]\n\n    def assertEqual(self, value, result):\n        if type(value) == str and value.isdigit():\n            if type(result) in (str, int):\n                assert int(value) == int(result)\n        elif type(value) in (int, float):\n            if type(result) in (str, int, float):\n                assert int(value) == int(result)\n            else:\n                assert None\n        elif type(value) == list:\n            assert format_number(value) == format_number(result)\n        else:\n>           assert value == result\nE           AssertionError\n\nsupport/base_test/AssertMethod.py:94: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "init",
+    "time" : {
+      "start" : 1600227952218,
+      "stop" : 1600227952218,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1600227952116,
+      "stop" : 1600227952218,
+      "duration" : 102
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "create_id",
+    "time" : {
+      "start" : 1600228324320,
+      "stop" : 1600228324320,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "resource",
+    "time" : {
+      "start" : 1600227952218,
+      "stop" : 1600227952218,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError",
+    "statusTrace" : "self = <test_updateThingRepair.TestUpdateThingRepair object at 0x10ba3b5f8>\nvariable = {'input': {'addition': '[{\"key\": \"8424d6c6c9cc402bb6ec0349ea81fa0e\", \"value\": \"\\\\u5355\\\\u884c\\\\u6587\\\\u5b57_ct7qk\"}, {...5702-100_ve4nv\"}]', 'faultDesc': 'faultDesc_d7nrc', 'faultImages': [{'id': 5}, {'id': 1}, {'id': 2}], 'id': '17', ...}}\nresource = <support.base_test.ResourceLoader.ResourceLoader object at 0x109eb1c18>\ncreate_id = <function create_id.<locals>._create_id at 0x109fa4d90>\n\n    @allure.story(\"所有项完整\")\n    @pytest.mark.parametrize(\"variable\", interface.generate(\"generate_all_params\", **BaseTestCase.all_param))\n    def test_1(self, variable, resource, create_id):\n        # 创建一个id以修改\n        _id, _ = create_id(self.create_name, 1, \"ThingRepair\", return_type=\"variable\")\n        variable['input'][\"id\"] = _id\n        # 使用创建的id\n        user = resource.simple_user\n        result = user.send_request(self.query_name, variable).result\n>       self.assertForm(variable, result)\n\ninterface/thingRepair_test/test_updateThingRepair.py:25: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nsupport/base_test/AssertMethod.py:123: in assertForm\n    self.assertCorrect(result)\nsupport/base_test/AssertMethod.py:128: in assertCorrect\n    self.assertJsonResponseEqual(\"$..errors\", result, None)\nsupport/base_test/AssertMethod.py:23: in assertJsonResponseEqual\n    self.assertEqual(value, result)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <test_updateThingRepair.TestUpdateThingRepair object at 0x10ba3b5f8>\nvalue = None\nresult = [{'extensions': {'code': 'APOLLO_ERROR'}, 'locations': [{'column': 5, 'line': 2}], 'message': '维修单已提交审核，无法修改基本信息', 'path': ['updateThingRepair']}]\n\n    def assertEqual(self, value, result):\n        if type(value) == str and value.isdigit():\n            if type(result) in (str, int):\n                assert int(value) == int(result)\n        elif type(value) in (int, float):\n            if type(result) in (str, int, float):\n                assert int(value) == int(result)\n            else:\n                assert None\n        elif type(value) == list:\n            assert format_number(value) == format_number(result)\n        else:\n>           assert value == result\nE           AssertionError\n\nsupport/base_test/AssertMethod.py:94: AssertionError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "935e4c0941071c26",
+      "name" : "log",
+      "source" : "935e4c0941071c26.txt",
+      "type" : "text/plain",
+      "size" : 481812
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "所有项完整"
+  }, {
+    "name" : "feature",
+    "value" : "updateThingRepair"
+  }, {
+    "name" : "epic",
+    "value" : "thingRepair"
+  }, {
+    "name" : "parentSuite",
+    "value" : "interface.thingRepair_test"
+  }, {
+    "name" : "suite",
+    "value" : "test_updateThingRepair"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestUpdateThingRepair"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Pro.local"
+  }, {
+    "name" : "thread",
+    "value" : "99506-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "interface.thingRepair_test.test_updateThingRepair"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "variable",
+    "value" : "{'input': {'id': 1, 'thing': {'id': 1}, 'reportedAt': 1600227948819, 'reportDepartment': 'reportDepartment_o39rd', 'faultImages': [{'id': 5}, {'id': 1}, {'id': 2}], 'faultDesc': 'faultDesc_d7nrc', 'worker': {'id': 1}, 'addition': '[{\"key\": \"8424d6c6c9cc402bb6ec0349ea81fa0e\", \"value\": \"\\\\u5355\\\\u884c\\\\u6587\\\\u5b57_ct7qk\"}, {\"key\": \"564472fe0c2d456eb05513bf87fb4127\", \"value\": \"\\\\u591a\\\\u884c\\\\u6587\\\\u5b57_zxgum\"}, {\"key\": \"201bdee082cd41869f258e8113477baa\", \"value\": \"\\\\u8054\\\\u7cfb\\\\u65b9\\\\u5f0f_hve4e\"}, {\"key\": \"5b31f41baeea42a1ba00ecc19087c69e\", \"value\": 1600227948820}, {\"key\": \"295983db95a1486095909ecbc24c06dd\", \"value\": 1600227948820}, {\"key\": \"04682bc02fe541dd933acb1466cbe072\", \"value\": 1600227948820}, {\"key\": \"5e8938f6eb3b4dd79c135c3cc502e097\", \"value\": \"\\\\u63cf\\\\u8ff0\\\\u6587\\\\u5b57_ct9wa\"}, {\"key\": \"5dbb3bf8679849fbb5c87c287a0bcc3c\", \"value\": \"1\"}, {\"key\": \"be64c8a8f18549d7a5e69b5d44ee4d60\", \"value\": [\"5\", \"5\", \"5\"]}, {\"key\": \"cbe332c7643d4d2a8692ee02883f7a95\", \"value\": 1.01}, {\"key\": \"03ddd4a260df48f188d8fbe73d3c80ab\", \"value\": 1.01}, {\"key\": \"7201de3cd60b4b5ea71346c11456aec4\", \"value\": 1.01}, {\"key\": \"57e8ce31a3d64dd987da098842c45b98\", \"value\": \"\\\\u8054\\\\u7cfb\\\\u65b9\\\\u5f0f-\\\\u6d4b\\\\u8bd5\\\\u5fc5\\\\u586b\\\\u9879/\\\\u9ed8\\\\u8ba4\\\\u5185\\\\u5bb9_a8ry4\"}, {\"key\": \"e259368235a1439aa0145f3cf18ef936\", \"value\": \"\\\\u6587\\\\u5b57-\\\\u9650\\\\u5b57\\\\u65702-100_ve4nv\"}]'}}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "34ef3e713e5a5a8b.json",
+  "parameterValues" : [ "{'input': {'id': 1, 'thing': {'id': 1}, 'reportedAt': 1600227948819, 'reportDepartment': 'reportDepartment_o39rd', 'faultImages': [{'id': 5}, {'id': 1}, {'id': 2}], 'faultDesc': 'faultDesc_d7nrc', 'worker': {'id': 1}, 'addition': '[{\"key\": \"8424d6c6c9cc402bb6ec0349ea81fa0e\", \"value\": \"\\\\u5355\\\\u884c\\\\u6587\\\\u5b57_ct7qk\"}, {\"key\": \"564472fe0c2d456eb05513bf87fb4127\", \"value\": \"\\\\u591a\\\\u884c\\\\u6587\\\\u5b57_zxgum\"}, {\"key\": \"201bdee082cd41869f258e8113477baa\", \"value\": \"\\\\u8054\\\\u7cfb\\\\u65b9\\\\u5f0f_hve4e\"}, {\"key\": \"5b31f41baeea42a1ba00ecc19087c69e\", \"value\": 1600227948820}, {\"key\": \"295983db95a1486095909ecbc24c06dd\", \"value\": 1600227948820}, {\"key\": \"04682bc02fe541dd933acb1466cbe072\", \"value\": 1600227948820}, {\"key\": \"5e8938f6eb3b4dd79c135c3cc502e097\", \"value\": \"\\\\u63cf\\\\u8ff0\\\\u6587\\\\u5b57_ct9wa\"}, {\"key\": \"5dbb3bf8679849fbb5c87c287a0bcc3c\", \"value\": \"1\"}, {\"key\": \"be64c8a8f18549d7a5e69b5d44ee4d60\", \"value\": [\"5\", \"5\", \"5\"]}, {\"key\": \"cbe332c7643d4d2a8692ee02883f7a95\", \"value\": 1.01}, {\"key\": \"03ddd4a260df48f188d8fbe73d3c80ab\", \"value\": 1.01}, {\"key\": \"7201de3cd60b4b5ea71346c11456aec4\", \"value\": 1.01}, {\"key\": \"57e8ce31a3d64dd987da098842c45b98\", \"value\": \"\\\\u8054\\\\u7cfb\\\\u65b9\\\\u5f0f-\\\\u6d4b\\\\u8bd5\\\\u5fc5\\\\u586b\\\\u9879/\\\\u9ed8\\\\u8ba4\\\\u5185\\\\u5bb9_a8ry4\"}, {\"key\": \"e259368235a1439aa0145f3cf18ef936\", \"value\": \"\\\\u6587\\\\u5b57-\\\\u9650\\\\u5b57\\\\u65702-100_ve4nv\"}]'}}" ]
+}

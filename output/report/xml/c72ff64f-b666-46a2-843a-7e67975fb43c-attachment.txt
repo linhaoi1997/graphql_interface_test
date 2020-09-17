@@ -1,0 +1,442 @@
+DEBUG    mytest:GraphqlClient.py:34 http://192.168.1.175:8888/graphql/?createThingInspectionRule
+DEBUG    mytest:GraphqlClient.py:35 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMxNDM0Mn0.UOI1OaH_ELEAVzSlldya-CY3ahODVdxWOAwKSCpjxGc'}
+DEBUG    mytest:GraphqlClient.py:36 {
+  'input': {
+    'addition': '[{"key": "b7f0c19b0fb14261b6c0a1803c0ae6e5", "value":
+                 "\\u5355\\u884c\\u6587\\u5b57_fas06"}, {"key":
+                 ...(20 hidden lines)',
+    'items': [
+      {
+        'name': 'name_41a6m',
+        'subItems': [
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NUMBER',
+            'criteria': 'LT',
+            'name': 'name_lf6ky',
+            'standard': 'standard_gtxek',
+          },
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NUMBER',
+            'criteria': 'GE',
+            'name': 'name_y2hxd',
+            'standard': 'standard_xjyya',
+          },
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NUMBER',
+            'criteria': 'LT',
+            'name': 'name_qmpfg',
+            'standard': 'standard_l63db',
+          },
+        ],
+      },
+      {
+        'name': 'name_amna0',
+        'subItems': [
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NUMBER',
+            'criteria': 'GT_LOWER_LE_UPPER',
+            'name': 'name_4xlk3',
+            'standard': 'standard_mo2dm',
+          },
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NUMBER',
+            'criteria': 'GT_LOWER_LE_UPPER',
+            'name': 'name_phu5s',
+            'standard': 'standard_5az8q',
+          },
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NUMBER',
+            'criteria': 'NOTEQUAL',
+            'name': 'name_suoov',
+            'standard': 'standard_uf9n6',
+          },
+        ],
+      },
+      {
+        'name': 'name_bwiyu',
+        'subItems': [
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NUMBER',
+            'criteria': 'GT_LOWER_LE_UPPER',
+            'name': 'name_sr4bf',
+            'standard': 'standard_iklvs',
+          },
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NORMAL',
+            'criteria': 'GE_LOWER_LT_UPPER',
+            'name': 'name_533bj',
+            'standard': 'standard_25ge6',
+          },
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NORMAL',
+            'criteria': 'LT',
+            'name': 'name_3er6x',
+            'standard': 'standard_l58du',
+          },
+        ],
+      },
+    ],
+    'name': 'name_b7dd1',
+  },
+}
+
+DEBUG    mytest:GraphqlClient.py:39 {
+  'data': {
+    'createThingInspectionRule': {
+      '__typename': 'ThingInspectionRule',
+      'addition': '[{"key": "b7f0c19b0fb14261b6c0a1803c0ae6e5", "value":
+                   "\\u5355\\u884c\\u6587\\u5b57_fas06"}, {"key":
+                   ...(20 hidden lines)',
+      'code': 'XJFA202009160005',
+      'id': '5',
+      'items': [
+        {
+          '__typename': 'ThingInspectionItem',
+          'id': 'c8449b23-ef55-437b-be23-131959699131',
+          'name': 'name_41a6m',
+          'subItems': [
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NUMBER',
+              'criteria': 'LT',
+              'id': 'd25e0061-6056-4892-bb26-6f6b9435af94',
+              'name': 'name_lf6ky',
+              'standard': 'standard_gtxek',
+            },
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NUMBER',
+              'criteria': 'GE',
+              'id': '25c8a16a-d758-48e9-8b56-04f5250f8d63',
+              'name': 'name_y2hxd',
+              'standard': 'standard_xjyya',
+            },
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NUMBER',
+              'criteria': 'LT',
+              'id': '178a414e-c3c7-4879-8402-6d8851c73c31',
+              'name': 'name_qmpfg',
+              'standard': 'standard_l63db',
+            },
+          ],
+        },
+        {
+          '__typename': 'ThingInspectionItem',
+          'id': '626b45c5-ed62-4356-9a74-0e74bcf6c322',
+          'name': 'name_amna0',
+          'subItems': [
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NUMBER',
+              'criteria': 'GT_LOWER_LE_UPPER',
+              'id': 'a9909883-50f9-46db-a369-d77b2fa272f5',
+              'name': 'name_4xlk3',
+              'standard': 'standard_mo2dm',
+            },
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NUMBER',
+              'criteria': 'GT_LOWER_LE_UPPER',
+              'id': '36752ccf-5d5e-4f9c-8388-b69c4057731b',
+              'name': 'name_phu5s',
+              'standard': 'standard_5az8q',
+            },
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NUMBER',
+              'criteria': 'NOTEQUAL',
+              'id': '326250b5-69b6-4e48-ba50-d84738ab89cd',
+              'name': 'name_suoov',
+              'standard': 'standard_uf9n6',
+            },
+          ],
+        },
+        {
+          '__typename': 'ThingInspectionItem',
+          'id': '54cccfa4-35f5-4782-a412-fc17cbf06170',
+          'name': 'name_bwiyu',
+          'subItems': [
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NUMBER',
+              'criteria': 'GT_LOWER_LE_UPPER',
+              'id': '67d353f0-2f2a-41a5-96fb-fab604afbbbe',
+              'name': 'name_sr4bf',
+              'standard': 'standard_iklvs',
+            },
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NORMAL',
+              'criteria': 'GE_LOWER_LT_UPPER',
+              'id': '6fbeb088-d9e0-468e-83e3-cb559d8e7713',
+              'name': 'name_533bj',
+              'standard': 'standard_25ge6',
+            },
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NORMAL',
+              'criteria': 'LT',
+              'id': '4d7096a4-77e3-4cc2-9ae1-0f9cb8a38e6a',
+              'name': 'name_3er6x',
+              'standard': 'standard_l58du',
+            },
+          ],
+        },
+      ],
+      'name': 'name_b7dd1',
+      'updatedAt': 1600228060196,
+    },
+  },
+  'errors': None,
+}
+
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..errors'
+get
+'None
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except None
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..name'
+get
+''name_b7dd1'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except name_b7dd1
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..createThingInspectionRule.items[*].name'
+get
+'['name_41a6m', 'name_amna0', 'name_bwiyu']
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except ['name_41a6m', 'name_amna0', 'name_bwiyu']
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..createThingInspectionRule.items[0].subItems[*].name'
+get
+'['name_lf6ky', 'name_y2hxd', 'name_qmpfg']
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except ['name_lf6ky', 'name_y2hxd', 'name_qmpfg']
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..createThingInspectionRule.items[0].subItems[*].standard'
+get
+'['standard_gtxek', 'standard_xjyya', 'standard_l63db']
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except ['standard_gtxek', 'standard_xjyya', 'standard_l63db']
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..createThingInspectionRule.items[0].subItems[*].category'
+get
+'['NUMBER', 'NUMBER', 'NUMBER']
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except ['NUMBER', 'NUMBER', 'NUMBER']
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..createThingInspectionRule.items[0].subItems[*].criteria'
+get
+'['LT', 'GE', 'LT']
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except ['LT', 'GE', 'LT']
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..createThingInspectionRule.items[0].subItems[*].boundary.a'
+get
+'[1, 1, 1]
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except [1, 1, 1]
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..createThingInspectionRule.items[0].subItems[*].boundary.b'
+get
+'[1, 1, 1]
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except [1, 1, 1]
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..createThingInspectionRule.items[1].subItems[*].name'
+get
+'['name_4xlk3', 'name_phu5s', 'name_suoov']
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except ['name_4xlk3', 'name_phu5s', 'name_suoov']
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..createThingInspectionRule.items[1].subItems[*].standard'
+get
+'['standard_mo2dm', 'standard_5az8q', 'standard_uf9n6']
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except ['standard_mo2dm', 'standard_5az8q', 'standard_uf9n6']
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..createThingInspectionRule.items[1].subItems[*].category'
+get
+'['NUMBER', 'NUMBER', 'NUMBER']
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except ['NUMBER', 'NUMBER', 'NUMBER']
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..createThingInspectionRule.items[1].subItems[*].criteria'
+get
+'['GT_LOWER_LE_UPPER', 'GT_LOWER_LE_UPPER', 'NOTEQUAL']
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except ['GT_LOWER_LE_UPPER', 'GT_LOWER_LE_UPPER', 'NOTEQUAL']
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..createThingInspectionRule.items[1].subItems[*].boundary.a'
+get
+'[1, 1, 1]
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except [1, 1, 1]
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..createThingInspectionRule.items[1].subItems[*].boundary.b'
+get
+'[1, 1, 1]
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except [1, 1, 1]
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..createThingInspectionRule.items[2].subItems[*].name'
+get
+'['name_sr4bf', 'name_533bj', 'name_3er6x']
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except ['name_sr4bf', 'name_533bj', 'name_3er6x']
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..createThingInspectionRule.items[2].subItems[*].standard'
+get
+'['standard_iklvs', 'standard_25ge6', 'standard_l58du']
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except ['standard_iklvs', 'standard_25ge6', 'standard_l58du']
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..createThingInspectionRule.items[2].subItems[*].category'
+get
+'['NUMBER', 'NORMAL', 'NORMAL']
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except ['NUMBER', 'NORMAL', 'NORMAL']
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..createThingInspectionRule.items[2].subItems[*].criteria'
+get
+'['GT_LOWER_LE_UPPER', 'GE_LOWER_LT_UPPER', 'LT']
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except ['GT_LOWER_LE_UPPER', 'GE_LOWER_LT_UPPER', 'LT']
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..createThingInspectionRule.items[2].subItems[*].boundary.a'
+get
+'[1, 1, 1]
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except [1, 1, 1]
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..createThingInspectionRule.items[2].subItems[*].boundary.b'
+get
+'[1, 1, 1]
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except [1, 1, 1]

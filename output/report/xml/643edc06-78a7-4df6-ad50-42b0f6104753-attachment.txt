@@ -1,0 +1,72 @@
+DEBUG    mytest:GraphqlClient.py:34 http://192.168.1.175:8888/graphql/?createSparePart
+DEBUG    mytest:GraphqlClient.py:35 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMxNDM0Mn0.UOI1OaH_ELEAVzSlldya-CY3ahODVdxWOAwKSCpjxGc'}
+DEBUG    mytest:GraphqlClient.py:36 {
+  'input': {
+    'model': 'model_mgcku',
+    'name': 'name_68qws',
+    'price': 1.01,
+    'type': '魔法设备',
+  },
+}
+
+DEBUG    mytest:GraphqlClient.py:39 {
+  'data': {
+    'createSparePart': {
+      '__typename': 'SparePart',
+      'addition': None,
+      'attachments': None,
+      'desc': None,
+      'distributor': None,
+      'id': '8',
+      'images': None,
+      'manufacturer': None,
+      'model': 'model_mgcku',
+      'name': 'name_68qws',
+      'price': 1.01,
+      'things': None,
+      'type': '魔法设备',
+    },
+  },
+  'errors': None,
+}
+
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..errors'
+get
+'None
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except None
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..name'
+get
+''name_68qws'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except name_68qws
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..type'
+get
+''魔法设备'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 魔法设备
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..model'
+get
+''model_mgcku'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except model_mgcku
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..price'
+get
+'1.01
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 1.01

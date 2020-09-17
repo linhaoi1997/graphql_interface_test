@@ -1,0 +1,620 @@
+2020-09-16 17:34:48,119 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?login
+2020-09-16 17:34:48,119 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json'}
+2020-09-16 17:34:48,130 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'account': 'admin',
+    'password': 'admin',
+  },
+}
+
+2020-09-16 17:34:48,664 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'login': {
+      '__typename': 'AuthInfo',
+      'employee': {
+        '__typename': 'Employee',
+        'account': 'admin',
+        'code': None,
+        'department': {
+          '__typename': 'Department',
+          'headcount': 0,
+          'id': '1',
+          'name': '喜临门家具股份有限公司',
+          'parentPath': [],
+          'subsidiaries': [],
+        },
+        'email': None,
+        'id': '1',
+        'job': None,
+        'name': '管理员',
+        'phone': None,
+        'roles': [
+          {'id': '1', 'name': '负责人', 'permissions':...(len=170),
+        ],
+        'status': 'ACTIVATED',
+      },
+      'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXB
+                sb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29
+                ...(5 hidden lines)',
+    },
+  },
+  'errors': None,
+}
+
+2020-09-16 17:34:48,672 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?formStructs
+2020-09-16 17:34:48,672 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMzNTI4OH0.d9h_ySEYGs_njJV0On1iLPzZWHW4f1l1IZPXND9ucco'}
+2020-09-16 17:34:48,672 - GraphqlClient.py - send_request - DEBUG -{
+  'isDraft': False,
+}
+
+2020-09-16 17:34:49,269 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'formStructs': [
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'spare_part_outbounds_领用仓库',...(len=392),
+          {'id': 'spare_part_outbounds_领用工厂',...(len=396),
+          {'id': 'spare_part_outbounds_领用目的',...(len=367),
+          {'id': 'spare_part_outbounds_领用时间',...(len=306),
+          {'id':...(len=340),
+        ],
+        'displayName': '申领单信息',
+        'name': 'spare_part_outbounds',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'spare_part_receipts_入库仓库',...(len=392),
+          {'id': 'spare_part_receipts_入库工厂',...(len=396),
+          {'id': 'spare_part_receipts_入库时间',...(len=306),
+          {'id':...(len=340),
+        ],
+        'displayName': '入库单信息',
+        'name': 'spare_part_receipts',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'spare_parts_备件名称', 'type':...(len=382),
+          {'id': 'spare_parts_备件类型', 'type':...(len=371),
+          {'id': 'spare_parts_备件型号', 'type':...(len=383),
+          {'id': 'spare_parts_生产厂家', 'type':...(len=397),
+          {'id': 'spare_parts_经销商', 'type':...(len=391),
+          {'id': 'spare_parts_备件描述', 'type':...(len=381),
+          {'id': 'spare_parts_附件', 'type':...(len=314),
+          {'id': 'spare_parts_图片', 'type':...(len=299),
+          {'id': 'spare_parts_单价', 'type':...(len=317),
+          {'id':...(len=340),
+        ],
+        'displayName': '备件基本档案',
+        'name': 'spare_parts',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'thing_inspection_rules_巡检方案名...(len=400),
+          {'id':...(len=340),
+        ],
+        'displayName': '设备巡检方案',
+        'name': 'thing_inspection_rules',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id':...(len=340),
+        ],
+        'displayName': '巡检工单',
+        'name': 'thing_inspections',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'thing_inspections_feedback_巡检完...(len=322),
+          {'id':...(len=340),
+        ],
+        'displayName': '反馈巡检工单',
+        'name': 'thing_inspections_feedback',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id':...(len=340),
+        ],
+        'displayName': '保养工单',
+        'name': 'thing_maintenance',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'thing_maintenance_feedback_结束时...(len=316),
+          {'id': 'thing_maintenance_feedback_备注',...(len=395),
+          {'id': 'thing_maintenance_feedback_备件费...(len=357),
+          {'id': 'thing_maintenance_feedback_材料费...(len=354),
+          {'id': 'thing_maintenance_feedback_人工费...(len=348),
+          {'id': 'thing_maintenance_feedback_其他费...(len=352),
+          {'id': 'thing_maintenance_feedback_保养结...(len=397),
+          {'id': 'thing_maintenance_feedback_保养图...(len=323),
+          {'id':...(len=340),
+        ],
+        'displayName': '反馈保养工单',
+        'name': 'thing_maintenance_feedback',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'thing_maintenance_rules_保养方案...(len=402),
+          {'id': 'thing_maintenance_rules_保养等级...(len=379),
+          {'id': 'thing_maintenance_rules_保养频次...(len=403),
+          {'id':...(len=340),
+        ],
+        'displayName': '保养方案',
+        'name': 'thing_maintenance_rules',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'thing_repairs_申请部门', 'type':...(len=408),
+          {'id': 'thing_repairs_故障描述', 'type':...(len=395),
+          {'id': 'thing_repairs_故障图片', 'type':...(len=315),
+          {'id':...(len=340),
+        ],
+        'displayName': '报修单信息',
+        'name': 'thing_repairs',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'thing_repairs_feedback_维修完成时...(len=329),
+          {'id': 'thing_repairs_feedback_备件费',...(len=351),
+          {'id': 'thing_repairs_feedback_维修费用',...(len=307),
+          {'id': 'thing_repairs_feedback_材料费',...(len=348),
+          {'id': 'thing_repairs_feedback_人工费',...(len=341),
+          {'id': 'thing_repairs_feedback_其他费用',...(len=346),
+          {'id': 'thing_repairs_feedback_维修结果',...(len=393),
+          {'id':...(len=340),
+        ],
+        'displayName': '报修单反馈信息',
+        'name': 'thing_repairs_feedback',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'things_设备名称', 'type': 'TEXT',...(len=376),
+          {'id': 'things_设备编码', 'type': 'TEXT',...(len=376),
+          {'id': 'things_设备位置', 'type': 'TEXT',...(len=385),
+          {'id': 'things_设备型号', 'type': 'TEXT',...(len=378),
+          {'id': 'things_负责人', 'type':...(len=291),
+          {'id': 'things_手机号码', 'type': 'TEXT',...(len=378),
+          {'id': 'things_生产厂家', 'type': 'TEXT',...(len=392),
+          {'id': 'things_经销商', 'type': 'TEXT',...(len=386),
+          {'id': 'things_采购日期', 'type':...(len=307),
+          {'id': 'things_启用日期', 'type':...(len=307),
+          {'id': 'things_采购价格', 'type':...(len=338),
+          {'id': 'things_使用年限', 'type':...(len=332),
+          {'id': 'things_折旧率', 'type': 'NUMBER',...(len=339),
+          {'id': 'things_关联附件', 'type':...(len=311),
+          {'id': 'things_设备图片', 'type':...(len=296),
+          {'id': 'things_设备描述', 'type': 'TEXT',...(len=377),
+          {'id': 'things_设备类别', 'type':...(len=337),
+          {'id': 'things_品牌', 'type':...(len=323),
+          {'id': 'things_使用工厂', 'type':...(len=335),
+          {'id': 'things_用途', 'type':...(len=327),
+          {'id': 'things_设备状态', 'type':...(len=333),
+          {'id':...(len=340),
+        ],
+        'displayName': '设备信息',
+        'name': 'things',
+      },
+    ],
+  },
+  'errors': None,
+}
+
+2020-09-16 17:34:49,288 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?login
+2020-09-16 17:34:49,288 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json'}
+2020-09-16 17:34:49,289 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'account': 'admin',
+    'password': 'admin',
+  },
+}
+
+2020-09-16 17:34:49,471 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'login': {
+      '__typename': 'AuthInfo',
+      'employee': {
+        '__typename': 'Employee',
+        'account': 'admin',
+        'code': None,
+        'department': {
+          '__typename': 'Department',
+          'headcount': 0,
+          'id': '1',
+          'name': '喜临门家具股份有限公司',
+          'parentPath': [],
+          'subsidiaries': [],
+        },
+        'email': None,
+        'id': '1',
+        'job': None,
+        'name': '管理员',
+        'phone': None,
+        'roles': [
+          {'id': '1', 'name': '负责人', 'permissions':...(len=170),
+        ],
+        'status': 'ACTIVATED',
+      },
+      'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXB
+                sb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29
+                ...(5 hidden lines)',
+    },
+  },
+  'errors': None,
+}
+
+2020-09-16 17:34:49,482 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?login
+2020-09-16 17:34:49,482 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json'}
+2020-09-16 17:34:49,483 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'account': 'admin',
+    'password': 'admin',
+  },
+}
+
+2020-09-16 17:34:49,665 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'login': {
+      '__typename': 'AuthInfo',
+      'employee': {
+        '__typename': 'Employee',
+        'account': 'admin',
+        'code': None,
+        'department': {
+          '__typename': 'Department',
+          'headcount': 0,
+          'id': '1',
+          'name': '喜临门家具股份有限公司',
+          'parentPath': [],
+          'subsidiaries': [],
+        },
+        'email': None,
+        'id': '1',
+        'job': None,
+        'name': '管理员',
+        'phone': None,
+        'roles': [
+          {'id': '1', 'name': '负责人', 'permissions':...(len=170),
+        ],
+        'status': 'ACTIVATED',
+      },
+      'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXB
+                sb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29
+                ...(5 hidden lines)',
+    },
+  },
+  'errors': None,
+}
+
+2020-09-16 17:34:49,677 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?login
+2020-09-16 17:34:49,677 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json'}
+2020-09-16 17:34:49,678 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'account': 'admin',
+    'password': 'admin',
+  },
+}
+
+2020-09-16 17:34:50,109 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'login': {
+      '__typename': 'AuthInfo',
+      'employee': {
+        '__typename': 'Employee',
+        'account': 'admin',
+        'code': None,
+        'department': {
+          '__typename': 'Department',
+          'headcount': 0,
+          'id': '1',
+          'name': '喜临门家具股份有限公司',
+          'parentPath': [],
+          'subsidiaries': [],
+        },
+        'email': None,
+        'id': '1',
+        'job': None,
+        'name': '管理员',
+        'phone': None,
+        'roles': [
+          {'id': '1', 'name': '负责人', 'permissions':...(len=170),
+        ],
+        'status': 'ACTIVATED',
+      },
+      'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXB
+                sb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29
+                ...(5 hidden lines)',
+    },
+  },
+  'errors': None,
+}
+
+2020-09-16 17:34:50,776 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createThingInspectionRule
+2020-09-16 17:34:50,776 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMzNTI4OX0.k_hAhuMhV-cBH_8CWupgmx6Tlr1Xr29LKSo2a4FnQ68'}
+2020-09-16 17:34:50,781 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'addition': '[{"key": "2e3ec806f0a74c30b8c0154109365284", "value":
+                 "\\u5355\\u884c\\u6587\\u5b57_inw5b"}]',
+    'items': [
+      {
+        'name': 'name_dgibv',
+        'subItems': [
+          {'name': 'name_vnfps', 'standard':...(len=137),
+          {'name': 'name_tmigt', 'standard':...(len=122),
+          {'name': 'name_kxv2i', 'standard':...(len=122),
+        ],
+      },
+      {
+        'name': 'name_v4xhe',
+        'subItems': [
+          {'name': 'name_q8wlm', 'standard':...(len=137),
+          {'name': 'name_paa14', 'standard':...(len=122),
+          {'name': 'name_n5ahb', 'standard':...(len=122),
+        ],
+      },
+      {
+        'name': 'name_ujs7d',
+        'subItems': [
+          {'name': 'name_eza2p', 'standard':...(len=122),
+          {'name': 'name_206au', 'standard':...(len=137),
+          {'name': 'name_hriag', 'standard':...(len=137),
+        ],
+      },
+    ],
+    'name': 'name_ulxp4',
+  },
+}
+
+2020-09-16 17:34:50,917 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createThingInspectionRule': {
+      '__typename': 'ThingInspectionRule',
+      'addition': '[{"key": "2e3ec806f0a74c30b8c0154109365284", "value":
+                   "\\u5355\\u884c\\u6587\\u5b57_inw5b"}]',
+      'code': 'XJFA202009160005',
+      'id': '5',
+      'items': [
+        {
+          '__typename': 'ThingInspectionItem',
+          'id': 'd2920e15-4221-47ce-b18d-c9731e138c18',
+          'name': 'name_dgibv',
+          'subItems': [{'id':...(len=795),
+        },
+        {
+          '__typename': 'ThingInspectionItem',
+          'id': '13215a0b-8491-4128-8451-c89b3ed9882e',
+          'name': 'name_v4xhe',
+          'subItems': [{'id':...(len=795),
+        },
+        {
+          '__typename': 'ThingInspectionItem',
+          'id': 'b4ae34df-268a-4662-87d5-899ccc7dfa1a',
+          'name': 'name_ujs7d',
+          'subItems': [{'id':...(len=810),
+        },
+      ],
+      'name': 'name_ulxp4',
+      'updatedAt': 1600248890837,
+    },
+  },
+  'errors': None,
+}
+
+2020-09-16 17:34:50,918 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..errors'
+get
+'None
+'
+from
+result
+2020-09-16 17:34:50,918 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except None
+2020-09-16 17:34:50,921 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..name'
+get
+''name_ulxp4'
+'
+from
+result
+2020-09-16 17:34:50,921 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except name_ulxp4
+2020-09-16 17:34:50,922 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..createThingInspectionRule.items[*].name'
+get
+'['name_dgibv', 'name_v4xhe', 'name_ujs7d']
+'
+from
+result
+2020-09-16 17:34:50,922 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except ['name_dgibv', 'name_v4xhe', 'name_ujs7d']
+2020-09-16 17:34:50,923 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..createThingInspectionRule.items[0].subItems[*].name'
+get
+'['name_vnfps', 'name_tmigt', 'name_kxv2i']
+'
+from
+result
+2020-09-16 17:34:50,924 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except ['name_vnfps', 'name_tmigt', 'name_kxv2i']
+2020-09-16 17:34:50,926 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..createThingInspectionRule.items[0].subItems[*].standard'
+get
+'['standard_03qih', 'standard_a1xq4', 'standard_tpxfs']
+'
+from
+result
+2020-09-16 17:34:50,926 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except ['standard_03qih', 'standard_a1xq4', 'standard_tpxfs']
+2020-09-16 17:34:50,927 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..createThingInspectionRule.items[0].subItems[*].category'
+get
+'['NUMBER', 'NUMBER', 'NORMAL']
+'
+from
+result
+2020-09-16 17:34:50,927 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except ['NUMBER', 'NUMBER', 'NORMAL']
+2020-09-16 17:34:50,928 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..createThingInspectionRule.items[0].subItems[*].criteria'
+get
+'['GE_LOWER_LT_UPPER', 'LE', 'LE']
+'
+from
+result
+2020-09-16 17:34:50,928 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except ['GE_LOWER_LT_UPPER', 'LE', 'LE']
+2020-09-16 17:34:50,930 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..createThingInspectionRule.items[0].subItems[*].boundary.a'
+get
+'[1, 1, 1]
+'
+from
+result
+2020-09-16 17:34:50,930 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except [1, 1, 1]
+2020-09-16 17:34:50,931 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..createThingInspectionRule.items[0].subItems[*].boundary.b'
+get
+'[1, 1, 1]
+'
+from
+result
+2020-09-16 17:34:50,931 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except [1, 1, 1]
+2020-09-16 17:34:50,933 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..createThingInspectionRule.items[1].subItems[*].name'
+get
+'['name_q8wlm', 'name_paa14', 'name_n5ahb']
+'
+from
+result
+2020-09-16 17:34:50,933 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except ['name_q8wlm', 'name_paa14', 'name_n5ahb']
+2020-09-16 17:34:50,935 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..createThingInspectionRule.items[1].subItems[*].standard'
+get
+'['standard_wjzkk', 'standard_q2rag', 'standard_2wne4']
+'
+from
+result
+2020-09-16 17:34:50,935 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except ['standard_wjzkk', 'standard_q2rag', 'standard_2wne4']
+2020-09-16 17:34:50,937 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..createThingInspectionRule.items[1].subItems[*].category'
+get
+'['NUMBER', 'NUMBER', 'NORMAL']
+'
+from
+result
+2020-09-16 17:34:50,937 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except ['NUMBER', 'NUMBER', 'NORMAL']
+2020-09-16 17:34:50,940 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..createThingInspectionRule.items[1].subItems[*].criteria'
+get
+'['GT_LOWER_LE_UPPER', 'LE', 'LT']
+'
+from
+result
+2020-09-16 17:34:50,941 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except ['GT_LOWER_LE_UPPER', 'LE', 'LT']
+2020-09-16 17:34:50,944 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..createThingInspectionRule.items[1].subItems[*].boundary.a'
+get
+'[1, 1, 1]
+'
+from
+result
+2020-09-16 17:34:50,944 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except [1, 1, 1]
+2020-09-16 17:34:50,945 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..createThingInspectionRule.items[1].subItems[*].boundary.b'
+get
+'[1, 1, 1]
+'
+from
+result
+2020-09-16 17:34:50,945 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except [1, 1, 1]
+2020-09-16 17:34:50,947 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..createThingInspectionRule.items[2].subItems[*].name'
+get
+'['name_eza2p', 'name_206au', 'name_hriag']
+'
+from
+result
+2020-09-16 17:34:50,947 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except ['name_eza2p', 'name_206au', 'name_hriag']
+2020-09-16 17:34:50,949 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..createThingInspectionRule.items[2].subItems[*].standard'
+get
+'['standard_bh557', 'standard_yjram', 'standard_yvehm']
+'
+from
+result
+2020-09-16 17:34:50,949 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except ['standard_bh557', 'standard_yjram', 'standard_yvehm']
+2020-09-16 17:34:50,951 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..createThingInspectionRule.items[2].subItems[*].category'
+get
+'['NORMAL', 'NUMBER', 'NORMAL']
+'
+from
+result
+2020-09-16 17:34:50,951 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except ['NORMAL', 'NUMBER', 'NORMAL']
+2020-09-16 17:34:50,952 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..createThingInspectionRule.items[2].subItems[*].criteria'
+get
+'['LE', 'GT_LOWER_LE_UPPER', 'GE_LOWER_LT_UPPER']
+'
+from
+result
+2020-09-16 17:34:50,952 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except ['LE', 'GT_LOWER_LE_UPPER', 'GE_LOWER_LT_UPPER']
+2020-09-16 17:34:50,953 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..createThingInspectionRule.items[2].subItems[*].boundary.a'
+get
+'[1, 1, 1]
+'
+from
+result
+2020-09-16 17:34:50,953 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except [1, 1, 1]
+2020-09-16 17:34:50,955 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..createThingInspectionRule.items[2].subItems[*].boundary.b'
+get
+'[1, 1, 1]
+'
+from
+result
+2020-09-16 17:34:50,955 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except [1, 1, 1]
+2020-09-16 17:34:50,960 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createThingInspectionRule
+2020-09-16 17:34:50,960 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMzNTI4OX0.k_hAhuMhV-cBH_8CWupgmx6Tlr1Xr29LKSo2a4FnQ68'}
+2020-09-16 17:34:50,960 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'name': 'name_altcj',
+  },
+}
+
+2020-09-16 17:34:51,110 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createThingInspectionRule': {
+      '__typename': 'ThingInspectionRule',
+      'addition': '[]',
+      'code': 'XJFA202009160006',
+      'id': '6',
+      'items': None,
+      'name': 'name_altcj',
+      'updatedAt': 1600248891019,
+    },
+  },
+  'errors': None,
+}
+
+2020-09-16 17:34:51,110 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..errors'
+get
+'None
+'
+from
+result
+2020-09-16 17:34:51,110 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except None
+2020-09-16 17:34:51,111 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..name'
+get
+''name_altcj'
+'
+from
+result
+2020-09-16 17:34:51,111 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except name_altcj

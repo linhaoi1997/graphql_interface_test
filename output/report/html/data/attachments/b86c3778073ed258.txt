@@ -1,0 +1,50 @@
+DEBUG    mytest:GraphqlClient.py:34 http://192.168.1.175:8888/graphql/?createThingMaintenanceRule
+DEBUG    mytest:GraphqlClient.py:35 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMzNTMxNX0.2rRmZzdbGMI3czn3_BdYdn4h5YTEBmcypzvAwI6jXvA'}
+DEBUG    mytest:GraphqlClient.py:36 {
+  'input': {
+    'level': '三级保养',
+    'name': 'name_fx9w5',
+  },
+}
+
+DEBUG    mytest:GraphqlClient.py:39 {
+  'data': {
+    'createThingMaintenanceRule': {
+      '__typename': 'ThingMaintenanceRule',
+      'addition': '[]',
+      'code': 'BYFA202009160006',
+      'frequency': None,
+      'id': '6',
+      'items': None,
+      'level': '三级保养',
+      'name': 'name_fx9w5',
+      'updatedAt': 1600248918130,
+    },
+  },
+  'errors': None,
+}
+
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..errors'
+get
+'None
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except None
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..name'
+get
+''name_fx9w5'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except name_fx9w5
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..level'
+get
+''三级保养'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 三级保养

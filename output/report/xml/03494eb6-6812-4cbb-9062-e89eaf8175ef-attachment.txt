@@ -1,0 +1,548 @@
+DEBUG    mytest:GraphqlClient.py:34 http://192.168.1.175:8888/graphql/?createEmployee
+DEBUG    mytest:GraphqlClient.py:35 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMxNDM0Mn0.UOI1OaH_ELEAVzSlldya-CY3ahODVdxWOAwKSCpjxGc'}
+DEBUG    mytest:GraphqlClient.py:36 {
+  'input': {
+    'account': 'account_n8v2z',
+    'code': 'code_cvug8',
+    'department': {
+      'id': 2,
+    },
+    'email': 'test@sina.com',
+    'job': 'job_hsbjf',
+    'name': 'name_kngr2',
+    'password': 'password_040b4',
+    'phone': 'phone_caf2q',
+    'roles': [
+      {
+        'id': 1,
+      },
+      {
+        'id': 2,
+      },
+      {
+        'id': 3,
+      },
+    ],
+    'status': 'ACTIVATED',
+  },
+}
+
+DEBUG    mytest:GraphqlClient.py:39 {
+  'data': {
+    'createEmployee': {
+      '__typename': 'Employee',
+      'account': 'account_n8v2z',
+      'code': 'code_cvug8',
+      'department': {
+        '__typename': 'Department',
+        'headcount': 2,
+        'id': '2',
+        'name': 'name_jcir5',
+        'parentPath': ['1'],
+        'subsidiaries': [],
+      },
+      'email': 'test@sina.com',
+      'id': '7',
+      'job': 'job_hsbjf',
+      'name': 'name_kngr2',
+      'phone': 'phone_caf2q',
+      'roles': [
+        {
+          '__typename': 'Role',
+          'id': '1',
+          'name': '负责人',
+          'permissions': [
+            {
+              '__typename': 'Permission',
+              'description': '所有数据权限，可管理全部信息',
+              'id': '1',
+              'scopes': [],
+            },
+          ],
+        },
+        {
+          '__typename': 'Role',
+          'id': '2',
+          'name': 'name_1ykwe',
+          'permissions': [
+            {
+              '__typename': 'Permission',
+              'description': '所有数据权限，可管理全部信息',
+              'id': '1',
+              'scopes': [],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '查看主设备列表、详情',
+              'id': '2',
+              'scopes': ['/query/thing', '/query/things'],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '编辑、导入、导出主设备详情',
+              'id': '3',
+              'scopes': ['/mutation/createThing', '/mutation/updateThing', '/mutation/importThings', '/mutation/exportThings', '/mutation/deleteThings'],
+            },
+          ],
+        },
+        {
+          '__typename': 'Role',
+          'id': '3',
+          'name': 'name_2osyn',
+          'permissions': [
+            {
+              '__typename': 'Permission',
+              'description': '所有数据权限，可管理全部信息',
+              'id': '1',
+              'scopes': [],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '查看主设备列表、详情',
+              'id': '2',
+              'scopes': ['/query/thing', '/query/things'],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '编辑、导入、导出主设备详情',
+              'id': '3',
+              'scopes': ['/mutation/createThing', '/mutation/updateThing', '/mutation/importThings', '/mutation/exportThings', '/mutation/deleteThings'],
+            },
+          ],
+        },
+      ],
+      'status': 'ACTIVATED',
+    },
+  },
+  'errors': None,
+}
+
+DEBUG    mytest:conftest.py:64 {'Employee': ['7'], 'Department': ['2'], 'Role': ['1', '2', '3'], 'Permission': ['1', '1', '2', '3', '1', '2', '3']}
+DEBUG    mytest:GraphqlClient.py:34 http://192.168.1.175:8888/graphql/?createEmployee
+DEBUG    mytest:GraphqlClient.py:35 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMxNDM0Mn0.UOI1OaH_ELEAVzSlldya-CY3ahODVdxWOAwKSCpjxGc'}
+DEBUG    mytest:GraphqlClient.py:36 {
+  'input': {
+    'account': 'account_jaxwf',
+    'code': 'code_v1fa2',
+    'department': {
+      'id': 3,
+    },
+    'email': 'test@sina.com',
+    'job': 'job_2ehs3',
+    'name': 'name_itriq',
+    'password': 'password_h5m4s',
+    'phone': 'phone_w4w4o',
+    'roles': [
+      {
+        'id': 1,
+      },
+      {
+        'id': 2,
+      },
+      {
+        'id': 3,
+      },
+    ],
+    'status': 'ACTIVATED',
+  },
+}
+
+DEBUG    mytest:GraphqlClient.py:39 {
+  'data': {
+    'createEmployee': {
+      '__typename': 'Employee',
+      'account': 'account_jaxwf',
+      'code': 'code_v1fa2',
+      'department': {
+        '__typename': 'Department',
+        'headcount': 2,
+        'id': '3',
+        'name': 'name_350nu',
+        'parentPath': ['1', '2'],
+        'subsidiaries': [],
+      },
+      'email': 'test@sina.com',
+      'id': '8',
+      'job': 'job_2ehs3',
+      'name': 'name_itriq',
+      'phone': 'phone_w4w4o',
+      'roles': [
+        {
+          '__typename': 'Role',
+          'id': '1',
+          'name': '负责人',
+          'permissions': [
+            {
+              '__typename': 'Permission',
+              'description': '所有数据权限，可管理全部信息',
+              'id': '1',
+              'scopes': [],
+            },
+          ],
+        },
+        {
+          '__typename': 'Role',
+          'id': '2',
+          'name': 'name_1ykwe',
+          'permissions': [
+            {
+              '__typename': 'Permission',
+              'description': '所有数据权限，可管理全部信息',
+              'id': '1',
+              'scopes': [],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '查看主设备列表、详情',
+              'id': '2',
+              'scopes': ['/query/thing', '/query/things'],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '编辑、导入、导出主设备详情',
+              'id': '3',
+              'scopes': ['/mutation/createThing', '/mutation/updateThing', '/mutation/importThings', '/mutation/exportThings', '/mutation/deleteThings'],
+            },
+          ],
+        },
+        {
+          '__typename': 'Role',
+          'id': '3',
+          'name': 'name_2osyn',
+          'permissions': [
+            {
+              '__typename': 'Permission',
+              'description': '所有数据权限，可管理全部信息',
+              'id': '1',
+              'scopes': [],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '查看主设备列表、详情',
+              'id': '2',
+              'scopes': ['/query/thing', '/query/things'],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '编辑、导入、导出主设备详情',
+              'id': '3',
+              'scopes': ['/mutation/createThing', '/mutation/updateThing', '/mutation/importThings', '/mutation/exportThings', '/mutation/deleteThings'],
+            },
+          ],
+        },
+      ],
+      'status': 'ACTIVATED',
+    },
+  },
+  'errors': None,
+}
+
+DEBUG    mytest:conftest.py:64 {'Employee': ['8'], 'Department': ['3'], 'Role': ['1', '2', '3'], 'Permission': ['1', '1', '2', '3', '1', '2', '3']}
+DEBUG    mytest:GraphqlClient.py:34 http://192.168.1.175:8888/graphql/?createEmployee
+DEBUG    mytest:GraphqlClient.py:35 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMxNDM0Mn0.UOI1OaH_ELEAVzSlldya-CY3ahODVdxWOAwKSCpjxGc'}
+DEBUG    mytest:GraphqlClient.py:36 {
+  'input': {
+    'account': 'account_dha00',
+    'code': 'code_ug89w',
+    'department': {
+      'id': 1,
+    },
+    'email': 'test@sina.com',
+    'job': 'job_ks7ht',
+    'name': 'name_qjg5g',
+    'password': 'password_agehh',
+    'phone': 'phone_fplv0',
+    'roles': [
+      {
+        'id': 1,
+      },
+      {
+        'id': 2,
+      },
+      {
+        'id': 3,
+      },
+    ],
+    'status': 'FROZEN',
+  },
+}
+
+DEBUG    mytest:GraphqlClient.py:39 {
+  'data': {
+    'createEmployee': {
+      '__typename': 'Employee',
+      'account': 'account_dha00',
+      'code': 'code_ug89w',
+      'department': {
+        '__typename': 'Department',
+        'headcount': 5,
+        'id': '1',
+        'name': '喜临门家具股份有限公司',
+        'parentPath': [],
+        'subsidiaries': [],
+      },
+      'email': 'test@sina.com',
+      'id': '9',
+      'job': 'job_ks7ht',
+      'name': 'name_qjg5g',
+      'phone': 'phone_fplv0',
+      'roles': [
+        {
+          '__typename': 'Role',
+          'id': '1',
+          'name': '负责人',
+          'permissions': [
+            {
+              '__typename': 'Permission',
+              'description': '所有数据权限，可管理全部信息',
+              'id': '1',
+              'scopes': [],
+            },
+          ],
+        },
+        {
+          '__typename': 'Role',
+          'id': '2',
+          'name': 'name_1ykwe',
+          'permissions': [
+            {
+              '__typename': 'Permission',
+              'description': '所有数据权限，可管理全部信息',
+              'id': '1',
+              'scopes': [],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '查看主设备列表、详情',
+              'id': '2',
+              'scopes': ['/query/thing', '/query/things'],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '编辑、导入、导出主设备详情',
+              'id': '3',
+              'scopes': ['/mutation/createThing', '/mutation/updateThing', '/mutation/importThings', '/mutation/exportThings', '/mutation/deleteThings'],
+            },
+          ],
+        },
+        {
+          '__typename': 'Role',
+          'id': '3',
+          'name': 'name_2osyn',
+          'permissions': [
+            {
+              '__typename': 'Permission',
+              'description': '所有数据权限，可管理全部信息',
+              'id': '1',
+              'scopes': [],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '查看主设备列表、详情',
+              'id': '2',
+              'scopes': ['/query/thing', '/query/things'],
+            },
+            {
+              '__typename': 'Permission',
+              'description': '编辑、导入、导出主设备详情',
+              'id': '3',
+              'scopes': ['/mutation/createThing', '/mutation/updateThing', '/mutation/importThings', '/mutation/exportThings', '/mutation/deleteThings'],
+            },
+          ],
+        },
+      ],
+      'status': 'FROZEN',
+    },
+  },
+  'errors': None,
+}
+
+DEBUG    mytest:conftest.py:64 {'Employee': ['9'], 'Department': ['1'], 'Role': ['1', '2', '3'], 'Permission': ['1', '1', '2', '3', '1', '2', '3']}
+DEBUG    mytest:GraphqlClient.py:34 http://192.168.1.175:8888/graphql/?employees
+DEBUG    mytest:GraphqlClient.py:35 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMxNDM0Mn0.UOI1OaH_ELEAVzSlldya-CY3ahODVdxWOAwKSCpjxGc'}
+DEBUG    mytest:GraphqlClient.py:36 {
+  'filter': {
+    'containSubsidiaries': True,
+    'department': {
+      'id': 1,
+    },
+  },
+  'limit': 3,
+  'offset': 0,
+  'orderBy': ['+updated_at'],
+}
+
+DEBUG    mytest:GraphqlClient.py:39 {
+  'data': {
+    'employees': {
+      '__typename': 'EmployeeList',
+      'data': [
+        {
+          '__typename': 'Employee',
+          'account': 'admin',
+          'code': None,
+          'department': {
+            '__typename': 'Department',
+            'headcount': 5,
+            'id': '1',
+            'name': '喜临门家具股份有限公司',
+            'parentPath': [],
+            'subsidiaries': [],
+          },
+          'email': None,
+          'id': '1',
+          'job': None,
+          'name': '管理员',
+          'phone': None,
+          'roles': [
+            {
+              '__typename': 'Role',
+              'id': '1',
+              'name': '负责人',
+              'permissions': [
+                {
+                  '__typename': 'Permission',
+                  'description': '所有数据权限，可管理全部信息',
+                  'id': '1',
+                  'scopes': [],
+                },
+              ],
+            },
+          ],
+          'status': 'ACTIVATED',
+        },
+        {
+          '__typename': 'Employee',
+          'account': 'account_v23fx',
+          'code': 'code_h5jol',
+          'department': {
+            '__typename': 'Department',
+            'headcount': 2,
+            'id': '3',
+            'name': 'name_350nu',
+            'parentPath': ['1', '2'],
+            'subsidiaries': [],
+          },
+          'email': 'test@sina.com',
+          'id': '2',
+          'job': 'job_w3q2v',
+          'name': 'name_ycm24',
+          'phone': 'phone_lb031',
+          'roles': [
+            {
+              '__typename': 'Role',
+              'id': '1',
+              'name': '负责人',
+              'permissions': [
+                {
+                  '__typename': 'Permission',
+                  'description': '所有数据权限，可管理全部信息',
+                  'id': '1',
+                  'scopes': [],
+                },
+              ],
+            },
+            {
+              '__typename': 'Role',
+              'id': '2',
+              'name': 'name_1ykwe',
+              'permissions': [
+                {
+                  '__typename': 'Permission',
+                  'description': '所有数据权限，可管理全部信息',
+                  'id': '1',
+                  'scopes': [],
+                },
+                {
+                  '__typename': 'Permission',
+                  'description': '查看主设备列表、详情',
+                  'id': '2',
+                  'scopes': ['/query/thing', '/query/things'],
+                },
+                {
+                  '__typename': 'Permission',
+                  'description': '编辑、导入、导出主设备详情',
+                  'id': '3',
+                  'scopes': ['/mutation/createThing', '/mutation/updateThing', '/mutation/importThings', '/mutation/exportThings', '/mutation/deleteThings'],
+                },
+              ],
+            },
+            {
+              '__typename': 'Role',
+              'id': '3',
+              'name': 'name_2osyn',
+              'permissions': [
+                {
+                  '__typename': 'Permission',
+                  'description': '所有数据权限，可管理全部信息',
+                  'id': '1',
+                  'scopes': [],
+                },
+                {
+                  '__typename': 'Permission',
+                  'description': '查看主设备列表、详情',
+                  'id': '2',
+                  'scopes': ['/query/thing', '/query/things'],
+                },
+                {
+                  '__typename': 'Permission',
+                  'description': '编辑、导入、导出主设备详情',
+                  'id': '3',
+                  'scopes': ['/mutation/createThing', '/mutation/updateThing', '/mutation/importThings', '/mutation/exportThings', '/mutation/deleteThings'],
+                },
+              ],
+            },
+          ],
+          'status': 'FROZEN',
+        },
+        {
+          '__typename': 'Employee',
+          'account': 'account_p6nu3',
+          'code': None,
+          'department': {
+            '__typename': 'Department',
+            'headcount': 5,
+            'id': '1',
+            'name': '喜临门家具股份有限公司',
+            'parentPath': [],
+            'subsidiaries': [],
+          },
+          'email': 'test@sina.com',
+          'id': '3',
+          'job': None,
+          'name': 'name_13skg',
+          'phone': None,
+          'roles': [],
+          'status': 'ACTIVATED',
+        },
+      ],
+      'totalCount': 6,
+    },
+  },
+  'errors': None,
+}
+
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..errors'
+get
+'None
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except None
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..errors'
+get
+'None
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except None
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..employees.data[*].id'
+get
+'['1', '2', '3']
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except ['7', '8', '9']

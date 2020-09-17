@@ -1,0 +1,1 @@
+DEBUG    mytest:test_permissions.py:61 []

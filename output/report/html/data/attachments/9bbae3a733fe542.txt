@@ -1,0 +1,247 @@
+DEBUG    mytest:GraphqlClient.py:34 http://192.168.1.175:8888/graphql/?createThingMaintenanceRule
+DEBUG    mytest:GraphqlClient.py:35 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMxNDM0Mn0.UOI1OaH_ELEAVzSlldya-CY3ahODVdxWOAwKSCpjxGc'}
+DEBUG    mytest:GraphqlClient.py:36 {
+  'input': {
+    'addition': '[{"key": "4e3e8e9c60eb48cda6da10d23f2d5af7", "value":
+                 "\\u5355\\u884c\\u6587\\u5b57_ni9e4"}, {"key":
+                 ...(20 hidden lines)',
+    'frequency': 'frequency_z0cpx',
+    'items': [
+      {
+        'content': 'content_czicm',
+        'name': 'name_9xci5',
+      },
+      {
+        'content': 'content_ioxl5',
+        'name': 'name_s897o',
+      },
+      {
+        'content': 'content_o0cc8',
+        'name': 'name_ceneq',
+      },
+    ],
+    'level': '一级保养',
+    'name': 'name_riqka',
+  },
+}
+
+DEBUG    mytest:GraphqlClient.py:39 {
+  'data': {
+    'createThingMaintenanceRule': {
+      '__typename': 'ThingMaintenanceRule',
+      'addition': '[{"key": "4e3e8e9c60eb48cda6da10d23f2d5af7", "value":
+                   "\\u5355\\u884c\\u6587\\u5b57_ni9e4"}, {"key":
+                   ...(20 hidden lines)',
+      'code': 'BYFA202009160010',
+      'frequency': 'frequency_z0cpx',
+      'id': '10',
+      'items': [
+        {
+          '__typename': 'ThingMaintenanceItem',
+          'content': 'content_czicm',
+          'id': 'b31d8c9f-fb96-4862-983f-b7d9b1c109b3',
+          'name': 'name_9xci5',
+        },
+        {
+          '__typename': 'ThingMaintenanceItem',
+          'content': 'content_ioxl5',
+          'id': '80f25614-cb2b-4443-98e6-02fcdc94abfe',
+          'name': 'name_s897o',
+        },
+        {
+          '__typename': 'ThingMaintenanceItem',
+          'content': 'content_o0cc8',
+          'id': '566b53bf-111e-4780-bf7c-aac7678fa819',
+          'name': 'name_ceneq',
+        },
+      ],
+      'level': '一级保养',
+      'name': 'name_riqka',
+      'updatedAt': 1600228135855,
+    },
+  },
+  'errors': None,
+}
+
+DEBUG    mytest:conftest.py:64 {'ThingMaintenanceRule': ['10'], 'ThingMaintenanceItem': ['b31d8c9f-fb96-4862-983f-b7d9b1c109b3', '80f25614-cb2b-4443-98e6-02fcdc94abfe', '566b53bf-111e-4780-bf7c-aac7678fa819']}
+DEBUG    mytest:GraphqlClient.py:34 http://192.168.1.175:8888/graphql/?createThingMaintenanceRule
+DEBUG    mytest:GraphqlClient.py:35 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMxNDM0Mn0.UOI1OaH_ELEAVzSlldya-CY3ahODVdxWOAwKSCpjxGc'}
+DEBUG    mytest:GraphqlClient.py:36 {
+  'input': {
+    'addition': '[{"key": "4e3e8e9c60eb48cda6da10d23f2d5af7", "value":
+                 "\\u5355\\u884c\\u6587\\u5b57_1weo0"}, {"key":
+                 ...(20 hidden lines)',
+    'frequency': 'frequency_whja7',
+    'items': [
+      {
+        'content': 'content_hzgp5',
+        'name': 'name_fhnd2',
+      },
+      {
+        'content': 'content_io7hb',
+        'name': 'name_arnlb',
+      },
+      {
+        'content': 'content_zek4u',
+        'name': 'name_0fyvt',
+      },
+    ],
+    'level': '二级保养',
+    'name': 'name_jyxxj',
+  },
+}
+
+DEBUG    mytest:GraphqlClient.py:39 {
+  'data': {
+    'createThingMaintenanceRule': {
+      '__typename': 'ThingMaintenanceRule',
+      'addition': '[{"key": "4e3e8e9c60eb48cda6da10d23f2d5af7", "value":
+                   "\\u5355\\u884c\\u6587\\u5b57_1weo0"}, {"key":
+                   ...(20 hidden lines)',
+      'code': 'BYFA202009160011',
+      'frequency': 'frequency_whja7',
+      'id': '11',
+      'items': [
+        {
+          '__typename': 'ThingMaintenanceItem',
+          'content': 'content_hzgp5',
+          'id': '83b97817-1992-42cf-889b-5298d20abcee',
+          'name': 'name_fhnd2',
+        },
+        {
+          '__typename': 'ThingMaintenanceItem',
+          'content': 'content_io7hb',
+          'id': 'bd46ec0b-0701-4f0f-b96b-a45e31a18b16',
+          'name': 'name_arnlb',
+        },
+        {
+          '__typename': 'ThingMaintenanceItem',
+          'content': 'content_zek4u',
+          'id': 'cf9a7296-0328-4457-9bdd-a2bf6fd2258d',
+          'name': 'name_0fyvt',
+        },
+      ],
+      'level': '二级保养',
+      'name': 'name_jyxxj',
+      'updatedAt': 1600228135982,
+    },
+  },
+  'errors': None,
+}
+
+DEBUG    mytest:conftest.py:64 {'ThingMaintenanceRule': ['11'], 'ThingMaintenanceItem': ['83b97817-1992-42cf-889b-5298d20abcee', 'bd46ec0b-0701-4f0f-b96b-a45e31a18b16', 'cf9a7296-0328-4457-9bdd-a2bf6fd2258d']}
+DEBUG    mytest:GraphqlClient.py:34 http://192.168.1.175:8888/graphql/?createThingMaintenanceRule
+DEBUG    mytest:GraphqlClient.py:35 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMxNDM0Mn0.UOI1OaH_ELEAVzSlldya-CY3ahODVdxWOAwKSCpjxGc'}
+DEBUG    mytest:GraphqlClient.py:36 {
+  'input': {
+    'addition': '[{"key": "4e3e8e9c60eb48cda6da10d23f2d5af7", "value":
+                 "\\u5355\\u884c\\u6587\\u5b57_661ey"}, {"key":
+                 ...(20 hidden lines)',
+    'frequency': 'frequency_pru22',
+    'items': [
+      {
+        'content': 'content_gppy5',
+        'name': 'name_guo6p',
+      },
+      {
+        'content': 'content_zzwqz',
+        'name': 'name_nzh9y',
+      },
+      {
+        'content': 'content_vbmi4',
+        'name': 'name_n3n7r',
+      },
+    ],
+    'level': '一级保养',
+    'name': 'name_hj9i1',
+  },
+}
+
+DEBUG    mytest:GraphqlClient.py:39 {
+  'data': {
+    'createThingMaintenanceRule': {
+      '__typename': 'ThingMaintenanceRule',
+      'addition': '[{"key": "4e3e8e9c60eb48cda6da10d23f2d5af7", "value":
+                   "\\u5355\\u884c\\u6587\\u5b57_661ey"}, {"key":
+                   ...(20 hidden lines)',
+      'code': 'BYFA202009160012',
+      'frequency': 'frequency_pru22',
+      'id': '12',
+      'items': [
+        {
+          '__typename': 'ThingMaintenanceItem',
+          'content': 'content_gppy5',
+          'id': '50bbeb79-71b1-4718-b4f5-1adade7a3ffe',
+          'name': 'name_guo6p',
+        },
+        {
+          '__typename': 'ThingMaintenanceItem',
+          'content': 'content_zzwqz',
+          'id': '163455ba-ee14-497d-8b9a-ba8f3b28b115',
+          'name': 'name_nzh9y',
+        },
+        {
+          '__typename': 'ThingMaintenanceItem',
+          'content': 'content_vbmi4',
+          'id': '0ba0d502-d4d8-49a4-bb96-b9966bdcb0ed',
+          'name': 'name_n3n7r',
+        },
+      ],
+      'level': '一级保养',
+      'name': 'name_hj9i1',
+      'updatedAt': 1600228136095,
+    },
+  },
+  'errors': None,
+}
+
+DEBUG    mytest:conftest.py:64 {'ThingMaintenanceRule': ['12'], 'ThingMaintenanceItem': ['50bbeb79-71b1-4718-b4f5-1adade7a3ffe', '163455ba-ee14-497d-8b9a-ba8f3b28b115', '0ba0d502-d4d8-49a4-bb96-b9966bdcb0ed']}
+DEBUG    mytest:GraphqlClient.py:34 http://192.168.1.175:8888/graphql/?exportThingMaintenanceRules
+DEBUG    mytest:GraphqlClient.py:35 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMxNDM0Mn0.UOI1OaH_ELEAVzSlldya-CY3ahODVdxWOAwKSCpjxGc'}
+DEBUG    mytest:GraphqlClient.py:36 {
+  'input': {
+    'ids': ['10', '11', '12'],
+  },
+}
+
+DEBUG    mytest:GraphqlClient.py:39 {
+  'data': {
+    'exportThingMaintenanceRules': {
+      '__typename': 'RawFile',
+      'data': 'data:application/vnd.openxmlformats-officedocument.spreadsheetml.
+               sheet;base64,UEsDBBQAAAAIABweMFHkxRO9ggAAALEAAAAQAAAAZG9jUHJvcHMv
+               ...(131 hidden lines)',
+      'name': None,
+    },
+  },
+  'errors': None,
+}
+
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..errors'
+get
+'None
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except None
+DEBUG    mytest:AssertMethod.py:28 
+jsonpath : '$..data'
+get
+'[
+  {
+    'exportThingMaintenanceRules': {
+      '__typename': 'RawFile',
+      'data': 'data:application/vnd.openxmlformats-officedocument.spreadsheetml.
+               sheet;base64,UEsDBBQAAAAIABweMFHkxRO9ggAAALEAAAAQAAAAZG9jUHJvcHMv
+               ...(131 hidden lines)',
+      'name': None,
+    },
+  },
+  'data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64
+   ,UEsDBBQAAAAIABweMFHkxRO9ggAAALEAAAAQAAAAZG9jUHJvcHMvYXBwLnhtbE2OTQvCMBBE/0rp
+   ...(111 hidden lines)',
+]
+'
+from
+result

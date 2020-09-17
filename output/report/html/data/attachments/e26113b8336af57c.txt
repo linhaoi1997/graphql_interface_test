@@ -1,0 +1,145 @@
+DEBUG    mytest:GraphqlClient.py:34 http://192.168.1.175:8888/graphql/?createSparePartReceipt
+DEBUG    mytest:GraphqlClient.py:35 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMzNTIyOH0.dzaUQamPfWD5WFiPIGlnazmc_Vkbsysi7uMeegW6zvg'}
+DEBUG    mytest:GraphqlClient.py:36 {
+  'input': {
+    'addition': '[{"key": "89b3f19d0703475d8e9fc3d72adab410", "value":
+                 "\\u5355\\u884c\\u6587\\u5b57_mxn6b"}]',
+    'details': [
+      {
+        'number': 1,
+        'sparePart': {
+          'id': 2,
+        },
+      },
+      {
+        'number': 1,
+        'sparePart': {
+          'id': 3,
+        },
+      },
+      {
+        'number': 1,
+        'sparePart': {
+          'id': 1,
+        },
+      },
+    ],
+    'factory': 'factory_03dmh',
+    'operator': {
+      'id': 1,
+    },
+    'shelf': 'shelf_uf82d',
+    'time': 1600248830969,
+  },
+}
+
+DEBUG    mytest:GraphqlClient.py:39 {
+  'data': {
+    'createSparePartReceipt': {
+      '__typename': 'SparePartReceipt',
+      'addition': '[{"key": "89b3f19d0703475d8e9fc3d72adab410", "value":
+                   "\\u5355\\u884c\\u6587\\u5b57_mxn6b"}]',
+      'details': [
+        {
+          '__typename': 'SparePartReceiptDetail',
+          'number': 1,
+          'sparePart': {'id': '1', 'name': 'name_bux7k', 'desc':...(len=10515),
+        },
+        {
+          '__typename': 'SparePartReceiptDetail',
+          'number': 1,
+          'sparePart': {'id': '2', 'name': 'name_pdgl4', 'desc':...(len=10509),
+        },
+        {
+          '__typename': 'SparePartReceiptDetail',
+          'number': 1,
+          'sparePart': {'id': '3', 'name': 'name_kl54e', 'desc':...(len=10515),
+        },
+      ],
+      'factory': 'factory_03dmh',
+      'id': '5',
+      'operator': {
+        '__typename': 'Employee',
+        'account': 'admin',
+        'code': None,
+        'department': {
+          '__typename': 'Department',
+          'headcount': 0,
+          'id': '1',
+          'name': '喜临门家具股份有限公司',
+          'parentPath': [],
+          'subsidiaries': [],
+        },
+        'email': None,
+        'id': '1',
+        'job': None,
+        'name': '管理员',
+        'phone': None,
+        'roles': [
+          {'id': '1', 'name': '负责人', 'permissions':...(len=170),
+        ],
+        'status': 'ACTIVATED',
+      },
+      'shelf': 'shelf_uf82d',
+      'time': 1600248830969,
+    },
+  },
+  'errors': None,
+}
+
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..errors'
+get
+'None
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except None
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..shelf'
+get
+''shelf_uf82d'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except shelf_uf82d
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..factory'
+get
+''factory_03dmh'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except factory_03dmh
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..operator.id'
+get
+''1'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 1
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..time'
+get
+'1600248830969
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 1600248830969
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..createSparePartReceipt.details[*].sparePart.id'
+get
+'['1', '2', '3']
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except [2, 3, 1]
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..createSparePartReceipt.details[*].number'
+get
+'[1, 1, 1]
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except [1, 1, 1]

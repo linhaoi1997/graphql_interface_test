@@ -1,0 +1,137 @@
+{
+  "uid" : "514efd74b5e1fae5",
+  "name" : "test_2[variable0]",
+  "fullName" : "interface.thing_test.test_createThing.TestCreateThing#test_2",
+  "historyId" : "edb080dc393b8081ab6e0bf42d6a4921",
+  "time" : {
+    "start" : 1600337372961,
+    "stop" : 1600337373199,
+    "duration" : 238
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1600337372287,
+      "stop" : 1600337372356,
+      "duration" : 69
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "init",
+    "time" : {
+      "start" : 1600337372356,
+      "stop" : 1600337372356,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "resource",
+    "time" : {
+      "start" : 1600337372356,
+      "stop" : 1600337372356,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "65d59f74e80531e5",
+      "name" : "log",
+      "source" : "65d59f74e80531e5.txt",
+      "type" : "text/plain",
+      "size" : 3168
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "不填写选填项"
+  }, {
+    "name" : "epic",
+    "value" : "thing"
+  }, {
+    "name" : "feature",
+    "value" : "createThing"
+  }, {
+    "name" : "parentSuite",
+    "value" : "interface.thing_test"
+  }, {
+    "name" : "suite",
+    "value" : "test_createThing"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestCreateThing"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Pro.local"
+  }, {
+    "name" : "thread",
+    "value" : "91614-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "interface.thing_test.test_createThing"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "variable",
+    "value" : "{'input': {'code': 'code_2z63g', 'name': 'name_54w2x', 'model': 'model_hgxb5', 'category': '生产设备', 'brand': '喜临门', 'factory': '喜临门', 'purpose': '生产', 'status': '使用中'}}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "f17cc400e0ee15bb",
+      "status" : "passed",
+      "time" : {
+        "start" : 1600228336101,
+        "stop" : 1600228336276,
+        "duration" : 175
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "514efd74b5e1fae5.json",
+  "parameterValues" : [ "{'input': {'code': 'code_2z63g', 'name': 'name_54w2x', 'model': 'model_hgxb5', 'category': '生产设备', 'brand': '喜临门', 'factory': '喜临门', 'purpose': '生产', 'status': '使用中'}}" ]
+}

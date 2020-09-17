@@ -1,0 +1,451 @@
+DEBUG    mytest:GraphqlClient.py:34 http://192.168.1.175:8888/graphql/?createSparePartOutbound
+DEBUG    mytest:GraphqlClient.py:35 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMxNDM0Mn0.UOI1OaH_ELEAVzSlldya-CY3ahODVdxWOAwKSCpjxGc'}
+DEBUG    mytest:GraphqlClient.py:36 {
+  'input': {
+    'addition': '[{"key": "7d2f6d619a954f64b6fd763335b479b1", "value":
+                 "\\u5355\\u884c\\u6587\\u5b57_cr7ld"}, {"key":
+                 ...(20 hidden lines)',
+    'details': [
+      {
+        'number': 1,
+        'reason': 'reason_02k3u',
+        'sparePart': {
+          'id': 1,
+        },
+      },
+      {
+        'number': 1,
+        'reason': 'reason_3ytuc',
+        'sparePart': {
+          'id': 2,
+        },
+      },
+      {
+        'number': 1,
+        'reason': 'reason_4asr3',
+        'sparePart': {
+          'id': 3,
+        },
+      },
+    ],
+    'factory': 'factory_089oj',
+    'operator': {
+      'id': 1,
+    },
+    'reason': '设备保养',
+    'shelf': 'shelf_isj6r',
+    'thingMaintenance': {
+      'id': 1,
+    },
+    'thingRepair': {
+      'id': 1,
+    },
+    'time': 1600227980923,
+  },
+}
+
+DEBUG    mytest:GraphqlClient.py:39 {
+  'data': {
+    'createSparePartOutbound': {
+      '__typename': 'SparePartOutbound',
+      'addition': '[{"key": "7d2f6d619a954f64b6fd763335b479b1", "value":
+                   "\\u5355\\u884c\\u6587\\u5b57_cr7ld"}, {"key":
+                   ...(20 hidden lines)',
+      'details': [
+        {
+          '__typename': 'SparePartOutboundDetail',
+          'number': 1,
+          'reason': 'reason_02k3u',
+          'sparePart': {
+            '__typename': 'SparePart',
+            'addition': None,
+            'attachments': None,
+            'desc': None,
+            'distributor': None,
+            'id': '1',
+            'images': None,
+            'manufacturer': None,
+            'model': 'model_fipua',
+            'name': 'name_bux7k',
+            'price': 1.01,
+            'things': [
+              {
+                '__typename': 'Thing',
+                'activatedAt': 1600224398764,
+                'addition': '[{"key": "71e05d282ed24d04aafdc78e68e87f9d",
+                             "value": "\\u5355\\u884c\\u6587\\u5b57_l3vro"}]',
+                'brand': '1',
+                'category': '1',
+                'code': 'code_hk255',
+                'contact': 'contact_hdmio',
+                'depreciationRate': 1.01,
+                'desc': 'desc_g6cjy',
+                'distributor': 'distributor_rnioo',
+                'factory': '1',
+                'id': '6',
+                'location': 'location_x1v30',
+                'manufacturer': 'manufacturer_f5v3p',
+                'model': 'model_hvlab',
+                'name': 'name_pda59',
+                'phone': 'phone_ipnom',
+                'purchasedAt': 1600224398764,
+                'purchasedPrice': 1.01,
+                'purpose': '1',
+                'qrCode': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASIAAAE
+                           iAQAAAAB1xeIbAAABlklEQVR4nO2aQY6jMBRE3x+8N1IOMEexbzBn
+                           ...(11 hidden lines)',
+                'status': '1',
+                'yearsOfUse': 1.01,
+              },
+            ],
+            'type': '不知道什么设备',
+          },
+          'totalPrice': 1.01,
+        },
+        {
+          '__typename': 'SparePartOutboundDetail',
+          'number': 1,
+          'reason': 'reason_3ytuc',
+          'sparePart': {
+            '__typename': 'SparePart',
+            'addition': None,
+            'attachments': None,
+            'desc': None,
+            'distributor': None,
+            'id': '2',
+            'images': None,
+            'manufacturer': None,
+            'model': 'model_laorh',
+            'name': 'name_pdgl4',
+            'price': 1.01,
+            'things': [
+              {
+                '__typename': 'Thing',
+                'activatedAt': 1600224398764,
+                'addition': '[{"key": "71e05d282ed24d04aafdc78e68e87f9d",
+                             "value": "\\u5355\\u884c\\u6587\\u5b57_l3vro"}]',
+                'brand': '1',
+                'category': '1',
+                'code': 'code_hk255',
+                'contact': 'contact_hdmio',
+                'depreciationRate': 1.01,
+                'desc': 'desc_g6cjy',
+                'distributor': 'distributor_rnioo',
+                'factory': '1',
+                'id': '6',
+                'location': 'location_x1v30',
+                'manufacturer': 'manufacturer_f5v3p',
+                'model': 'model_hvlab',
+                'name': 'name_pda59',
+                'phone': 'phone_ipnom',
+                'purchasedAt': 1600224398764,
+                'purchasedPrice': 1.01,
+                'purpose': '1',
+                'qrCode': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASIAAAE
+                           iAQAAAAB1xeIbAAABlklEQVR4nO2aQY6jMBRE3x+8N1IOMEexbzBn
+                           ...(11 hidden lines)',
+                'status': '1',
+                'yearsOfUse': 1.01,
+              },
+            ],
+            'type': '魔法设备',
+          },
+          'totalPrice': 1.01,
+        },
+        {
+          '__typename': 'SparePartOutboundDetail',
+          'number': 1,
+          'reason': 'reason_4asr3',
+          'sparePart': {
+            '__typename': 'SparePart',
+            'addition': None,
+            'attachments': None,
+            'desc': None,
+            'distributor': None,
+            'id': '3',
+            'images': None,
+            'manufacturer': None,
+            'model': 'model_1wk3h',
+            'name': 'name_kl54e',
+            'price': 1.01,
+            'things': [
+              {
+                '__typename': 'Thing',
+                'activatedAt': 1600224398764,
+                'addition': '[{"key": "71e05d282ed24d04aafdc78e68e87f9d",
+                             "value": "\\u5355\\u884c\\u6587\\u5b57_l3vro"}]',
+                'brand': '1',
+                'category': '1',
+                'code': 'code_hk255',
+                'contact': 'contact_hdmio',
+                'depreciationRate': 1.01,
+                'desc': 'desc_g6cjy',
+                'distributor': 'distributor_rnioo',
+                'factory': '1',
+                'id': '6',
+                'location': 'location_x1v30',
+                'manufacturer': 'manufacturer_f5v3p',
+                'model': 'model_hvlab',
+                'name': 'name_pda59',
+                'phone': 'phone_ipnom',
+                'purchasedAt': 1600224398764,
+                'purchasedPrice': 1.01,
+                'purpose': '1',
+                'qrCode': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASIAAAE
+                           iAQAAAAB1xeIbAAABlklEQVR4nO2aQY6jMBRE3x+8N1IOMEexbzBn
+                           ...(11 hidden lines)',
+                'status': '1',
+                'yearsOfUse': 1.01,
+              },
+            ],
+            'type': '不知道什么设备',
+          },
+          'totalPrice': 1.01,
+        },
+      ],
+      'factory': 'factory_089oj',
+      'id': '12',
+      'operator': {
+        '__typename': 'Employee',
+        'account': 'admin',
+        'code': None,
+        'department': {
+          '__typename': 'Department',
+          'headcount': 6,
+          'id': '1',
+          'name': '喜临门家具股份有限公司',
+          'parentPath': [],
+          'subsidiaries': [],
+        },
+        'email': None,
+        'id': '1',
+        'job': None,
+        'name': '管理员',
+        'phone': None,
+        'roles': [
+          {
+            '__typename': 'Role',
+            'id': '1',
+            'name': '负责人',
+            'permissions': [
+              {
+                '__typename': 'Permission',
+                'description': '所有数据权限，可管理全部信息',
+                'id': '1',
+                'scopes': [],
+              },
+            ],
+          },
+        ],
+        'status': 'ACTIVATED',
+      },
+      'reason': '设备保养',
+      'shelf': 'shelf_isj6r',
+      'status': 'PENDING',
+      'thingMaintenance': {
+        '__typename': 'ThingMaintenance',
+        'addition': '[{"key": "793dacbc3c7742eaadc7fa65cabc7f88", "value":
+                     "\\u5355\\u884c\\u6587\\u5b57_vt7ps"}]',
+        'code': 'BY202009160001',
+        'endAt': None,
+        'id': '1',
+        'images': None,
+        'laborCosts': None,
+        'maintainer': {
+          '__typename': 'Employee',
+          'account': 'admin',
+          'code': None,
+          'department': {
+            '__typename': 'Department',
+            'headcount': 6,
+            'id': '1',
+            'name': '喜临门家具股份有限公司',
+            'parentPath': [],
+          },
+          'email': None,
+          'id': '1',
+          'job': None,
+          'name': '管理员',
+          'phone': None,
+          'roles': [
+            {
+              '__typename': 'Role',
+              'id': '1',
+              'name': '负责人',
+            },
+          ],
+          'status': 'ACTIVATED',
+        },
+        'materialCosts': None,
+        'otherCosts': None,
+        'period': {
+          '__typename': 'Period',
+          'endAt': 1600221670906,
+          'frequency': 'THREE_MONTH',
+          'startAt': 1600221670906,
+          'type': 'INFINITE',
+        },
+        'remarks': None,
+        'result': '',
+        'resultHistory': [],
+        'rule': {
+          '__typename': 'ThingMaintenanceRule',
+          'addition': '[{"key": "52ffaba0143348f4a7950cd1ab8a34a8", "value":
+                       "\\u5355\\u884c\\u6587\\u5b57_mwsd3"}]',
+          'code': 'BYFA202009160001',
+          'frequency': 'frequency_747je',
+          'id': '1',
+          'items': [
+            {
+              '__typename': 'ThingMaintenanceItem',
+              'content': 'content_5igcv',
+              'id': '31dcf6b1-72b0-4a91-a135-0876d6d5317e',
+              'name': 'name_t3ehu',
+            },
+            {
+              '__typename': 'ThingMaintenanceItem',
+              'content': 'content_rxkrc',
+              'id': '8974129a-a0a3-4f22-b3ee-a282b5d71ff7',
+              'name': 'name_iv5i8',
+            },
+            {
+              '__typename': 'ThingMaintenanceItem',
+              'content': 'content_jxkke',
+              'id': '259c6e5f-8606-4fcf-832f-1cd2b8b35f93',
+              'name': 'name_6jwot',
+            },
+          ],
+          'level': '二级保养',
+          'name': 'name_fwttg',
+          'updatedAt': 1600221631010,
+        },
+        'sparePartCosts': None,
+        'startAt': 1600221670906,
+        'status': 'PENDING',
+        'thing': {
+          '__typename': 'Thing',
+          'activatedAt': None,
+          'addition': None,
+          'brand': '1',
+          'category': '1',
+          'code': 'code_smkpy',
+          'contact': None,
+          'depreciationRate': None,
+          'desc': None,
+          'distributor': None,
+          'factory': '1',
+          'id': '2',
+          'location': None,
+          'manufacturer': None,
+          'model': 'model_t2zf7',
+          'name': 'name_cjcxn',
+          'phone': None,
+          'purchasedAt': None,
+          'purchasedPrice': None,
+          'purpose': '1',
+          'qrCode': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASIAAAEiAQAAA
+                     AB1xeIbAAABdElEQVR4nO2YQWrDMBBF39SGLFXoAXIU62alN3NuZC0DCr8L
+                     ...(9 hidden lines)',
+          'status': '1',
+          'yearsOfUse': None,
+        },
+        'thingRepair': None,
+        'totalCosts': 0.0,
+      },
+      'thingRepair': None,
+      'time': 1600227980923,
+    },
+  },
+  'errors': None,
+}
+
+DEBUG    mytest:conftest.py:64 {'SparePartOutbound': ['12'], 'Employee': ['1', '1'], 'Department': ['1', '1'], 'Role': ['1', '1'], 'Permission': ['1'], 'ThingMaintenance': ['1'], 'Thing': ['2', '6', '6', '6'], 'ThingMaintenanceRule': ['1'], 'ThingMaintenanceItem': ['31dcf6b1-72b0-4a91-a135-0876d6d5317e', '8974129a-a0a3-4f22-b3ee-a282b5d71ff7', '259c6e5f-8606-4fcf-832f-1cd2b8b35f93'], 'SparePart': ['1', '2', '3']}
+DEBUG    mytest:GraphqlClient.py:34 http://192.168.1.175:8888/graphql/?updateSparePartOutbound
+DEBUG    mytest:GraphqlClient.py:35 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMxNDM0Mn0.UOI1OaH_ELEAVzSlldya-CY3ahODVdxWOAwKSCpjxGc'}
+DEBUG    mytest:GraphqlClient.py:36 {
+  'input': {
+    'addition': '[{"key": "7d2f6d619a954f64b6fd763335b479b1", "value":
+                 "\\u5355\\u884c\\u6587\\u5b57_q36of"}, {"key":
+                 ...(20 hidden lines)',
+    'details': [
+      {
+        'number': 1,
+        'reason': 'reason_b7x12',
+        'sparePart': {
+          'id': 2,
+        },
+      },
+      {
+        'number': 1,
+        'reason': 'reason_kn2we',
+        'sparePart': {
+          'id': 3,
+        },
+      },
+      {
+        'number': 1,
+        'reason': 'reason_nlcdx',
+        'sparePart': {
+          'id': 1,
+        },
+      },
+    ],
+    'factory': 'factory_5088f',
+    'id': '12',
+    'operator': {
+      'id': 1,
+    },
+    'reason': '设备维修',
+    'shelf': 'shelf_p521j',
+    'thingMaintenance': {
+      'id': 1,
+    },
+    'thingRepair': {
+      'id': 1,
+    },
+    'time': 1600227948453,
+  },
+}
+
+ERROR    sgqlc.endpoint.http:base.py:213 GraphQL query failed with 1 errors
+DEBUG    mytest:GraphqlClient.py:39 {
+  'data': None,
+  'errors': [
+    {
+      'extensions': {
+        'code': 'APOLLO_ERROR',
+      },
+      'locations': [
+        {
+          'column': 5,
+          'line': 2,
+        },
+      ],
+      'message': '当前备件申领单不支持此操作',
+      'path': ['updateSparePartOutbound'],
+    },
+  ],
+}
+
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..errors'
+get
+'[
+  {
+    'extensions': {
+      'code': 'APOLLO_ERROR',
+    },
+    'locations': [
+      {
+        'column': 5,
+        'line': 2,
+      },
+    ],
+    'message': '当前备件申领单不支持此操作',
+    'path': ['updateSparePartOutbound'],
+  },
+]
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except None

@@ -1,0 +1,144 @@
+{
+  "uid" : "18418fd9481a7ffc",
+  "name" : "test_import_right[upload_file9]",
+  "fullName" : "interface.file_test.test_uploadFile.TestUploadFile#test_import_right",
+  "historyId" : "3fa6aa1643f5f52a2cb7355dfa9f8f35",
+  "time" : {
+    "start" : 1600227969466,
+    "stop" : 1600227969469,
+    "duration" : 3
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "init",
+    "time" : {
+      "start" : 1600227952218,
+      "stop" : 1600227952218,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1600227952116,
+      "stop" : 1600227952218,
+      "duration" : 102
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "upload_file",
+    "time" : {
+      "start" : 1600227968760,
+      "stop" : 1600227969466,
+      "duration" : 706
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "resource",
+    "time" : {
+      "start" : 1600227952218,
+      "stop" : 1600227952218,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "14d498ef993a664f",
+      "name" : "log",
+      "source" : "14d498ef993a664f.txt",
+      "type" : "text/plain",
+      "size" : 1125
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "epic",
+    "value" : "file"
+  }, {
+    "name" : "feature",
+    "value" : "uploadFile"
+  }, {
+    "name" : "story",
+    "value" : "upload_file make import data"
+  }, {
+    "name" : "parentSuite",
+    "value" : "interface.file_test"
+  }, {
+    "name" : "suite",
+    "value" : "test_uploadFile"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestUploadFile"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Pro.local"
+  }, {
+    "name" : "thread",
+    "value" : "99506-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "interface.file_test.test_uploadFile"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "upload_file",
+    "value" : "['必填项为空3.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "18418fd9481a7ffc.json",
+  "parameterValues" : [ "['必填项为空3.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']" ]
+}

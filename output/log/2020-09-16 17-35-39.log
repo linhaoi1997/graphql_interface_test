@@ -1,0 +1,504 @@
+2020-09-16 17:35:39,618 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?login
+2020-09-16 17:35:39,618 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json'}
+2020-09-16 17:35:39,629 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'account': 'admin',
+    'password': 'admin',
+  },
+}
+
+2020-09-16 17:35:40,792 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'login': {
+      '__typename': 'AuthInfo',
+      'employee': {
+        '__typename': 'Employee',
+        'account': 'admin',
+        'code': None,
+        'department': {
+          '__typename': 'Department',
+          'headcount': 0,
+          'id': '1',
+          'name': '喜临门家具股份有限公司',
+          'parentPath': [],
+          'subsidiaries': [],
+        },
+        'email': None,
+        'id': '1',
+        'job': None,
+        'name': '管理员',
+        'phone': None,
+        'roles': [
+          {'id': '1', 'name': '负责人', 'permissions':...(len=170),
+        ],
+        'status': 'ACTIVATED',
+      },
+      'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXB
+                sb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29
+                ...(5 hidden lines)',
+    },
+  },
+  'errors': None,
+}
+
+2020-09-16 17:35:40,794 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?formStructs
+2020-09-16 17:35:40,794 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMzNTMzOX0.uLX0QIXSlrW5nOvo3a6mSUj_ZR3cAabNaXvSWh-lzvQ'}
+2020-09-16 17:35:40,794 - GraphqlClient.py - send_request - DEBUG -{
+  'isDraft': False,
+}
+
+2020-09-16 17:35:41,899 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'formStructs': [
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'spare_part_outbounds_领用仓库',...(len=392),
+          {'id': 'spare_part_outbounds_领用工厂',...(len=396),
+          {'id': 'spare_part_outbounds_领用目的',...(len=367),
+          {'id': 'spare_part_outbounds_领用时间',...(len=306),
+          {'id':...(len=340),
+        ],
+        'displayName': '申领单信息',
+        'name': 'spare_part_outbounds',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'spare_part_receipts_入库仓库',...(len=392),
+          {'id': 'spare_part_receipts_入库工厂',...(len=396),
+          {'id': 'spare_part_receipts_入库时间',...(len=306),
+          {'id':...(len=340),
+        ],
+        'displayName': '入库单信息',
+        'name': 'spare_part_receipts',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'spare_parts_备件名称', 'type':...(len=382),
+          {'id': 'spare_parts_备件类型', 'type':...(len=371),
+          {'id': 'spare_parts_备件型号', 'type':...(len=383),
+          {'id': 'spare_parts_生产厂家', 'type':...(len=397),
+          {'id': 'spare_parts_经销商', 'type':...(len=391),
+          {'id': 'spare_parts_备件描述', 'type':...(len=381),
+          {'id': 'spare_parts_附件', 'type':...(len=314),
+          {'id': 'spare_parts_图片', 'type':...(len=299),
+          {'id': 'spare_parts_单价', 'type':...(len=317),
+          {'id':...(len=340),
+        ],
+        'displayName': '备件基本档案',
+        'name': 'spare_parts',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'thing_inspection_rules_巡检方案名...(len=400),
+          {'id':...(len=340),
+        ],
+        'displayName': '设备巡检方案',
+        'name': 'thing_inspection_rules',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id':...(len=340),
+        ],
+        'displayName': '巡检工单',
+        'name': 'thing_inspections',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'thing_inspections_feedback_巡检完...(len=322),
+          {'id':...(len=340),
+        ],
+        'displayName': '反馈巡检工单',
+        'name': 'thing_inspections_feedback',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id':...(len=340),
+        ],
+        'displayName': '保养工单',
+        'name': 'thing_maintenance',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'thing_maintenance_feedback_结束时...(len=316),
+          {'id': 'thing_maintenance_feedback_备注',...(len=395),
+          {'id': 'thing_maintenance_feedback_备件费...(len=357),
+          {'id': 'thing_maintenance_feedback_材料费...(len=354),
+          {'id': 'thing_maintenance_feedback_人工费...(len=348),
+          {'id': 'thing_maintenance_feedback_其他费...(len=352),
+          {'id': 'thing_maintenance_feedback_保养结...(len=397),
+          {'id': 'thing_maintenance_feedback_保养图...(len=323),
+          {'id':...(len=340),
+        ],
+        'displayName': '反馈保养工单',
+        'name': 'thing_maintenance_feedback',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'thing_maintenance_rules_保养方案...(len=402),
+          {'id': 'thing_maintenance_rules_保养等级...(len=379),
+          {'id': 'thing_maintenance_rules_保养频次...(len=403),
+          {'id':...(len=340),
+        ],
+        'displayName': '保养方案',
+        'name': 'thing_maintenance_rules',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'thing_repairs_申请部门', 'type':...(len=408),
+          {'id': 'thing_repairs_故障描述', 'type':...(len=395),
+          {'id': 'thing_repairs_故障图片', 'type':...(len=315),
+          {'id':...(len=340),
+        ],
+        'displayName': '报修单信息',
+        'name': 'thing_repairs',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'thing_repairs_feedback_维修完成时...(len=329),
+          {'id': 'thing_repairs_feedback_备件费',...(len=351),
+          {'id': 'thing_repairs_feedback_维修费用',...(len=307),
+          {'id': 'thing_repairs_feedback_材料费',...(len=348),
+          {'id': 'thing_repairs_feedback_人工费',...(len=341),
+          {'id': 'thing_repairs_feedback_其他费用',...(len=346),
+          {'id': 'thing_repairs_feedback_维修结果',...(len=393),
+          {'id':...(len=340),
+        ],
+        'displayName': '报修单反馈信息',
+        'name': 'thing_repairs_feedback',
+      },
+      {
+        '__typename': 'FormStruct',
+        'customFields': [
+          {'id': 'things_设备名称', 'type': 'TEXT',...(len=376),
+          {'id': 'things_设备编码', 'type': 'TEXT',...(len=376),
+          {'id': 'things_设备位置', 'type': 'TEXT',...(len=385),
+          {'id': 'things_设备型号', 'type': 'TEXT',...(len=378),
+          {'id': 'things_负责人', 'type':...(len=291),
+          {'id': 'things_手机号码', 'type': 'TEXT',...(len=378),
+          {'id': 'things_生产厂家', 'type': 'TEXT',...(len=392),
+          {'id': 'things_经销商', 'type': 'TEXT',...(len=386),
+          {'id': 'things_采购日期', 'type':...(len=307),
+          {'id': 'things_启用日期', 'type':...(len=307),
+          {'id': 'things_采购价格', 'type':...(len=338),
+          {'id': 'things_使用年限', 'type':...(len=332),
+          {'id': 'things_折旧率', 'type': 'NUMBER',...(len=339),
+          {'id': 'things_关联附件', 'type':...(len=311),
+          {'id': 'things_设备图片', 'type':...(len=296),
+          {'id': 'things_设备描述', 'type': 'TEXT',...(len=377),
+          {'id': 'things_设备类别', 'type':...(len=337),
+          {'id': 'things_品牌', 'type':...(len=323),
+          {'id': 'things_使用工厂', 'type':...(len=335),
+          {'id': 'things_用途', 'type':...(len=327),
+          {'id': 'things_设备状态', 'type':...(len=333),
+          {'id':...(len=340),
+        ],
+        'displayName': '设备信息',
+        'name': 'things',
+      },
+    ],
+  },
+  'errors': None,
+}
+
+2020-09-16 17:35:41,924 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?login
+2020-09-16 17:35:41,924 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json'}
+2020-09-16 17:35:41,925 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'account': 'admin',
+    'password': 'admin',
+  },
+}
+
+2020-09-16 17:35:42,228 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'login': {
+      '__typename': 'AuthInfo',
+      'employee': {
+        '__typename': 'Employee',
+        'account': 'admin',
+        'code': None,
+        'department': {
+          '__typename': 'Department',
+          'headcount': 0,
+          'id': '1',
+          'name': '喜临门家具股份有限公司',
+          'parentPath': [],
+          'subsidiaries': [],
+        },
+        'email': None,
+        'id': '1',
+        'job': None,
+        'name': '管理员',
+        'phone': None,
+        'roles': [
+          {'id': '1', 'name': '负责人', 'permissions':...(len=170),
+        ],
+        'status': 'ACTIVATED',
+      },
+      'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXB
+                sb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29
+                ...(5 hidden lines)',
+    },
+  },
+  'errors': None,
+}
+
+2020-09-16 17:35:42,239 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?login
+2020-09-16 17:35:42,239 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json'}
+2020-09-16 17:35:42,240 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'account': 'admin',
+    'password': 'admin',
+  },
+}
+
+2020-09-16 17:35:42,395 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'login': {
+      '__typename': 'AuthInfo',
+      'employee': {
+        '__typename': 'Employee',
+        'account': 'admin',
+        'code': None,
+        'department': {
+          '__typename': 'Department',
+          'headcount': 0,
+          'id': '1',
+          'name': '喜临门家具股份有限公司',
+          'parentPath': [],
+          'subsidiaries': [],
+        },
+        'email': None,
+        'id': '1',
+        'job': None,
+        'name': '管理员',
+        'phone': None,
+        'roles': [
+          {'id': '1', 'name': '负责人', 'permissions':...(len=170),
+        ],
+        'status': 'ACTIVATED',
+      },
+      'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXB
+                sb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29
+                ...(5 hidden lines)',
+    },
+  },
+  'errors': None,
+}
+
+2020-09-16 17:35:42,407 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?login
+2020-09-16 17:35:42,407 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json'}
+2020-09-16 17:35:42,408 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'account': 'admin',
+    'password': 'admin',
+  },
+}
+
+2020-09-16 17:35:44,581 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'login': {
+      '__typename': 'AuthInfo',
+      'employee': {
+        '__typename': 'Employee',
+        'account': 'admin',
+        'code': None,
+        'department': {
+          '__typename': 'Department',
+          'headcount': 0,
+          'id': '1',
+          'name': '喜临门家具股份有限公司',
+          'parentPath': [],
+          'subsidiaries': [],
+        },
+        'email': None,
+        'id': '1',
+        'job': None,
+        'name': '管理员',
+        'phone': None,
+        'roles': [
+          {'id': '1', 'name': '负责人', 'permissions':...(len=170),
+        ],
+        'status': 'ACTIVATED',
+      },
+      'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXB
+                sb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29
+                ...(5 hidden lines)',
+    },
+  },
+  'errors': None,
+}
+
+2020-09-16 17:35:45,269 - GraphqlClient.py - send_request - DEBUG -http://192.168.1.175:8888/graphql/?createSparePartOutbound
+2020-09-16 17:35:45,269 - GraphqlClient.py - send_request - DEBUG -{'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMzNTM0Mn0.BDuHVvt2zZciDJgKsv_M3MxmKZLKeRLy-i1d-lO56d4'}
+2020-09-16 17:35:45,274 - GraphqlClient.py - send_request - DEBUG -{
+  'input': {
+    'addition': '[{"key": "de579dbbcf78478ca7c7108aa32d4f0c", "value":
+                 "\\u5355\\u884c\\u6587\\u5b57_h9rxx"}]',
+    'details': [
+      {
+        'number': 1,
+        'reason': 'LOOSEN',
+        'sparePart': {
+          'id': 2,
+        },
+      },
+      {
+        'number': 1,
+        'reason': 'LOOSEN',
+        'sparePart': {
+          'id': 3,
+        },
+      },
+      {
+        'number': 1,
+        'reason': 'LOOSEN',
+        'sparePart': {
+          'id': 1,
+        },
+      },
+    ],
+    'factory': 'factory_5c4w4',
+    'operator': {
+      'id': 1,
+    },
+    'reason': '设备保养',
+    'shelf': 'shelf_h2utz',
+    'thingRepair': {
+      'id': 1,
+    },
+    'time': 1600248945196,
+  },
+}
+
+2020-09-16 17:35:46,659 - GraphqlClient.py - send_request - DEBUG -{
+  'data': {
+    'createSparePartOutbound': {
+      '__typename': 'SparePartOutbound',
+      'addition': '[{"key": "de579dbbcf78478ca7c7108aa32d4f0c", "value":
+                   "\\u5355\\u884c\\u6587\\u5b57_h9rxx"}]',
+      'details': [
+        {
+          '__typename': 'SparePartOutboundDetail',
+          'number': 1,
+          'reason': 'LOOSEN',
+          'sparePart': {'id': '1', 'name': 'name_bux7k', 'desc':...(len=1503),
+          'totalPrice': 1.01,
+        },
+        {
+          '__typename': 'SparePartOutboundDetail',
+          'number': 1,
+          'reason': 'LOOSEN',
+          'sparePart': {'id': '2', 'name': 'name_pdgl4', 'desc':...(len=1497),
+          'totalPrice': 1.01,
+        },
+        {
+          '__typename': 'SparePartOutboundDetail',
+          'number': 1,
+          'reason': 'LOOSEN',
+          'sparePart': {'id': '3', 'name': 'name_kl54e', 'desc':...(len=1503),
+          'totalPrice': 1.01,
+        },
+      ],
+      'factory': 'factory_5c4w4',
+      'id': '3',
+      'operator': {
+        '__typename': 'Employee',
+        'account': 'admin',
+        'code': None,
+        'department': {
+          '__typename': 'Department',
+          'headcount': 0,
+          'id': '1',
+          'name': '喜临门家具股份有限公司',
+          'parentPath': [],
+          'subsidiaries': [],
+        },
+        'email': None,
+        'id': '1',
+        'job': None,
+        'name': '管理员',
+        'phone': None,
+        'roles': [
+          {'id': '1', 'name': '负责人', 'permissions':...(len=170),
+        ],
+        'status': 'ACTIVATED',
+      },
+      'reason': '设备保养',
+      'shelf': 'shelf_h2utz',
+      'status': 'PENDING',
+      'thingMaintenance': None,
+      'thingRepair': None,
+      'time': 1600248945196,
+    },
+  },
+  'errors': None,
+}
+
+2020-09-16 17:35:46,660 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..errors'
+get
+'None
+'
+from
+result
+2020-09-16 17:35:46,661 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except None
+2020-09-16 17:35:46,663 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..operator.id'
+get
+''1'
+'
+from
+result
+2020-09-16 17:35:46,663 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except 1
+2020-09-16 17:35:46,664 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..time'
+get
+'1600248945196
+'
+from
+result
+2020-09-16 17:35:46,664 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except 1600248945196
+2020-09-16 17:35:46,666 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..shelf'
+get
+''shelf_h2utz'
+'
+from
+result
+2020-09-16 17:35:46,666 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except shelf_h2utz
+2020-09-16 17:35:46,667 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..factory'
+get
+''factory_5c4w4'
+'
+from
+result
+2020-09-16 17:35:46,667 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except factory_5c4w4
+2020-09-16 17:35:46,668 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..reason'
+get
+''设备保养'
+'
+from
+result
+2020-09-16 17:35:46,668 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except 设备保养
+2020-09-16 17:35:46,670 - AssertMethod.py - assertJsonResponseEqual - DEBUG -
+jsonpath : '$..thingRepair.id'
+get
+'None
+'
+from
+result
+2020-09-16 17:35:46,670 - AssertMethod.py - assertJsonResponseEqual - DEBUG -except 1

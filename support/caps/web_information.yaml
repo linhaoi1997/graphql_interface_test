@@ -1,0 +1,45 @@
+url: http://192.168.1.175:8888/graphql/
+#platform_url: http://192.168.1.5:8200/graphql/
+#url: https://test.teletraan.io/app/eam/graphql/
+
+
+db:
+  - 'postgres'
+  - 'postgres'
+  - '192.168.1.175'
+  - '9990'
+
+db_list:
+  - 'eam-sleemon'
+
+users:
+  simple_user:
+    interfaces:
+      "all"
+    login:
+      account: 'admin'
+      passpord: 'admin'
+  platform_user:
+    login:
+      account: admin
+      passpord: admin
+    interfaces:
+      - "createThing"
+      - "createSparePart"
+  test_user:
+    interfaces:
+      "all"
+    login:
+      account: admin
+      passpord: admin
+
+id_map:
+  'thing': 'createThing'
+  'sparePart': 'createSparePart'
+  'sparePartReceipt': 'createSparePartReceipt'
+  'sparePartOutbound': 'createSparePartOutbound'
+  'thingRepair': 'createThingRepair'
+  'thingInspectionRule': 'createThingInspectionRule'
+  'thingInspection': 'createThingInspection'
+  'thingMaintenanceRule': 'createThingMaintenanceRule'
+  'thingMaintenance': 'createThingMaintenance'

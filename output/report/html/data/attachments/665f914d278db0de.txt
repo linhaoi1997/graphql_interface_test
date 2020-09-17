@@ -1,0 +1,24 @@
+DEBUG    mytest:test_uploadFile.py:60 {'Content-Type': 'multipart/form-data; boundary=99e3317742215e7bf753d602a81d8829', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMxNDM2M30.uL1M5ECGAHVID0GqeHMxaTKJrM3hC8qpexOR1XWN_W0'}
+DEBUG    mytest:test_uploadFile.py:61 mutation uploadFiles($files: [Upload!]!) {
+  uploadFiles(files: $files) {
+    id
+    name
+    url
+    __typename
+  }
+}
+DEBUG    mytest:test_uploadFile.py:76 {
+  'data': {
+    'uploadFiles': [
+      {
+        '__typename': 'File',
+        'id': '8',
+        'name': '只有必填项.xlsx',
+        'url': 'https://minio.teletraan.io/eam-sleemon/%E5%8F%AA%E6%9C%89%E5%BF%
+                85%E5%A1%AB%E9%A1%B9.xlsx?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz
+                ...(4 hidden lines)',
+      },
+    ],
+  },
+  'errors': None,
+}

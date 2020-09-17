@@ -1,0 +1,302 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError",
+      "children" : [ {
+        "name" : "test_1",
+        "uid" : "1b90d2bbea73dc2e",
+        "parentUid" : "a0017ad855102fea08b8682d27fec4ca",
+        "status" : "failed",
+        "time" : {
+          "start" : 1600227952661,
+          "stop" : 1600227953007,
+          "duration" : 346
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_query_thing",
+        "uid" : "e2800b0bbeae2374",
+        "parentUid" : "a0017ad855102fea08b8682d27fec4ca",
+        "status" : "failed",
+        "time" : {
+          "start" : 1600227956043,
+          "stop" : 1600227958552,
+          "duration" : 2509
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_query_thing",
+        "uid" : "3daef5483d46040f",
+        "parentUid" : "a0017ad855102fea08b8682d27fec4ca",
+        "status" : "failed",
+        "time" : {
+          "start" : 1600227974677,
+          "stop" : 1600227976030,
+          "duration" : 1353
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_1[variable0]",
+        "uid" : "9da9300a4a89421d",
+        "parentUid" : "a0017ad855102fea08b8682d27fec4ca",
+        "status" : "failed",
+        "time" : {
+          "start" : 1600227980924,
+          "stop" : 1600227982338,
+          "duration" : 1414
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'input': {'id': 1, 'operator': {'id': 1}, 'time': 1600227948453, 'shelf': 'shelf_p521j', 'factory': 'factory_5088f', 'reason': '设备维修', 'thingRepair': {'id': 1}, 'thingMaintenance': {'id': 1}, 'details': [{'sparePart': {'id': 2}, 'number': 1, 'reason': 'reason_b7x12'}, {'sparePart': {'id': 3}, 'number': 1, 'reason': 'reason_kn2we'}, {'sparePart': {'id': 1}, 'number': 1, 'reason': 'reason_nlcdx'}], 'addition': '[{\"key\": \"7d2f6d619a954f64b6fd763335b479b1\", \"value\": \"\\\\u5355\\\\u884c\\\\u6587\\\\u5b57_q36of\"}, {\"key\": \"3891e218092945d2ad9ed32961b8a6df\", \"value\": \"\\\\u591a\\\\u884c\\\\u6587\\\\u5b57_ex0qo\"}, {\"key\": \"7484ee5382f440bdb77801a366d1dc7b\", \"value\": \"\\\\u8054\\\\u7cfb\\\\u65b9\\\\u5f0f_sdakl\"}, {\"key\": \"44f76301e7dd4b9691ef03f27b1dc40e\", \"value\": 1600227948454}, {\"key\": \"30e00084de5541739cb5381e6d3ca7f8\", \"value\": 1600227948454}, {\"key\": \"9aaf842c0aed4f78aa3f6395bd93de57\", \"value\": 1600227948454}, {\"key\": \"3b5835e60f154c109e0a2b63f7029dd5\", \"value\": \"\\\\u63cf\\\\u8ff0\\\\u6587\\\\u5b57_i97zk\"}, {\"key\": \"1a36612b403e4d4eb849da443f02171d\", \"value\": \"1\"}, {\"key\": \"f526dce640ca45578314faa651101286\", \"value\": [\"1\", \"1\", \"5\"]}, {\"key\": \"6549b744f3cc4220af6dd57e4a6f433d\", \"value\": 1.01}, {\"key\": \"5d67a40062e541039cc329e56e1e5326\", \"value\": 1.01}, {\"key\": \"d74fd241aa3f44d9aa93fd5c8508acb6\", \"value\": 1.01}, {\"key\": \"8bf709e943334dd883f00b2f1120ea88\", \"value\": \"\\\\u8054\\\\u7cfb\\\\u65b9\\\\u5f0f-\\\\u6d4b\\\\u8bd5\\\\u5fc5\\\\u586b\\\\u9879/\\\\u9ed8\\\\u8ba4\\\\u5185\\\\u5bb9_80dnn\"}, {\"key\": \"e5e269044ba94b82863775af49fe8ff8\", \"value\": \"\\\\u6587\\\\u5b57-\\\\u9650\\\\u5b57\\\\u65702-100_39yju\"}]'}}" ]
+      }, {
+        "name" : "test_2[variable0]",
+        "uid" : "2f6b2691a5f0512a",
+        "parentUid" : "a0017ad855102fea08b8682d27fec4ca",
+        "status" : "failed",
+        "time" : {
+          "start" : 1600227982362,
+          "stop" : 1600227983184,
+          "duration" : 822
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'input': {'id': 3, 'time': 1600227948455, 'shelf': 'shelf_z3njz', 'factory': 'factory_gpa1f'}}" ]
+      }, {
+        "name" : "test_right[import_spare_parts0]",
+        "uid" : "b8f24b51aa23a862",
+        "parentUid" : "a0017ad855102fea08b8682d27fec4ca",
+        "status" : "failed",
+        "time" : {
+          "start" : 1600228023807,
+          "stop" : 1600228023809,
+          "duration" : 2
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "['备件导入-只填写必填项.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']" ]
+      }, {
+        "name" : "test_1[variable0]",
+        "uid" : "72b5e310fb5b1821",
+        "parentUid" : "a0017ad855102fea08b8682d27fec4ca",
+        "status" : "failed",
+        "time" : {
+          "start" : 1600228064883,
+          "stop" : 1600228065146,
+          "duration" : 263
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'input': {'id': 1, 'name': 'name_ultk8', 'items': [{'id': 1, 'name': 'name_j42zs', 'subItems': [{'id': 1, 'name': 'name_s8o0n', 'standard': 'standard_fkfaw', 'category': 'NUMBER', 'criteria': 'GT_LOWER_LE_UPPER', 'boundary': {'a': 1, 'b': 1}}, {'id': 1, 'name': 'name_rpkeq', 'standard': 'standard_jlfsz', 'category': 'NUMBER', 'criteria': 'GE_LOWER_LE_UPPER', 'boundary': {'a': 1, 'b': 1}}, {'id': 2, 'name': 'name_4jszb', 'standard': 'standard_k53di', 'category': 'NUMBER', 'criteria': 'LE', 'boundary': {'a': 1, 'b': 1}}]}, {'id': 2, 'name': 'name_vnnra', 'subItems': [{'id': 2, 'name': 'name_zsxlt', 'standard': 'standard_y1l2m', 'category': 'NORMAL', 'criteria': 'LT', 'boundary': {'a': 1, 'b': 1}}, {'id': 3, 'name': 'name_wgfm4', 'standard': 'standard_4jhli', 'category': 'NORMAL', 'criteria': 'LT', 'boundary': {'a': 1, 'b': 1}}, {'id': 1, 'name': 'name_05uji', 'standard': 'standard_ft9th', 'category': 'NORMAL', 'criteria': 'GT_LOWER_LT_UPPER', 'boundary': {'a': 1, 'b': 1}}]}, {'id': 3, 'name': 'name_c4z5j', 'subItems': [{'id': 1, 'name': 'name_wodsn', 'standard': 'standard_qaz1q', 'category': 'NUMBER', 'criteria': 'GE_LOWER_LE_UPPER', 'boundary': {'a': 1, 'b': 1}}, {'id': 1, 'name': 'name_2p647', 'standard': 'standard_4umnu', 'category': 'NORMAL', 'criteria': 'NOTEQUAL', 'boundary': {'a': 1, 'b': 1}}, {'id': 2, 'name': 'name_mdvm2', 'standard': 'standard_i74ii', 'category': 'NORMAL', 'criteria': 'GT', 'boundary': {'a': 1, 'b': 1}}]}], 'addition': '[{\"key\": \"b7f0c19b0fb14261b6c0a1803c0ae6e5\", \"value\": \"\\\\u5355\\\\u884c\\\\u6587\\\\u5b57_o7mc3\"}, {\"key\": \"5dfbced16455411da0ca9ade7b880cbc\", \"value\": \"\\\\u591a\\\\u884c\\\\u6587\\\\u5b57_75iro\"}, {\"key\": \"ddf0a83e6ccb43ac8d330cac8107b5d6\", \"value\": \"\\\\u8054\\\\u7cfb\\\\u65b9\\\\u5f0f_q7c20\"}, {\"key\": \"67b64d2a1458405db72f7ce06e2d5d1e\", \"value\": 1600227948613}, {\"key\": \"043500291f234334ab188cd51944b8bb\", \"value\": 1600227948613}, {\"key\": \"c05b004f2643415c98bfa57e485f7d91\", \"value\": 1600227948613}, {\"key\": \"ad69fcfb00004a62bbc9d52cf112baa8\", \"value\": \"\\\\u63cf\\\\u8ff0\\\\u6587\\\\u5b57_x8n3j\"}, {\"key\": \"f24c40305e4e43a8a439e01723ad3d65\", \"value\": \"1\"}, {\"key\": \"e21957db3dde408c84c90d4914a449c7\", \"value\": [\"1\", \"4\", \"2\"]}, {\"key\": \"329724f9a8e442e3b9b49c49e3525268\", \"value\": 1.01}, {\"key\": \"f37767f7c5f14f5a868863b65a1b7d0b\", \"value\": 1.01}, {\"key\": \"923492afa7f4464f99e4facc432bb744\", \"value\": 1.01}, {\"key\": \"c044a79a6577407eaa2d7342845737d2\", \"value\": \"\\\\u8054\\\\u7cfb\\\\u65b9\\\\u5f0f-\\\\u6d4b\\\\u8bd5\\\\u5fc5\\\\u586b\\\\u9879/\\\\u9ed8\\\\u8ba4\\\\u5185\\\\u5bb9_gbt5m\"}, {\"key\": \"bef34a89163f4c10af4df2abd3cd4157\", \"value\": \"\\\\u6587\\\\u5b57-\\\\u9650\\\\u5b57\\\\u65702-100_66s0j\"}]'}}" ]
+      }, {
+        "name" : "test_1[variable0]",
+        "uid" : "34ef3e713e5a5a8b",
+        "parentUid" : "a0017ad855102fea08b8682d27fec4ca",
+        "status" : "failed",
+        "time" : {
+          "start" : 1600228324320,
+          "stop" : 1600228329392,
+          "duration" : 5072
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'input': {'id': 1, 'thing': {'id': 1}, 'reportedAt': 1600227948819, 'reportDepartment': 'reportDepartment_o39rd', 'faultImages': [{'id': 5}, {'id': 1}, {'id': 2}], 'faultDesc': 'faultDesc_d7nrc', 'worker': {'id': 1}, 'addition': '[{\"key\": \"8424d6c6c9cc402bb6ec0349ea81fa0e\", \"value\": \"\\\\u5355\\\\u884c\\\\u6587\\\\u5b57_ct7qk\"}, {\"key\": \"564472fe0c2d456eb05513bf87fb4127\", \"value\": \"\\\\u591a\\\\u884c\\\\u6587\\\\u5b57_zxgum\"}, {\"key\": \"201bdee082cd41869f258e8113477baa\", \"value\": \"\\\\u8054\\\\u7cfb\\\\u65b9\\\\u5f0f_hve4e\"}, {\"key\": \"5b31f41baeea42a1ba00ecc19087c69e\", \"value\": 1600227948820}, {\"key\": \"295983db95a1486095909ecbc24c06dd\", \"value\": 1600227948820}, {\"key\": \"04682bc02fe541dd933acb1466cbe072\", \"value\": 1600227948820}, {\"key\": \"5e8938f6eb3b4dd79c135c3cc502e097\", \"value\": \"\\\\u63cf\\\\u8ff0\\\\u6587\\\\u5b57_ct9wa\"}, {\"key\": \"5dbb3bf8679849fbb5c87c287a0bcc3c\", \"value\": \"1\"}, {\"key\": \"be64c8a8f18549d7a5e69b5d44ee4d60\", \"value\": [\"5\", \"5\", \"5\"]}, {\"key\": \"cbe332c7643d4d2a8692ee02883f7a95\", \"value\": 1.01}, {\"key\": \"03ddd4a260df48f188d8fbe73d3c80ab\", \"value\": 1.01}, {\"key\": \"7201de3cd60b4b5ea71346c11456aec4\", \"value\": 1.01}, {\"key\": \"57e8ce31a3d64dd987da098842c45b98\", \"value\": \"\\\\u8054\\\\u7cfb\\\\u65b9\\\\u5f0f-\\\\u6d4b\\\\u8bd5\\\\u5fc5\\\\u586b\\\\u9879/\\\\u9ed8\\\\u8ba4\\\\u5185\\\\u5bb9_a8ry4\"}, {\"key\": \"e259368235a1439aa0145f3cf18ef936\", \"value\": \"\\\\u6587\\\\u5b57-\\\\u9650\\\\u5b57\\\\u65702-100_ve4nv\"}]'}}" ]
+      }, {
+        "name" : "test_2[variable0]",
+        "uid" : "abbb3977dcbcab6d",
+        "parentUid" : "a0017ad855102fea08b8682d27fec4ca",
+        "status" : "failed",
+        "time" : {
+          "start" : 1600228329412,
+          "stop" : 1600228334070,
+          "duration" : 4658
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'input': {'id': 1, 'reportDepartment': 'reportDepartment_zfd9m', 'faultDesc': 'faultDesc_33pu1'}}" ]
+      }, {
+        "name" : "test_8[audit_pass]",
+        "uid" : "ad1b88ff1e668a6a",
+        "parentUid" : "a0017ad855102fea08b8682d27fec4ca",
+        "status" : "failed",
+        "time" : {
+          "start" : 1600228397457,
+          "stop" : 1600228404008,
+          "duration" : 6551
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "'audit_pass'" ]
+      }, {
+        "name" : "test_8[audit_reject]",
+        "uid" : "ea15d306405db37c",
+        "parentUid" : "a0017ad855102fea08b8682d27fec4ca",
+        "status" : "failed",
+        "time" : {
+          "start" : 1600228404027,
+          "stop" : 1600228411776,
+          "duration" : 7749
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "'audit_reject'" ]
+      }, {
+        "name" : "test_8[re_submit]",
+        "uid" : "c4a3a99346a963bb",
+        "parentUid" : "a0017ad855102fea08b8682d27fec4ca",
+        "status" : "failed",
+        "time" : {
+          "start" : 1600228411794,
+          "stop" : 1600228416995,
+          "duration" : 5201
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "'re_submit'" ]
+      }, {
+        "name" : "test_9[audit_pass]",
+        "uid" : "f1cdd19998c207d6",
+        "parentUid" : "a0017ad855102fea08b8682d27fec4ca",
+        "status" : "failed",
+        "time" : {
+          "start" : 1600228417016,
+          "stop" : 1600228423748,
+          "duration" : 6732
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "'audit_pass'" ]
+      }, {
+        "name" : "test_9[audit_reject]",
+        "uid" : "4c00273acc99860",
+        "parentUid" : "a0017ad855102fea08b8682d27fec4ca",
+        "status" : "failed",
+        "time" : {
+          "start" : 1600228423767,
+          "stop" : 1600228428799,
+          "duration" : 5032
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "'audit_reject'" ]
+      }, {
+        "name" : "test_6[feed]",
+        "uid" : "3af55bb4729a76cc",
+        "parentUid" : "a0017ad855102fea08b8682d27fec4ca",
+        "status" : "failed",
+        "time" : {
+          "start" : 1600243856297,
+          "stop" : 1600243863090,
+          "duration" : 6793
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "'feed'" ]
+      }, {
+        "name" : "test_2",
+        "uid" : "d76172086e293510",
+        "parentUid" : "a0017ad855102fea08b8682d27fec4ca",
+        "status" : "failed",
+        "time" : {
+          "start" : 1600248104846,
+          "stop" : 1600248173446,
+          "duration" : 68600
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "a0017ad855102fea08b8682d27fec4ca"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  }, {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "KeyError: 'SparePartOutBound'",
+      "children" : [ {
+        "name" : "test_1",
+        "uid" : "b70f61def8e6d433",
+        "parentUid" : "e241cfb79620eb9b2b43723b4fa84aa8",
+        "status" : "broken",
+        "time" : {
+          "start" : 1600227972140,
+          "stop" : 1600227972633,
+          "duration" : 493
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "e241cfb79620eb9b2b43723b4fa84aa8"
+    }, {
+      "name" : "http.client.RemoteDisconnected: Remote end closed connection without response",
+      "children" : [ {
+        "name" : "test_7[update]",
+        "uid" : "db026455ea164528",
+        "parentUid" : "234a1ed694335c0cfbbf77d94ee142c9",
+        "status" : "broken",
+        "time" : {
+          "start" : 1600243863179,
+          "stop" : 1600243874858,
+          "duration" : 11679
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "'update'" ]
+      } ],
+      "uid" : "234a1ed694335c0cfbbf77d94ee142c9"
+    }, {
+      "name" : "urllib.error.URLError: <urlopen error [Errno 61] Connection refused>",
+      "children" : [ {
+        "name" : "test_7[feed]",
+        "uid" : "48fb5bbcf77e786f",
+        "parentUid" : "7eec4f426990226a5f940d02b11820cd",
+        "status" : "broken",
+        "time" : {
+          "start" : 1600243875125,
+          "stop" : 1600243875142,
+          "duration" : 17
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "'feed'" ]
+      }, {
+        "name" : "test_7[audit_feed_pass]",
+        "uid" : "b9a0baf286f74630",
+        "parentUid" : "7eec4f426990226a5f940d02b11820cd",
+        "status" : "broken",
+        "time" : {
+          "start" : 1600243875487,
+          "stop" : 1600243875510,
+          "duration" : 23
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "'audit_feed_pass'" ]
+      }, {
+        "name" : "test_7[audit_feed_reject]",
+        "uid" : "f2bffb29ccc21fd9",
+        "parentUid" : "7eec4f426990226a5f940d02b11820cd",
+        "status" : "broken",
+        "time" : {
+          "start" : 1600243875842,
+          "stop" : 1600243875884,
+          "duration" : 42
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "'audit_feed_reject'" ]
+      } ],
+      "uid" : "7eec4f426990226a5f940d02b11820cd"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ]
+}

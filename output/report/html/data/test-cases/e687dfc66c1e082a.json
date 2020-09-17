@@ -1,0 +1,144 @@
+{
+  "uid" : "e687dfc66c1e082a",
+  "name" : "test_add_right[upload_file3]",
+  "fullName" : "interface.file_test.test_uploadFile.TestUploadFile#test_add_right",
+  "historyId" : "de2a62e8fcb03a18449728b38b153b7a",
+  "time" : {
+    "start" : 1600227961736,
+    "stop" : 1600227961740,
+    "duration" : 4
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "init",
+    "time" : {
+      "start" : 1600227952218,
+      "stop" : 1600227952218,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "upload_file",
+    "time" : {
+      "start" : 1600227961157,
+      "stop" : 1600227961736,
+      "duration" : 579
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1600227952116,
+      "stop" : 1600227952218,
+      "duration" : 102
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "resource",
+    "time" : {
+      "start" : 1600227952218,
+      "stop" : 1600227952218,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "9c9f45966a6057c2",
+      "name" : "log",
+      "source" : "9c9f45966a6057c2.txt",
+      "type" : "text/plain",
+      "size" : 1330
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "upload_file success"
+  }, {
+    "name" : "epic",
+    "value" : "file"
+  }, {
+    "name" : "feature",
+    "value" : "uploadFile"
+  }, {
+    "name" : "parentSuite",
+    "value" : "interface.file_test"
+  }, {
+    "name" : "suite",
+    "value" : "test_uploadFile"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestUploadFile"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Pro.local"
+  }, {
+    "name" : "thread",
+    "value" : "99506-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "interface.file_test.test_uploadFile"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "upload_file",
+    "value" : "['test.pdf', 'application/pdf']"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "e687dfc66c1e082a.json",
+  "parameterValues" : [ "['test.pdf', 'application/pdf']" ]
+}

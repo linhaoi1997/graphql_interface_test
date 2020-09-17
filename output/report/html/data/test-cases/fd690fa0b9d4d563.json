@@ -1,0 +1,131 @@
+{
+  "uid" : "fd690fa0b9d4d563",
+  "name" : "test_1[variable0]",
+  "fullName" : "interface.sparePartOutBound_test.test_createSparePartOutbound.TestCreateSparePartOutbound#test_1",
+  "historyId" : "018e8ffed1b9b57d917e4fd82d2c8947",
+  "time" : {
+    "start" : 1600248945269,
+    "stop" : 1600248946670,
+    "duration" : 1401
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError",
+  "statusTrace" : "self = <test_createSparePartOutbound.TestCreateSparePartOutbound object at 0x10b2f6048>\nvariable = {'input': {'details': [{'number': 1, 'reason': 'LOOSEN', 'sparePart': {'id': 2}}, {'number': 1, 'reason': 'LOOSEN', 's...reason': 'LOOSEN', 'sparePart': {'id': 1}}], 'factory': 'factory_5c4w4', 'operator': {'id': 1}, 'reason': '设备保养', ...}}\nresource = <support.base_test.ResourceLoader.ResourceLoader object at 0x1098d4940>\n\n    @allure.story(\"所有项完整\")\n    @pytest.mark.parametrize(\"variable\", interface.generate(\"generate_all_params\", **BaseTestCase.all_param))\n    def test_1(self, variable, resource):\n        # 有bug先改下参数\n        for i in variable[\"input\"][\"details\"]:\n            i[\"reason\"] = \"LOOSEN\"\n        variable[\"input\"].pop(\"thingMaintenance\")\n        user = resource.simple_user\n        result = user.send_request(self.query_name, variable).result\n>       self.assertForm(variable, result)\n\ntest_createSparePartOutbound.py:23: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n../../support/base_test/AssertMethod.py:124: in assertForm\n    self.assertEveryParam(variables, result)\n../../support/base_test/AssertMethod.py:80: in assertEveryParam\n    self.assertJsonResponseEqual(i, result, deepest_dict[i])\n../../support/base_test/AssertMethod.py:23: in assertJsonResponseEqual\n    self.assertEqual(value, result)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <test_createSparePartOutbound.TestCreateSparePartOutbound object at 0x10b2f6048>\nvalue = 1, result = None\n\n    def assertEqual(self, value, result):\n        if type(value) == str and value.isdigit():\n            if type(result) in (str, int):\n                assert int(value) == int(result)\n        elif type(value) in (int, float):\n            if type(result) in (str, int, float):\n                assert int(value) == int(result)\n            else:\n>               assert None\nE               AssertionError\n\n../../support/base_test/AssertMethod.py:90: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "init",
+    "time" : {
+      "start" : 1600248945266,
+      "stop" : 1600248945266,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1600248945200,
+      "stop" : 1600248945266,
+      "duration" : 66
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "resource",
+    "time" : {
+      "start" : 1600248945266,
+      "stop" : 1600248945267,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError",
+    "statusTrace" : "self = <test_createSparePartOutbound.TestCreateSparePartOutbound object at 0x10b2f6048>\nvariable = {'input': {'details': [{'number': 1, 'reason': 'LOOSEN', 'sparePart': {'id': 2}}, {'number': 1, 'reason': 'LOOSEN', 's...reason': 'LOOSEN', 'sparePart': {'id': 1}}], 'factory': 'factory_5c4w4', 'operator': {'id': 1}, 'reason': '设备保养', ...}}\nresource = <support.base_test.ResourceLoader.ResourceLoader object at 0x1098d4940>\n\n    @allure.story(\"所有项完整\")\n    @pytest.mark.parametrize(\"variable\", interface.generate(\"generate_all_params\", **BaseTestCase.all_param))\n    def test_1(self, variable, resource):\n        # 有bug先改下参数\n        for i in variable[\"input\"][\"details\"]:\n            i[\"reason\"] = \"LOOSEN\"\n        variable[\"input\"].pop(\"thingMaintenance\")\n        user = resource.simple_user\n        result = user.send_request(self.query_name, variable).result\n>       self.assertForm(variable, result)\n\ntest_createSparePartOutbound.py:23: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n../../support/base_test/AssertMethod.py:124: in assertForm\n    self.assertEveryParam(variables, result)\n../../support/base_test/AssertMethod.py:80: in assertEveryParam\n    self.assertJsonResponseEqual(i, result, deepest_dict[i])\n../../support/base_test/AssertMethod.py:23: in assertJsonResponseEqual\n    self.assertEqual(value, result)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <test_createSparePartOutbound.TestCreateSparePartOutbound object at 0x10b2f6048>\nvalue = 1, result = None\n\n    def assertEqual(self, value, result):\n        if type(value) == str and value.isdigit():\n            if type(result) in (str, int):\n                assert int(value) == int(result)\n        elif type(value) in (int, float):\n            if type(result) in (str, int, float):\n                assert int(value) == int(result)\n            else:\n>               assert None\nE               AssertionError\n\n../../support/base_test/AssertMethod.py:90: AssertionError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "99a8c47885c12c1b",
+      "name" : "log",
+      "source" : "99a8c47885c12c1b.txt",
+      "type" : "text/plain",
+      "size" : 4198
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "epic",
+    "value" : "sparePartOutBound"
+  }, {
+    "name" : "story",
+    "value" : "所有项完整"
+  }, {
+    "name" : "feature",
+    "value" : "createSparePartOutbound"
+  }, {
+    "name" : "parentSuite",
+    "value" : "interface.sparePartOutBound_test"
+  }, {
+    "name" : "suite",
+    "value" : "test_createSparePartOutbound"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestCreateSparePartOutbound"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Pro.local"
+  }, {
+    "name" : "thread",
+    "value" : "78064-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "interface.sparePartOutBound_test.test_createSparePartOutbound"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "variable",
+    "value" : "{'input': {'operator': {'id': 1}, 'time': 1600248945196, 'shelf': 'shelf_h2utz', 'factory': 'factory_5c4w4', 'reason': '设备保养', 'thingRepair': {'id': 1}, 'thingMaintenance': {'id': 1}, 'details': [{'sparePart': {'id': 2}, 'number': 1, 'reason': 'reason_u56wg'}, {'sparePart': {'id': 3}, 'number': 1, 'reason': 'reason_4xckv'}, {'sparePart': {'id': 1}, 'number': 1, 'reason': 'reason_96olo'}], 'addition': '[{\"key\": \"de579dbbcf78478ca7c7108aa32d4f0c\", \"value\": \"\\\\u5355\\\\u884c\\\\u6587\\\\u5b57_h9rxx\"}]'}}"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "fd690fa0b9d4d563.json",
+  "parameterValues" : [ "{'input': {'operator': {'id': 1}, 'time': 1600248945196, 'shelf': 'shelf_h2utz', 'factory': 'factory_5c4w4', 'reason': '设备保养', 'thingRepair': {'id': 1}, 'thingMaintenance': {'id': 1}, 'details': [{'sparePart': {'id': 2}, 'number': 1, 'reason': 'reason_u56wg'}, {'sparePart': {'id': 3}, 'number': 1, 'reason': 'reason_4xckv'}, {'sparePart': {'id': 1}, 'number': 1, 'reason': 'reason_96olo'}], 'addition': '[{\"key\": \"de579dbbcf78478ca7c7108aa32d4f0c\", \"value\": \"\\\\u5355\\\\u884c\\\\u6587\\\\u5b57_h9rxx\"}]'}}" ]
+}

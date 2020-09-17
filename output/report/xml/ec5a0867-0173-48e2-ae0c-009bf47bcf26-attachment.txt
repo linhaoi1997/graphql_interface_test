@@ -1,0 +1,1320 @@
+DEBUG    mytest:GraphqlClient.py:34 http://192.168.1.175:8888/graphql/?createThingInspectionRule
+DEBUG    mytest:GraphqlClient.py:35 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMxNDM0Mn0.UOI1OaH_ELEAVzSlldya-CY3ahODVdxWOAwKSCpjxGc'}
+DEBUG    mytest:GraphqlClient.py:36 {
+  'input': {
+    'addition': '[{"key": "b7f0c19b0fb14261b6c0a1803c0ae6e5", "value":
+                 "\\u5355\\u884c\\u6587\\u5b57_ei0y3"}, {"key":
+                 ...(20 hidden lines)',
+    'items': [
+      {
+        'name': 'name_u2rdf',
+        'subItems': [
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NUMBER',
+            'criteria': 'GT_LOWER_LT_UPPER',
+            'name': 'name_c9ioa',
+            'standard': 'standard_co3kn',
+          },
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NORMAL',
+            'criteria': 'GE_LOWER_LE_UPPER',
+            'name': 'name_6hyqs',
+            'standard': 'standard_eftf7',
+          },
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NORMAL',
+            'criteria': 'GT',
+            'name': 'name_vqfrc',
+            'standard': 'standard_98sjs',
+          },
+        ],
+      },
+      {
+        'name': 'name_eykqk',
+        'subItems': [
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NORMAL',
+            'criteria': 'GE_LOWER_LT_UPPER',
+            'name': 'name_bu6l1',
+            'standard': 'standard_b7umj',
+          },
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NORMAL',
+            'criteria': 'NOTEQUAL',
+            'name': 'name_oxyel',
+            'standard': 'standard_3284u',
+          },
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NORMAL',
+            'criteria': 'GT_LOWER_LE_UPPER',
+            'name': 'name_7qi1p',
+            'standard': 'standard_qbqny',
+          },
+        ],
+      },
+      {
+        'name': 'name_c6p9w',
+        'subItems': [
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NORMAL',
+            'criteria': 'EQUAL',
+            'name': 'name_kr7fr',
+            'standard': 'standard_4w8lf',
+          },
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NUMBER',
+            'criteria': 'GE_LOWER_LE_UPPER',
+            'name': 'name_3e9jf',
+            'standard': 'standard_2yxwe',
+          },
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NORMAL',
+            'criteria': 'LT',
+            'name': 'name_0vq1a',
+            'standard': 'standard_pz48q',
+          },
+        ],
+      },
+    ],
+    'name': 'name_ibnnd',
+  },
+}
+
+DEBUG    mytest:GraphqlClient.py:39 {
+  'data': {
+    'createThingInspectionRule': {
+      '__typename': 'ThingInspectionRule',
+      'addition': '[{"key": "b7f0c19b0fb14261b6c0a1803c0ae6e5", "value":
+                   "\\u5355\\u884c\\u6587\\u5b57_ei0y3"}, {"key":
+                   ...(20 hidden lines)',
+      'code': 'XJFA202009160014',
+      'id': '14',
+      'items': [
+        {
+          '__typename': 'ThingInspectionItem',
+          'id': 'b9c19a6f-ab98-4cd9-8edd-eb6be6208a71',
+          'name': 'name_u2rdf',
+          'subItems': [
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NUMBER',
+              'criteria': 'GT_LOWER_LT_UPPER',
+              'id': '6dc907f6-1cd4-48fc-9965-315ac6dcb031',
+              'name': 'name_c9ioa',
+              'standard': 'standard_co3kn',
+            },
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NORMAL',
+              'criteria': 'GE_LOWER_LE_UPPER',
+              'id': 'a2485e99-1c5e-4933-b662-c826e6bf27a0',
+              'name': 'name_6hyqs',
+              'standard': 'standard_eftf7',
+            },
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NORMAL',
+              'criteria': 'GT',
+              'id': '27385e26-16da-4bf9-9ff1-955972f0d8e0',
+              'name': 'name_vqfrc',
+              'standard': 'standard_98sjs',
+            },
+          ],
+        },
+        {
+          '__typename': 'ThingInspectionItem',
+          'id': 'a20b9163-9016-4971-9d92-b93b9ae8faf7',
+          'name': 'name_eykqk',
+          'subItems': [
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NORMAL',
+              'criteria': 'GE_LOWER_LT_UPPER',
+              'id': '265ecdde-c58a-42ea-83a0-57e55069e8f4',
+              'name': 'name_bu6l1',
+              'standard': 'standard_b7umj',
+            },
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NORMAL',
+              'criteria': 'NOTEQUAL',
+              'id': 'dc5eb1a7-f8c7-4c3c-89c9-b8fdc3d32bd2',
+              'name': 'name_oxyel',
+              'standard': 'standard_3284u',
+            },
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NORMAL',
+              'criteria': 'GT_LOWER_LE_UPPER',
+              'id': '48f86c68-2a9c-454a-af0c-7661e7f6bd3c',
+              'name': 'name_7qi1p',
+              'standard': 'standard_qbqny',
+            },
+          ],
+        },
+        {
+          '__typename': 'ThingInspectionItem',
+          'id': '97967342-9087-49ed-ba96-03674bac2f4e',
+          'name': 'name_c6p9w',
+          'subItems': [
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NORMAL',
+              'criteria': 'EQUAL',
+              'id': '144017eb-be2a-4af2-9532-c270087e24c9',
+              'name': 'name_kr7fr',
+              'standard': 'standard_4w8lf',
+            },
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NUMBER',
+              'criteria': 'GE_LOWER_LE_UPPER',
+              'id': '9704bce7-a9f0-4f19-be48-1cc342866d8f',
+              'name': 'name_3e9jf',
+              'standard': 'standard_2yxwe',
+            },
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NORMAL',
+              'criteria': 'LT',
+              'id': '2913af98-41c5-4173-ae24-fd4ab7aead79',
+              'name': 'name_0vq1a',
+              'standard': 'standard_pz48q',
+            },
+          ],
+        },
+      ],
+      'name': 'name_ibnnd',
+      'updatedAt': 1600228062897,
+    },
+  },
+  'errors': None,
+}
+
+DEBUG    mytest:conftest.py:64 {'ThingInspectionRule': ['14'], 'ThingInspectionItem': ['b9c19a6f-ab98-4cd9-8edd-eb6be6208a71', 'a20b9163-9016-4971-9d92-b93b9ae8faf7', '97967342-9087-49ed-ba96-03674bac2f4e'], 'ThingInspectionSubItem': ['6dc907f6-1cd4-48fc-9965-315ac6dcb031', 'a2485e99-1c5e-4933-b662-c826e6bf27a0', '27385e26-16da-4bf9-9ff1-955972f0d8e0', '265ecdde-c58a-42ea-83a0-57e55069e8f4', 'dc5eb1a7-f8c7-4c3c-89c9-b8fdc3d32bd2', '48f86c68-2a9c-454a-af0c-7661e7f6bd3c', '144017eb-be2a-4af2-9532-c270087e24c9', '9704bce7-a9f0-4f19-be48-1cc342866d8f', '2913af98-41c5-4173-ae24-fd4ab7aead79']}
+DEBUG    mytest:GraphqlClient.py:34 http://192.168.1.175:8888/graphql/?createThingInspectionRule
+DEBUG    mytest:GraphqlClient.py:35 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMxNDM0Mn0.UOI1OaH_ELEAVzSlldya-CY3ahODVdxWOAwKSCpjxGc'}
+DEBUG    mytest:GraphqlClient.py:36 {
+  'input': {
+    'addition': '[{"key": "b7f0c19b0fb14261b6c0a1803c0ae6e5", "value":
+                 "\\u5355\\u884c\\u6587\\u5b57_06ll3"}, {"key":
+                 ...(20 hidden lines)',
+    'items': [
+      {
+        'name': 'name_w6wud',
+        'subItems': [
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NORMAL',
+            'criteria': 'GT_LOWER_LE_UPPER',
+            'name': 'name_10twl',
+            'standard': 'standard_cm92o',
+          },
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NORMAL',
+            'criteria': 'LT',
+            'name': 'name_5ndmy',
+            'standard': 'standard_snq96',
+          },
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NUMBER',
+            'criteria': 'LT',
+            'name': 'name_ueg63',
+            'standard': 'standard_pm65v',
+          },
+        ],
+      },
+      {
+        'name': 'name_86c6v',
+        'subItems': [
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NUMBER',
+            'criteria': 'GT_LOWER_LT_UPPER',
+            'name': 'name_ckujg',
+            'standard': 'standard_4vpqq',
+          },
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NORMAL',
+            'criteria': 'GT_LOWER_LT_UPPER',
+            'name': 'name_ee66o',
+            'standard': 'standard_3y6bs',
+          },
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NORMAL',
+            'criteria': 'GE_LOWER_LE_UPPER',
+            'name': 'name_6u2wa',
+            'standard': 'standard_8dpkf',
+          },
+        ],
+      },
+      {
+        'name': 'name_sy9v3',
+        'subItems': [
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NORMAL',
+            'criteria': 'EQUAL',
+            'name': 'name_05k7v',
+            'standard': 'standard_2xwu3',
+          },
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NORMAL',
+            'criteria': 'EQUAL',
+            'name': 'name_p9mxm',
+            'standard': 'standard_pb36m',
+          },
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NUMBER',
+            'criteria': 'GE_LOWER_LT_UPPER',
+            'name': 'name_wtabl',
+            'standard': 'standard_ysfnf',
+          },
+        ],
+      },
+    ],
+    'name': 'name_avefn',
+  },
+}
+
+DEBUG    mytest:GraphqlClient.py:39 {
+  'data': {
+    'createThingInspectionRule': {
+      '__typename': 'ThingInspectionRule',
+      'addition': '[{"key": "b7f0c19b0fb14261b6c0a1803c0ae6e5", "value":
+                   "\\u5355\\u884c\\u6587\\u5b57_06ll3"}, {"key":
+                   ...(20 hidden lines)',
+      'code': 'XJFA202009160015',
+      'id': '15',
+      'items': [
+        {
+          '__typename': 'ThingInspectionItem',
+          'id': 'f4109bc9-717a-4b0c-bc32-04c8a200c703',
+          'name': 'name_w6wud',
+          'subItems': [
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NORMAL',
+              'criteria': 'GT_LOWER_LE_UPPER',
+              'id': '55435880-32b7-46a1-a933-4a0ee2fee361',
+              'name': 'name_10twl',
+              'standard': 'standard_cm92o',
+            },
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NORMAL',
+              'criteria': 'LT',
+              'id': '9aad1472-5896-4b76-9036-ec07ae4b1086',
+              'name': 'name_5ndmy',
+              'standard': 'standard_snq96',
+            },
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NUMBER',
+              'criteria': 'LT',
+              'id': '8b24d4cc-39c5-4130-a13e-b973d76cbedb',
+              'name': 'name_ueg63',
+              'standard': 'standard_pm65v',
+            },
+          ],
+        },
+        {
+          '__typename': 'ThingInspectionItem',
+          'id': 'e6eba90d-68e8-46d0-a705-17290c7d3f9e',
+          'name': 'name_86c6v',
+          'subItems': [
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NUMBER',
+              'criteria': 'GT_LOWER_LT_UPPER',
+              'id': '20d0f704-3899-4603-acc0-7aba33c72880',
+              'name': 'name_ckujg',
+              'standard': 'standard_4vpqq',
+            },
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NORMAL',
+              'criteria': 'GT_LOWER_LT_UPPER',
+              'id': '6adb6ba3-f508-46c7-adbf-9b8bfc91c3a6',
+              'name': 'name_ee66o',
+              'standard': 'standard_3y6bs',
+            },
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NORMAL',
+              'criteria': 'GE_LOWER_LE_UPPER',
+              'id': '040cc1a4-092d-45af-9600-778150cd9265',
+              'name': 'name_6u2wa',
+              'standard': 'standard_8dpkf',
+            },
+          ],
+        },
+        {
+          '__typename': 'ThingInspectionItem',
+          'id': 'f7f9fc3f-0009-4bb5-8d38-bbe8d2069bf7',
+          'name': 'name_sy9v3',
+          'subItems': [
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NORMAL',
+              'criteria': 'EQUAL',
+              'id': 'd45f99d7-0fec-4b15-9a78-7b09303ef580',
+              'name': 'name_05k7v',
+              'standard': 'standard_2xwu3',
+            },
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NORMAL',
+              'criteria': 'EQUAL',
+              'id': '5d82d5be-24e3-4929-9b39-33adc4b3cd98',
+              'name': 'name_p9mxm',
+              'standard': 'standard_pb36m',
+            },
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NUMBER',
+              'criteria': 'GE_LOWER_LT_UPPER',
+              'id': '5640aad7-cba8-4179-9d62-98ac58865664',
+              'name': 'name_wtabl',
+              'standard': 'standard_ysfnf',
+            },
+          ],
+        },
+      ],
+      'name': 'name_avefn',
+      'updatedAt': 1600228064367,
+    },
+  },
+  'errors': None,
+}
+
+DEBUG    mytest:conftest.py:64 {'ThingInspectionRule': ['15'], 'ThingInspectionItem': ['f4109bc9-717a-4b0c-bc32-04c8a200c703', 'e6eba90d-68e8-46d0-a705-17290c7d3f9e', 'f7f9fc3f-0009-4bb5-8d38-bbe8d2069bf7'], 'ThingInspectionSubItem': ['55435880-32b7-46a1-a933-4a0ee2fee361', '9aad1472-5896-4b76-9036-ec07ae4b1086', '8b24d4cc-39c5-4130-a13e-b973d76cbedb', '20d0f704-3899-4603-acc0-7aba33c72880', '6adb6ba3-f508-46c7-adbf-9b8bfc91c3a6', '040cc1a4-092d-45af-9600-778150cd9265', 'd45f99d7-0fec-4b15-9a78-7b09303ef580', '5d82d5be-24e3-4929-9b39-33adc4b3cd98', '5640aad7-cba8-4179-9d62-98ac58865664']}
+DEBUG    mytest:GraphqlClient.py:34 http://192.168.1.175:8888/graphql/?createThingInspectionRule
+DEBUG    mytest:GraphqlClient.py:35 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMxNDM0Mn0.UOI1OaH_ELEAVzSlldya-CY3ahODVdxWOAwKSCpjxGc'}
+DEBUG    mytest:GraphqlClient.py:36 {
+  'input': {
+    'addition': '[{"key": "b7f0c19b0fb14261b6c0a1803c0ae6e5", "value":
+                 "\\u5355\\u884c\\u6587\\u5b57_xzijd"}, {"key":
+                 ...(20 hidden lines)',
+    'items': [
+      {
+        'name': 'name_pfdw9',
+        'subItems': [
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NUMBER',
+            'criteria': 'LT',
+            'name': 'name_9oebx',
+            'standard': 'standard_ign11',
+          },
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NORMAL',
+            'criteria': 'GE',
+            'name': 'name_ashav',
+            'standard': 'standard_iukvb',
+          },
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NORMAL',
+            'criteria': 'LT',
+            'name': 'name_4q6av',
+            'standard': 'standard_gqtuz',
+          },
+        ],
+      },
+      {
+        'name': 'name_eaeln',
+        'subItems': [
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NORMAL',
+            'criteria': 'GE_LOWER_LE_UPPER',
+            'name': 'name_f9jmg',
+            'standard': 'standard_n9un9',
+          },
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NORMAL',
+            'criteria': 'GT_LOWER_LE_UPPER',
+            'name': 'name_u4ohw',
+            'standard': 'standard_whcei',
+          },
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NUMBER',
+            'criteria': 'EQUAL',
+            'name': 'name_fgfcu',
+            'standard': 'standard_qwdsz',
+          },
+        ],
+      },
+      {
+        'name': 'name_z7rw0',
+        'subItems': [
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NUMBER',
+            'criteria': 'EQUAL',
+            'name': 'name_j7vre',
+            'standard': 'standard_3cylq',
+          },
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NUMBER',
+            'criteria': 'GT_LOWER_LE_UPPER',
+            'name': 'name_7dyiu',
+            'standard': 'standard_0g8td',
+          },
+          {
+            'boundary': {
+              'a': 1,
+              'b': 1,
+            },
+            'category': 'NUMBER',
+            'criteria': 'EQUAL',
+            'name': 'name_ruvom',
+            'standard': 'standard_nsc8y',
+          },
+        ],
+      },
+    ],
+    'name': 'name_g5k9m',
+  },
+}
+
+DEBUG    mytest:GraphqlClient.py:39 {
+  'data': {
+    'createThingInspectionRule': {
+      '__typename': 'ThingInspectionRule',
+      'addition': '[{"key": "b7f0c19b0fb14261b6c0a1803c0ae6e5", "value":
+                   "\\u5355\\u884c\\u6587\\u5b57_xzijd"}, {"key":
+                   ...(20 hidden lines)',
+      'code': 'XJFA202009160016',
+      'id': '16',
+      'items': [
+        {
+          '__typename': 'ThingInspectionItem',
+          'id': '785afce0-8f3e-457c-9c98-792531908365',
+          'name': 'name_pfdw9',
+          'subItems': [
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NUMBER',
+              'criteria': 'LT',
+              'id': '8660b5f6-4e24-4b50-91e4-2614ed7cad77',
+              'name': 'name_9oebx',
+              'standard': 'standard_ign11',
+            },
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NORMAL',
+              'criteria': 'GE',
+              'id': '2245e510-c782-494e-8209-72e4995c9607',
+              'name': 'name_ashav',
+              'standard': 'standard_iukvb',
+            },
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NORMAL',
+              'criteria': 'LT',
+              'id': '85f84f3e-c321-4d21-93e1-9d90dab3236a',
+              'name': 'name_4q6av',
+              'standard': 'standard_gqtuz',
+            },
+          ],
+        },
+        {
+          '__typename': 'ThingInspectionItem',
+          'id': '821e0a55-8108-4d69-bfe8-3437089e0cc5',
+          'name': 'name_eaeln',
+          'subItems': [
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NORMAL',
+              'criteria': 'GE_LOWER_LE_UPPER',
+              'id': 'd19724b6-9191-43ee-8403-58929108ef6a',
+              'name': 'name_f9jmg',
+              'standard': 'standard_n9un9',
+            },
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NORMAL',
+              'criteria': 'GT_LOWER_LE_UPPER',
+              'id': 'b0d986b4-3c41-4262-8e03-6ec9b09d729f',
+              'name': 'name_u4ohw',
+              'standard': 'standard_whcei',
+            },
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NUMBER',
+              'criteria': 'EQUAL',
+              'id': 'c8aa4b0c-830e-4e91-b82b-35f2e1d5dee2',
+              'name': 'name_fgfcu',
+              'standard': 'standard_qwdsz',
+            },
+          ],
+        },
+        {
+          '__typename': 'ThingInspectionItem',
+          'id': '65a04198-d555-4236-a486-8963370fcaae',
+          'name': 'name_z7rw0',
+          'subItems': [
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NUMBER',
+              'criteria': 'EQUAL',
+              'id': '19ddd56a-41fa-4dff-954b-3627c93bb7e0',
+              'name': 'name_j7vre',
+              'standard': 'standard_3cylq',
+            },
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NUMBER',
+              'criteria': 'GT_LOWER_LE_UPPER',
+              'id': 'f92ef45b-f863-4640-ad58-54b2a299d59c',
+              'name': 'name_7dyiu',
+              'standard': 'standard_0g8td',
+            },
+            {
+              '__typename': 'ThingInspectionSubItem',
+              'boundary': {
+                '__typename': 'ThingInspectionSubItemBoundaries',
+                'a': 1,
+                'b': 1,
+              },
+              'category': 'NUMBER',
+              'criteria': 'EQUAL',
+              'id': '6af75883-1e5b-40e1-92b5-cb774d684bbb',
+              'name': 'name_ruvom',
+              'standard': 'standard_nsc8y',
+            },
+          ],
+        },
+      ],
+      'name': 'name_g5k9m',
+      'updatedAt': 1600228064585,
+    },
+  },
+  'errors': None,
+}
+
+DEBUG    mytest:conftest.py:64 {'ThingInspectionRule': ['16'], 'ThingInspectionItem': ['785afce0-8f3e-457c-9c98-792531908365', '821e0a55-8108-4d69-bfe8-3437089e0cc5', '65a04198-d555-4236-a486-8963370fcaae'], 'ThingInspectionSubItem': ['8660b5f6-4e24-4b50-91e4-2614ed7cad77', '2245e510-c782-494e-8209-72e4995c9607', '85f84f3e-c321-4d21-93e1-9d90dab3236a', 'd19724b6-9191-43ee-8403-58929108ef6a', 'b0d986b4-3c41-4262-8e03-6ec9b09d729f', 'c8aa4b0c-830e-4e91-b82b-35f2e1d5dee2', '19ddd56a-41fa-4dff-954b-3627c93bb7e0', 'f92ef45b-f863-4640-ad58-54b2a299d59c', '6af75883-1e5b-40e1-92b5-cb774d684bbb']}
+DEBUG    mytest:GraphqlClient.py:34 http://192.168.1.175:8888/graphql/?thingInspectionRules
+DEBUG    mytest:GraphqlClient.py:35 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMxNDM0Mn0.UOI1OaH_ELEAVzSlldya-CY3ahODVdxWOAwKSCpjxGc'}
+DEBUG    mytest:GraphqlClient.py:36 {
+  'filter': {
+  },
+  'limit': 3,
+  'offset': 0,
+}
+
+DEBUG    mytest:GraphqlClient.py:39 {
+  'data': {
+    'thingInspectionRules': {
+      '__typename': 'ThingInspectionRuleList',
+      'data': [
+        {
+          '__typename': 'ThingInspectionRule',
+          'addition': '[{"key": "b7f0c19b0fb14261b6c0a1803c0ae6e5", "value":
+                       "\\u5355\\u884c\\u6587\\u5b57_xzijd"}, {"key":
+                       ...(24 hidden lines)',
+          'code': 'XJFA202009160016',
+          'id': '16',
+          'items': [
+            {
+              '__typename': 'ThingInspectionItem',
+              'id': '785afce0-8f3e-457c-9c98-792531908365',
+              'name': 'name_pfdw9',
+              'subItems': [
+                {
+                  '__typename': 'ThingInspectionSubItem',
+                  'boundary': {
+                    '__typename': 'ThingInspectionSubItemBoundaries',
+                    'a': 1,
+                    'b': 1,
+                  },
+                  'category': 'NUMBER',
+                  'criteria': 'LT',
+                  'id': '8660b5f6-4e24-4b50-91e4-2614ed7cad77',
+                  'name': 'name_9oebx',
+                  'standard': 'standard_ign11',
+                },
+                {
+                  '__typename': 'ThingInspectionSubItem',
+                  'boundary': {
+                    '__typename': 'ThingInspectionSubItemBoundaries',
+                    'a': 1,
+                    'b': 1,
+                  },
+                  'category': 'NORMAL',
+                  'criteria': 'GE',
+                  'id': '2245e510-c782-494e-8209-72e4995c9607',
+                  'name': 'name_ashav',
+                  'standard': 'standard_iukvb',
+                },
+                {
+                  '__typename': 'ThingInspectionSubItem',
+                  'boundary': {
+                    '__typename': 'ThingInspectionSubItemBoundaries',
+                    'a': 1,
+                    'b': 1,
+                  },
+                  'category': 'NORMAL',
+                  'criteria': 'LT',
+                  'id': '85f84f3e-c321-4d21-93e1-9d90dab3236a',
+                  'name': 'name_4q6av',
+                  'standard': 'standard_gqtuz',
+                },
+              ],
+            },
+            {
+              '__typename': 'ThingInspectionItem',
+              'id': '821e0a55-8108-4d69-bfe8-3437089e0cc5',
+              'name': 'name_eaeln',
+              'subItems': [
+                {
+                  '__typename': 'ThingInspectionSubItem',
+                  'boundary': {
+                    '__typename': 'ThingInspectionSubItemBoundaries',
+                    'a': 1,
+                    'b': 1,
+                  },
+                  'category': 'NORMAL',
+                  'criteria': 'GE_LOWER_LE_UPPER',
+                  'id': 'd19724b6-9191-43ee-8403-58929108ef6a',
+                  'name': 'name_f9jmg',
+                  'standard': 'standard_n9un9',
+                },
+                {
+                  '__typename': 'ThingInspectionSubItem',
+                  'boundary': {
+                    '__typename': 'ThingInspectionSubItemBoundaries',
+                    'a': 1,
+                    'b': 1,
+                  },
+                  'category': 'NORMAL',
+                  'criteria': 'GT_LOWER_LE_UPPER',
+                  'id': 'b0d986b4-3c41-4262-8e03-6ec9b09d729f',
+                  'name': 'name_u4ohw',
+                  'standard': 'standard_whcei',
+                },
+                {
+                  '__typename': 'ThingInspectionSubItem',
+                  'boundary': {
+                    '__typename': 'ThingInspectionSubItemBoundaries',
+                    'a': 1,
+                    'b': 1,
+                  },
+                  'category': 'NUMBER',
+                  'criteria': 'EQUAL',
+                  'id': 'c8aa4b0c-830e-4e91-b82b-35f2e1d5dee2',
+                  'name': 'name_fgfcu',
+                  'standard': 'standard_qwdsz',
+                },
+              ],
+            },
+            {
+              '__typename': 'ThingInspectionItem',
+              'id': '65a04198-d555-4236-a486-8963370fcaae',
+              'name': 'name_z7rw0',
+              'subItems': [
+                {
+                  '__typename': 'ThingInspectionSubItem',
+                  'boundary': {
+                    '__typename': 'ThingInspectionSubItemBoundaries',
+                    'a': 1,
+                    'b': 1,
+                  },
+                  'category': 'NUMBER',
+                  'criteria': 'EQUAL',
+                  'id': '19ddd56a-41fa-4dff-954b-3627c93bb7e0',
+                  'name': 'name_j7vre',
+                  'standard': 'standard_3cylq',
+                },
+                {
+                  '__typename': 'ThingInspectionSubItem',
+                  'boundary': {
+                    '__typename': 'ThingInspectionSubItemBoundaries',
+                    'a': 1,
+                    'b': 1,
+                  },
+                  'category': 'NUMBER',
+                  'criteria': 'GT_LOWER_LE_UPPER',
+                  'id': 'f92ef45b-f863-4640-ad58-54b2a299d59c',
+                  'name': 'name_7dyiu',
+                  'standard': 'standard_0g8td',
+                },
+                {
+                  '__typename': 'ThingInspectionSubItem',
+                  'boundary': {
+                    '__typename': 'ThingInspectionSubItemBoundaries',
+                    'a': 1,
+                    'b': 1,
+                  },
+                  'category': 'NUMBER',
+                  'criteria': 'EQUAL',
+                  'id': '6af75883-1e5b-40e1-92b5-cb774d684bbb',
+                  'name': 'name_ruvom',
+                  'standard': 'standard_nsc8y',
+                },
+              ],
+            },
+          ],
+          'name': 'name_g5k9m',
+          'updatedAt': 1600228064585,
+        },
+        {
+          '__typename': 'ThingInspectionRule',
+          'addition': '[{"key": "b7f0c19b0fb14261b6c0a1803c0ae6e5", "value":
+                       "\\u5355\\u884c\\u6587\\u5b57_06ll3"}, {"key":
+                       ...(24 hidden lines)',
+          'code': 'XJFA202009160015',
+          'id': '15',
+          'items': [
+            {
+              '__typename': 'ThingInspectionItem',
+              'id': 'f4109bc9-717a-4b0c-bc32-04c8a200c703',
+              'name': 'name_w6wud',
+              'subItems': [
+                {
+                  '__typename': 'ThingInspectionSubItem',
+                  'boundary': {
+                    '__typename': 'ThingInspectionSubItemBoundaries',
+                    'a': 1,
+                    'b': 1,
+                  },
+                  'category': 'NORMAL',
+                  'criteria': 'GT_LOWER_LE_UPPER',
+                  'id': '55435880-32b7-46a1-a933-4a0ee2fee361',
+                  'name': 'name_10twl',
+                  'standard': 'standard_cm92o',
+                },
+                {
+                  '__typename': 'ThingInspectionSubItem',
+                  'boundary': {
+                    '__typename': 'ThingInspectionSubItemBoundaries',
+                    'a': 1,
+                    'b': 1,
+                  },
+                  'category': 'NORMAL',
+                  'criteria': 'LT',
+                  'id': '9aad1472-5896-4b76-9036-ec07ae4b1086',
+                  'name': 'name_5ndmy',
+                  'standard': 'standard_snq96',
+                },
+                {
+                  '__typename': 'ThingInspectionSubItem',
+                  'boundary': {
+                    '__typename': 'ThingInspectionSubItemBoundaries',
+                    'a': 1,
+                    'b': 1,
+                  },
+                  'category': 'NUMBER',
+                  'criteria': 'LT',
+                  'id': '8b24d4cc-39c5-4130-a13e-b973d76cbedb',
+                  'name': 'name_ueg63',
+                  'standard': 'standard_pm65v',
+                },
+              ],
+            },
+            {
+              '__typename': 'ThingInspectionItem',
+              'id': 'e6eba90d-68e8-46d0-a705-17290c7d3f9e',
+              'name': 'name_86c6v',
+              'subItems': [
+                {
+                  '__typename': 'ThingInspectionSubItem',
+                  'boundary': {
+                    '__typename': 'ThingInspectionSubItemBoundaries',
+                    'a': 1,
+                    'b': 1,
+                  },
+                  'category': 'NUMBER',
+                  'criteria': 'GT_LOWER_LT_UPPER',
+                  'id': '20d0f704-3899-4603-acc0-7aba33c72880',
+                  'name': 'name_ckujg',
+                  'standard': 'standard_4vpqq',
+                },
+                {
+                  '__typename': 'ThingInspectionSubItem',
+                  'boundary': {
+                    '__typename': 'ThingInspectionSubItemBoundaries',
+                    'a': 1,
+                    'b': 1,
+                  },
+                  'category': 'NORMAL',
+                  'criteria': 'GT_LOWER_LT_UPPER',
+                  'id': '6adb6ba3-f508-46c7-adbf-9b8bfc91c3a6',
+                  'name': 'name_ee66o',
+                  'standard': 'standard_3y6bs',
+                },
+                {
+                  '__typename': 'ThingInspectionSubItem',
+                  'boundary': {
+                    '__typename': 'ThingInspectionSubItemBoundaries',
+                    'a': 1,
+                    'b': 1,
+                  },
+                  'category': 'NORMAL',
+                  'criteria': 'GE_LOWER_LE_UPPER',
+                  'id': '040cc1a4-092d-45af-9600-778150cd9265',
+                  'name': 'name_6u2wa',
+                  'standard': 'standard_8dpkf',
+                },
+              ],
+            },
+            {
+              '__typename': 'ThingInspectionItem',
+              'id': 'f7f9fc3f-0009-4bb5-8d38-bbe8d2069bf7',
+              'name': 'name_sy9v3',
+              'subItems': [
+                {
+                  '__typename': 'ThingInspectionSubItem',
+                  'boundary': {
+                    '__typename': 'ThingInspectionSubItemBoundaries',
+                    'a': 1,
+                    'b': 1,
+                  },
+                  'category': 'NORMAL',
+                  'criteria': 'EQUAL',
+                  'id': 'd45f99d7-0fec-4b15-9a78-7b09303ef580',
+                  'name': 'name_05k7v',
+                  'standard': 'standard_2xwu3',
+                },
+                {
+                  '__typename': 'ThingInspectionSubItem',
+                  'boundary': {
+                    '__typename': 'ThingInspectionSubItemBoundaries',
+                    'a': 1,
+                    'b': 1,
+                  },
+                  'category': 'NORMAL',
+                  'criteria': 'EQUAL',
+                  'id': '5d82d5be-24e3-4929-9b39-33adc4b3cd98',
+                  'name': 'name_p9mxm',
+                  'standard': 'standard_pb36m',
+                },
+                {
+                  '__typename': 'ThingInspectionSubItem',
+                  'boundary': {
+                    '__typename': 'ThingInspectionSubItemBoundaries',
+                    'a': 1,
+                    'b': 1,
+                  },
+                  'category': 'NUMBER',
+                  'criteria': 'GE_LOWER_LT_UPPER',
+                  'id': '5640aad7-cba8-4179-9d62-98ac58865664',
+                  'name': 'name_wtabl',
+                  'standard': 'standard_ysfnf',
+                },
+              ],
+            },
+          ],
+          'name': 'name_avefn',
+          'updatedAt': 1600228064367,
+        },
+        {
+          '__typename': 'ThingInspectionRule',
+          'addition': '[{"key": "b7f0c19b0fb14261b6c0a1803c0ae6e5", "value":
+                       "\\u5355\\u884c\\u6587\\u5b57_ei0y3"}, {"key":
+                       ...(24 hidden lines)',
+          'code': 'XJFA202009160014',
+          'id': '14',
+          'items': [
+            {
+              '__typename': 'ThingInspectionItem',
+              'id': 'b9c19a6f-ab98-4cd9-8edd-eb6be6208a71',
+              'name': 'name_u2rdf',
+              'subItems': [
+                {
+                  '__typename': 'ThingInspectionSubItem',
+                  'boundary': {
+                    '__typename': 'ThingInspectionSubItemBoundaries',
+                    'a': 1,
+                    'b': 1,
+                  },
+                  'category': 'NUMBER',
+                  'criteria': 'GT_LOWER_LT_UPPER',
+                  'id': '6dc907f6-1cd4-48fc-9965-315ac6dcb031',
+                  'name': 'name_c9ioa',
+                  'standard': 'standard_co3kn',
+                },
+                {
+                  '__typename': 'ThingInspectionSubItem',
+                  'boundary': {
+                    '__typename': 'ThingInspectionSubItemBoundaries',
+                    'a': 1,
+                    'b': 1,
+                  },
+                  'category': 'NORMAL',
+                  'criteria': 'GE_LOWER_LE_UPPER',
+                  'id': 'a2485e99-1c5e-4933-b662-c826e6bf27a0',
+                  'name': 'name_6hyqs',
+                  'standard': 'standard_eftf7',
+                },
+                {
+                  '__typename': 'ThingInspectionSubItem',
+                  'boundary': {
+                    '__typename': 'ThingInspectionSubItemBoundaries',
+                    'a': 1,
+                    'b': 1,
+                  },
+                  'category': 'NORMAL',
+                  'criteria': 'GT',
+                  'id': '27385e26-16da-4bf9-9ff1-955972f0d8e0',
+                  'name': 'name_vqfrc',
+                  'standard': 'standard_98sjs',
+                },
+              ],
+            },
+            {
+              '__typename': 'ThingInspectionItem',
+              'id': 'a20b9163-9016-4971-9d92-b93b9ae8faf7',
+              'name': 'name_eykqk',
+              'subItems': [
+                {
+                  '__typename': 'ThingInspectionSubItem',
+                  'boundary': {
+                    '__typename': 'ThingInspectionSubItemBoundaries',
+                    'a': 1,
+                    'b': 1,
+                  },
+                  'category': 'NORMAL',
+                  'criteria': 'GE_LOWER_LT_UPPER',
+                  'id': '265ecdde-c58a-42ea-83a0-57e55069e8f4',
+                  'name': 'name_bu6l1',
+                  'standard': 'standard_b7umj',
+                },
+                {
+                  '__typename': 'ThingInspectionSubItem',
+                  'boundary': {
+                    '__typename': 'ThingInspectionSubItemBoundaries',
+                    'a': 1,
+                    'b': 1,
+                  },
+                  'category': 'NORMAL',
+                  'criteria': 'NOTEQUAL',
+                  'id': 'dc5eb1a7-f8c7-4c3c-89c9-b8fdc3d32bd2',
+                  'name': 'name_oxyel',
+                  'standard': 'standard_3284u',
+                },
+                {
+                  '__typename': 'ThingInspectionSubItem',
+                  'boundary': {
+                    '__typename': 'ThingInspectionSubItemBoundaries',
+                    'a': 1,
+                    'b': 1,
+                  },
+                  'category': 'NORMAL',
+                  'criteria': 'GT_LOWER_LE_UPPER',
+                  'id': '48f86c68-2a9c-454a-af0c-7661e7f6bd3c',
+                  'name': 'name_7qi1p',
+                  'standard': 'standard_qbqny',
+                },
+              ],
+            },
+            {
+              '__typename': 'ThingInspectionItem',
+              'id': '97967342-9087-49ed-ba96-03674bac2f4e',
+              'name': 'name_c6p9w',
+              'subItems': [
+                {
+                  '__typename': 'ThingInspectionSubItem',
+                  'boundary': {
+                    '__typename': 'ThingInspectionSubItemBoundaries',
+                    'a': 1,
+                    'b': 1,
+                  },
+                  'category': 'NORMAL',
+                  'criteria': 'EQUAL',
+                  'id': '144017eb-be2a-4af2-9532-c270087e24c9',
+                  'name': 'name_kr7fr',
+                  'standard': 'standard_4w8lf',
+                },
+                {
+                  '__typename': 'ThingInspectionSubItem',
+                  'boundary': {
+                    '__typename': 'ThingInspectionSubItemBoundaries',
+                    'a': 1,
+                    'b': 1,
+                  },
+                  'category': 'NUMBER',
+                  'criteria': 'GE_LOWER_LE_UPPER',
+                  'id': '9704bce7-a9f0-4f19-be48-1cc342866d8f',
+                  'name': 'name_3e9jf',
+                  'standard': 'standard_2yxwe',
+                },
+                {
+                  '__typename': 'ThingInspectionSubItem',
+                  'boundary': {
+                    '__typename': 'ThingInspectionSubItemBoundaries',
+                    'a': 1,
+                    'b': 1,
+                  },
+                  'category': 'NORMAL',
+                  'criteria': 'LT',
+                  'id': '2913af98-41c5-4173-ae24-fd4ab7aead79',
+                  'name': 'name_0vq1a',
+                  'standard': 'standard_pz48q',
+                },
+              ],
+            },
+          ],
+          'name': 'name_ibnnd',
+          'updatedAt': 1600228062897,
+        },
+      ],
+      'totalCount': 13,
+    },
+  },
+  'errors': None,
+}
+
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..errors'
+get
+'None
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except None
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..errors'
+get
+'None
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except None
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..thingInspectionRules.data[*].id'
+get
+'['16', '15', '14']
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except ['14', '15', '16']

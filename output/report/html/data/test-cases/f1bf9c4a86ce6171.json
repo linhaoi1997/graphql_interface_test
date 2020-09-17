@@ -1,0 +1,131 @@
+{
+  "uid" : "f1bf9c4a86ce6171",
+  "name" : "test_1[variable0]",
+  "fullName" : "interface.sparePartOutBound_test.test_createSparePartOutbound.TestCreateSparePartOutbound#test_1",
+  "historyId" : "018e8ffed1b9b57d917e4fd82d2c8947",
+  "time" : {
+    "start" : 1600227971223,
+    "stop" : 1600227972121,
+    "duration" : 898
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError",
+  "statusTrace" : "self = <test_createSparePartOutbound.TestCreateSparePartOutbound object at 0x10ba314e0>\nvariable = {'input': {'details': [{'number': 1, 'reason': 'LOOSEN', 'sparePart': {'id': 2}}, {'number': 1, 'reason': 'LOOSEN', 's...reason': 'LOOSEN', 'sparePart': {'id': 1}}], 'factory': 'factory_zo323', 'operator': {'id': 1}, 'reason': '设备保养', ...}}\nresource = <support.base_test.ResourceLoader.ResourceLoader object at 0x109eb1c18>\n\n    @allure.story(\"所有项完整\")\n    @pytest.mark.parametrize(\"variable\", interface.generate(\"generate_all_params\", **BaseTestCase.all_param))\n    def test_1(self, variable, resource):\n        # 有bug先改下参数\n        for i in variable[\"input\"][\"details\"]:\n            i[\"reason\"] = \"LOOSEN\"\n        variable[\"input\"].pop(\"thingMaintenance\")\n        user = resource.simple_user\n        result = user.send_request(self.query_name, variable).result\n>       self.assertForm(variable, result)\n\ninterface/sparePartOutBound_test/test_createSparePartOutbound.py:23: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nsupport/base_test/AssertMethod.py:124: in assertForm\n    self.assertEveryParam(variables, result)\nsupport/base_test/AssertMethod.py:80: in assertEveryParam\n    self.assertJsonResponseEqual(i, result, deepest_dict[i])\nsupport/base_test/AssertMethod.py:23: in assertJsonResponseEqual\n    self.assertEqual(value, result)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <test_createSparePartOutbound.TestCreateSparePartOutbound object at 0x10ba314e0>\nvalue = 1, result = None\n\n    def assertEqual(self, value, result):\n        if type(value) == str and value.isdigit():\n            if type(result) in (str, int):\n                assert int(value) == int(result)\n        elif type(value) in (int, float):\n            if type(result) in (str, int, float):\n                assert int(value) == int(result)\n            else:\n>               assert None\nE               AssertionError\n\nsupport/base_test/AssertMethod.py:90: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "init",
+    "time" : {
+      "start" : 1600227952218,
+      "stop" : 1600227952218,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1600227952116,
+      "stop" : 1600227952218,
+      "duration" : 102
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "resource",
+    "time" : {
+      "start" : 1600227952218,
+      "stop" : 1600227952218,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError",
+    "statusTrace" : "self = <test_createSparePartOutbound.TestCreateSparePartOutbound object at 0x10ba314e0>\nvariable = {'input': {'details': [{'number': 1, 'reason': 'LOOSEN', 'sparePart': {'id': 2}}, {'number': 1, 'reason': 'LOOSEN', 's...reason': 'LOOSEN', 'sparePart': {'id': 1}}], 'factory': 'factory_zo323', 'operator': {'id': 1}, 'reason': '设备保养', ...}}\nresource = <support.base_test.ResourceLoader.ResourceLoader object at 0x109eb1c18>\n\n    @allure.story(\"所有项完整\")\n    @pytest.mark.parametrize(\"variable\", interface.generate(\"generate_all_params\", **BaseTestCase.all_param))\n    def test_1(self, variable, resource):\n        # 有bug先改下参数\n        for i in variable[\"input\"][\"details\"]:\n            i[\"reason\"] = \"LOOSEN\"\n        variable[\"input\"].pop(\"thingMaintenance\")\n        user = resource.simple_user\n        result = user.send_request(self.query_name, variable).result\n>       self.assertForm(variable, result)\n\ninterface/sparePartOutBound_test/test_createSparePartOutbound.py:23: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nsupport/base_test/AssertMethod.py:124: in assertForm\n    self.assertEveryParam(variables, result)\nsupport/base_test/AssertMethod.py:80: in assertEveryParam\n    self.assertJsonResponseEqual(i, result, deepest_dict[i])\nsupport/base_test/AssertMethod.py:23: in assertJsonResponseEqual\n    self.assertEqual(value, result)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <test_createSparePartOutbound.TestCreateSparePartOutbound object at 0x10ba314e0>\nvalue = 1, result = None\n\n    def assertEqual(self, value, result):\n        if type(value) == str and value.isdigit():\n            if type(result) in (str, int):\n                assert int(value) == int(result)\n        elif type(value) in (int, float):\n            if type(result) in (str, int, float):\n                assert int(value) == int(result)\n            else:\n>               assert None\nE               AssertionError\n\nsupport/base_test/AssertMethod.py:90: AssertionError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "a50afefaaa26702f",
+      "name" : "log",
+      "source" : "a50afefaaa26702f.txt",
+      "type" : "text/plain",
+      "size" : 9406
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "所有项完整"
+  }, {
+    "name" : "epic",
+    "value" : "sparePartOutBound"
+  }, {
+    "name" : "feature",
+    "value" : "createSparePartOutbound"
+  }, {
+    "name" : "parentSuite",
+    "value" : "interface.sparePartOutBound_test"
+  }, {
+    "name" : "suite",
+    "value" : "test_createSparePartOutbound"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestCreateSparePartOutbound"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Pro.local"
+  }, {
+    "name" : "thread",
+    "value" : "99506-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "interface.sparePartOutBound_test.test_createSparePartOutbound"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "variable",
+    "value" : "{'input': {'operator': {'id': 1}, 'time': 1600227948417, 'shelf': 'shelf_84mww', 'factory': 'factory_zo323', 'reason': '设备保养', 'thingRepair': {'id': 1}, 'thingMaintenance': {'id': 1}, 'details': [{'sparePart': {'id': 2}, 'number': 1, 'reason': 'reason_cp0v8'}, {'sparePart': {'id': 3}, 'number': 1, 'reason': 'reason_fh4rh'}, {'sparePart': {'id': 1}, 'number': 1, 'reason': 'reason_nnwv1'}], 'addition': '[{\"key\": \"7d2f6d619a954f64b6fd763335b479b1\", \"value\": \"\\\\u5355\\\\u884c\\\\u6587\\\\u5b57_mya38\"}, {\"key\": \"3891e218092945d2ad9ed32961b8a6df\", \"value\": \"\\\\u591a\\\\u884c\\\\u6587\\\\u5b57_97d43\"}, {\"key\": \"7484ee5382f440bdb77801a366d1dc7b\", \"value\": \"\\\\u8054\\\\u7cfb\\\\u65b9\\\\u5f0f_uu1kz\"}, {\"key\": \"44f76301e7dd4b9691ef03f27b1dc40e\", \"value\": 1600227948420}, {\"key\": \"30e00084de5541739cb5381e6d3ca7f8\", \"value\": 1600227948420}, {\"key\": \"9aaf842c0aed4f78aa3f6395bd93de57\", \"value\": 1600227948420}, {\"key\": \"3b5835e60f154c109e0a2b63f7029dd5\", \"value\": \"\\\\u63cf\\\\u8ff0\\\\u6587\\\\u5b57_schh8\"}, {\"key\": \"1a36612b403e4d4eb849da443f02171d\", \"value\": \"3\"}, {\"key\": \"f526dce640ca45578314faa651101286\", \"value\": [\"1\", \"4\", \"2\"]}, {\"key\": \"6549b744f3cc4220af6dd57e4a6f433d\", \"value\": 1.01}, {\"key\": \"5d67a40062e541039cc329e56e1e5326\", \"value\": 1.01}, {\"key\": \"d74fd241aa3f44d9aa93fd5c8508acb6\", \"value\": 1.01}, {\"key\": \"8bf709e943334dd883f00b2f1120ea88\", \"value\": \"\\\\u8054\\\\u7cfb\\\\u65b9\\\\u5f0f-\\\\u6d4b\\\\u8bd5\\\\u5fc5\\\\u586b\\\\u9879/\\\\u9ed8\\\\u8ba4\\\\u5185\\\\u5bb9_hjlu2\"}, {\"key\": \"e5e269044ba94b82863775af49fe8ff8\", \"value\": \"\\\\u6587\\\\u5b57-\\\\u9650\\\\u5b57\\\\u65702-100_q4qab\"}]'}}"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "f1bf9c4a86ce6171.json",
+  "parameterValues" : [ "{'input': {'operator': {'id': 1}, 'time': 1600227948417, 'shelf': 'shelf_84mww', 'factory': 'factory_zo323', 'reason': '设备保养', 'thingRepair': {'id': 1}, 'thingMaintenance': {'id': 1}, 'details': [{'sparePart': {'id': 2}, 'number': 1, 'reason': 'reason_cp0v8'}, {'sparePart': {'id': 3}, 'number': 1, 'reason': 'reason_fh4rh'}, {'sparePart': {'id': 1}, 'number': 1, 'reason': 'reason_nnwv1'}], 'addition': '[{\"key\": \"7d2f6d619a954f64b6fd763335b479b1\", \"value\": \"\\\\u5355\\\\u884c\\\\u6587\\\\u5b57_mya38\"}, {\"key\": \"3891e218092945d2ad9ed32961b8a6df\", \"value\": \"\\\\u591a\\\\u884c\\\\u6587\\\\u5b57_97d43\"}, {\"key\": \"7484ee5382f440bdb77801a366d1dc7b\", \"value\": \"\\\\u8054\\\\u7cfb\\\\u65b9\\\\u5f0f_uu1kz\"}, {\"key\": \"44f76301e7dd4b9691ef03f27b1dc40e\", \"value\": 1600227948420}, {\"key\": \"30e00084de5541739cb5381e6d3ca7f8\", \"value\": 1600227948420}, {\"key\": \"9aaf842c0aed4f78aa3f6395bd93de57\", \"value\": 1600227948420}, {\"key\": \"3b5835e60f154c109e0a2b63f7029dd5\", \"value\": \"\\\\u63cf\\\\u8ff0\\\\u6587\\\\u5b57_schh8\"}, {\"key\": \"1a36612b403e4d4eb849da443f02171d\", \"value\": \"3\"}, {\"key\": \"f526dce640ca45578314faa651101286\", \"value\": [\"1\", \"4\", \"2\"]}, {\"key\": \"6549b744f3cc4220af6dd57e4a6f433d\", \"value\": 1.01}, {\"key\": \"5d67a40062e541039cc329e56e1e5326\", \"value\": 1.01}, {\"key\": \"d74fd241aa3f44d9aa93fd5c8508acb6\", \"value\": 1.01}, {\"key\": \"8bf709e943334dd883f00b2f1120ea88\", \"value\": \"\\\\u8054\\\\u7cfb\\\\u65b9\\\\u5f0f-\\\\u6d4b\\\\u8bd5\\\\u5fc5\\\\u586b\\\\u9879/\\\\u9ed8\\\\u8ba4\\\\u5185\\\\u5bb9_hjlu2\"}, {\"key\": \"e5e269044ba94b82863775af49fe8ff8\", \"value\": \"\\\\u6587\\\\u5b57-\\\\u9650\\\\u5b57\\\\u65702-100_q4qab\"}]'}}" ]
+}

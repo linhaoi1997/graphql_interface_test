@@ -1,0 +1,134 @@
+DEBUG    mytest:GraphqlClient.py:34 http://192.168.1.175:8888/graphql/?createRole
+DEBUG    mytest:GraphqlClient.py:35 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMxNDM0Mn0.UOI1OaH_ELEAVzSlldya-CY3ahODVdxWOAwKSCpjxGc'}
+DEBUG    mytest:GraphqlClient.py:36 {
+  'input': {
+    'name': 'name_vjsx6',
+    'permissions': [
+      {
+        'id': 2,
+      },
+      {
+        'id': 3,
+      },
+      {
+        'id': 1,
+      },
+    ],
+  },
+}
+
+DEBUG    mytest:GraphqlClient.py:39 {
+  'data': {
+    'createRole': {
+      '__typename': 'Role',
+      'id': '9',
+      'name': 'name_vjsx6',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '所有数据权限，可管理全部信息',
+          'id': '1',
+          'scopes': [],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看主设备列表、详情',
+          'id': '2',
+          'scopes': ['/query/thing', '/query/things'],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑、导入、导出主设备详情',
+          'id': '3',
+          'scopes': ['/mutation/createThing', '/mutation/updateThing', '/mutation/importThings', '/mutation/exportThings', '/mutation/deleteThings'],
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+DEBUG    mytest:conftest.py:64 {'Role': ['9'], 'Permission': ['1', '2', '3']}
+DEBUG    mytest:GraphqlClient.py:34 http://192.168.1.175:8888/graphql/?updateRole
+DEBUG    mytest:GraphqlClient.py:35 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMxNDM0Mn0.UOI1OaH_ELEAVzSlldya-CY3ahODVdxWOAwKSCpjxGc'}
+DEBUG    mytest:GraphqlClient.py:36 {
+  'input': {
+    'id': '9',
+    'name': 'name_en4y3',
+    'permissions': [
+      {
+        'id': 2,
+      },
+      {
+        'id': 3,
+      },
+      {
+        'id': 1,
+      },
+    ],
+  },
+}
+
+DEBUG    mytest:GraphqlClient.py:39 {
+  'data': {
+    'updateRole': {
+      '__typename': 'Role',
+      'id': '9',
+      'name': 'name_en4y3',
+      'permissions': [
+        {
+          '__typename': 'Permission',
+          'description': '所有数据权限，可管理全部信息',
+          'id': '1',
+          'scopes': [],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '查看主设备列表、详情',
+          'id': '2',
+          'scopes': ['/query/thing', '/query/things'],
+        },
+        {
+          '__typename': 'Permission',
+          'description': '编辑、导入、导出主设备详情',
+          'id': '3',
+          'scopes': ['/mutation/createThing', '/mutation/updateThing', '/mutation/importThings', '/mutation/exportThings', '/mutation/deleteThings'],
+        },
+      ],
+    },
+  },
+  'errors': None,
+}
+
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..errors'
+get
+'None
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except None
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..id'
+get
+''9'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 9
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..name'
+get
+''name_en4y3'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except name_en4y3
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..updateRole.permissions[*].id'
+get
+'['1', '2', '3']
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except [2, 3, 1]

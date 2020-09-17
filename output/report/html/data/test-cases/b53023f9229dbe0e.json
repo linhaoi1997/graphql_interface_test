@@ -1,0 +1,131 @@
+{
+  "uid" : "b53023f9229dbe0e",
+  "name" : "test_4[update]",
+  "fullName" : "interface.workFlow_test.test_thingMaintanenceFlow.TestThingMaintenanceWorkFlow#test_4",
+  "historyId" : "02a4ae292cd925ce91b2ca47a5f91d20",
+  "time" : {
+    "start" : 1600231672996,
+    "stop" : 1600231683828,
+    "duration" : 10832
+  },
+  "status" : "failed",
+  "statusMessage" : "Failed: 本来不应该通过这个步骤，这不正常！！！",
+  "statusTrace" : "self = <interface.workFlow_test.test_thingMaintanenceFlow.TestThingMaintenanceWorkFlow object at 0x10bd08710>\naction = 'update'\n\n    @pytest.mark.parametrize(\"action\", test_data)\n    @allure.story(\"保养中不允许的操作\")\n    def test_4(self, action):\n        thing_maintenance_id = self.simple_user.create_thing_maintenance()\n>       self._call_action(action, thing_maintenance_id)\n\ntest_thingMaintanenceFlow.py:164: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <interface.workFlow_test.test_thingMaintanenceFlow.TestThingMaintenanceWorkFlow object at 0x10bd08710>\naction = 'update', _id = '28'\n\n    def _call_action(self, action, _id):\n        call_str = \"self.simple_user.{action}({_id})\".format(action=action, _id=_id)\n        try:\n            exec(call_str)\n            # 如果通过了这个步骤说明不对\n>           pytest.fail(\"本来不应该通过这个步骤，这不正常！！！\")\nE           Failed: 本来不应该通过这个步骤，这不正常！！！\n\ntest_thingMaintanenceFlow.py:151: Failed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1600231631344,
+      "stop" : 1600231631403,
+      "duration" : 59
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "init",
+    "time" : {
+      "start" : 1600231631403,
+      "stop" : 1600231631403,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "resource",
+    "time" : {
+      "start" : 1600231631403,
+      "stop" : 1600231631403,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Failed: 本来不应该通过这个步骤，这不正常！！！",
+    "statusTrace" : "self = <interface.workFlow_test.test_thingMaintanenceFlow.TestThingMaintenanceWorkFlow object at 0x10bd08710>\naction = 'update'\n\n    @pytest.mark.parametrize(\"action\", test_data)\n    @allure.story(\"保养中不允许的操作\")\n    def test_4(self, action):\n        thing_maintenance_id = self.simple_user.create_thing_maintenance()\n>       self._call_action(action, thing_maintenance_id)\n\ntest_thingMaintanenceFlow.py:164: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <interface.workFlow_test.test_thingMaintanenceFlow.TestThingMaintenanceWorkFlow object at 0x10bd08710>\naction = 'update', _id = '28'\n\n    def _call_action(self, action, _id):\n        call_str = \"self.simple_user.{action}({_id})\".format(action=action, _id=_id)\n        try:\n            exec(call_str)\n            # 如果通过了这个步骤说明不对\n>           pytest.fail(\"本来不应该通过这个步骤，这不正常！！！\")\nE           Failed: 本来不应该通过这个步骤，这不正常！！！\n\ntest_thingMaintanenceFlow.py:151: Failed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "a29dd955427e93a0",
+      "name" : "log",
+      "source" : "a29dd955427e93a0.txt",
+      "type" : "text/plain",
+      "size" : 950870
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "保养中不允许的操作"
+  }, {
+    "name" : "feature",
+    "value" : "ThingMaintenanceWorkFlow"
+  }, {
+    "name" : "epic",
+    "value" : "workflow"
+  }, {
+    "name" : "parentSuite",
+    "value" : "interface.workFlow_test"
+  }, {
+    "name" : "suite",
+    "value" : "test_thingMaintanenceFlow"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestThingMaintenanceWorkFlow"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Pro.local"
+  }, {
+    "name" : "thread",
+    "value" : "1068-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "interface.workFlow_test.test_thingMaintanenceFlow"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "action",
+    "value" : "'update'"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "b53023f9229dbe0e.json",
+  "parameterValues" : [ "'update'" ]
+}

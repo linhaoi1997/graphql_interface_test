@@ -1,0 +1,123 @@
+DEBUG    mytest:GraphqlClient.py:34 http://192.168.1.175:8888/graphql/?createThing
+DEBUG    mytest:GraphqlClient.py:35 {'Content-Type': 'application/json', 'authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFscyI6eyJlbXBsb3llZV9pZCI6MSwiaXNfYWRtaW5fIjp0cnVlfSwidXNlciI6eyJpZCI6MSwiY29tcGFueV9pZCI6MSwibmFtZSI6Ilx1N2JhMVx1NzQwNlx1NTQ1OCIsImRlcGFydG1lbnRfaWQiOjEsImNvZGUiOm51bGwsInBob25lIjpudWxsLCJqb2IiOm51bGwsImVtYWlsIjpudWxsLCJhY2NvdW50IjoiYWRtaW4iLCJzdGF0dXMiOiJBQ1RJVkFURUQiLCJyb2xlcyI6bnVsbH0sImV4cCI6MTYwMDMxNDM0Mn0.UOI1OaH_ELEAVzSlldya-CY3ahODVdxWOAwKSCpjxGc'}
+DEBUG    mytest:GraphqlClient.py:36 {
+  'input': {
+    'brand': '1',
+    'category': '1',
+    'code': 'code_jvrsl',
+    'factory': '1',
+    'model': 'model_pxqgh',
+    'name': 'name_zou61',
+    'purpose': '1',
+    'status': '1',
+  },
+}
+
+DEBUG    mytest:GraphqlClient.py:39 {
+  'data': {
+    'createThing': {
+      '__typename': 'Thing',
+      'activatedAt': None,
+      'addition': '[]',
+      'attachments': None,
+      'brand': '1',
+      'category': '1',
+      'code': 'code_jvrsl',
+      'contact': None,
+      'depreciationRate': None,
+      'desc': None,
+      'distributor': None,
+      'factory': '1',
+      'id': '9',
+      'images': None,
+      'location': None,
+      'manufacturer': None,
+      'model': 'model_pxqgh',
+      'name': 'name_zou61',
+      'phone': None,
+      'purchasedAt': None,
+      'purchasedPrice': None,
+      'purpose': '1',
+      'qrCode': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASIAAAEiAQAAAAB1x
+                 eIbAAABgElEQVR4nO2YQW6DMBBF/9RIWZob9CjmBr0yPlAle1kJ63dhm5BEVbMx
+                 ...(8 hidden lines)',
+      'spareParts': None,
+      'status': '1',
+      'yearsOfUse': None,
+    },
+  },
+  'errors': None,
+}
+
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..errors'
+get
+'None
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except None
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..code'
+get
+''code_jvrsl'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except code_jvrsl
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..name'
+get
+''name_zou61'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except name_zou61
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..model'
+get
+''model_pxqgh'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except model_pxqgh
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..category'
+get
+''1'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 1
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..brand'
+get
+''1'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 1
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..factory'
+get
+''1'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 1
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..purpose'
+get
+''1'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 1
+DEBUG    mytest:AssertMethod.py:17 
+jsonpath : '$..status'
+get
+''1'
+'
+from
+result
+DEBUG    mytest:AssertMethod.py:18 except 1
