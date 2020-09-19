@@ -2,11 +2,12 @@ import random
 import types
 from copy import deepcopy
 import json
-
+from .Fake import MyFaker
 from ..tools import create_timestamp, create_num_string
 from .ResourceLoader import ResourceLoader
 
 resource = ResourceLoader()
+fake = MyFaker()
 
 
 class GraphqlInterface(object):
@@ -19,7 +20,8 @@ class GraphqlInterface(object):
         for param in info.get("params"):
             self.params.append(
                 SingleParam(param.get("name"), param.get("type"), param.get("is_must"), param.get("identity", ""),
-                            param.get("interface"), param.get("len"), parent, interface_name, param.get("real_name"),
+                            param.get("interface"), param.get("len"), parent, interface_name,
+                            param.get("real_name"),
                             is_file=param.get("is_file")))
 
     @staticmethod
@@ -190,42 +192,34 @@ class SingleParam(object):
             return {"id": result_id}
         return result_id
 
-    def _create_attachment(self, **identity):
+    @staticmethod
+    def _create_attachment(**identity):
         user = resource.simple_user
         return user.upload_file()
 
     def _create_string(self, **identity):
-        if self.real_name:
-            name = self.real_name
-        else:
-            name = self.name
-        if name == "email":
-            return "test@sina.com"
-        if identity.get("is_random", False):
-            str_len = identity.get("string_len", 5)
-            return name + "_" + create_num_string(str_len, 1)
-        elif identity.get("num"):
-            return name + "_" + str(identity.get("num"))
-        else:
-            return name
+        return fake.create_string(self, **identity)
 
-    def _create_timestamp(self, **identity):
+    @staticmethod
+    def _create_timestamp(**identity):
         if identity.get("delay"):
             return create_timestamp() + identity.get("delay") * 60 * 1000
         else:
             return create_timestamp()
 
-    def _create_int(self, **identity):
+    @staticmethod
+    def _create_int(**identity):
         if identity.get("num"):
             return identity.get("num")
         else:
             return 1
 
-    def _create_float(self, **identity):
+    @staticmethod
+    def _create_float(**identity):
         if identity.get("num"):
-            return identity.get("num") + 0.01
+            return identity.get("num") + 0.1
         else:
-            return 1.01
+            return 1.1
 
     def _create_input(self, **identity):
         if identity.get("lack_must"):
@@ -243,45 +237,12 @@ class SingleParam(object):
         else:
             return GraphqlInterface(self.interface, self).generate_params(**identity)
 
-    def _create_upload(self, **identity):
-        return None
+    # @staticmethod
+    # def _create_upload(self, **identity):
+    #     return None
 
     def __call__(self, **kwargs):
         return self._generate(**kwargs)
-
-
-# class InterfaceTestCase(AssertMethod):
-#     executor = CaseExecutor("createThingMaintenance")
-#
-#     @allure.feature("自动测试项")
-#     @allure.story("所有项齐全")
-#     @pytest.mark.parametrize("variables", executor.generate_all_params)
-#     def test_all_completion(self, variables):
-#         self.executor.execute(variables)
-#
-#     @allure.feature("自动测试项")
-#     @allure.story("不填写选填项")
-#     @pytest.mark.parametrize("variables", executor.generate_no_optional_params)
-#     def test_no_optional(self, variables):
-#         self.executor.execute(variables)
-#
-#     @allure.feature("自动测试项")
-#     @allure.story("缺少必填项")
-#     @pytest.mark.parametrize("variables", executor.generate_lack_must)
-#     def test_lack_must(self, variables):
-#         self.executor.execute(variables)
-#
-#     @allure.feature("自动测试项")
-#     @allure.story("长度不匹配")
-#     @pytest.mark.parametrize("variables", executor.generate_dan_len)
-#     def test_dan_len(self, variables):
-#         self.executor.execute(variables)
-#
-#     @allure.feature("自动测试项")
-#     @allure.story("类型不匹配")
-#     @pytest.mark.parametrize("variables", executor.generate_dan_type)
-#     def test_dan_type(self, variables):
-#         self.executor.execute(variables)
 
 
 if __name__ == "__main__":

@@ -18,7 +18,11 @@ class SchemaReader(object):
         self.interfaces = self._query_param()
         self._input_second_treat()
         if self.find("formStructs"):
-            self._change_form_struct()
+            try:
+                self._change_form_struct()
+            except Exception as e:
+                print(e)
+                print("可能是网络不通或者form structs接口发生错误，需要检查")
 
     def _query_param(self):
         all_query = self._find("Query")[0][1:]
@@ -32,7 +36,7 @@ class SchemaReader(object):
                 info = info.split(",")
                 params = self._format_param(info)
                 interface = {"name": query_name, "return_type": return_type, "params": params}
-            else:
+            elif ":" in interface:
                 query_name, return_type = [i.strip() for i in interface.split(':')]
                 interface = {"name": query_name, "return_type": return_type, "params": []}
             all_interfaces.append(interface)
@@ -62,7 +66,7 @@ class SchemaReader(object):
         for _input in self.input:
             _input["params"] = self._format_param(_input["params_msg"])
             for param in _input["params"]:
-                if param["name"] == "addition":
+                if param.get("name") == "addition":
                     param["interface"] = _input["name"][6:-5] + "JsonString"
             _input.pop("params_msg")
 
@@ -82,7 +86,7 @@ class SchemaReader(object):
                 msg = f.readline()
         return all_query
 
-    def _format_param(self, params_msg: list):
+    def _format_param(self, params_msg: list) -> dict:
         format_params = []
         for param in params_msg:
             format_param = {"name": [i.strip() for i in param.split(":")][0],

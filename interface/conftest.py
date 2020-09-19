@@ -88,4 +88,4 @@ def _create_var(query_name):
 
 
 if __name__ == "__main__":
-    test_form_struct(False)
+    test_form_struct(True)

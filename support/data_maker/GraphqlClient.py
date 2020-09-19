@@ -19,7 +19,11 @@ class GraphqlClient(object):
         self.result = None
         self.num = 0
         if login:
-            self.login(login)
+            try:
+                self.login(login)
+            except Exception as e:
+                print(e)
+                print("登录错误")
 
     def send_request(self, query_name, variables, is_platform=False, has_typename=True):
         if not self.query.get(query_name):

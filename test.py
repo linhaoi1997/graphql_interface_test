@@ -15,9 +15,7 @@ if __name__ == "__main__":
         "thinginspectionrule": ["asdasdasd", "1212121ijsda"]
     }
     s.import_id(id_map)
-    # pp(test.input)
     test = GraphqlInterface("updateThing")
-    # test = GraphqlInterface("createThingInspection")
     test_identity = {
         "list_len": 1,
         "num": 1,
@@ -27,11 +25,7 @@ if __name__ == "__main__":
         "no_none": True
     }
     variables = test.generate("generate_all_params", **test_identity)
-    # variables = test.generate_lack_must(**test_identity)
 
-    # pp(variables, max_depth=10)
-    # variables = test.generate_lack_must(**test_identity)
     for i in variables:
         print(i)
-    #
-    # pp(s.create("createThingInspectionRule", variables))
+
