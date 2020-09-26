@@ -43,118 +43,39 @@ addition_test = [
 addition = [
     {
         "type": "TEXT",
-        "title": "单行文字",
-        "deletable": True,
-        "fieldRatio": 50,
-        "isSingleLine": True,
-        "hidden": False
-    }, {
-        "type": "TEXT",
         "title": "多行文字",
         "deletable": True,
         "fieldRatio": 50,
-        "isSingleLine": True,
-        "hidden": False
+        "isSingleLine": True
     }, {
         "type": "CONTACT",
         "title": "联系方式",
         "deletable": True,
         "fieldRatio": 50,
-        "isSingleLine": True,
-        "hidden": False
+        "isSingleLine": True
     }, {
         "type": "DATETIME",
-        "title": "自定义默认日期",
+        "title": "日期",
         "deletable": True,
-        "fieldRatio": 50,
-        "defaultDatetime": -1,
-        "hidden": False
+        "fieldRatio": 50
     }, {
-        "type": "DATETIME",
-        "title": "当前时间默认日期",
+        "type": "NUMBER",
+        "title": "数字",
         "deletable": True,
-        "fieldRatio": 50,
-        "defaultDatetime": -1,
-        "hidden": False
-    }, {
-        "type": "DATETIME",
-        "title": "普通的日期字段",
-        "deletable": True,
-        "fieldRatio": 50,
-        "hidden": False
-    }, {
-        "type": "DESCRIPTION",
-        "title": "描述文字",
-        "deletable": True,
-        "fieldRatio": 100,
-        "hidden": False
+        "fieldRatio": 50
     }, {
         "type": "SINGLE_SELECTION",
-        "title": "下拉单选",
+        "title": "单选",
         "deletable": True,
         "fieldRatio": 50,
-        "candidates": ["1", "2", "3"],
-        "hidden": False
+        "candidates": ["1", "2", "3"]
     }, {
         "type": "MULTI_SELECTION",
-        "title": "下拉多选",
+        "title": "多选",
         "deletable": True,
         "fieldRatio": 50,
-        "candidates": ["1", "2", "3", "4", "5"],
-        "hidden": False
-    }, {
-        "type": "NUMBER",
-        "title": "普通数字-限制小数3",
-        "deletable": True,
-        "fieldRatio": 25,
-        "hidden": False
-    }, {
-        "type": "NUMBER",
-        "title": "普通数字-不限小数位数",
-        "deletable": True,
-        "fieldRatio": 25,
-        "defaultNumber": 2,
-        "hidden": False
-    }, {
-        "type": "NUMBER",
-        "title": "普通数字",
-        "deletable": True,
-        "fieldRatio": 25,
-        "defaultNumber": 2,
-        "hidden": False
-    }, {
-        "type": "CONTACT",
-        "title": "联系方式-测试必填项/默认内容",
-        "deletable": True,
-        "required": True,
-        "fieldRatio": 50,
-        "defaultContact": "111111",
-        "hidden": False
-    }, {
-        "type": "TEXT",
-        "title": "文字-限字数2-100",
-        "deletable": True,
-        "fieldRatio": 25,
-        "isSingleLine": True,
-        "wordCountLimit": {
-            "min": 2,
-            "max": 100
-        },
-        "hidden": False
-    },
-    # {
-    #     "type": "ATTACHMENT",
-    #     "title": "测试附件",
-    #     "deletable": True,
-    #     "fieldRatio": 50,
-    #     "hidden": False
-    # }, {
-    #     "type": "IMAGE",
-    #     "title": "测试图片",
-    #     "deletable": True,
-    #     "fieldRatio": 50,
-    #     "hidden": False
-    # }
+        "candidates": ["1", "2", "3"]
+    }
 ]
 
 if __name__ == '__main__':

@@ -1,4 +1,5 @@
 from support import init_data
 
 if __name__ == '__main__':
-    init_data()
+    # init_data()
+    pass

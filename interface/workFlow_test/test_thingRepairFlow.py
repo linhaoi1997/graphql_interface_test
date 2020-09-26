@@ -3,7 +3,7 @@ import allure
 import pytest
 
 THING = {"id": 1}
-WORKER = {"id": 1}
+WORKER = {"id": 137}
 
 
 class ThingRepairUser(AssertMethod):
@@ -109,69 +109,70 @@ class ThingRepairUser(AssertMethod):
 @allure.epic("workflow")
 @allure.feature("ThingRepairWorkFlow")
 class TestThingRepairWorkFlow(AssertMethod):
-    simple_user = ThingRepairUser(get_account("simple_user"))
+    feed_back_user = ThingRepairUser(get_account("feed_back_user"))
+    audit_user = ThingRepairUser(get_account("audit_user"))
 
     @allure.story("派工中->维修中->反馈中->维修完成")
     def test_1(self):
-        thing_repair_id = self.simple_user.create_thing_repair()
+        thing_repair_id = self.audit_user.create_thing_repair()
         # 第一次审核通过
-        self.simple_user.audit_pass(thing_repair_id)
+        self.audit_user.audit_pass(thing_repair_id)
         # 反馈
-        self.simple_user.feed(thing_repair_id)
+        self.feed_back_user.feed(thing_repair_id)
         # 反馈审核通过
-        self.simple_user.audit_feed_pass(thing_repair_id)
+        self.audit_user.audit_feed_pass(thing_repair_id)
 
     @allure.story("派工中->维修中->反馈中->反馈拒绝->再次反馈->反馈通过")
     def test_2(self):
-        thing_repair_id = self.simple_user.create_thing_repair()
+        thing_repair_id = self.audit_user.create_thing_repair()
         # 第一次审核通过
-        self.simple_user.audit_pass(thing_repair_id)
+        self.audit_user.audit_pass(thing_repair_id)
         # 反馈提交
-        self.simple_user.feed(thing_repair_id)
+        self.feed_back_user.feed(thing_repair_id)
         # 反馈审核拒绝
-        self.simple_user.audit_feed_reject(thing_repair_id)
+        self.audit_user.audit_feed_reject(thing_repair_id)
         # 再次反馈提交
-        self.simple_user.feed(thing_repair_id)
+        self.feed_back_user.feed(thing_repair_id)
         # 反馈审核通过
-        result = self.simple_user.audit_feed_pass(thing_repair_id)
+        result = self.audit_user.audit_feed_pass(thing_repair_id)
         self.assertJsonCountEqual("$..resultHistory[*]", result, 2)
 
     @allure.story("派工中->维修中->审核拒绝->重新提交->审核通过->维修中")
     def test_3(self):
-        thing_repair_id = self.simple_user.create_thing_repair()
+        thing_repair_id = self.audit_user.create_thing_repair()
         # 第一次审核拒绝
-        self.simple_user.audit_reject(thing_repair_id)
+        self.audit_user.audit_reject(thing_repair_id)
         #  再次提交
-        self.simple_user.re_submit(thing_repair_id)
+        self.audit_user.re_submit(thing_repair_id)
         #  第一次审核通过
-        self.simple_user.audit_pass(thing_repair_id)
+        self.audit_user.audit_pass(thing_repair_id)
 
     @allure.story("派工中->终止")
     def test_4(self):
-        thing_repair_id = self.simple_user.create_thing_repair()
+        thing_repair_id = self.audit_user.create_thing_repair()
         # 终止流程
-        self.simple_user.audit_stop(thing_repair_id)
+        self.audit_user.audit_stop(thing_repair_id)
 
     @allure.story("派工中-> 维修中->终止")
     def test_5(self):
-        thing_repair_id = self.simple_user.create_thing_repair()
+        thing_repair_id = self.audit_user.create_thing_repair()
         # 第一次审核通过
-        self.simple_user.audit_pass(thing_repair_id)
+        self.audit_user.audit_pass(thing_repair_id)
         # 终止流程
-        self.simple_user.audit_stop(thing_repair_id)
+        self.audit_user.audit_stop(thing_repair_id)
 
     @allure.story("派工中-> 维修中-> 反馈中->终止")
     def test_6(self):
-        thing_repair_id = self.simple_user.create_thing_repair()
+        thing_repair_id = self.audit_user.create_thing_repair()
         # 第一次审核通过
-        self.simple_user.audit_pass(thing_repair_id)
+        self.audit_user.audit_pass(thing_repair_id)
         # 反馈
-        self.simple_user.feed(thing_repair_id)
+        self.feed_back_user.feed(thing_repair_id)
         # 终止流程
-        self.simple_user.audit_stop(thing_repair_id)
+        self.audit_user.audit_stop(thing_repair_id)
 
-    def _call_action(self, action, _id):
-        call_str = "self.simple_user.{action}({_id})".format(action=action, _id=_id)
+    def _call_action(self, user, action, _id):
+        call_str = "self.{user}.{action}({_id})".format(user=user, action=action, _id=_id)
         try:
             exec(call_str)
             # 如果通过了这个步骤说明不对
@@ -179,7 +180,7 @@ class TestThingRepairWorkFlow(AssertMethod):
         except AssertionError as e:
             logger.debug(e)
         # 如果未通过校验（校验部分是核实返回的status是否是预期的），那么检查下它是不是有报错也是有必要的
-        self.assertError(self.simple_user.result)
+        self.assertError(getattr(self, user).result)
 
     # 预期错误的用例
     test_data = ["re_submit", "feed", "audit_feed_pass", "audit_feed_reject"]
@@ -187,8 +188,8 @@ class TestThingRepairWorkFlow(AssertMethod):
     @pytest.mark.parametrize("action", test_data)
     @allure.story("派工中不允许的操作")
     def test_7(self, action):
-        thing_repair_id = self.simple_user.create_thing_repair()
-        self._call_action(action, thing_repair_id)
+        thing_repair_id = self.audit_user.create_thing_repair()
+        self._call_action("audit_user", action, thing_repair_id)
 
     # 预期错误的用例
     test_data = ["feed", "audit_pass", "audit_reject", "audit_feed_pass", "audit_feed_reject",
@@ -197,10 +198,10 @@ class TestThingRepairWorkFlow(AssertMethod):
     @pytest.mark.parametrize("action", test_data)
     @allure.story("拒绝中不允许的操作")
     def test_8(self, action):
-        thing_repair_id = self.simple_user.create_thing_repair()
+        thing_repair_id = self.audit_user.create_thing_repair()
         # 审核拒绝
-        self.simple_user.audit_reject(thing_repair_id)
-        self._call_action(action, thing_repair_id)
+        self.audit_user.audit_reject(thing_repair_id)
+        self._call_action("audit_user", action, thing_repair_id)
 
     # 预期错误的用例
     test_data = ["re_submit", "audit_pass", "audit_reject", "audit_feed_pass", "audit_feed_reject"]
@@ -208,10 +209,10 @@ class TestThingRepairWorkFlow(AssertMethod):
     @pytest.mark.parametrize("action", test_data)
     @allure.story("维修中不允许的操作")
     def test_9(self, action):
-        thing_repair_id = self.simple_user.create_thing_repair()
+        thing_repair_id = self.audit_user.create_thing_repair()
         # 审核通过->维修中
-        self.simple_user.audit_pass(thing_repair_id)
-        self._call_action(action, thing_repair_id)
+        self.audit_user.audit_pass(thing_repair_id)
+        self._call_action("audit_user", action, thing_repair_id)
 
     # 预期错误的用例
     test_data = ["re_submit", "feed", "audit_pass", "audit_reject"]
@@ -219,12 +220,12 @@ class TestThingRepairWorkFlow(AssertMethod):
     @pytest.mark.parametrize("action", test_data)
     @allure.story("反馈中不允许的操作")
     def test_10(self, action):
-        thing_repair_id = self.simple_user.create_thing_repair()
+        thing_repair_id = self.audit_user.create_thing_repair()
         # 审核通过->维修中
-        self.simple_user.audit_pass(thing_repair_id)
+        self.audit_user.audit_pass(thing_repair_id)
         # 提交反馈 ->反馈中
-        self.simple_user.feed(thing_repair_id)
-        self._call_action(action, thing_repair_id)
+        self.feed_back_user.feed(thing_repair_id)
+        self._call_action("audit_user", action, thing_repair_id)
 
     # 预期错误的用例
     test_data = ["re_submit", "feed", "audit_pass", "audit_reject", "audit_feed_pass", "audit_feed_reject",
@@ -233,14 +234,14 @@ class TestThingRepairWorkFlow(AssertMethod):
     @pytest.mark.parametrize("action", test_data)
     @allure.story("维修完成不允许的操作")
     def test_11(self, action):
-        thing_repair_id = self.simple_user.create_thing_repair()
+        thing_repair_id = self.audit_user.create_thing_repair()
         # 审核通过->维修中
-        self.simple_user.audit_pass(thing_repair_id)
+        self.audit_user.audit_pass(thing_repair_id)
         # 提交反馈 ->反馈中
-        self.simple_user.feed(thing_repair_id)
+        self.feed_back_user.feed(thing_repair_id)
         # 反馈审核通过->维修完成
-        self.simple_user.audit_feed_pass(thing_repair_id)
-        self._call_action(action, thing_repair_id)
+        self.audit_user.audit_feed_pass(thing_repair_id)
+        self._call_action("audit_user", action, thing_repair_id)
 
     # 预期错误的用例
     test_data = ["re_submit", "feed", "audit_pass", "audit_reject", "audit_feed_pass", "audit_feed_reject",
@@ -249,10 +250,10 @@ class TestThingRepairWorkFlow(AssertMethod):
     @pytest.mark.parametrize("action", test_data)
     @allure.story("终止不允许的操作")
     def test_12(self, action):
-        thing_repair_id = self.simple_user.create_thing_repair()
+        thing_repair_id = self.audit_user.create_thing_repair()
         # 终止->终止
-        self.simple_user.audit_stop(thing_repair_id)
-        self._call_action(action, thing_repair_id)
+        self.audit_user.audit_stop(thing_repair_id)
+        self._call_action("audit_user", action, thing_repair_id)
 
     all_action = ["re_submit", "feed", "audit_pass", "audit_reject", "audit_feed_pass", "audit_feed_reject",
                   "audit_stop"]

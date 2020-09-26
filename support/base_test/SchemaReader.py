@@ -30,16 +30,17 @@ class SchemaReader(object):
         all_interfaces = []
         for interface in all_query:
             if "(" in interface:
-                query_name, info = interface.split("(")
+                query_name, info = interface.split("(")[0:2]
                 info, return_type = info.split(")")
                 return_type = return_type.split(":")[1].strip()
                 info = info.split(",")
                 params = self._format_param(info)
                 interface = {"name": query_name, "return_type": return_type, "params": params}
+                all_interfaces.append(interface)
             elif ":" in interface:
                 query_name, return_type = [i.strip() for i in interface.split(':')]
                 interface = {"name": query_name, "return_type": return_type, "params": []}
-            all_interfaces.append(interface)
+                all_interfaces.append(interface)
         return all_interfaces
 
     def _type(self):

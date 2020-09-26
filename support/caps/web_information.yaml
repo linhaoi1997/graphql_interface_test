@@ -17,21 +17,29 @@ users:
     interfaces:
       "all"
     login:
-      account: 'admin'
-      passpord: 'admin'
+#      account: 'admin'
+#      passpord: 'admin'
+      account: 'admin_jia'
+      passpord: '123456'
   platform_user:
     login:
-      account: admin
-      passpord: admin
+      account: 'admin'
+      passpord: 'admin'
     interfaces:
       - "createThing"
       - "createSparePart"
-  test_user:
+  feed_back_user:
     interfaces:
       "all"
     login:
-      account: admin
-      passpord: admin
+      account: 'xiaohe'
+      passpord: '123456'
+  audit_user:
+    interfaces:
+      "all"
+    login:
+      account: 'xiaoliu'
+      passpord: '123456'
 
 id_map:
   'thing': 'createThing'

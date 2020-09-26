@@ -4,7 +4,7 @@ import pytest
 
 RULE = {"id": 1}
 THING = {"id": 1}
-MAINTAINER = {"id": 1}
+MAINTAINER = {"id": 137}
 
 
 class ThingMaintenanceUser(AssertMethod):
@@ -96,55 +96,56 @@ class ThingMaintenanceUser(AssertMethod):
 @allure.epic("workflow")
 @allure.feature("ThingMaintenanceWorkFlow")
 class TestThingMaintenanceWorkFlow(AssertMethod):
-    simple_user = ThingMaintenanceUser(get_account("simple_user"))
+    feed_back_user = ThingMaintenanceUser(get_account("feed_back_user"))
+    audit_user = ThingMaintenanceUser(get_account("audit_user"))
 
     @allure.story("待保养--编辑->待保养")
     def test_1_0(self):
-        thing_maintenance_id = self.simple_user.create_thing_maintenance(delay=10)
+        thing_maintenance_id = self.audit_user.create_thing_maintenance(delay=10)
         # 更新保养单
-        self.simple_user.update(thing_maintenance_id, delay=10)
+        self.audit_user.update(thing_maintenance_id, delay=10)
         # 更新保养单
-        self.simple_user.update(thing_maintenance_id)
+        self.audit_user.update(thing_maintenance_id)
 
     @allure.story("保养中--反馈->审核中--审核通过->保养完成")
     def test_1(self):
-        thing_maintenance_id = self.simple_user.create_thing_maintenance()
+        thing_maintenance_id = self.audit_user.create_thing_maintenance()
         # 反馈
-        self.simple_user.feed(thing_maintenance_id)
+        self.feed_back_user.feed(thing_maintenance_id)
         # 反馈审核通过
-        self.simple_user.audit_feed_pass(thing_maintenance_id)
+        self.audit_user.audit_feed_pass(thing_maintenance_id)
 
     @allure.story("保养中--反馈->审核中--审核拒绝->保养中--再次反馈->审核中--审核通过->保养完成")
     def test_2(self):
-        thing_maintenance_id = self.simple_user.create_thing_maintenance()
+        thing_maintenance_id = self.audit_user.create_thing_maintenance()
         # 反馈
-        self.simple_user.feed(thing_maintenance_id)
+        self.feed_back_user.feed(thing_maintenance_id)
         # 审核拒绝
-        self.simple_user.audit_feed_reject(thing_maintenance_id)
+        self.audit_user.audit_feed_reject(thing_maintenance_id)
         # 再次反馈
-        self.simple_user.feed(thing_maintenance_id)
+        self.feed_back_user.feed(thing_maintenance_id)
         # 审核通过
-        self.simple_user.audit_feed_pass(thing_maintenance_id)
+        self.audit_user.audit_feed_pass(thing_maintenance_id)
 
     @allure.story("审核拒绝--再次反馈 循环5次")
     def test_3(self):
-        thing_maintenance_id = self.simple_user.create_thing_maintenance()
+        thing_maintenance_id = self.audit_user.create_thing_maintenance()
 
         def circulation(n):
             for i in range(n):
                 # 反馈
-                self.simple_user.feed(thing_maintenance_id)
+                self.feed_back_user.feed(thing_maintenance_id)
                 # 审核拒绝
-                self.simple_user.audit_feed_reject(thing_maintenance_id)
+                self.audit_user.audit_feed_reject(thing_maintenance_id)
 
         circulation(5)
         # 再次反馈
-        self.simple_user.feed(thing_maintenance_id)
+        self.feed_back_user.feed(thing_maintenance_id)
         # 审核通过
-        self.simple_user.audit_feed_pass(thing_maintenance_id)
+        self.audit_user.audit_feed_pass(thing_maintenance_id)
 
-    def _call_action(self, action, _id):
-        call_str = "self.simple_user.{action}({_id})".format(action=action, _id=_id)
+    def _call_action(self, user, action, _id):
+        call_str = "self.{user}.{action}({_id})".format(user=user, action=action, _id=_id)
         try:
             exec(call_str)
             # 如果通过了这个步骤说明不对
@@ -152,7 +153,7 @@ class TestThingMaintenanceWorkFlow(AssertMethod):
         except AssertionError as e:
             logger.debug(e)
         # 如果未通过校验（校验部分是核实返回的status是否是预期的），那么检查下它是不是有报错也是有必要的
-        self.assertError(self.simple_user.result)
+        self.assertError(getattr(self, user).result)
 
     # 预期错误的用例
     test_data = ["audit_feed_pass", "audit_feed_reject", "update"]
@@ -160,8 +161,8 @@ class TestThingMaintenanceWorkFlow(AssertMethod):
     @pytest.mark.parametrize("action", test_data)
     @allure.story("保养中不允许的操作")
     def test_4(self, action):
-        thing_maintenance_id = self.simple_user.create_thing_maintenance()
-        self._call_action(action, thing_maintenance_id)
+        thing_maintenance_id = self.audit_user.create_thing_maintenance()
+        self._call_action("feed_back_user", action, thing_maintenance_id)
 
     # 预期错误的用例
     test_data = ["feed", "update"]
@@ -169,10 +170,10 @@ class TestThingMaintenanceWorkFlow(AssertMethod):
     @pytest.mark.parametrize("action", test_data)
     @allure.story("审核中不允许的操作")
     def test_5(self, action):
-        thing_maintenance_id = self.simple_user.create_thing_maintenance()
+        thing_maintenance_id = self.audit_user.create_thing_maintenance()
         # 提交审核->审核中
-        self.simple_user.feed(thing_maintenance_id)
-        self._call_action(action, thing_maintenance_id)
+        self.feed_back_user.feed(thing_maintenance_id)
+        self._call_action("feed_back_user", action, thing_maintenance_id)
 
     # 预期错误的用例
     test_data = ["feed", "audit_feed_pass", "audit_feed_reject", "update"]
@@ -180,12 +181,12 @@ class TestThingMaintenanceWorkFlow(AssertMethod):
     @pytest.mark.parametrize("action", test_data)
     @allure.story("保养完成不允许的操作")
     def test_6(self, action):
-        thing_maintenance_id = self.simple_user.create_thing_maintenance()
+        thing_maintenance_id = self.audit_user.create_thing_maintenance()
         # 提交审核->审核中
-        self.simple_user.feed(thing_maintenance_id)
+        self.feed_back_user.feed(thing_maintenance_id)
         # 审核通过-> 保养完成
-        self.simple_user.audit_feed_pass(thing_maintenance_id)
-        self._call_action(action, thing_maintenance_id)
+        self.audit_user.audit_feed_pass(thing_maintenance_id)
+        self._call_action("audit_user", action, thing_maintenance_id)
 
     # 预期错误的用例
     test_data = ["feed", "audit_feed_pass", "audit_feed_reject"]
@@ -193,9 +194,11 @@ class TestThingMaintenanceWorkFlow(AssertMethod):
     @pytest.mark.parametrize("action", test_data)
     @allure.story("待保养不允许的操作")
     def test_7(self, action):
-        thing_maintenance_id = self.simple_user.create_thing_maintenance(delay=10)
+        thing_maintenance_id = self.audit_user.create_thing_maintenance(delay=10)
 
-        self._call_action(action, thing_maintenance_id)
+        self._call_action("audit_user", action, thing_maintenance_id)
+
+    # 任务执行人员不能
 
     all_action = ["update", "feed", "audit_feed_pass", "audit_feed_reject"]
 

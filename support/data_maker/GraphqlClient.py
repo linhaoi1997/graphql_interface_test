@@ -23,6 +23,7 @@ class GraphqlClient(object):
                 self.login(login)
             except Exception as e:
                 print(e)
+                print(login)
                 print("登录错误")
 
     def send_request(self, query_name, variables, is_platform=False, has_typename=True):

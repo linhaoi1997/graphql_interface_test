@@ -24,12 +24,12 @@ id_map = {
     "ThingInspectionRule": [1],
     "ThingRepair": [1],
     "ThingMaintenance": [1],
-    "operator": [1],
-    "worker": [1],
-    "maintainer": [1],
+    "operator": [139],
+    "worker": [139],
+    "maintainer": [139],
     "parent": [2, 1],
     "permission": [1, 2, 3],
-    "role": [1, 2, 3],
+    "role": [1, 170, 3],
     "department": [1, 2, 3],
 }
 s.import_id(id_map)
@@ -88,4 +88,5 @@ def _create_var(query_name):
 
 
 if __name__ == "__main__":
-    test_form_struct(True)
+    test_form_struct(False)
+    # recover_form_struct()

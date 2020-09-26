@@ -47,6 +47,8 @@ class MyFaker(object):
             return name
 
     def __getattr__(self, item):
+        if item == "password":
+            return self.fake.password(special_chars=False)
         try:
             return getattr(self.fake, item)()
         except AttributeError:

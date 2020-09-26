@@ -52,7 +52,7 @@ class TestUploadFile(BaseTestCase):
             "map": (None, json.dumps({"1": ["variables.files.0"]})),
             "1": (variables[0], find_test_file(variables[0]), variables[1])
         }
-        self.login("admin", "admin")
+        self.login("admin_jia", "123456")
         encode_data = encode_multipart_formdata(files)
         data = encode_data[0]
         # logger.debug(variables)

@@ -22,8 +22,8 @@ class ThingSparePartOutboundUser(AssertMethod):
             "input": {
                 "operator": OPERATOR,
                 "time": create_timestamp(),
-                "shelf": "工作流仓库",
-                "factory": "工作流工厂",
+                "shelf": "测试仓库",
+                "factory": "测试工厂",
                 "reason": "设备维修",
                 "thingRepair": THING_REPAIR,
                 "details": [
@@ -73,8 +73,8 @@ class ThingSparePartOutboundUser(AssertMethod):
                 "id": _id,
                 "operator": OPERATOR,
                 "time": create_timestamp(),
-                "shelf": "工作流仓库",
-                "factory": "工作流工厂",
+                "shelf": "测试仓库",
+                "factory": "测试工厂",
                 "reason": "设备维修",
                 "thingRepair": THING_REPAIR,
                 "details": [

@@ -8,7 +8,8 @@ THINGS = [
     {"id": 2}
 ]
 OPERATOR = {
-    "id": 1
+    "id": 137
+    # 执行人员小何
 }
 
 
@@ -125,60 +126,61 @@ class ThingInspectionUser(AssertMethod):
 @allure.epic("workflow")
 @allure.feature("ThingInspectionWorkFlow")
 class TestThingInspectionWorkFlow(AssertMethod):
-    simple_user = ThingInspectionUser(get_account("simple_user"))
+    feed_back_user = ThingInspectionUser(get_account("feed_back_user"))
+    audit_user = ThingInspectionUser(get_account("audit_user"))
 
     @allure.story("待巡检--编辑->待巡检")
     def test_1_0(self):
-        thing_maintenance_id = self.simple_user.create_thing_inspection(delay=10)
+        thing_maintenance_id = self.audit_user.create_thing_inspection(delay=10)
         # 更新保养单
-        self.simple_user.update(thing_maintenance_id, delay=10)
+        self.audit_user.update(thing_maintenance_id, delay=10)
         # 更新保养单
-        self.simple_user.update(thing_maintenance_id)
+        self.audit_user.update(thing_maintenance_id)
 
     @allure.story("巡检中->反馈->审核中->审核通过->巡检完成")
     def test_1(self):
-        thing_inspection_id = self.simple_user.create_thing_inspection()
+        thing_inspection_id = self.audit_user.create_thing_inspection()
         # 反馈
-        self.simple_user.feed(thing_inspection_id)
-        self.simple_user.audit_commit(thing_inspection_id)
+        self.feed_back_user.feed(thing_inspection_id)
+        self.feed_back_user.audit_commit(thing_inspection_id)
         # 反馈审核通过
-        self.simple_user.audit_feed_pass(thing_inspection_id)
+        self.audit_user.audit_feed_pass(thing_inspection_id)
 
     @allure.story("巡检中->反馈->审核中->审核拒绝->巡检中->再次反馈->审核中->审核通过->巡检完成")
     def test_2(self):
-        thing_inspection_id = self.simple_user.create_thing_inspection()
+        thing_inspection_id = self.audit_user.create_thing_inspection()
         # 反馈
-        self.simple_user.feed(thing_inspection_id)
-        self.simple_user.audit_commit(thing_inspection_id)
+        self.feed_back_user.feed(thing_inspection_id)
+        self.feed_back_user.audit_commit(thing_inspection_id)
         # 审核拒绝
-        self.simple_user.audit_feed_reject(thing_inspection_id)
+        self.audit_user.audit_feed_reject(thing_inspection_id)
         # 再次反馈
-        self.simple_user.feed(thing_inspection_id)
-        self.simple_user.audit_commit(thing_inspection_id)
+        self.feed_back_user.feed(thing_inspection_id)
+        self.feed_back_user.audit_commit(thing_inspection_id)
         # 审核通过
-        self.simple_user.audit_feed_pass(thing_inspection_id)
+        self.audit_user.audit_feed_pass(thing_inspection_id)
 
     @allure.story("审核拒绝->再次反馈 循环5次")
     def test_3(self):
-        thing_inspection_id = self.simple_user.create_thing_inspection()
+        thing_inspection_id = self.audit_user.create_thing_inspection()
 
         def circulation(n):
             for i in range(n):
                 # 反馈
-                self.simple_user.feed(thing_inspection_id)
-                self.simple_user.audit_commit(thing_inspection_id)
+                self.feed_back_user.feed(thing_inspection_id)
+                self.feed_back_user.audit_commit(thing_inspection_id)
                 # 审核拒绝
-                self.simple_user.audit_feed_reject(thing_inspection_id)
+                self.audit_user.audit_feed_reject(thing_inspection_id)
 
         circulation(5)
         # 再次反馈
-        self.simple_user.feed(thing_inspection_id)
-        self.simple_user.audit_commit(thing_inspection_id)
+        self.feed_back_user.feed(thing_inspection_id)
+        self.feed_back_user.audit_commit(thing_inspection_id)
         # 审核通过
-        self.simple_user.audit_feed_pass(thing_inspection_id)
+        self.audit_user.audit_feed_pass(thing_inspection_id)
 
-    def _call_action(self, action, _id):
-        call_str = "self.simple_user.{action}({_id})".format(action=action, _id=_id)
+    def _call_action(self, user, action, _id):
+        call_str = "self.{user}.{action}({_id})".format(user=user, action=action, _id=_id)
         try:
             exec(call_str)
             # 如果通过了这个步骤说明不对
@@ -186,16 +188,22 @@ class TestThingInspectionWorkFlow(AssertMethod):
         except AssertionError as e:
             logger.debug(e)
         # 如果未通过校验（校验部分是核实返回的status是否是预期的），那么检查下它是不是有报错也是有必要的
-        self.assertError(self.simple_user.result)
+        self.assertError(getattr(self, user).result)
 
     # 预期错误的用例
     test_data = ["feed", "audit_feed_pass", "audit_feed_reject"]
 
     @pytest.mark.parametrize("action", test_data)
     @allure.story("待巡检不允许的操作")
-    def test_4(self, action):
-        thing_inspection_id = self.simple_user.create_thing_inspection(delay=10)
-        self._call_action(action, thing_inspection_id)
+    def test_4_0(self, action):
+        thing_inspection_id = self.audit_user.create_thing_inspection(delay=10)
+        self._call_action("audit_user", action, thing_inspection_id)
+
+    @pytest.mark.parametrize("action", test_data)
+    @allure.story("待巡检不允许的操作")
+    def test_4_1(self, action):
+        thing_inspection_id = self.audit_user.create_thing_inspection(delay=10)
+        self._call_action("feed_back_user", action, thing_inspection_id)
 
     # 预期错误的用例
     test_data = ["update", "audit_feed_pass", "audit_feed_reject"]
@@ -203,8 +211,8 @@ class TestThingInspectionWorkFlow(AssertMethod):
     @pytest.mark.parametrize("action", test_data)
     @allure.story("巡检中不允许的操作")
     def test_5(self, action):
-        thing_inspection_id = self.simple_user.create_thing_inspection()
-        self._call_action(action, thing_inspection_id)
+        thing_inspection_id = self.audit_user.create_thing_inspection()
+        self._call_action("audit_user", action, thing_inspection_id)
 
     # 预期错误的用例
     test_data = ["update", "feed"]
@@ -212,11 +220,11 @@ class TestThingInspectionWorkFlow(AssertMethod):
     @pytest.mark.parametrize("action", test_data)
     @allure.story("审核中不允许的操作")
     def test_6(self, action):
-        thing_inspection_id = self.simple_user.create_thing_inspection()
+        thing_inspection_id = self.audit_user.create_thing_inspection()
         # 反馈->审核中
-        self.simple_user.feed(thing_inspection_id)
-        self.simple_user.audit_commit(thing_inspection_id)
-        self._call_action(action, thing_inspection_id)
+        self.feed_back_user.feed(thing_inspection_id)
+        self.feed_back_user.audit_commit(thing_inspection_id)
+        self._call_action("audit_user", action, thing_inspection_id)
 
     # 预期错误的用例
     test_data = ["update", "feed", "audit_feed_pass", "audit_feed_reject"]
@@ -224,13 +232,13 @@ class TestThingInspectionWorkFlow(AssertMethod):
     @pytest.mark.parametrize("action", test_data)
     @allure.story("巡检完成不允许的操作")
     def test_7(self, action):
-        thing_inspection_id = self.simple_user.create_thing_inspection()
+        thing_inspection_id = self.audit_user.create_thing_inspection()
         # 反馈->审核中
-        self.simple_user.feed(thing_inspection_id)
-        self.simple_user.audit_commit(thing_inspection_id)
+        self.feed_back_user.feed(thing_inspection_id)
+        self.feed_back_user.audit_commit(thing_inspection_id)
         # 审核通过->巡检完成
-        self.simple_user.audit_feed_pass(thing_inspection_id)
-        self._call_action(action, thing_inspection_id)
+        self.audit_user.audit_feed_pass(thing_inspection_id)
+        self._call_action("audit_user", action, thing_inspection_id)
 
     all_action = ["update", "feed", "audit_feed_pass", "audit_feed_reject"]
 
