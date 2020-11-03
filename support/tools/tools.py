@@ -103,7 +103,7 @@ def go_allure(isClear=False):
     html_path = pro_path + "/output/report/html/"
     print(xml_path)
     command = allure_path + "allure generate " + xml_path + " -o " + html_path + " --clean"
-    result = os.popen(command)
+    os.popen(command)
     if isClear:
         shutil.rmtree(xml_path)
         os.mkdir(xml_path)

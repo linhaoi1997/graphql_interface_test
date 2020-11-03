@@ -1,7 +1,7 @@
 from ..caps.read_yaml import config
 from sgqlc.endpoint.http import HTTPEndpoint
 from jsonpath import jsonpath
-from ..tools.find_gralhql_schema import graphql_query, platform_query, find_test_file
+from ..tools.find_gralhql_schema import graphql_query, find_test_file
 from ..tools import logger, pformat
 from urllib3 import encode_multipart_formdata
 import json
@@ -25,13 +25,9 @@ class GraphqlClient(object):
                 print(login)
                 print("登录错误")
 
-    def send_request(self, query_name, variables, is_platform=False, has_typename=True):
-        if not is_platform:
-            query = graphql_query.get_query(query_name, has_typename)
-            self.graphql_client.url = self.base_url + "?" + query_name
-        else:
-            query = platform_query.get_query(query_name, has_typename)
-            self.graphql_client.url = self.platform_url + "?" + query_name
+    def send_request(self, query_name, variables, has_typename=True):
+        query = graphql_query.get_query(query_name, has_typename)
+        self.graphql_client.url = self.base_url + "?" + query_name
         logger.debug(self.graphql_client.url)
         logger.debug(self.headers)
         logger.debug(pformat(variables))
