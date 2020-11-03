@@ -1,41 +1,51 @@
 import os
 from support.caps.read_yaml import config
 import re
-from beeprint import pp
 
 file_path = config.get_file_path("schema_graphql")
 platform_file_path = config.get_file_path("platform_graphql")
 schema_path = config.get_file_path("schema")
 
 
-# 查找npm生成的标准graphql接口
-def find_schema(schema_type="queries", name="accountExist", is_platform=False, has_typename=True):
-    if not is_platform:
-        file_name = os.path.join(file_path, schema_type, name) + ".gql"
-    else:
-        file_name = os.path.join(platform_file_path, schema_type, name) + ".gql"
-    with open(file_name) as f:
-        query_str: str = f.read()
-    if has_typename:
-        query_str = query_str.replace("}", " __typename }", query_str.count("}") - 1)
+class Query(object):
 
-    return query_str
+    def __init__(self, query_file_path=config.get_file_path("schema_graphql")):
+        self.query_path = os.path.join(query_file_path, "queries")
+        self.mutation_path = os.path.join(query_file_path, "mutations")
+        self._query = os.listdir(self.query_path)
+        self._mutation = os.listdir(self.mutation_path)
+        self.all_query = {}
+
+    def get_query(self, name="accountExist", has_typename=True):
+        if name + ".gql" in self._query:
+            file_name = os.path.join(self.query_path, name) + ".gql"
+        elif name + ".gql" in self._mutation:
+            file_name = os.path.join(self.mutation_path, name) + ".gql"
+        else:
+            raise Exception("没有对应接口，看下是否需要更新schema")
+        with open(file_name) as f:
+            query_str: str = f.read()
+        if has_typename:
+            query_str = query_str.replace("}", " __typename }", query_str.count("}") - 1)
+        return query_str
+
+    def find_input(self, name):
+        query = self.get_query(name)
+        _query = re.search("\$input: (\w+)!", query)
+        if _query:
+            input_name = _query.group(1)
+        else:
+            input_name = name
+        return input_name
+
+    def __getattr__(self, item):
+        if item not in self.all_query.keys():
+            self.all_query[item] = self.get_query(item)
+        return self.all_query[item]
 
 
-def find_input(schema_type="queries", name="accountExist"):
-    return find(schema_type, name, "input")
-
-
-def find(schema_type="queries", name="accountExist", find_type="input"):
-    file_name = os.path.join(file_path, schema_type, name) + ".gql"
-    with open(file_name) as f:
-        query_str: str = f.read()
-    _query = re.search("\$%s: (\w+)!" % find_type, query_str)
-    if _query:
-        input_name = _query.group(1)
-    else:
-        input_name = name
-    return input_name
+graphql_query = Query()
+platform_query = Query(platform_file_path)
 
 
 def find_return_type(query_name):
@@ -55,6 +65,5 @@ def find_test_file(file_name="26f175eaa2634bedabc4694c688bd522.jpeg"):
 
 
 if __name__ == "__main__":
-    query = find_schema(schema_type="mutations", name="createSparePartOutbound")
-    # query = find_test_file()
-    print(query)
+    print(graphql_query.login)
+    print(graphql_query.find_input("login"))

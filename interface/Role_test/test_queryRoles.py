@@ -9,7 +9,7 @@ collection()
 @allure.feature("queryRoles")
 class TestQueryRoles(BaseTestCase):
     query_name = "roles"
-    interface = find_schema("queries", query_name)
+    interface = graphql_query.get_query(query_name)
 
     @allure.story("所有项完整")
     def test_1(self, resource):

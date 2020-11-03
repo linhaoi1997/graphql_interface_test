@@ -1,7 +1,7 @@
 from ..caps.read_yaml import config
 from sgqlc.endpoint.http import HTTPEndpoint
 from jsonpath import jsonpath
-from ..tools.find_gralhql_schema import find_schema, find_test_file
+from ..tools.find_gralhql_schema import graphql_query, platform_query, find_test_file
 from ..tools import logger, pformat
 from urllib3 import encode_multipart_formdata
 import json
@@ -9,7 +9,6 @@ import requests
 
 
 class GraphqlClient(object):
-    query = {}
 
     def __init__(self, login=None):
         self.base_url = config.get_web_information('url')
@@ -27,17 +26,11 @@ class GraphqlClient(object):
                 print("登录错误")
 
     def send_request(self, query_name, variables, is_platform=False, has_typename=True):
-        if not self.query.get(query_name):
-            try:
-                query = find_schema("mutations", query_name, is_platform, has_typename)
-            except FileNotFoundError:
-                query = find_schema("queries", query_name, is_platform, has_typename)
-            self.query[query_name] = query
-        else:
-            query = self.query[query_name]
         if not is_platform:
+            query = graphql_query.get_query(query_name, has_typename)
             self.graphql_client.url = self.base_url + "?" + query_name
         else:
+            query = platform_query.get_query(query_name, has_typename)
             self.graphql_client.url = self.platform_url + "?" + query_name
         logger.debug(self.graphql_client.url)
         logger.debug(self.headers)
@@ -115,7 +108,6 @@ class GraphqlClient(object):
         data = encode_data[0]
         self.update_header(**{"Content-Type": encode_data[1]})
         logger.debug(self.headers)
-        logger.debug(self.query)
         result = requests.post(self.base_url, headers=self.headers, data=data).json()
         self.update_header(**{"Content-Type": "application/json"})
         return result["data"]["uploadFiles"]

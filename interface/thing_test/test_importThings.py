@@ -11,7 +11,7 @@
 # @allure.epic("thing")
 # @allure.feature("importThings")
 # class TestImportThings(BaseTestCase):
-#     query = find_schema("mutations", "importThings")
+#     query = graphql_query.get_query("mutations", "importThings")
 #     test_right_data = [
 #         ['只有必填项.xlsx', "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"],
 #         ['所有项齐全.xlsx', "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"],

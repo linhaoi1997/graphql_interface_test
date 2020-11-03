@@ -1,5 +1,5 @@
 schema_graphql: /Users/linhao/graphql/eam/
-#platform_graphql: /Users/linhao/graphql/platform/
+platform_graphql: /Users/linhao/graphql/platform/
 allure: /Users/linhao/Desktop/linhao/project/allure-2.13.1/bin/
 #schema
 schema: /Users/linhao/graphql/eam.graphql

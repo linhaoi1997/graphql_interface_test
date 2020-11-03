@@ -2,7 +2,7 @@ import jsonpath
 from support.tools.log import logger, pformat
 from ..caps.read_yaml import config
 from ..tools import go_allure
-from support.tools.find_gralhql_schema import find_schema
+from support.tools.find_gralhql_schema import graphql_query
 from .AssertMethod import AssertMethod
 from sgqlc.endpoint.http import HTTPEndpoint
 import ssl
@@ -75,7 +75,7 @@ def collection():
 def login(account, password):
     url = config.get_web_information('url')
     variables = {'input': {"account": account, "password": password}}
-    query = find_schema('mutations', 'login')
+    query = graphql_query.login
     client = HTTPEndpoint(url)
     result = client(query, variables)
     token = jsonpath.jsonpath(result, "$..token")[0]
