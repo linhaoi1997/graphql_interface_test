@@ -1,6 +1,6 @@
 import jsonpath
 from support.tools.log import logger, pformat
-from ..caps.read_yaml import get_web_information
+from ..caps.read_yaml import config
 from ..tools import go_allure
 from support.tools.find_gralhql_schema import find_schema
 from .AssertMethod import AssertMethod
@@ -18,7 +18,7 @@ class BaseTestCase(AssertMethod):
         "is_random": True,
         "no_none": True,
     }
-    base_url = get_web_information('url')
+    base_url = config.get_web_information('url')
     headers = {"Content-Type": "application/json"}
     graphql_client = HTTPEndpoint(base_url, headers)
 
@@ -73,7 +73,7 @@ def collection():
 
 
 def login(account, password):
-    url = get_web_information('url')
+    url = config.get_web_information('url')
     variables = {'input': {"account": account, "password": password}}
     query = find_schema('mutations', 'login')
     client = HTTPEndpoint(url)

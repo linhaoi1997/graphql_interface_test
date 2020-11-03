@@ -1,4 +1,4 @@
-from support import GraphqlClient, create_timestamp, AssertMethod, logger, run, get_account
+from support import GraphqlClient, create_timestamp, AssertMethod, logger, run, config
 import allure
 import pytest
 
@@ -96,8 +96,8 @@ class ThingMaintenanceUser(AssertMethod):
 @allure.epic("workflow")
 @allure.feature("ThingMaintenanceWorkFlow")
 class TestThingMaintenanceWorkFlow(AssertMethod):
-    feed_back_user = ThingMaintenanceUser(get_account("feed_back_user"))
-    audit_user = ThingMaintenanceUser(get_account("audit_user"))
+    feed_back_user = ThingMaintenanceUser(config.get_account("feed_back_user"))
+    audit_user = ThingMaintenanceUser(config.get_account("audit_user"))
 
     @allure.story("待保养--编辑->待保养")
     def test_1_0(self):

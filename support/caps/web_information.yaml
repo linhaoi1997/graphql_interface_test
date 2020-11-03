@@ -32,13 +32,19 @@ users:
     interfaces:
       "all"
     login:
-      account: 'xiaohe'
+      account: 'zhixing'
       passpord: '123456'
   audit_user:
     interfaces:
       "all"
     login:
-      account: 'xiaoliu'
+      account: 'shenheren'
+      passpord: '123456'
+  report_user:
+    interfaces:
+      "all"
+    login:
+      account: 'faqiren'
       passpord: '123456'
 
 id_map:

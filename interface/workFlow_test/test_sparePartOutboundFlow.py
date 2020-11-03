@@ -1,4 +1,4 @@
-from support import GraphqlClient, create_timestamp, AssertMethod, logger, run, get_account
+from support import GraphqlClient, create_timestamp, AssertMethod, logger, run, config
 import allure
 import pytest
 
@@ -96,7 +96,7 @@ class ThingSparePartOutboundUser(AssertMethod):
 @allure.epic("workflow")
 @allure.feature("SparePartOutBoundWorkFlow")
 class TestSparePartOutBoundWorkFlow(AssertMethod):
-    simple_user = ThingSparePartOutboundUser(get_account("simple_user"))
+    simple_user = ThingSparePartOutboundUser(config.get_account("simple_user"))
 
     @allure.story("申领->待审核->审核通过->申领完成")
     def test_1(self):

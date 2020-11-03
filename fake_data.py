@@ -1,17 +1,37 @@
-from support.data_maker.DataFaker import DataFaker
+from support.base_test.ResourceLoader import ResourceLoader
+from support.base_test.GraphqlInterfaceGenerate import GraphqlInterface
+import pytest
+import os
+
+s = ResourceLoader()
+simple_user = s.simple_user
+pro_dir = os.path.dirname(__file__)
+xml_path = pro_dir + "/output/report/xml/"
+all_param = {
+    "list_len": 2,
+    "num": 1,
+    "is_random": True,
+    "no_none": True,
+}
+
+
+def create(_create_list, num):
+    def _create(_query_name, _num):
+        while _num > 0:
+            interface = GraphqlInterface(_query_name)
+            variable = next(interface.generate("generate_no_optional_params", **all_param))
+            result = simple_user.send_request(_query_name, variable)
+            if not result.find_result("$..errors")[0]:
+                print(" %s success %s \n" % (_query_name, _num))
+            else:
+                print(" %s fail %s \n" % (_query_name, _num))
+                break
+            _num -= 1
+
+    for query_name in _create_list:
+        _create(query_name, num)
+
 
 if __name__ == '__main__':
-    fake_data = DataFaker('createThing')
-    fake_data.fake_data(21)
-    fake_data = DataFaker('createSparePart')
-    fake_data.fake_data(21)
-    fake_data = DataFaker('createSparePartReceipt', is_id_increase=True)
-    fake_data.fake_data(21)
-    fake_data = DataFaker('createThingRepair', is_id_increase=True)
-    fake_data.fake_data(21)
-    fake_data = DataFaker('createSparePartOutbound', no_optional=True, is_id_increase=True)
-    fake_data.fake_data(21)
-    fake_data = DataFaker('createThingMaintenanceRule', is_id_increase=True, list_len=3)
-    fake_data.fake_data(11)
-    fake_data = DataFaker('createThingMaintenance', is_id_increase=True)
-    fake_data.fake_data(11)
+    pytest.main(['-v', "-s", "interface", '--alluredir', xml_path])
+    create_list = ["createThing", "createSparePart", "createSparePartReceipt", "create"]

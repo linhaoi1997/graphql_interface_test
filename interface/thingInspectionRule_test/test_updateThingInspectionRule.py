@@ -22,6 +22,8 @@ class TestUpdateThingInspectionRule(BaseTestCase):
         variable['input']["id"] = _id
         for i in range(self.all_param.get("list_len")):
             variable['input']['items'][i]["id"] = _id_map['ThingInspectionItem'][i]
+            for j in range(self.all_param.get("list_len")):
+                variable['input']['items'][i]["subItems"][j]["id"] = _id_map['ThingInspectionSubItem'][i*3+j]
         # 使用创建的id
         user = resource.simple_user
         result = user.send_request(self.query_name, variable).result

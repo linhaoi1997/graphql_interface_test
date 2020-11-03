@@ -1,4 +1,4 @@
-from ..caps.read_yaml import get_web_information
+from ..caps.read_yaml import config
 from ..tools import singleton
 from .SchemaReader import SchemaReader
 from ..data_maker import GraphqlClient
@@ -24,6 +24,7 @@ class ResourceLoader(object):
         self.id_map = IdMap()
         self.id = {}
         self.all = [i["name"] for i in self.interface.interfaces]
+        self._num = 0
 
     def __getattr__(self, item):
         if "user" in item:
@@ -93,8 +94,12 @@ class ResourceLoader(object):
                     return value["value"][value["num"]]
             except AttributeError:
                 pass
+
         print("no matchId")
-        return random.randint(1, 3)
+        if self._num > 3:
+            self._num = 1
+
+        return self._num
         # raise Exception("no matchId")
 
 
@@ -103,7 +108,7 @@ class UserLoader(object):
 
     def __init__(self):
         self.users = []
-        users = get_web_information("users")
+        users = config.get_web_information("users")
         for user_name in users.keys():
             login = users[user_name].get("login")
             interfaces = users[user_name].get("interfaces")
@@ -132,7 +137,7 @@ class UserLoader(object):
 @singleton
 class IdMap:
     def __init__(self):
-        self.id_map = get_web_information("id_map")
+        self.id_map = config.get_web_information("id_map")
 
     def __call__(self, item):
         return self.id_map.get(item)

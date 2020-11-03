@@ -1,13 +1,13 @@
 import psycopg2
 # from support import logger, get_file_path, get_web_information
 from support.tools import logger
-from support.caps.read_yaml import get_file_path, get_web_information
+from support.caps.read_yaml import config
 
 
 class PostgresConn(object):
 
     def __init__(self, database):
-        self.user, self.password, self.host, self.port = get_web_information('db')
+        self.user, self.password, self.host, self.port = config.get_web_information('db')
         self.database = database
         self.conn = psycopg2.connect(
             database=self.database,
@@ -92,13 +92,13 @@ def execute_sql(database, sql_path):
 
 def init_data(sql=None):
     logger.debug('start init database')
-    db_list = get_web_information('db_list')
+    db_list = config.get_web_information('db_list')
     for db in db_list:
         if not sql:
-            eam_sql = get_file_path(db + '_sql')
+            eam_sql = config.get_file_path(db + '_sql')
             print(eam_sql)
         else:
-            eam_sql = get_file_path(sql)
+            eam_sql = config.get_file_path(sql)
         logger.debug('start init %s' % db)
         execute_sql(db, eam_sql)
 
@@ -111,6 +111,6 @@ if __name__ == "__main__":
     #     print(i)
     #     pla.update_passport_user_id(i[1], i[0])
 
-    print(get_web_information('db'))
+    print(config.get_web_information('db'))
     init_data(None)
     # init_data("empty_sql")

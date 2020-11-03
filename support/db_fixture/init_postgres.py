@@ -1,4 +1,4 @@
-from support.caps.read_yaml import get_web_information
+from support.caps.read_yaml import config
 from sqlalchemy import MetaData, create_engine, Table
 from datetime import datetime
 from sqlalchemy.ext.automap import automap_base
@@ -14,7 +14,7 @@ class DataInitExecuter(object):
 
     def __init__(self):
         url = 'postgresql://{}:{}@{}:{}/{}'
-        db_information = get_web_information("db")
+        db_information = config.get_web_information("db")
         url = url.format(*db_information)
         self.engine = create_engine(url, client_encoding='utf-8')
         self.metadata = MetaData(self.engine)

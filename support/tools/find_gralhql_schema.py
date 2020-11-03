@@ -1,11 +1,11 @@
 import os
-from support.caps.read_yaml import get_file_path
+from support.caps.read_yaml import config
 import re
 from beeprint import pp
 
-file_path = get_file_path("schema_graphql")
-platform_file_path = get_file_path("platform_graphql")
-schema_path = get_file_path("schema")
+file_path = config.get_file_path("schema_graphql")
+platform_file_path = config.get_file_path("platform_graphql")
+schema_path = config.get_file_path("schema")
 
 
 # 查找npm生成的标准graphql接口

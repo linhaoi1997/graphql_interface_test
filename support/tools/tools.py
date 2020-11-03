@@ -2,7 +2,7 @@ import random
 import time
 import os
 import shutil
-from support.caps.read_yaml import get_file_path
+from support.caps.read_yaml import config
 from copy import deepcopy
 
 
@@ -97,7 +97,7 @@ def format_number(num_list: list):
 
 
 def go_allure(isClear=False):
-    allure_path = get_file_path("allure")
+    allure_path = config.get_file_path("allure")
     pro_path = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
     xml_path = pro_path + "/output/report/xml/"
     html_path = pro_path + "/output/report/html/"

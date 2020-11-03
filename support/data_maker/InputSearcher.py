@@ -1,8 +1,8 @@
-from ..caps.read_yaml import get_file_path
+from ..caps.read_yaml import config
 from ..tools.log import logger
 import re
 
-SCHEMA_PATH = get_file_path("schema")
+SCHEMA_PATH = config.get_file_path("schema")
 
 
 class InputSearcher(object):

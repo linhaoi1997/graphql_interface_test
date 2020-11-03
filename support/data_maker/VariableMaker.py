@@ -3,9 +3,9 @@ from ..tools.tools import create_timestamp
 from .JsonSetter import JsonSetter
 from copy import deepcopy
 import random
-from ..caps.read_yaml import get_file_path
+from ..caps.read_yaml import config
 
-SCHEMA_PATH = get_file_path("schema")
+SCHEMA_PATH = config.get_file_path("schema")
 
 
 class TypeSearcher(object):

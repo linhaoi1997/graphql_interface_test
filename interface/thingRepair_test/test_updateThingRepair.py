@@ -19,8 +19,10 @@ class TestUpdateThingRepair(BaseTestCase):
         # 创建一个id以修改
         _id, _ = create_id(self.create_name, 1, "ThingRepair", return_type="variable")
         variable['input']["id"] = _id
-        # 使用创建的id
         user = resource.simple_user
+        # 拒绝使其能更新
+        user.send_request("updateThingRepairStatus", {"input": {"id": _id, "action": "REJECT_REPAIR"}})
+        # 使用创建的id
         result = user.send_request(self.query_name, variable).result
         self.assertForm(variable, result)
 
@@ -32,6 +34,8 @@ class TestUpdateThingRepair(BaseTestCase):
         variable['input']["id"] = _id
         # 使用创建的id
         user = resource.simple_user
+        # 拒绝
+        user.send_request("updateThingRepairStatus", {"input": {"id": _id, "action": "REJECT_REPAIR"}})
         result = user.send_request(self.query_name, variable).result
         self.assertForm(variable, result)
 

@@ -1,10 +1,10 @@
-from ..caps.read_yaml import get_file_path, get_account
+from ..caps.read_yaml import config
 from beeprint import pp
 from ..tools import singleton
 from ..data_maker.GraphqlClient import GraphqlClient
 
-file_path = get_file_path("schema_graphql")
-schema_path = get_file_path("schema")
+file_path = config.get_file_path("schema_graphql")
+schema_path = config.get_file_path("schema")
 
 
 @singleton
@@ -149,7 +149,7 @@ class SchemaReader(object):
 
     def _change_form_struct(self):
         # 发送请求查找所有表单的格式
-        s = GraphqlClient(login=get_account("simple_user"))
+        s = GraphqlClient(login=config.get_account("simple_user"))
         variables = {
             "isDraft": False
         }
