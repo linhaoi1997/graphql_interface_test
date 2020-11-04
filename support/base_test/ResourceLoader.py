@@ -1,10 +1,8 @@
 from ..caps.read_yaml import config
 from ..tools import singleton
-from .SchemaReader import SchemaReader
+from .newSchema import eam_schema
 from ..data_maker import GraphqlClient
 import random
-
-interface_info = SchemaReader()
 
 
 @singleton
@@ -19,7 +17,7 @@ class ResourceLoader(object):
     '''
 
     def __init__(self):
-        self.interface = interface_info
+        self.interface = eam_schema
         self.users = UserLoader()
         self.id_map = IdMap()
         self.id = {}
@@ -112,15 +110,8 @@ class UserLoader(object):
         for user_name in users.keys():
             login = users[user_name].get("login")
             interfaces = users[user_name].get("interfaces")
-            if interfaces == "all":
-                interfaces = interface_info.get_all_interface_name()
             user = {"name": user_name, "client": User(login, interfaces)}
             self.users.append(user)
-        self._add_user()
-
-    def _add_user(self):
-        for user in self.users:
-            interface_info.set_users(user["name"], user["client"].use_interfaces)
 
     def create(self, query_name, variables):
         for user in self.users:

@@ -1,5 +1,5 @@
 from support.base_test.ResourceLoader import ResourceLoader, IdMap, UserLoader
-from support.base_test.GraphqlInterfaceGenerate import GraphqlInterface
+from support.base_test.GenerateParam import GraphqlInterface
 from beeprint import pp
 
 if __name__ == '__main__':

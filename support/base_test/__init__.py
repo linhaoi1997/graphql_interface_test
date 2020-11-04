@@ -1,4 +1,4 @@
 from .ResourceLoader import ResourceLoader
-from .GraphqlInterfaceGenerate import GraphqlInterface
+from .GenerateParam import GraphqlInterface
 
 __all__ = ["ResourceLoader", "GraphqlInterface"]

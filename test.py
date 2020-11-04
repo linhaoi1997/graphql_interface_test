@@ -1,12 +1,11 @@
-from support.base_test.GraphqlInterfaceGenerate import GraphqlInterface
+from support.base_test.GenerateParam import GraphqlInterface
 from support.base_test.ResourceLoader import ResourceLoader
-from support.base_test.SchemaReader import SchemaReader
+from support.base_test.newSchema import eam_schema
 from support.data_maker.GraphqlClient import GraphqlClient
 from beeprint import pp
 
 s = ResourceLoader()
 if __name__ == "__main__":
-    test = SchemaReader()
     id_map = {
         "Thing": [1, 2, 3, 4],
         "SparePart": [1, 2, 3, 5, 8],
@@ -24,7 +23,7 @@ if __name__ == "__main__":
         # "no_optional": True,
         "no_none": True
     }
-    variables = test.generate("generate_all_params", **test_identity)
+    variables = test.generate_all_params(**test_identity)
 
     for i in variables:
         print(i)

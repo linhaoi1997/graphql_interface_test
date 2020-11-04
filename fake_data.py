@@ -1,5 +1,5 @@
 from support.base_test.ResourceLoader import ResourceLoader
-from support.base_test.GraphqlInterfaceGenerate import GraphqlInterface
+from support.base_test.GenerateParam import GraphqlInterface
 import pytest
 import os
 
@@ -19,7 +19,7 @@ def create(_create_list, num):
     def _create(_query_name, _num):
         while _num > 0:
             interface = GraphqlInterface(_query_name)
-            variable = next(interface.generate("generate_no_optional_params", **all_param))
+            variable = next(interface.generate_no_optional_params(**all_param))
             result = simple_user.send_request(_query_name, variable)
             if not result.find_result("$..errors")[0]:
                 print(" %s success %s \n" % (_query_name, _num))

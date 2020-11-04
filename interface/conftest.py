@@ -59,7 +59,7 @@ def create_id():
         variable = {}
         _id_map = {}
         while num > 0:
-            variable = next(create_interface.generate("generate_all_params", **all_param))
+            variable = next(create_interface.generate_no_optional_params(**all_param))
             _id_map = s.create(create_name, variable)
             logger.debug(_id_map)
             _ids.append(_id_map[name][0])

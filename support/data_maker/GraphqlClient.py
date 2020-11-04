@@ -73,7 +73,7 @@ class GraphqlClient(object):
     def login(self, login_information):
         account, password = login_information.values()
         variables = {"input": {"account": account, "password": password}}
-        token = self.send_request("login", variables, is_platform=False).find_result("$..token")[0]
+        token = self.send_request("login", variables).find_result("$..token")[0]
         self.update_token(token)
 
     def __call__(self, query, variables):

@@ -1,5 +1,4 @@
 from faker import Faker
-from ..tools.log import singleton
 from ..tools.tools import create_num_string, create_timestamp
 from faker.providers import BaseProvider
 
@@ -14,7 +13,6 @@ class MyProvider(BaseProvider):
         return self.fake.word() + self.fake.gou()
 
 
-@singleton
 class MyFaker(object):
 
     def __init__(self):
@@ -29,11 +27,8 @@ class MyFaker(object):
             "distributor": "company",
         }
 
-    def create_string(self, single_param, **identity):
-        if single_param.real_name:
-            name = single_param.real_name
-        else:
-            name = single_param.name
+    def create_string(self, param, **identity):
+        name = param.param.name
         # if name == "name":
         #     name = single_param.parent.interface
         if getattr(self, name.lower()):
@@ -59,3 +54,6 @@ class MyFaker(object):
             except AttributeError:
                 print("fake_map %s 的对应不对")
         return None
+
+
+fake = MyFaker()
