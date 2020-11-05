@@ -1,8 +1,5 @@
-from support.base_test.GenerateParam import GraphqlInterface
+from support.base_test.generate_param.GenerateParam import GraphqlInterface
 from support.base_test.ResourceLoader import ResourceLoader
-from support.base_test.newSchema import eam_schema
-from support.data_maker.GraphqlClient import GraphqlClient
-from beeprint import pp
 
 s = ResourceLoader()
 if __name__ == "__main__":

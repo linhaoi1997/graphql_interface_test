@@ -46,11 +46,6 @@ def resource():
     return s
 
 
-# @pytest.fixture(scope="session")
-# def generate_param():
-#     return GraphqlInterface()
-
-
 @pytest.fixture(scope="function")
 def create_id():
     def _create_id(create_name, num, name, return_type="id"):
@@ -81,8 +76,6 @@ def _create_var(query_name):
         "num": 1,
         "is_random": True,
         "rule_id": 2,
-        # "no_optional": True,
-        # "no_none": True
     }
     return query_name, v.generate_params()
 

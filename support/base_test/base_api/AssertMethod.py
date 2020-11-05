@@ -1,7 +1,7 @@
 import jsonpath
-from ..tools.log import logger, pformat
-from ..tools import get_all_deepest_dict, format_number, find_return_type
-from ..data_maker.VariableMaker import TypeSearcher
+from support.tools.log import logger, pformat
+from support.tools import get_all_deepest_dict, format_number, find_return_type
+from support.data_maker.VariableMaker import TypeSearcher
 import json
 
 

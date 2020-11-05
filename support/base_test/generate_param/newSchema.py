@@ -206,8 +206,8 @@ class Schema(object):
             return getattr(self.enum, item)
 
 
-eam_schema = Schema()
-all_input = eam_schema.input
+base_schema = Schema()
+all_input = base_schema.input
 
 if __name__ == '__main__':
-    print(eam_schema.interfaces)
+    print(base_schema.interfaces)

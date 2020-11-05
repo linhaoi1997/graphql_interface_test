@@ -1,5 +1,5 @@
-from support.base_test.newSchema import Param, Schema, Input, eam_schema
-from support.base_test.Fake import fake
+from support.base_test.generate_param.newSchema import Param, Schema, Input, base_schema
+from support.base_test.generate_param.Fake import fake
 from support.base_test.ResourceLoader import resource
 import time
 import random
@@ -189,7 +189,7 @@ class InputParam(BaseParam):
 
 class GraphqlInterface(object):
 
-    def __init__(self, query_name, schema: Schema = eam_schema):
+    def __init__(self, query_name, schema: Schema = base_schema):
         self.query_name = query_name
         self.schema = schema
 
@@ -212,5 +212,5 @@ if __name__ == '__main__':
 
     print(test.generate_params(list_len=3))
 
-    test = GenerateInput.generate_root(eam_schema, eam_schema.things)
+    test = GenerateInput.generate_root(base_schema, base_schema.things)
     print(test)

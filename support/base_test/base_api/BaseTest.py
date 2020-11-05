@@ -1,9 +1,9 @@
 import jsonpath
 from support.tools.log import logger, pformat
-from ..caps.read_yaml import config
-from ..tools import go_allure
+from support.caps.read_yaml import config
+from support.tools import go_allure
 from support.tools.find_gralhql_schema import graphql_query
-from .AssertMethod import AssertMethod
+from support.base_test.base_api.AssertMethod import AssertMethod
 from sgqlc.endpoint.http import HTTPEndpoint
 import ssl
 import pytest

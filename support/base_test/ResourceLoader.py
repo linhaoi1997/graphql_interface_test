@@ -1,6 +1,6 @@
 from ..caps.read_yaml import config
 from ..tools import singleton
-from .newSchema import eam_schema
+from support.base_test.generate_param.newSchema import base_schema
 from ..data_maker import GraphqlClient
 
 
@@ -16,7 +16,7 @@ class ResourceLoader(object):
     """
 
     def __init__(self):
-        self.interface = eam_schema
+        self.interface = base_schema
         self.users = UserLoader()
         self.id_map = IdMap()
         self.id = {}
