@@ -1,6 +1,6 @@
 import pytest
-from support import init_data, ResourceLoader, GraphqlInterface, logger
-from support.base_test.FormStruct import recover_form_struct, test_form_struct
+from support import ResourceLoader, GraphqlInterface, logger
+from interface.FormStruct import recover_form_struct
 import ssl
 
 ssl._create_default_https_context = ssl._create_unverified_context

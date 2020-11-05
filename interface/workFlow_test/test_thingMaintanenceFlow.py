@@ -4,7 +4,7 @@ import pytest
 
 RULE = {"id": 1}
 THING = {"id": 1}
-MAINTAINER = {"id": 137}
+MAINTAINER = {"id": 25}
 
 
 class ThingMaintenanceUser(AssertMethod):

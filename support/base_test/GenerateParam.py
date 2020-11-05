@@ -1,5 +1,6 @@
 from support.base_test.newSchema import Param, Schema, Input, eam_schema
 from support.base_test.Fake import fake
+from support.base_test.ResourceLoader import resource
 import time
 import random
 
@@ -7,9 +8,17 @@ import random
 class GenerateInput(object):
 
     @classmethod
+    def _format(cls, name: str):
+        if name.endswith("s"):
+            name = name[:-1]
+        return name
+
+    @classmethod
     def _generate(cls, schema: Schema, _input: Input, **identity):
         result = {}
+        identity.update({"param_name": cls._format(_input.name)})
         for param in _input.params:
+            identity.update({"param_name": cls._format(param.name)})
             result.update(getattr(GenerateParam(), param.type)(schema, param, **identity))
 
         return result
@@ -25,7 +34,7 @@ class GenerateInput(object):
 
 class GenerateParam(object):
     def __getattr__(self, item: str):
-        all_base_type = ("Int", "Float", "String", "ID", "Boolean", "Upload", "JSONString", "Timestamp")
+        all_base_type = ("Int", "Float", "String", "ID", "IDInput", "Boolean", "Upload", "JSONString", "Timestamp")
         if item in all_base_type:
             return getattr(self, "generate_" + item.lower())
         else:
@@ -38,6 +47,10 @@ class GenerateParam(object):
     @staticmethod
     def generate_id(schema: Schema, param: Param, **identity):
         return IDParam(schema, param).generate(**identity)
+
+    @staticmethod
+    def generate_idinput(schema: Schema, param: Param, **identity):
+        return IDInputParam(schema, param).generate(**identity)
 
     @staticmethod
     def generate_int(schema: Schema, param: Param, **identity):
@@ -119,7 +132,26 @@ class FloatParam(BaseParam):
 
 class IDParam(BaseParam):
     def _generate(self, **identity):
-        return None
+        try:
+            return resource.get_id(identity.get("param_name"))
+        except KeyError:
+            try:
+                return resource.get_id(identity.get("input_name"))
+            except KeyError:
+                print("未找到 %s 下 %s 参数的 id，请手动填入" % (identity.get("input_name"), identity.get("param_name")))
+                return None
+
+
+class IDInputParam(BaseParam):
+    def _generate(self, **identity):
+        try:
+            return {"id": resource.get_id(identity.get("param_name"))}
+        except KeyError:
+            try:
+                return {"id": resource.get_id(identity.get("input_name"))}
+            except KeyError:
+                print("未找到 %s 下 %s 参数的 id，请手动填入" % (identity.get("input_name"), identity.get("param_name")))
+                return {"id": None}
 
 
 class BooleanParam(BaseParam):
@@ -157,11 +189,12 @@ class InputParam(BaseParam):
 
 class GraphqlInterface(object):
 
-    def __init__(self, query_name):
+    def __init__(self, query_name, schema: Schema = eam_schema):
         self.query_name = query_name
+        self.schema = schema
 
     def generate_params(self, **identity):
-        return GenerateInput.generate_root(eam_schema, getattr(eam_schema, self.query_name), **identity)
+        return GenerateInput.generate_root(self.schema, getattr(self.schema, self.query_name), **identity)
 
     def generate_all_params(self, **identity):
         yield self.generate_params(**identity)
@@ -169,6 +202,9 @@ class GraphqlInterface(object):
     def generate_no_optional_params(self, **identity):
         identity.update({"no_optional": True})
         yield self.generate_params(**identity)
+
+    def generate(self, method, **kwargs):
+        return getattr(self, method)(**kwargs)
 
 
 if __name__ == '__main__':

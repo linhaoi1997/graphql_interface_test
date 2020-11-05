@@ -1,9 +1,6 @@
-# from .ResourceLoader import ResourceLoader
-from support.base_test.ResourceLoader import ResourceLoader
-from support.base_test.form import form_list
-from beeprint import pp
+from support.base_test.ResourceLoader import resource
+from interface.form import form_list
 
-resource = ResourceLoader()
 user = resource.simple_user
 
 
@@ -86,7 +83,7 @@ if __name__ == '__main__':
     all_forms = ['spare_part_outbounds', 'spare_part_receipts', 'spare_parts', 'thing_inspection_rules',
                  'thing_inspections', 'thing_inspections_feedback', 'thing_maintenance', 'thing_maintenance_feedback',
                  'thing_maintenance_rules', 'thing_repairs', 'thing_repairs_feedback', 'things']
-    with open("./form.py", "w") as f:
+    with open("form.py", "w") as f:
         for i in all_forms:
             variables["name"] = i
             result = user.send_request("formStruct", variables, has_typename=False).result

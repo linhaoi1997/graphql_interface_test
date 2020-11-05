@@ -15,7 +15,7 @@ __all__ = ["Decorator", "AutoTestLog", "go_allure", "logger", "pformat", "create
            "init_data", "find_test_file", "create_timestamp",
            "get_all_deepest_dict", "format_number", "InterfaceWriter", "DataMaker", "InputSearcher",
            "BaseTestCase", "run", "collection", "find_return_type", "AssertMethod", "GraphqlClient",
-           "ResourceLoader", "GraphqlInterface", "graphql_query"
+           "ResourceLoader", "GraphqlInterface", "graphql_query", "config"
            ]
 
 if __name__ == "__main__":

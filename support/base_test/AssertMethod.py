@@ -162,4 +162,3 @@ class AssertMethod(object):
 
 if __name__ == "__main__":
     test = AssertMethod()
-    test.assertEqual(None, 100)
