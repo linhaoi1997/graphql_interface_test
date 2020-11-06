@@ -52,12 +52,15 @@ class ResourceLoader(object):
             return result
 
     def get_id(self, name):
-        name = name.lower()
-        _id = self.id[name]["value"][self.id[name]["num"]]
-        self.id[name]["num"] += 1
-        if self.id[name]["num"] >= len(self.id[name]["value"]):
-            self.id[name]["num"] = 0
-        return _id
+        if name:
+            name = name.lower()
+            _id = self.id[name]["value"][self.id[name]["num"]]
+            self.id[name]["num"] += 1
+            if self.id[name]["num"] >= len(self.id[name]["value"]):
+                self.id[name]["num"] = 0
+            return _id
+        else:
+            raise KeyError
 
 
 @singleton

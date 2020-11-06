@@ -58,7 +58,7 @@ class BaseType(object):
             result = {}
             while msg[j] not in ['{', "\n"]:
                 j += 1
-            result["name"] = msg[i:j-1]
+            result["name"] = msg[i:j - 1]
             end_index = self.find_next_symbol("{", "}", msg, j)
             result["value"] = self._handle(msg[j:end_index])
             self.children.append(result)
@@ -89,12 +89,17 @@ class Enums(BaseType):
             if enum.name == item:
                 return enum
 
+    def add_enum(self, enum):
+        self.enum.append(enum)
+
 
 class Input(object):
-    def __init__(self, name, param_information_list):
+    def __init__(self, name, param_information_list=None):
         self.name = name
         self.params = []
-        self._handle(param_information_list)
+        # 从schema读取    if param_information_list:
+        if param_information_list:
+            self._handle(param_information_list)
 
     def _handle(self, param_information_list):
         index = 0
@@ -105,28 +110,53 @@ class Input(object):
             else:
                 index += 1
 
+    def add_param(self, param):
+        self.params.append(param)
+
+    def update_param(self, custom_fields: list, schema):
+        # 先改变addition的属性
+        name = self.name + "JSONString"
+        self.addition.type = name
+        # 给schema加入一个input
+        new_input = Input(name)
+        for i in custom_fields:
+            # 如果param存在
+            if self.get_param(i["fieldName"]):
+                param = self.get_param(i["fieldName"])
+                param.handle_for_form_struct(i, schema)
+            else:
+                new_input.add_param(Param(i["id"], self_define_info=i, schema=schema))
+        schema.add_input(new_input)
+
     def __repr__(self):
         test_str = "input name %s ,params:\n" % self.name
         for param in self.params:
             test_str = test_str + "\t" + pformat(param)
         return test_str
 
-    def __getattr__(self, item):
+    def get_param(self, item):
         for param in self.params:
             if param.name == item:
                 return param
 
+    def __getattr__(self, item):
+        return self.get_param(item)
+
 
 class Param(object):
 
-    def __init__(self, name, _type: str):
+    def __init__(self, name, _type: str = None, self_define_info=None, schema=None):
         self.name = name
         self._type = _type
         self.is_must = False
         self.is_list = False
         self.is_list_can_empty = True
         self.type = None
-        self._handle()
+        self.real_name = self.name
+        if _type:
+            self._handle()
+        else:
+            self.handle_for_form_struct(self_define_info, schema)
 
     def _handle(self):
         test_type = self._type
@@ -141,6 +171,25 @@ class Param(object):
             self.is_list_can_empty = False
         all_base_type = ("Int", "Float", "String", "ID", "Boolean", "Upload", "JSONString", "Timestamp")
         self.type = test_type
+
+    def handle_for_form_struct(self, define_info: dict, schema):
+        type_map = {
+            "TEXT": "String", "SINGLE_SELECTION": "SINGLE_SELECTION", "MULTI_SELECTION": "MULTI_SELECTION",
+            "NUMBER": "Float", "ATTACHMENT": "IDInput", "IMAGE": "IDInput"
+        }
+        if define_info.get("fieldName"):
+            self.name = define_info.get("fieldName")
+            self.real_name = self.name
+        else:
+            self.name = define_info.get("id")
+            self.real_name = define_info.get("title")
+        self.type = type_map[define_info.get("type")]
+        self.is_must = define_info.get("required")
+        if self.type in ("SINGLE_SELECTION", "MULTI_SELECTION"):
+            schema.add_enum(Enum(self.name, define_info.get("candidates")))
+            if self.type == "MULTI_SELECTION":
+                self.is_list = True
+            self.type = self.name
 
     def __repr__(self):
         return "Param name %s ,type %s, is_must %s, is_list %s" % (self.name, self.type, self.is_must, self.is_list)
@@ -159,6 +208,9 @@ class Inputs(BaseType):
             if _input.name == item:
                 return _input
 
+    def add_input(self, _input: Input):
+        self.input.append(_input)
+
 
 class Interface(object):
     def __init__(self, name, param, return_type):
@@ -166,8 +218,17 @@ class Interface(object):
         self.params = []
         if param:
             for _param in [i.strip() for i in param[1:-1].split(",")]:
-                self.params.append(Param(*[i.strip() for i in _param.split(":")]))
+                __param = Param(*[i.strip() for i in _param.split(":")])
+                if __param.name == "input":
+                    self.input = __param.type
+                self.params.append(__param)
         self.return_type = return_type
+
+    def __repr__(self):
+        test_str = "interface name %s ,params:\n" % self.name
+        for param in self.params:
+            test_str = test_str + "\t" + pformat(param)
+        return test_str
 
 
 class Interfaces(BaseType):
@@ -196,6 +257,7 @@ class Schema(object):
         self.enum = Enums(self.msg)
         self.input = Inputs(self.msg)
         self.interfaces = Interfaces(self.msg)
+        self.add_input(Input("JSONString"))
 
     def __getattr__(self, item):
         if getattr(self.interfaces, item):
@@ -204,6 +266,12 @@ class Schema(object):
             return getattr(self.input, item)
         elif getattr(self.enum, item):
             return getattr(self.enum, item)
+
+    def add_input(self, _input: Input):
+        self.input.add_input(_input)
+
+    def add_enum(self, enum: Enum):
+        self.enum.add_enum(enum)
 
 
 base_schema = Schema()

@@ -15,10 +15,9 @@ class BaseApi(object):
     def run(self):
         self.result = self.user.send_request(self.api_name, self.variables).result
 
-    @property
-    def variables(self):
-        return self.variables
+    def set_random_variables(self):
+        self.variables = self.interface_generator.generate_params()
 
-    @variables.setter
-    def variables(self, variables):
-        self.variables = variables
+    def random_run(self):
+        self.run()
+        self.set_random_variables()

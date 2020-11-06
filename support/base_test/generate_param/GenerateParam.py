@@ -3,6 +3,7 @@ from support.base_test.generate_param.Fake import fake
 from support.base_test.ResourceLoader import resource
 import time
 import random
+import json
 
 
 class GenerateInput(object):
@@ -16,7 +17,7 @@ class GenerateInput(object):
     @classmethod
     def _generate(cls, schema: Schema, _input: Input, **identity):
         result = {}
-        identity.update({"param_name": cls._format(_input.name)})
+        identity.update({"input_name": cls._format(_input.name)})
         for param in _input.params:
             identity.update({"param_name": cls._format(param.name)})
             result.update(getattr(GenerateParam(), param.type)(schema, param, **identity))
@@ -37,6 +38,8 @@ class GenerateParam(object):
         all_base_type = ("Int", "Float", "String", "ID", "IDInput", "Boolean", "Upload", "JSONString", "Timestamp")
         if item in all_base_type:
             return getattr(self, "generate_" + item.lower())
+        elif "JSONString" in item:
+            return self.generate_jsonstring
         else:
             return self.generate_enum_or_input
 
@@ -166,7 +169,11 @@ class UploadParam(BaseParam):
 
 class JSONStringParam(BaseParam):
     def _generate(self, **identity):
-        return {}
+        _input2 = getattr(self.schema, self.param.type)
+        if _input2 is None:
+            raise Exception("no input named %s" % self.param.type)
+        result = json.dumps([GenerateInput.generate(self.schema, _input2, **identity)[self.param.type]])
+        return result
 
 
 class TimestampParam(BaseParam):

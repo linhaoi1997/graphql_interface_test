@@ -28,9 +28,7 @@ class MyFaker(object):
         }
 
     def create_string(self, param, **identity):
-        name = param.param.name
-        # if name == "name":
-        #     name = single_param.parent.interface
+        name = param.param.real_name
         if getattr(self, name.lower()):
             return getattr(self, name.lower())
         if identity.get("is_random", False):
