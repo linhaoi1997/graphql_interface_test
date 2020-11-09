@@ -34,7 +34,7 @@ class TestUploadFile(BaseTestCase):
         ['测试类型用3.xlsx', "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"],
         ['5000行.xlsx', "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"],
         ['空数据.xls', "	application/vnd.ms-excel"],
-        ['必填项为空1.xlsx', "	application/vnd.ms-excel"],
+        ['必填项为空1.xlsx', "application/vnd.ms-excel"],
         ['必填项为空2.xlsx', "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"],
         ['必填项为空3.xlsx', "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"],
         ['更新数据库信息.xlsx', "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"],

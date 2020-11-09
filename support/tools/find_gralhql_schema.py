@@ -14,19 +14,28 @@ class Query(object):
         self.mutation_path = os.path.join(query_file_path, "mutations")
         self._query = os.listdir(self.query_path)
         self._mutation = os.listdir(self.mutation_path)
-        self.all_query = {}
+        upload_query = "mutation uploadFiles($files: [Upload!]!) {\n  uploadFiles(files: $files) " \
+                       "{\n    id\n    name\n    url\n    __typename\n  }\n}\n"
+        self.all_query = {
+            "uploadFiles": upload_query
+        }
 
     def get_query(self, name="accountExist", has_typename=True):
-        if name + ".gql" in self._query:
-            file_name = os.path.join(self.query_path, name) + ".gql"
-        elif name + ".gql" in self._mutation:
-            file_name = os.path.join(self.mutation_path, name) + ".gql"
+        if not self.all_query.get(name):
+            if name + ".gql" in self._query:
+                file_name = os.path.join(self.query_path, name) + ".gql"
+            elif name + ".gql" in self._mutation:
+                file_name = os.path.join(self.mutation_path, name) + ".gql"
+            else:
+                print(name)
+                raise Exception("没有对应接口，看下是否需要更新schema")
+            with open(file_name) as f:
+                query_str: str = f.read()
+            if has_typename:
+                query_str = query_str.replace("}", " __typename }", query_str.count("}") - 1)
+            self.all_query[name] = query_str
         else:
-            raise Exception("没有对应接口，看下是否需要更新schema")
-        with open(file_name) as f:
-            query_str: str = f.read()
-        if has_typename:
-            query_str = query_str.replace("}", " __typename }", query_str.count("}") - 1)
+            return self.all_query.get(name)
         return query_str
 
     def find_input(self, name):

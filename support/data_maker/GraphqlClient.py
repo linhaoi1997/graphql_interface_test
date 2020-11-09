@@ -36,7 +36,7 @@ class GraphqlClient(object):
         logger.debug(pformat(result))
         return self
 
-    def update_header(self, **kwargs):
+    def update_headers(self, **kwargs):
         for key in kwargs.keys():
             self.headers[key] = kwargs[key]
         self.graphql_client.base_headers = self.headers
@@ -47,7 +47,7 @@ class GraphqlClient(object):
             token_dict["authorization"] = "Token " + token
         else:
             self.graphql_client.base_headers.pop('authorization', None)
-        self.update_header(**token_dict)
+        self.update_headers(**token_dict)
 
     def find_result(self, json_path):
         find = jsonpath(self.result, json_path)
@@ -79,31 +79,3 @@ class GraphqlClient(object):
     def __call__(self, query, variables):
         self.send_request(query, variables)
         return self
-
-    def upload_file(self):
-        upload_data = [
-            ['test.jpg', 'image/jpg'],
-            ['test2.jpeg', 'image/jpg'],
-            ['test3.jpeg', 'image/jpg'],
-        ]
-        query = "mutation uploadFiles($files: [Upload!]!) {\n  uploadFiles(files: $files) " \
-                "{\n    id\n    name\n    url\n    __typename\n  }\n}\n"
-        variables = upload_data[self.num]
-        if self.num == len(upload_data):
-            self.num = 0
-        else:
-            self.num += 1
-        files = {
-            "operations": (
-                None,
-                json.dumps({"query": query, "variables": {"files": [None]}, "operationName": "uploadFiles"})),
-            "map": (None, json.dumps({"1": ["variables.files.0"]})),
-            "1": (variables[0], find_test_file(variables[0]), variables[1])
-        }
-        encode_data = encode_multipart_formdata(files)
-        data = encode_data[0]
-        self.update_header(**{"Content-Type": encode_data[1]})
-        logger.debug(self.headers)
-        result = requests.post(self.base_url, headers=self.headers, data=data).json()
-        self.update_header(**{"Content-Type": "application/json"})
-        return result["data"]["uploadFiles"]
