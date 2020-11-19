@@ -1,5 +1,5 @@
 from ..caps.read_yaml import config
-from ..tools.log import logger
+from ..tools.log import record
 import re
 
 SCHEMA_PATH = config.get_file_path("schema")
@@ -38,7 +38,7 @@ class InputSearcher(object):
                         input_msg = msg.split("(")[1].split(")")[0].split(",")
                         break
         if not input_msg:
-            logger.debug("no {input} found in schema".format(input=self.input_name))
+            record("no {input} found in schema".format(input=self.input_name))
             # raise TypeError
         return input_msg
 

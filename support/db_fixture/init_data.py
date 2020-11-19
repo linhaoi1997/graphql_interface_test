@@ -1,6 +1,6 @@
 import psycopg2
-# from support import logger, get_file_path, get_web_information
-from support.tools import logger
+# from support import record, get_file_path, get_web_information
+from support.tools import record
 from support.caps.read_yaml import config
 
 
@@ -91,7 +91,7 @@ def execute_sql(database, sql_path):
 
 
 def init_data(sql=None):
-    logger.debug('start init database')
+    record('start init database')
     db_list = config.get_web_information('db_list')
     for db in db_list:
         if not sql:
@@ -99,7 +99,7 @@ def init_data(sql=None):
             print(eam_sql)
         else:
             eam_sql = config.get_file_path(sql)
-        logger.debug('start init %s' % db)
+        record('start init %s' % db)
         execute_sql(db, eam_sql)
 
 

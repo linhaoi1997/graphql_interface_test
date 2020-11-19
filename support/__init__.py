@@ -11,7 +11,7 @@ from .data_maker.GraphqlClient import GraphqlClient
 # 这里主要为工具支持函数
 
 
-__all__ = ["Decorator", "AutoTestLog", "go_allure", "logger", "pformat", "create_num_string",
+__all__ = ["Decorator", "AutoTestLog", "go_allure", "record", "pformat", "create_num_string",
            "init_data", "find_test_file", "create_timestamp",
            "get_all_deepest_dict", "format_number", "InterfaceWriter", "DataMaker", "InputSearcher",
            "BaseTestCase", "run", "collection", "find_return_type", "AssertMethod", "GraphqlClient",

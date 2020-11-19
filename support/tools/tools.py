@@ -2,8 +2,9 @@ import random
 import time
 import os
 import shutil
-from support.caps.read_yaml import config
+import allure
 from copy import deepcopy
+from support.caps.read_yaml import config
 
 
 def create_num_string(num, default=0):
@@ -110,6 +111,10 @@ def go_allure(isClear=False):
         log_path = pro_path + "/output/log/"
         shutil.rmtree(log_path)
         os.mkdir(log_path)
+
+
+def record(body, title=""):
+    allure.attach(str(body), str("title"), allure.attachment_type.TEXT)
 
 
 if __name__ == "__main__":

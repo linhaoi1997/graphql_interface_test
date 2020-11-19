@@ -1,4 +1,4 @@
-from support import GraphqlClient, create_timestamp, AssertMethod, logger, run, config
+from support import GraphqlClient, create_timestamp, AssertMethod, record, run, config
 import allure
 import pytest
 
@@ -30,7 +30,7 @@ class ThingMaintenanceUser(AssertMethod):
             }
         }
         thing_maintenance_id = self.user(query_name, variables).find_result("$..id")[0]
-        logger.debug("thing_maintenance_id =" + str(thing_maintenance_id))
+        record("thing_maintenance_id =" + str(thing_maintenance_id))
         return thing_maintenance_id
 
     # 3个动作：1: 审核（通过/拒绝）参数应该均为维修单的ID,返回值待定
@@ -151,7 +151,7 @@ class TestThingMaintenanceWorkFlow(AssertMethod):
             # 如果通过了这个步骤说明不对
             pytest.fail("本来不应该通过这个步骤，这不正常！！！")
         except AssertionError as e:
-            logger.debug(e)
+            record(e)
         # 如果未通过校验（校验部分是核实返回的status是否是预期的），那么检查下它是不是有报错也是有必要的
         self.assertError(getattr(self, user).result)
 

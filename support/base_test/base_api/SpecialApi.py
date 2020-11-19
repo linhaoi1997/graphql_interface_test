@@ -1,5 +1,5 @@
 from support.base_test.base_api.BaseApi import BaseApi
-from support.tools import graphql_query, find_test_file, logger
+from support.tools import graphql_query, find_test_file
 import json
 import requests
 from urllib3 import encode_multipart_formdata

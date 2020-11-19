@@ -1,21 +1,25 @@
 import jsonpath
-from support.tools.log import logger, pformat
+from support.tools.log import record, pformat
 from support.tools import get_all_deepest_dict, format_number, find_return_type
 from support.data_maker.VariableMaker import TypeSearcher
 import json
+import allure
 
 
 class AssertMethod(object):
     # 校验相关
     # 校验json中某个值相等
+    query_name = None
+
+    @allure.step("Assert Equal")
     def assertJsonResponseEqual(self, json_path, json_data, value):
         result = jsonpath.jsonpath(json_data, json_path)
         result = [None] if not result else result
         if "[" not in json_path:
             result = result[0]
-        logger.debug(
+        record(
             "\njsonpath : '%s'\nget\n'%s'\nfrom\nresult" % (json_path, pformat(result)))
-        logger.debug("except %s" % value)
+        record("except %s" % value)
         """Jsonpath取到的值与value一致"""
         if not result and not value:
             pass
@@ -23,19 +27,22 @@ class AssertMethod(object):
             self.assertEqual(value, result)
 
     # 校验json含有某个key,并且有值
+
+    @allure.step("Assert")
     def assertJsonResponseIn(self, json_path, json_data):
         result = jsonpath.jsonpath(json_data, json_path)
-        logger.debug("\njsonpath : '%s'\nget\n'%s'\nfrom\nresult" % (json_path, pformat(result)))
+        record("\njsonpath : '%s'\nget\n'%s'\nfrom\nresult" % (json_path, pformat(result)), "json get")
         """jsonpath能在json中取到值"""
         assert result
         assert result[0]
 
     # 校验json某个路径下包含某个字符串
+    @allure.step("Assert")
     def assertJsonMessageContain(self, json_path, json_data, value):
         flag = False
         result = jsonpath.jsonpath(json_data, json_path)
-        logger.debug("\njsonpath : '%s'\nget\n'%s'\nfrom\nresult" % (json_path, pformat(result)))
-        logger.debug("except %s" % value)
+        record("\njsonpath : '%s'\nget\n'%s'\nfrom\nresult" % (json_path, pformat(result)), "json get")
+        record("except %s" % value, "except: ")
         assert result
         for i in result:
             if value in i.lower():
@@ -43,22 +50,24 @@ class AssertMethod(object):
         assert flag
 
     # 校验json返回多个值计数是否是想要的数字（主要针对返回多个结果的计数校验）
+    @allure.step("Assert")
     def assertJsonCountEqual(self, json_path, json_data, num):
         result = jsonpath.jsonpath(json_data, json_path)
-        logger.debug("\njsonpath : '%s'\nget\n'%s'\nfrom\nresult" % (json_path, pformat(result)))
+        record("\njsonpath : '%s'\nget\n'%s'\nfrom\nresult" % (json_path, pformat(result)), "json get")
         if not result:
             count = 0
         else:
             count = len(result)
-        logger.debug("get numbers %s" % count)
-        logger.debug("except %s" % num)
+        record("get numbers %s" % count, "get numbers:")
+        record("except %s" % num, "except numbers:")
         assert count == num
 
     # 校验json某个value不为none
+    @allure.step("Assert")
     def assertJsonNotNone(self, json_path, json_data):
         result = jsonpath.jsonpath(json_data, json_path)
-        logger.debug("\njsonpath : '%s'\nget\n'%s'\nfrom\nresult" % (json_path, pformat(result)))
-        logger.debug("except something")
+        record("\njsonpath : '%s'\nget\n'%s'\nfrom\nresult" % (json_path, pformat(result)), "json get")
+        record("except something", "except not None")
         assert result and result[0]
 
     # 检验每一个输入参数都和返回的json一样
@@ -79,7 +88,8 @@ class AssertMethod(object):
         for i in deepest_dict.keys():
             self.assertJsonResponseEqual(i, result, deepest_dict[i])
 
-    def assertEqual(self, value, result):
+    @staticmethod
+    def assertEqual(value, result):
         if type(value) == str and value.isdigit():
             if type(result) in (str, int):
                 assert int(value) == int(result)
@@ -97,7 +107,9 @@ class AssertMethod(object):
         pass
 
     # 确认返回type都有值，适用于schema中type的列表都会返回值的情形
-    def assertReturnType(self, result, filter_list=[]):
+    def assertReturnType(self, result, filter_list=None):
+        if filter_list is None:
+            filter_list = []
         return_type = find_return_type(self.query_name)
         if "ID" not in return_type:
             assert_list = TypeSearcher(return_type).msg

@@ -55,17 +55,17 @@ class TestUploadFile(BaseTestCase):
         self.login("admin_jia", "123456")
         encode_data = encode_multipart_formdata(files)
         data = encode_data[0]
-        # logger.debug(variables)
+        # record(variables)
         self.update_headers(**{"Content-Type": encode_data[1]})
-        logger.debug(self.headers)
-        logger.debug(self.query)
+        record(self.headers)
+        record(self.query)
         return requests.post(self.base_url, headers=self.headers, data=data).json(), request.param
 
     @allure.story("upload_file success")
     @pytest.mark.parametrize("upload_file", test_right_data, indirect=True)
     def test_add_right(self, upload_file):
         result, _ = upload_file
-        logger.debug(pformat(result))
+        record(pformat(result))
         self.assertJsonResponseIn("$..id", result)
         self.assertJsonResponseEqual("$..name", result, _[0])
 
@@ -73,7 +73,7 @@ class TestUploadFile(BaseTestCase):
     @pytest.mark.parametrize("upload_file", test_make_import_data, indirect=True)
     def test_import_right(self, upload_file):
         result, _ = upload_file
-        logger.debug(pformat(result))
+        record(pformat(result))
 
 
 if __name__ == "__main__":

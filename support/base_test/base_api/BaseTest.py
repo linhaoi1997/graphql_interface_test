@@ -1,5 +1,5 @@
 import jsonpath
-from support.tools.log import logger, pformat
+from support.tools.log import record, pformat
 from support.caps.read_yaml import config
 from support.tools import go_allure
 from support.tools.find_gralhql_schema import graphql_query
@@ -24,9 +24,9 @@ class BaseTestCase(AssertMethod):
 
     # 发送请求
     def send_request(self, query, variables):
-        logger.debug("variables : " + pformat(variables))
+        record("variables : " + pformat(variables))
         result = self.graphql_client(query, variables)
-        logger.debug("get result : " + pformat(result))
+        record("get result : " + pformat(result))
         return result, variables
 
     # 更新url

@@ -1,5 +1,5 @@
 import pytest
-from support import ResourceLoader, GraphqlInterface, logger
+from support import ResourceLoader, GraphqlInterface, record
 from interface.FormStruct import recover_form_struct
 import ssl
 
@@ -56,7 +56,7 @@ def create_id():
         while num > 0:
             variable = next(create_interface.generate_no_optional_params(**all_param))
             _id_map = s.create(create_name, variable)
-            logger.debug(_id_map)
+            record(_id_map)
             _ids.append(_id_map[name][0])
             num -= 1
         if return_type == "id":

@@ -28,7 +28,7 @@ class TestPermission(BaseTestCase):
             if i not in scopes:
                 un_use_interfaces.append(i)
         print(un_use_interfaces)
-        logger.debug(un_use_interfaces)
+        record(un_use_interfaces)
         # assert un_use_interfaces == []
 
 

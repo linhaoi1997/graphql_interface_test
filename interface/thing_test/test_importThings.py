@@ -64,24 +64,24 @@
 #         }
 #         encode_data = encode_multipart_formdata(files)
 #         variables = encode_data[0]
-#         # logger.debug(variables)
+#         # record(variables)
 #         self.update_headers(**{"Content-Type": encode_data[1]})
-#         logger.debug(self.headers)
-#         logger.debug(variables)
+#         record(self.headers)
+#         record(variables)
 #         return requests.post(self.base_url, headers=self.headers, data=variables).json(), request.param
 #
 #     @allure.story("import thing success")
 #     @pytest.mark.parametrize("import_things", test_right_data, indirect=True)
 #     def test_right(self, import_things):
 #         result, _ = import_things
-#         logger.debug(result)
+#         record(result)
 #         self.assertCorrect(result)
 #
 #     @allure.story("import thing error")
 #     @pytest.mark.parametrize("import_things", test_error_data, indirect=True)
 #     def test_error(self, import_things):
 #         result, _ = import_things
-#         logger.debug(result)
+#         record(result)
 #         self.assertError(result)
 #
 #

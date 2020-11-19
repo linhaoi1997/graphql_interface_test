@@ -1,11 +1,9 @@
 from ..caps.read_yaml import config
 from sgqlc.endpoint.http import HTTPEndpoint
 from jsonpath import jsonpath
-from ..tools.find_gralhql_schema import graphql_query, find_test_file
-from ..tools import logger, pformat
-from urllib3 import encode_multipart_formdata
-import json
-import requests
+from ..tools.find_gralhql_schema import graphql_query
+from ..tools import record, pformat
+import allure
 
 
 class GraphqlClient(object):
@@ -21,19 +19,20 @@ class GraphqlClient(object):
             try:
                 self.login(login)
             except Exception as e:
-                print(e)
-                print(login)
-                print("登录错误")
+                record(e)
+                record(login)
+                record("登录错误")
 
+    @allure.step('send request {1}')
     def send_request(self, query_name, variables, has_typename=True):
         query = graphql_query.get_query(query_name, has_typename)
         self.graphql_client.url = self.base_url + "?" + query_name
-        logger.debug(self.graphql_client.url)
-        logger.debug(self.headers)
-        logger.debug(pformat(variables))
+        record(self.graphql_client.url)
+        record(self.headers)
+        record(pformat(variables))
         result = self.graphql_client(query, variables)
         self.result = result
-        logger.debug(pformat(result))
+        record(pformat(result))
         return self
 
     def update_headers(self, **kwargs):
@@ -70,6 +69,7 @@ class GraphqlClient(object):
                 elif "id" == key:
                     yield result["__typename"], result['id']
 
+    @allure.step("登录 {1}")
     def login(self, login_information):
         account, password = login_information.values()
         variables = {"input": {"account": account, "password": password}}

@@ -1,7 +1,7 @@
 import functools
 from support.tools.log import AutoTestLog
 
-logger = AutoTestLog().get_log()
+record = AutoTestLog().get_log()
 
 
 class Decorator(object):
@@ -11,9 +11,9 @@ class Decorator(object):
     def log_process(func):
         @functools.wraps(func)
         def wrapper(*args, **kw):
-            logger.debug('%s 用例开始:' % (func.__name__))
+            record('%s 用例开始:' % (func.__name__))
             result = func(*args, **kw)
-            logger.debug('%s 用例结束:' % (func.__name__))
+            record('%s 用例结束:' % (func.__name__))
             return result
 
         return wrapper

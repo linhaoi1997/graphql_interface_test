@@ -19,14 +19,14 @@ def singleton(cls):
 
 
 @singleton
-class AutoTestLog():
+class AutoTestLog(object):
     def __init__(self):
-        # 创建一个logger
-        self.logger = logging.getLogger("mytest")
+        # 创建一个record
+        self.record = logging.getrecord("mytest")
 
         # 置顶日志级别
-        self.logger.setLevel(logging.DEBUG)
-        # print(self.logger.handlers)
+        self.record.setLevel(logging.DEBUG)
+        # print(self.record.handlers)
 
         # 给日志命名
         now = time.strftime("%Y-%m-%d %H-%M-%S")
@@ -43,14 +43,14 @@ class AutoTestLog():
         self.file_handle.setFormatter(file_formatter)
 
         # 给log添加handle
-        self.logger.addHandler(self.file_handle)
+        self.record.addHandler(self.file_handle)
 
     def get_log(self):
-        return self.logger
+        return self.record
 
     # 关闭handle
     def close_handle(self):
-        self.logger.removeHandler(self.file_handle)
+        self.record.removeHandler(self.file_handle)
         self.file_handle.close()
 
     # def __del__(self):
@@ -62,7 +62,7 @@ def pformat(strings):
     return pp(strings, output=False)
 
 
-logger = AutoTestLog().get_log()
+record = AutoTestLog().get_log()
 if __name__ == '__main__':
     print(os.path.abspath(__file__))
     obj = AutoTestLog()

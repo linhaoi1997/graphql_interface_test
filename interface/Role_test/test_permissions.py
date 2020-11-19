@@ -55,10 +55,10 @@ class TestPermission(BaseTestCase):
                 }
             )
         except Exception as e:
-            logger.debug(e)
+            record(e)
 
     def test(self):
-        logger.debug(self.variables)
+        record(self.variables)
     # @pytest.mark.parametrize("variable", variables)
     # def test_permission(self, variable):
     #     user = resource.test_user
@@ -72,7 +72,7 @@ class TestPermission(BaseTestCase):
     #             result = user.send_request(query_name, interface).result
     #             self.assertError(result)
     #         except Exception as e:
-    #             logger.debug(e)
+    #             record(e)
     #             error_interface.append(interface_name)
     #     assert not error_interface
 

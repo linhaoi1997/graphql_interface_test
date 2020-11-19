@@ -43,16 +43,16 @@ class TestUploadFile(BaseTestCase):
         }
         encode_data = encode_multipart_formdata(files)
         variables = encode_data[0]
-        # logger.debug(variables)
+        # record(variables)
         self.update_headers(**{"Content-Type": encode_data[1]})
-        logger.debug(self.headers)
+        record(self.headers)
         return requests.post(self.base_url, headers=self.headers, data=variables).json(), request.param
 
     @allure.story("upload_file success")
     @pytest.mark.parametrize("upload_file", test_right_data, indirect=True)
     def test_add_right(self, upload_file):
         result, _ = upload_file
-        logger.debug(pformat(result))
+        record(pformat(result))
         self.assertJsonResponseIn("$..id", result)
         self.assertJsonResponseEqual("$..name", result, _[0])
 
