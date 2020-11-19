@@ -1,5 +1,4 @@
 import psycopg2
-# from support import record, get_file_path, get_web_information
 from support.tools import record
 from support.caps.read_yaml import config
 
@@ -49,6 +48,10 @@ class PostgresConn(object):
                         execute = ''
                 elif not execute.endswith(';'):
                     execute += i
+
+    def get_id(self, table_name, id_name="id"):
+        query = "select %s from %s" % (id_name, table_name)
+        return [i[0] for i in self.query(query)]
 
     def __del__(self):
         self.conn.commit()
@@ -104,13 +107,7 @@ def init_data(sql=None):
 
 
 if __name__ == "__main__":
-    # pla = PlatformDataSearcher('teletraan')
-    # fetch = sorted(pla.query_staff('teletraan', 2))
-    # print(len(fetch))
-    # for i in fetch:
-    #     print(i)
-    #     pla.update_passport_user_id(i[1], i[0])
-
-    print(config.get_web_information('db'))
-    init_data(None)
-    # init_data("empty_sql")
+    print(config.get_web_information("db"))
+    test = PostgresConn("eam-sleemon")
+    print(test.get_id("things"))
+    # init_data(None)

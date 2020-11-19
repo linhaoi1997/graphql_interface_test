@@ -22,7 +22,7 @@ def singleton(cls):
 class AutoTestLog(object):
     def __init__(self):
         # 创建一个record
-        self.record = logging.getrecord("mytest")
+        self.record = logging.getLogger("mytest")
 
         # 置顶日志级别
         self.record.setLevel(logging.DEBUG)

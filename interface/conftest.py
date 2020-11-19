@@ -1,38 +1,43 @@
 import pytest
-from support import ResourceLoader, GraphqlInterface, record
+from support import ResourceLoader, GraphqlInterface, record, PostgresConn
 from interface.FormStruct import recover_form_struct
 import ssl
 
 ssl._create_default_https_context = ssl._create_unverified_context
+s = ResourceLoader()
+
+
+def import_id():
+    eam_sleemon = PostgresConn("eam-sleemon")
+    id_map = {
+        "Thing": eam_sleemon.get_id("things"),
+        "SparePart": eam_sleemon.get_id("spare_parts"),
+        "attachment": eam_sleemon.get_id("files"),
+        "image": eam_sleemon.get_id("files"),
+        "faultImage": eam_sleemon.get_id("files"),
+        "ThingMaintenanceRule": eam_sleemon.get_id("thing_maintenance_rules"),
+        "ThingInspectionRule": eam_sleemon.get_id("thing_inspection_rules"),
+        "ThingRepair": eam_sleemon.get_id("thing_repairs"),
+        "ThingMaintenance": eam_sleemon.get_id("thing_maintenance"),
+        "operator": eam_sleemon.get_id("employees"),
+        "worker": eam_sleemon.get_id("employees"),
+        "maintainer": eam_sleemon.get_id("employees"),
+        "parent": eam_sleemon.get_id("departments"),
+        "permission": eam_sleemon.get_id("permissions"),
+        "role": eam_sleemon.get_id("roles"),
+        "department": eam_sleemon.get_id("departments"),
+    }
+    s.import_id(id_map)
 
 
 @pytest.fixture(scope="session", autouse=True)
 def init():
+    import_id()
     # init_data()
     # test_form_struct()
     pass
 
 
-s = ResourceLoader()
-id_map = {
-    "Thing": [1, 2, 3],
-    "SparePart": [1, 2, 3],
-    "attachment": [1, 2, 3, 4],
-    "image": [1, 2, 3],
-    "faultImage": [1, 2, 3, 4, 5],
-    "ThingMaintenanceRule": [1],
-    "ThingInspectionRule": [1],
-    "ThingRepair": [1],
-    "ThingMaintenance": [1],
-    "operator": [139],
-    "worker": [139],
-    "maintainer": [139],
-    "parent": [2, 1],
-    "permission": [1, 2, 3],
-    "role": [1, 170, 3],
-    "department": [1, 2, 3],
-}
-s.import_id(id_map)
 all_param = {
     "list_len": 3,
     "num": 1,
