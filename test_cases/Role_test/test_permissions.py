@@ -64,12 +64,12 @@ class TestPermission(BaseTestCase):
     #     user = resource.test_user
     #     user.login(variable["login"])
     #     error_interface = []
-    #     for interface in variable["interfaces"]:
-    #         interface_name = interface.split('/')[-1]
+    #     for test_cases in variable["interfaces"]:
+    #         interface_name = test_cases.split('/')[-1]
     #         try:
     #             query_name = interface_name
-    #             interface = GraphqlInterface(query_name).generate_params(**self.all_param)
-    #             result = user.send_request(query_name, interface).result
+    #             test_cases = GraphqlInterface(query_name).generate_params(**self.all_param)
+    #             result = user.send_request(query_name, test_cases).result
     #             self.assertError(result)
     #         except Exception as e:
     #             record(e)

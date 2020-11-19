@@ -1,5 +1,5 @@
 from support.base_test.ResourceLoader import resource
-from interface.form import form_list
+from test_cases.form import form_list
 
 user = resource.simple_user
 

@@ -3,7 +3,7 @@ import os
 from support import go_allure
 
 
-def main(interface="interface/thing_test", is_clear_report=True):
+def main(interface="test_cases/thing_test", is_clear_report=True):
     go_allure(is_clear_report)
     pro_dir = os.path.dirname(os.path.dirname(__file__))
     xml_path = pro_dir + "/output/report/xml/"
@@ -15,9 +15,9 @@ def main(interface="interface/thing_test", is_clear_report=True):
 
 
 if __name__ == "__main__":
-    test_interface = "interface/sparePart_test"
+    test_interface = "test_cases/sparePart_test"
     test_is_clear_report = False
     main(test_interface, test_is_clear_report)
-    # test_interface = "interface/thingMaintenanceRule_test"
+    # test_interface = "test_cases/thingMaintenanceRule_test"
     # test_is_clear_report = False
     # main(test_interface, test_is_clear_report)

@@ -225,7 +225,7 @@ class Interface(object):
         self.return_type = return_type
 
     def __repr__(self):
-        test_str = "interface name %s ,params:\n" % self.name
+        test_str = "test_cases name %s ,params:\n" % self.name
         for param in self.params:
             test_str = test_str + "\t" + pformat(param)
         return test_str

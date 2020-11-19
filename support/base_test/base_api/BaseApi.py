@@ -12,7 +12,10 @@ class BaseApi(object):
         self.variables = self.interface_generator.generate_params()
         self.result = None
 
-    def run(self):
+    def run(self, **kwargs):
+        for key, value in kwargs.items():
+            if value:
+                self.variables.update({key: value})
         self.result = self.user.send_request(self.api_name, self.variables).result
 
     def set_random_variables(self):

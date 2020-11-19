@@ -1,6 +1,6 @@
 import pytest
 from support import ResourceLoader, GraphqlInterface, record, PostgresConn
-from interface.FormStruct import recover_form_struct
+from test_cases.FormStruct import recover_form_struct
 import ssl
 
 ssl._create_default_https_context = ssl._create_unverified_context

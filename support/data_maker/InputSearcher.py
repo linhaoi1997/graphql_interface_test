@@ -119,7 +119,7 @@ class Field(object):
             "type": var_type,
             "is_must": self.is_must,
             "identity": self.identity,
-            "interface": interface,
+            "test_cases": interface,
             "len": self.len
         }
         return result
