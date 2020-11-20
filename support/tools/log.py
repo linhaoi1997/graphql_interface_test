@@ -62,7 +62,7 @@ def pformat(strings):
     return pp(strings, output=False)
 
 
-record = AutoTestLog().get_log()
+logger = AutoTestLog().get_log()
 if __name__ == '__main__':
     print(os.path.abspath(__file__))
     obj = AutoTestLog()

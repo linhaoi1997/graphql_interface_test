@@ -1,5 +1,5 @@
 import jsonpath
-from support.tools.log import record, pformat
+from support.tools import pformat,record
 from support.caps.read_yaml import config
 from support.tools import go_allure
 from support.tools.find_gralhql_schema import graphql_query
@@ -58,7 +58,7 @@ class BaseTestCase(AssertMethod):
 
 # 运行 pytest 入口
 def run(file_name, maxfail=None):
-    pro_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+    pro_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
     xml_path = pro_dir + "/output/report/xml/"
     if not maxfail:
         pytest.main(['-q', file_name, '--alluredir', xml_path])

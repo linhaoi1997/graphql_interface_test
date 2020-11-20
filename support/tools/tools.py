@@ -114,7 +114,7 @@ def go_allure(isClear=False):
 
 
 def record(body, title=""):
-    allure.attach(str(body), str("title"), allure.attachment_type.TEXT)
+    allure.attach(str(body), str(title), allure.attachment_type.TEXT)
 
 
 if __name__ == "__main__":

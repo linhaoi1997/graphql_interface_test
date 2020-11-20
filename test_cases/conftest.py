@@ -1,14 +1,13 @@
 import pytest
-from support import ResourceLoader, GraphqlInterface, record, PostgresConn
+from support import resource as s, GraphqlInterface, record, PostgresConn
 from test_cases.FormStruct import recover_form_struct
 import ssl
 
 ssl._create_default_https_context = ssl._create_unverified_context
-s = ResourceLoader()
 
 
 def import_id():
-    eam_sleemon = PostgresConn("eam-sleemon")
+    eam_sleemon = PostgresConn("eam-sleemon-test")
     id_map = {
         "Thing": eam_sleemon.get_id("things"),
         "SparePart": eam_sleemon.get_id("spare_parts"),
@@ -28,11 +27,15 @@ def import_id():
         "department": eam_sleemon.get_id("departments"),
     }
     s.import_id(id_map)
+    record(s.id, "收集到的所有id")
+    print(s.id)
+
+
+import_id()
 
 
 @pytest.fixture(scope="session", autouse=True)
 def init():
-    import_id()
     # init_data()
     # test_form_struct()
     pass

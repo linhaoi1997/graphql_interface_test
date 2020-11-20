@@ -1,5 +1,5 @@
 from ..caps.read_yaml import config
-from ..tools.log import record
+from ..tools import record
 import re
 
 SCHEMA_PATH = config.get_file_path("schema")

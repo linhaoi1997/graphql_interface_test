@@ -55,8 +55,11 @@ class ResourceLoader(object):
     def get_id(self, name):
         if name:
             name = name.lower()
-            _id = self.id[name]["value"][self.id[name]["value"]]
-            return random.choice(_id)
+            _id = self.id[name]["value"]
+            if _id:
+                return random.choice(_id)
+            else:
+                raise KeyError
         else:
             raise KeyError
 
@@ -99,6 +102,7 @@ class User(GraphqlClient):
     def __init__(self, login, use_interfaces):
         super(User, self).__init__(login=login)
         self.use_interfaces = use_interfaces
+        self.id = self.send_request("me", {}).find_result("$.data.me.id")[0]
 
 
 resource = ResourceLoader()

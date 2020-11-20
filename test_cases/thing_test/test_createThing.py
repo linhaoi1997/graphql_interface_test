@@ -1,30 +1,33 @@
-from support import *
+from Apis.Things.createThing import CreateThing
+from support import BaseTestCase, run
 import pytest
 import allure
 
-collection()
 
-
-@allure.epic("thing")
-@allure.feature("createThing")
 class TestCreateThing(BaseTestCase):
-    query_name = "createThing"
-    interface = GraphqlInterface(query_name)
+    create_thing = CreateThing()
+    query_name = create_thing.api_name
 
-    @allure.story("所有项完整")
-    @pytest.mark.parametrize("variable", interface.generate("generate_all_params", **BaseTestCase.all_param))
-    def test_1(self, variable, resource):
-        user = resource.simple_user
-        result = user.send_request(self.query_name, variable).result
-        self.assertForm(variable, result)
+    def test_create_all(self):
+        result = self.create_thing.create_thing()
+        self.assertCreate(self.create_thing.variables, result)
 
-    @allure.story("不填写选填项")
-    @pytest.mark.parametrize("variable", interface.generate("generate_no_optional_params", **BaseTestCase.all_param))
-    def test_2(self, variable, resource):
-        user = resource.simple_user
-        result = user.send_request(self.query_name, variable).result
-        self.assertForm(variable, result)
+    def test_create_no_optional(self):
+        result = self.create_thing.create_no_optional()
+        self.assertCreate(self.create_thing.variables, result)
+
+    @pytest.mark.parametrize('year', [0.5, 1, 1.5])
+    def test_half_year(self, year):
+        result = self.create_thing.create_time_before(year)
+        self.assertCreate(self.create_thing.variables, result)
+        self.assertJsonResponseEqual("$..usedYear", result, year)
+
+    @allure.title("1.8年")
+    def test_1_8_year(self):
+        result = self.create_thing.create_time_before(1.8)
+        self.assertCreate(self.create_thing.variables, result)
+        self.assertJsonResponseEqual("$..usedYear", result, 1.8)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     run(__file__)

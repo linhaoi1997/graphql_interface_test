@@ -1,29 +1,13 @@
-from support import *
-import pytest
-import allure
-
-collection()
+from support import run, BaseTestCase
+from Apis.Things.exportThing import ExportThing
 
 
-@allure.epic("thing")
-@allure.feature("exportThings")
-class TestQueryExportThings(BaseTestCase):
-    query_name = "exportThings"
-    interface = GraphqlInterface(query_name)
+class TestExportThing(BaseTestCase):
+    export_thing = ExportThing()
 
-    create_name = "createThing"
-    resource_name = "Thing"
-
-    @allure.story("导出三项")
-    def test(self, resource, create_id):
-        _ids = create_id(self.create_name, 3, self.resource_name)
-
-        variable = {
-            "input": {"ids": _ids}
-        }
-        user = resource.simple_user
-        result = user.send_request(self.query_name, variable).result
-        self.assertExport(result)
+    def test_export_all(self):
+        result = self.export_thing.export_things()
+        self.assertCorrect(result)
 
 
 if __name__ == "__main__":

@@ -1,4 +1,4 @@
-url: http://192.168.1.175:8888/graphql/
+url: http://192.168.1.175:10000/graphql/
 #platform_url: http://192.168.1.5:8200/graphql/
 #url: https://test.teletraan.io/app/eam/graphql/
 
@@ -10,42 +10,31 @@ db:
   - '9990'
 
 db_list:
-  - 'eam-sleemon'
+  - 'eam-sleemon-test'
 
 users:
   simple_user:
-    interfaces:
-      "all"
-    login:
-#      account: 'admin'
-#      passpord: 'admin'
-      account: 'admin_jia'
-      passpord: '123456'
-  platform_user:
     login:
       account: 'admin'
       passpord: 'admin'
-    interfaces:
-      - "createThing"
-      - "createSparePart"
-  feed_back_user:
-    interfaces:
-      "all"
-    login:
-      account: 'zhixing'
-      passpord: '123456'
-  audit_user:
-    interfaces:
-      "all"
-    login:
-      account: 'shenheren'
-      passpord: '123456'
-  report_user:
-    interfaces:
-      "all"
-    login:
-      account: 'faqiren'
-      passpord: '123456'
+#      account: 'admin_jia'
+#      passpord: '123456'
+#  platform_user:
+#    login:
+#      account: 'admin'
+#      passpord: 'admin'
+#  feed_back_user:
+#    login:
+#      account: 'zhixing'
+#      passpord: '123456'
+#  audit_user:
+#    login:
+#      account: 'shenheren'
+#      passpord: '123456'
+#  report_user:
+#    login:
+#      account: 'faqiren'
+#      passpord: '123456'
 
 id_map:
   'thing': 'createThing'

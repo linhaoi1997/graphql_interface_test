@@ -1,5 +1,5 @@
 from support.base_test.base_api.BaseApi import BaseApi
-from support.tools import graphql_query, find_test_file
+from support.tools import graphql_query, find_test_file, record
 import json
 import requests
 from urllib3 import encode_multipart_formdata
@@ -31,11 +31,14 @@ def format_name(name: str):
 
 class FormStructApi(BaseApi):
 
-    def run(self, is_change_struct=False):
+    def run(self, variables=None, is_change_struct=False):
         if is_change_struct:
             self.change_struct()
             self.set_random_variables()
+        if variables:
+            self.variables = variables
         self.result = self.user.send_request(self.api_name, self.variables).result
+        return self.result
 
     def change_struct(self):
         interface = getattr(self.schema, self.api_name)
@@ -80,7 +83,9 @@ class UploadApi(BaseApi):
         encode_data = encode_multipart_formdata(self.variables)
         data = encode_data[0]
         self.user.update_headers(**{"Content-Type": encode_data[1]})
-        return requests.post(self.user.base_url, headers=self.user.headers, data=data).json()
+        self.result = requests.post(self.user.base_url, headers=self.user.headers, data=data).json()
+        record(self.result, "上传文件结果")
+        return self.result
 
     @staticmethod
     def get_type(name: str):

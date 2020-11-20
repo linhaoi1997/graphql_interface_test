@@ -1,6 +1,6 @@
 import jsonpath
-from support.tools.log import record, pformat
-from support.tools import get_all_deepest_dict, format_number, find_return_type
+from support.tools.log import pformat
+from support.tools import get_all_deepest_dict, format_number, find_return_type, record
 from support.data_maker.VariableMaker import TypeSearcher
 import json
 import allure
@@ -18,8 +18,8 @@ class AssertMethod(object):
         if "[" not in json_path:
             result = result[0]
         record(
-            "\njsonpath : '%s'\nget\n'%s'\nfrom\nresult" % (json_path, pformat(result)))
-        record("except %s" % value)
+            "\njsonpath : '%s'\nget\n'%s'\nfrom\nresult" % (json_path, pformat(result)), title="拿到的值")
+        record("except %s" % value, title="期望的值")
         """Jsonpath取到的值与value一致"""
         if not result and not value:
             pass

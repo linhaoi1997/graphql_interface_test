@@ -1,5 +1,4 @@
 from .InputSearcher import InputSearcher
-from ..tools.log import record
 from ..tools.find_gralhql_schema import graphql_query
 from .GraphqlClient import GraphqlClient
 from .VariableMaker import VariableMaker

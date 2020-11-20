@@ -172,7 +172,10 @@ class JSONStringParam(BaseParam):
         _input2 = getattr(self.schema, self.param.type)
         if _input2 is None:
             raise Exception("no input named %s" % self.param.type)
-        result = json.dumps([GenerateInput.generate(self.schema, _input2, **identity)[self.param.type]])
+        var = [GenerateInput.generate(self.schema, _input2, **identity)[self.param.type]]
+        if var[0] == {}:
+            var = []
+        result = json.dumps(var)
         return result
 
 
@@ -217,7 +220,7 @@ class GraphqlInterface(object):
 if __name__ == '__main__':
     test = GraphqlInterface("ExportThingInput")
 
-    print(test.generate_params(list_len=3))
+    print(test.generate_params(list_len=3, no_none=True))
 
     test = GenerateInput.generate_root(base_schema, base_schema.things)
     print(test)

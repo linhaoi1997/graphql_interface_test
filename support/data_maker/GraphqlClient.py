@@ -15,6 +15,7 @@ class GraphqlClient(object):
         self.graphql_client = HTTPEndpoint(self.base_url, self.headers)
         self.result = None
         self.num = 0
+        self.id = None
         if login:
             try:
                 self.login(login)
