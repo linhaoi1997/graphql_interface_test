@@ -11,16 +11,15 @@ class Decorator(object):
     def log_process(func):
         @functools.wraps(func)
         def wrapper(*args, **kw):
-            record('%s 用例开始:' % (func.__name__))
+            record('%s 用例开始:' % func.__name__)
             result = func(*args, **kw)
-            record('%s 用例结束:' % (func.__name__))
+            record('%s 用例结束:' % func.__name__)
             return result
 
         return wrapper
 
-
     # 多装饰器装饰case
-    def log_allure_story():
+    def log_allure_story(self):
         pass
 
 

@@ -1,8 +1,16 @@
 from ..caps.read_yaml import config
 from ..tools import singleton
 from support.base_test.generate_param.newSchema import base_schema
-from ..data_maker import GraphqlClient
+from .GraphqlClient import GraphqlClient
 import random
+
+
+class User(GraphqlClient):
+
+    def __init__(self, login, use_interfaces):
+        super(User, self).__init__(login=login)
+        self.use_interfaces = use_interfaces
+        self.id = self.send_request("me", {}).find_result("$.data.me.id")[0]
 
 
 @singleton
@@ -63,6 +71,9 @@ class ResourceLoader(object):
         else:
             raise KeyError
 
+    def get_user(self, user_name) -> User:
+        return getattr(self.users, user_name)
+
 
 @singleton
 class UserLoader(object):
@@ -95,14 +106,6 @@ class IdMap:
 
     def __call__(self, item):
         return self.id_map.get(item)
-
-
-class User(GraphqlClient):
-
-    def __init__(self, login, use_interfaces):
-        super(User, self).__init__(login=login)
-        self.use_interfaces = use_interfaces
-        self.id = self.send_request("me", {}).find_result("$.data.me.id")[0]
 
 
 resource = ResourceLoader()

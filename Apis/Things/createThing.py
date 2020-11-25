@@ -6,17 +6,15 @@ class CreateThing(FormStructApi):
     def __init__(self, user=None):
         super(CreateThing, self).__init__("createThing", user)
 
-    def create_thing(self, reason="", **kwargs):
+    def create_thing(self, **kwargs):
         self.set_random_variables()
         self.variables.get("input").update(
             {
                 "attachments": [{"id": 1}, {"id": 2}],
                 "images": [{"id": 1}, {"id": 2}],
-                # "repairContacts": [],
-                # "spareParts": []
+                "repairContacts": [{"id": 1}],
             }
         )
-        self.variables.get("input").pop("repairContacts")
         self.variables.get("input").pop("spareParts")
         self.variables.get("input").pop("usedYear")
         self.variables.get("input").update(**kwargs)

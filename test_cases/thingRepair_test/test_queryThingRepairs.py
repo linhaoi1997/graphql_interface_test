@@ -1,26 +1,13 @@
-from support import *
-import pytest
-import allure
-
-collection()
+from Apis.thingRepairs.thingRepairs import QueryThingRepairs
+from support import run, record
 
 
-@allure.epic("thingRepair")
-@allure.feature("queryThingRepairs")
-class TestQueryThingRepairs(BaseTestCase):
-    query_name = "thingRepairs"
-    interface = GraphqlInterface(query_name)
+class TestThingRepair(object):
+    test = QueryThingRepairs()
 
-    create_name = "createThingRepair"
-
-    @allure.story("正确查询")
-    def test_query_thing(self, resource, create_id):
-        _ids = create_id(self.create_name, 3, "ThingRepair", return_type="id")
-        user = resource.simple_user
-        variables = {"offset": 0, "limit": 3, "filter": {}}  # 分页查询一个
-        result = user.send_request(self.query_name, variables).result
-        self.assertQuerys(_ids, result)
+    def test_query(self):
+        record(self.test.run_and_query_id())
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     run(__file__)

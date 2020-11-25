@@ -1,4 +1,4 @@
-from support.data_maker.GraphqlClient import GraphqlClient
+from support.base_test.GraphqlClient import GraphqlClient
 from copy import deepcopy
 
 

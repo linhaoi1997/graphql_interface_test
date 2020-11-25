@@ -1,4 +1,4 @@
-url: http://192.168.1.175:10000/graphql/
+url: http://192.168.1.175:9999/graphql/
 #platform_url: http://192.168.1.5:8200/graphql/
 #url: https://test.teletraan.io/app/eam/graphql/
 
@@ -23,18 +23,18 @@ users:
 #    login:
 #      account: 'admin'
 #      passpord: 'admin'
-#  feed_back_user:
-#    login:
-#      account: 'zhixing'
-#      passpord: '123456'
-#  audit_user:
-#    login:
-#      account: 'shenheren'
-#      passpord: '123456'
-#  report_user:
-#    login:
-#      account: 'faqiren'
-#      passpord: '123456'
+  feed_back_user:
+    login:
+      account: 'zhixing'
+      passpord: '123456'
+  audit_user:
+    login:
+      account: 'shenhe'
+      passpord: '123456'
+  report_user:
+    login:
+      account: 'faqiren'
+      passpord: '123456'
 
 id_map:
   'thing': 'createThing'

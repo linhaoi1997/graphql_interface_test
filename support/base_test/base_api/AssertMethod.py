@@ -1,7 +1,6 @@
 import jsonpath
 from support.tools.log import pformat
 from support.tools import get_all_deepest_dict, format_number, find_return_type, record
-from support.data_maker.VariableMaker import TypeSearcher
 import json
 import allure
 
@@ -112,7 +111,8 @@ class AssertMethod(object):
             filter_list = []
         return_type = find_return_type(self.query_name)
         if "ID" not in return_type:
-            assert_list = TypeSearcher(return_type).msg
+            assert_list = []
+            # assert_list = TypeSearcher(return_type).msg
             for i in assert_list:
                 if i not in filter_list:
                     json_path = "$.data." + self.query_name + "." + i

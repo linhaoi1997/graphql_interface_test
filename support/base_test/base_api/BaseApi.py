@@ -1,6 +1,7 @@
 from support.base_test.generate_param.newSchema import base_schema, Schema
 from support.base_test.generate_param.GenerateParam import GraphqlInterface
 from support.base_test.ResourceLoader import resource
+from support.base_test.JsonSetter import JsonSetter
 import jsonpath
 
 
@@ -15,6 +16,12 @@ class BaseApi(object):
         self.interface_generator = GraphqlInterface(api_name, schema)
         self.variables = self.interface_generator.generate_params(is_random=True)
         self.result = None
+        self.id = None
+
+    # 发送接口方法
+    def random_run(self):
+        self.run()
+        self.set_random_variables()
 
     def run(self, variables=None):
         if variables:
@@ -22,15 +29,23 @@ class BaseApi(object):
         self.result = self.user.send_request(self.api_name, self.variables).result
         return self.result
 
+    # 设置变量方法
+
     def set_random_variables(self, **kwargs):
         self.variables = self.interface_generator.generate_params(is_random=True, **kwargs)
 
     def set_no_optional_var(self, **kwargs):
         self.variables = self.interface_generator.generate_params(is_random=True, no_optional=True, no_none=True)
 
-    def random_run(self):
-        self.run()
-        self.set_random_variables()
+    def pop_value(self, f_json_path):
+        test = JsonSetter(f_json_path)
+        test.pop(self.variables)
+
+    def change_value(self, f_json_path, value):
+        test = JsonSetter(f_json_path)
+        test.set(self.variables, value)
+
+    # 查找方法
 
     def find_from_result(self, json_path):
         return jsonpath.jsonpath(self.result, json_path)

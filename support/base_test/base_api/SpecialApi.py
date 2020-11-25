@@ -38,6 +38,7 @@ class FormStructApi(BaseApi):
         if variables:
             self.variables = variables
         self.result = self.user.send_request(self.api_name, self.variables).result
+        self.id = self.find_first_deep_item("id")
         return self.result
 
     def change_struct(self):
@@ -102,6 +103,97 @@ class UploadApi(BaseApi):
             return type_map.get(_type)
         except KeyError:
             raise Exception("没有对应类型，请补充")
+
+
+class QuerySingleApi(BaseApi):
+
+    def query(self, _id):
+        var = {
+            "id": _id
+        }
+        self.run(var)
+        return self.result["data"]
+
+
+class QueryManyApi(BaseApi):
+
+    def query(self, offset=0, limit=10, _filter=None):
+        if _filter is None:
+            _filter = {}
+        var = {
+            "offset": offset,
+            "limit": limit,
+            "filter": _filter
+        }
+        return self.run(var)
+
+    def query_and_return_ids(self, offset=0, limit=10, _filter=None):
+        self.query(offset, limit, _filter)
+        return self.find_from_result("$.data." + self.api_name + ".data[*].id")
+
+    def query_and_return_certain(self, _id, offset=0, limit=10, _filter=None):
+        self.query(offset, limit, _filter)
+        for i in self.result["data"][self.api_name]["data"]:
+            if i["id"] == 1:
+                return i
+
+
+class CreateApi(BaseApi):
+
+    def create(self, variables=None):
+        if variables is None:
+            variables = {}
+        self.set_random_variables()
+        for json_path, value in variables.items():
+            self.change_value(f_json_path="input." + json_path, value=value)
+
+        self.id = self.find_first_deep_item("id")
+        return self.run()
+
+
+class UpdateApi(BaseApi):
+
+    def update(self, _id=None, variables=None):
+        if self.id and not _id:
+            _id = self.id
+        self.change_value(f_json_path="input." + "id", value=_id)
+        if variables is None:
+            variables = {}
+        for json_path, value in variables.items():
+            if value:
+                self.change_value(f_json_path="input." + json_path, value=value)
+            else:
+                self.pop_value(f_json_path="input." + json_path)
+        return self.run()
+
+    def update_all(self, _id=None, variables=None):
+        self.set_random_variables()
+        self.update(_id, variables)
+
+    def update_part(self, _id=None, variables=None):
+        self.variables = {"input": {}}
+        self.update(_id, variables)
+
+
+class DeleteApi(BaseApi):
+
+    def delete(self, _ids: list):
+        var = {
+            "input": {
+                "ids": _ids
+            }
+        }
+        return self.run(var)
+
+
+class ExportApi(BaseApi):
+    def export(self, _ids: list):
+        var = {
+            "input": {
+                "ids": _ids
+            }
+        }
+        return self.run(var)
 
 
 if __name__ == '__main__':

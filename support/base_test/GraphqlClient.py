@@ -1,8 +1,8 @@
-from ..caps.read_yaml import config
+from support.caps.read_yaml import config
 from sgqlc.endpoint.http import HTTPEndpoint
 from jsonpath import jsonpath
-from ..tools.find_gralhql_schema import graphql_query
-from ..tools import record, pformat
+from support.tools.find_gralhql_schema import graphql_query
+from support.tools import record, pformat
 import allure
 
 
