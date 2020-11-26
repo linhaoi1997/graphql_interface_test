@@ -4,6 +4,7 @@ from Apis.thingInspections.updateThingInspectionStatus import UpdateThingInspect
 from Apis.thingInspections.queryThingInspectionRules import QueryThingInspectionRules
 from Apis.thingInspections.updateThingInspectionFeedback import UpdateThingInspectionFeedback
 from Apis.thingInspections.queryInspection import QueryInspection
+from Apis.thingRepairs.createThingRepair import CreateThingRepairs
 from Apis.Things.things import Things
 
 
@@ -28,3 +29,5 @@ class TestInspectionFlow(object):
 
         # 查询
         self.query = QueryInspection(self.report_user, self.id)
+        # 可以关联维修单到保养单
+        self.create_repairs = CreateThingRepairs(self.feed_back_user)

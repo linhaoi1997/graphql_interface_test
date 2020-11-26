@@ -10,7 +10,7 @@ class QueryThingInspectionRules(QueryManyApi):
     def return_random_Rule(self):
         ids = self.query_and_return_ids()
         _id = random.choice(ids)
-        return QueryThingInspectionRule().query_and_return_items(_id)
+        return QueryThingInspectionRule(self.user).query_and_return_items(_id)
 
 
 class QueryThingInspectionRule(QuerySingleApi):
