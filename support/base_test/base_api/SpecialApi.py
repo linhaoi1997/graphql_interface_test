@@ -140,15 +140,19 @@ class QueryManyApi(BaseApi):
 
 class CreateApi(BaseApi):
 
-    def create(self, variables=None):
+    def create(self, variables=None, allow_none=False):
         if variables is None:
             variables = {}
         self.set_random_variables()
         for json_path, value in variables.items():
-            self.change_value(f_json_path="input." + json_path, value=value)
-
+            if allow_none:
+                self.change_value(f_json_path="input." + json_path, value=value)
+            else:
+                if value:
+                    self.change_value(f_json_path="input." + json_path, value=value)
+        self.run()
         self.id = self.find_first_deep_item("id")
-        return self.run()
+        return self.result
 
 
 class UpdateApi(BaseApi):

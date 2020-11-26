@@ -1,7 +1,7 @@
-from support import BaseApi
+from support.base_test.base_api.SpecialApi import QueryManyApi
 
 
-class Things(BaseApi):
+class Things(QueryManyApi):
     def __init__(self, user=None):
         super(Things, self).__init__("things", user)
 
