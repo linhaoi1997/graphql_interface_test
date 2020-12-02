@@ -28,12 +28,15 @@ class GraphqlClient(object):
     def send_request(self, query_name, variables, has_typename=True):
         query = graphql_query.get_query(query_name, has_typename)
         self.graphql_client.url = self.base_url + "?" + query_name
-        record(self.graphql_client.url, "发送的url")
-        record(self.headers, "发送的headers")
-        record(pformat(variables), "发送的参数")
         result = self.graphql_client(query, variables)
         self.result = result
-        record(pformat(result), "返回的结果")
+        try:
+            record(self.graphql_client.url, "发送的url")
+            record(self.headers, "发送的headers")
+            record(pformat(variables), "发送的参数")
+            record(pformat(result), "返回的结果")
+        except KeyError as e:
+            print(e)
         return self
 
     def update_headers(self, **kwargs):

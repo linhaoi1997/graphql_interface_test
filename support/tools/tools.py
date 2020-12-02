@@ -21,8 +21,8 @@ def create_num_string(num, default=0):
     return result
 
 
-def create_timestamp(delay=0):
-    return int(time.time() * 1000) + delay * 60 * 1000
+def create_timestamp(delay=0, before=0):
+    return int(time.time() * 1000) + delay * 60 * 1000 - before * 60 * 1000
 
 
 def get_all_deepest_dict_gen(test_dict, sign=''):
@@ -114,6 +114,8 @@ def go_allure(isClear=False):
 
 
 def record(body, title=""):
+    if not body:
+        body = "no records ,please check something"
     allure.attach(str(body), str(title), allure.attachment_type.TEXT)
 
 

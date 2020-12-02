@@ -1,4 +1,4 @@
-from support.base_test.base_api.SpecialApi import QueryManyApi
+from support.base_test.base_api.SpecialApi import QueryManyApi, QuerySingleApi
 
 
 class QueryThingRepairs(QueryManyApi):
@@ -10,3 +10,19 @@ class QueryThingRepairs(QueryManyApi):
             variables = {"offset": 0, "limit": 10, "filter": {}}
         self.run(variables)
         return self.find_from_result("$..data[*].id")[0]
+
+
+class QueryThingRepair(QuerySingleApi):
+    REJECT = "REJECT"
+    DISPATCHING = "DISPATCHING"
+    REPAIRING = "REPAIRING"
+    FEEDBACK = "FEEDBACK"
+    FINISHED = "FINISHED"
+    STOP = "STOP"
+
+    def __init__(self, user=None):
+        super(QueryThingRepair, self).__init__("thingRepair", user)
+
+    def return_thing_repair_status(self, _id):
+        self.query(_id)
+        return self.find_first_deep_item("status")

@@ -1,4 +1,4 @@
-from support.base_test.base_api.SpecialApi import QueryManyApi
+from support.base_test.base_api.SpecialApi import QueryManyApi, QuerySingleApi
 
 
 class Things(QueryManyApi):
@@ -27,6 +27,15 @@ class Things(QueryManyApi):
             "values": values
         }
         return self.run_and_query_id(variables)
+
+
+class Thing(QuerySingleApi):
+    def __init__(self, user=None):
+        super(Thing, self).__init__("thing", user)
+
+    def query_and_return_contact_ids(self, _id):
+        self.query(_id)
+        return self.find_from_result("$..repairContacts[*].id")
 
 
 if __name__ == '__main__':

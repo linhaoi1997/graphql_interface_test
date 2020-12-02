@@ -35,6 +35,10 @@ users:
     login:
       account: 'faqiren'
       passpord: '123456'
+  other_user:
+    login:
+      account: 'test_lin'
+      passpord: '123456'
 
 id_map:
   'thing': 'createThing'

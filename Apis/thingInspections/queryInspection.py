@@ -1,4 +1,4 @@
-from support.base_test.base_api.SpecialApi import QuerySingleApi
+from support.base_test.base_api.SpecialApi import QuerySingleApi, QueryManyApi
 
 
 class QueryInspection(QuerySingleApi):
@@ -10,3 +10,8 @@ class QueryInspection(QuerySingleApi):
     def query_and_find_status(self):
         self.query(self.id)
         return self.find_first_deep_item("status")
+
+
+class QueryInspections(QueryManyApi):
+    def __init__(self, user=None):
+        super(QueryInspections, self).__init__("thingInspections", user)

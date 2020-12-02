@@ -218,7 +218,7 @@ class GraphqlInterface(object):
 
 
 if __name__ == '__main__':
-    test = GraphqlInterface("ExportThingInput")
+    test = GraphqlInterface("exportSparePartReceipts")
 
     print(test.generate_params(list_len=3, no_none=True))
 

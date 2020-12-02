@@ -138,7 +138,7 @@ class QueryManyApi(BaseApi):
                 return i
 
 
-class CreateApi(BaseApi):
+class CreateApi(FormStructApi):
 
     def create(self, variables=None, allow_none=False):
         if variables is None:
@@ -164,7 +164,7 @@ class UpdateApi(BaseApi):
         if variables is None:
             variables = {}
         for json_path, value in variables.items():
-            if value:
+            if value is not None:
                 self.change_value(f_json_path="input." + json_path, value=value)
             else:
                 self.pop_value(f_json_path="input." + json_path)

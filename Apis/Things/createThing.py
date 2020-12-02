@@ -1,5 +1,7 @@
 from support import FormStructApi
+from Apis.Departments.departments import WorkShops
 import datetime
+import random
 
 
 class CreateThing(FormStructApi):
@@ -8,11 +10,13 @@ class CreateThing(FormStructApi):
 
     def create_thing(self, **kwargs):
         self.set_random_variables()
+        workshop = random.choice(WorkShops().query_and_return_ids())
         self.variables.get("input").update(
             {
                 "attachments": [{"id": 1}, {"id": 2}],
                 "images": [{"id": 1}, {"id": 2}],
                 "repairContacts": [{"id": 1}],
+                "department": {"id": workshop}
             }
         )
         self.variables.get("input").pop("spareParts")

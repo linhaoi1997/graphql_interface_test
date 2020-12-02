@@ -56,3 +56,10 @@ class BaseApi(object):
             return jsonpath.jsonpath(self.result, json_path)[0]
         except TypeError:
             raise AssertionError("没有找到值 %s" % json_path)
+
+    @staticmethod
+    def return_id_input(_id):
+        if isinstance(_id, list):
+            return [{"id": i} for i in _id]
+        else:
+            return {"id": _id}
