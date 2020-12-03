@@ -1,4 +1,5 @@
 from support import FormStructApi
+from Apis.Things.things import Things
 
 
 class CreateSparePart(FormStructApi):
@@ -7,6 +8,7 @@ class CreateSparePart(FormStructApi):
 
     def create(self):
         self.set_random_variables()
+        self.change_value("input.things", [{"id": Things().return_random_thing()} for i in range(2)])
         self.run()
         return self.result
 

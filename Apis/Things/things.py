@@ -1,4 +1,5 @@
 from support.base_test.base_api.SpecialApi import QueryManyApi, QuerySingleApi
+import random
 
 
 class Things(QueryManyApi):
@@ -27,6 +28,9 @@ class Things(QueryManyApi):
             "values": values
         }
         return self.run_and_query_id(variables)
+
+    def return_random_thing(self):
+        return random.choice(self.query_and_return_ids())
 
 
 class Thing(QuerySingleApi):

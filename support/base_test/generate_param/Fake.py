@@ -1,5 +1,6 @@
 from faker import Faker
-from support.tools.tools import create_num_string, create_timestamp
+from support.tools.tools import create_num_string
+from support.tools.log import logger
 from faker.providers import BaseProvider
 
 
@@ -48,9 +49,9 @@ class MyFaker(object):
             try:
                 return getattr(self.fake, self.fake_map[item])()
             except KeyError:
-                print("fake_map 不存在 %s" % item)
+                logger.debug("fake_map 不存在 %s" % item)
             except AttributeError:
-                print("fake_map %s 的对应不对")
+                logger.debug("fake_map %s 的对应不对")
         return None
 
 

@@ -21,6 +21,13 @@ class Employees(QueryManyApi):
     def __init__(self, user=None):
         super(Employees, self).__init__("employees", user)
 
+    def query_and_return_ids(self, offset=0, limit=10, _filter=None):
+        if not _filter:
+            _filter = {
+                "containSubsidiaries": True
+            }
+        self.query(offset, limit, _filter)
+
 
 if __name__ == '__main__':
     test = Roles()

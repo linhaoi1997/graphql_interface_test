@@ -70,6 +70,37 @@ class TestSparePartOutboundFlow(BaseTestCase):
             status = flow.query.query_and_return_status()
             assert status == "PENDING"
 
+    @allure.title("备件各流程，移动端角标和概览的数量变化")
+    def test_4(self):
+        def assert_spare_outbound_count(count):
+            assert flow.report_user_overview.sparePartOutboundToFinishedCount == flow.old_report_user_count + \
+                   count and flow.feed_back_user_overview.sparePartOutboundToFinishedCount == \
+                   flow.old_feedback_user_count + \
+                   count and flow.audit_user_overview.sparePartOutboundToFinishedCount == flow.old_audit_user_count + \
+                   count
+
+        with allure.step("创建出库单"):
+            flow = SparePartOutboundFlow()
+            with allure.step("执行人、审核人、发起人的未完成备件数量+1,其他人员不变"):
+                assert_spare_outbound_count(1)
+                assert flow.other_user_overview.sparePartOutboundToFinishedCount == flow.old_other_user_count
+        with allure.step("拒绝出库单"):
+            flow.audit.audit_reject()
+            with allure.step("执行人、审核人、发起人的未完成备件数量不变,其他人员不变"):
+                assert_spare_outbound_count(1)
+                assert flow.other_user_overview.sparePartOutboundToFinishedCount == flow.old_other_user_count
+        with allure.step("再次编辑入库单"):
+            flow.feed_back.update_part(variables=flow.create.variables.get("input"))
+            with allure.step("执行人、审核人、发起人的未完成备件数量不变,其他人员不变"):
+                assert_spare_outbound_count(1)
+                assert flow.other_user_overview.sparePartOutboundToFinishedCount == flow.old_other_user_count
+        with allure.step("审核通过"):
+            spare_part_num = 100
+            flow.audit.audit_pass(spare_part_list=flow.spare_part_list, spare_part_num=spare_part_num)
+            with allure.step("执行人、审核人、发起人的未完成备件数量-1,其他人员不变"):
+                assert_spare_outbound_count(0)
+                assert flow.other_user_overview.sparePartOutboundToFinishedCount == flow.old_other_user_count
+
 
 if __name__ == '__main__':
     run(__file__)

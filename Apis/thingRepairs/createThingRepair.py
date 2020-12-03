@@ -21,9 +21,9 @@ class CreateThingRepairs(CreateApi):
         self.set_random_variables(list_len=len(things_ids_list))
         for i in range(len(things_ids_list)):
             self.change_value("input.data[%s].thing.id" % i, things_ids_list[i])
-        fault_images = [{"id": i} for i in [1]]
+        fault_images = [{"id": i} for i in [1, 2, 3]]
         self.change_value("input.data[*].faultImages", fault_images)
-        self.run()
+        self.result = self.user.send_request(self.api_name, self.variables).result
         self.ids = self.find_from_result("$.data.%s.data[*].id" % self.api_name)
         return self.ids
 

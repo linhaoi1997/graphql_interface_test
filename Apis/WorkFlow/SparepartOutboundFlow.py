@@ -5,6 +5,7 @@ from Apis.SpareParts.querySpareOutbound import SparePartOutbound
 from Apis.SpareParts.querySpareParts import QuerySpareParts
 from Apis.SpareParts.querySparePartStocks import QuerySparePartStocks
 from Apis.SpareParts.createSparePartsReceipts import CreateSparePartReceipt
+from Apis.Things.thingOverView import ThingOverView
 
 from support import resource
 
@@ -15,7 +16,18 @@ class SparePartOutboundFlow(object):
         self.report_user = resource.get_user("report_user")
         self.audit_user = resource.get_user("audit_user")
         self.feed_back_user = resource.get_user("feed_back_user")
+        self.other_user = resource.get_user("other_user")
         self.create_stocks_number = create_stocks_number
+
+        # 权限测试，三个人员的overview
+        self.report_user_overview = ThingOverView(self.report_user)
+        self.feed_back_user_overview = ThingOverView(self.feed_back_user)
+        self.audit_user_overview = ThingOverView(self.audit_user)
+        self.other_user_overview = ThingOverView(self.other_user)
+        self.old_report_user_count = self.report_user_overview.sparePartOutboundToFinishedCount
+        self.old_feedback_user_count = self.feed_back_user_overview.sparePartOutboundToFinishedCount
+        self.old_audit_user_count = self.audit_user_overview.sparePartOutboundToFinishedCount
+        self.old_other_user_count = self.other_user_overview.sparePartOutboundToFinishedCount
 
         # 业务层 创建出库单,及查询出库单的接口
         self.spare_part_list = QuerySpareParts(self.report_user).query_and_return_ids()
