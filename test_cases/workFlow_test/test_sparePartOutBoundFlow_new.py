@@ -77,6 +77,8 @@ class TestSparePartOutboundFlow(BaseTestCase):
                    count and flow.feed_back_user_overview.sparePartOutboundToFinishedCount == \
                    flow.old_feedback_user_count + \
                    count and flow.audit_user_overview.sparePartOutboundToFinishedCount == flow.old_audit_user_count + \
+                   count \
+                   and flow.see_all_user_overview.sparePartOutboundToFinishedCount == flow.old_see_all_user_count + \
                    count
 
         with allure.step("创建出库单"):

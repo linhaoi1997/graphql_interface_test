@@ -39,7 +39,7 @@ class Thing(QuerySingleApi):
 
     def query_and_return_contact_ids(self, _id):
         self.query(_id)
-        return self.find_from_result("$..repairContacts[*].id")
+        return self.find_from_result("$.data."+self.api_name+".repairContacts[*].id")
 
 
 if __name__ == '__main__':

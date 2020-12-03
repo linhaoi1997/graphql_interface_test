@@ -27,6 +27,7 @@ class Employees(QueryManyApi):
                 "containSubsidiaries": True
             }
         self.query(offset, limit, _filter)
+        return self.find_from_result("$..data.employees.data[*].id")
 
 
 if __name__ == '__main__':
