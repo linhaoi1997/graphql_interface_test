@@ -129,7 +129,11 @@ class QueryManyApi(BaseApi):
 
     def query_and_return_ids(self, offset=0, limit=10, _filter=None):
         self.query(offset, limit, _filter)
-        return self.find_from_result("$.data." + self.api_name + ".data[*].id")
+        ids = self.find_from_result("$.data." + self.api_name + ".data[*].id")
+        if ids:
+            return ids
+        else:
+            return []
 
     def query_and_return_certain(self, _id, offset=0, limit=10, _filter=None):
         self.query(offset, limit, _filter)

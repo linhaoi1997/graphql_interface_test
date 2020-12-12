@@ -20,6 +20,21 @@ class ThingRepairFlow(object):
         self.feed_back_user = resource.get_user("feed_back_user")
         self.other_user = resource.get_user("other_user")
         self.see_all_user = resource.get_user("see_all_user")
+        self.standby_user = resource.get_user("standby_user")
+
+        # 权限测试，三个人员的overview
+        self.report_user_overview = ThingOverView(self.report_user)
+        self.feed_back_user_overview = ThingOverView(self.feed_back_user)
+        self.audit_user_overview = ThingOverView(self.audit_user)
+        self.other_user_overview = ThingOverView(self.other_user)
+        self.standby_user_overview = ThingOverView(self.standby_user)
+        self.see_all_user_overview = ThingOverView(self.see_all_user)
+        self.old_report_user_count = self.report_user_overview.thingRepairToFinishedCount
+        self.old_feedback_user_count = self.feed_back_user_overview.thingRepairToFinishedCount
+        self.old_audit_user_count = self.audit_user_overview.thingRepairToFinishedCount
+        self.old_other_user_count = self.other_user_overview.thingRepairToFinishedCount
+        self.old_see_all_user_count = self.see_all_user_overview.thingRepairToFinishedCount
+        self.old_standby_user_count = self.standby_user_overview.thingRepairToFinishedCount
 
         # 创建表单
         self.create_repair = CreateThingRepair(self.report_user)
@@ -54,20 +69,9 @@ class ThingRepairFlow(object):
         self.audit_user_see = QueryThingRepairs(self.audit_user)
         self.other_user_see = QueryThingRepairs(self.other_user)
         self.see_all_user_see = QueryThingRepairs(self.see_all_user)
+        self.standby_user_see = QueryThingRepairs(self.standby_user)
 
         self.report_user_see_one = QueryThingRepair(self.report_user)
         self.feed_back_user_see_one = QueryThingRepair(self.feed_back_user)
         self.audit_user_see_one = QueryThingRepair(self.audit_user)
         self.other_user_see_one = QueryThingRepair(self.other_user)
-
-        # 权限测试，三个人员的overview
-        self.report_user_overview = ThingOverView(self.report_user)
-        self.feed_back_user_overview = ThingOverView(self.feed_back_user)
-        self.audit_user_overview = ThingOverView(self.audit_user)
-        self.other_user_overview = ThingOverView(self.other_user)
-        self.see_all_user_overview = ThingOverView(self.see_all_user)
-        self.old_report_user_count = self.report_user_overview.thingRepairToFinishedCount
-        self.old_feedback_user_count = self.feed_back_user_overview.thingRepairToFinishedCount
-        self.old_audit_user_count = self.audit_user_overview.thingRepairToFinishedCount
-        self.old_other_user_count = self.other_user_overview.thingRepairToFinishedCount
-        self.old_see_all_user_count = self.see_all_user_overview.thingRepairToFinishedCount

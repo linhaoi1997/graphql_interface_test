@@ -37,6 +37,10 @@ users:
     login:
       account: 'chakan'
       passpord: '123456'
+  standby_user:
+    login:
+      account: 'ceshi_001'
+      passpord: '123456'
 id_map:
   'thing': 'createThing'
   'sparePart': 'createSparePart'
