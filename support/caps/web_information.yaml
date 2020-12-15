@@ -41,13 +41,3 @@ users:
     login:
       account: 'ceshi_001'
       passpord: '123456'
-id_map:
-  'thing': 'createThing'
-  'sparePart': 'createSparePart'
-  'sparePartReceipt': 'createSparePartReceipt'
-  'sparePartOutbound': 'createSparePartOutbound'
-  'thingRepair': 'createThingRepair'
-  'thingInspectionRule': 'createThingInspectionRule'
-  'thingInspection': 'createThingInspection'
-  'thingMaintenanceRule': 'createThingMaintenanceRule'
-  'thingMaintenance': 'createThingMaintenance'
